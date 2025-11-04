@@ -1,0 +1,28 @@
+.navigation {
+  display: flex;
+  padding-top: 8px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 14px;
+  gap: 48px;
+
+  .link {
+    color: #fafafa;
+    text-decoration: none;
+    transition: all 0.2s;
+
+    &::before {
+      color: #ff4500;
+      content: '> ';
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+
+    &:hover::before {
+      opacity: 1;
+    }
+
+    &:hover {
+      color: #95c5ef;
+    }
+  }
+}

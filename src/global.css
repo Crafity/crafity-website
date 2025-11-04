@@ -1,0 +1,28 @@
+@import url('./css/tokens.css');
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background: var(--background-color);
+  color: var(--color);
+  font-family: var(--font-family);
+
+  &::before {
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+      linear-gradient(rgb(149 197 239 / 3%) 1px, transparent 1px),
+      linear-gradient(90deg, rgb(149 197 239 / 3%) 1px, transparent 1px);
+    background-size: 30px 30px;
+    content: '';
+    pointer-events: none;
+  }
+}

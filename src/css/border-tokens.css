@@ -1,0 +1,5 @@
+:root {
+  --border-width-thin: var(--spacing-0-1);
+  --border-width-medium: var(--spacing-0-5);
+  --border-width-thick: var(--spacing-1);
+}

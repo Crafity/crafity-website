@@ -1,0 +1,7 @@
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: var(--spacing-10) 0;
+  border-bottom: var(--border-width-thin) solid var(--color-gray);
+}
