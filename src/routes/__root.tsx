@@ -27,7 +27,29 @@ export const Route = createRootRoute({
         name: 'viewport',
       },
       {
-        title: 'Crafity',
+        title: 'Crafity // Built with passion',
+      },
+      {
+        content:
+          'E-commerce modernization, legacy rescue, senior engineering capacity. 25+ years experience. Clients: Sonic Equipment, ING, Picnic, Schiphol, Electronic Arts. Netherlands.',
+        name: 'description',
+      },
+      {
+        content: 'Crafity // Built with passion',
+        property: 'og:title',
+      },
+      {
+        content:
+          'E-commerce modernization, legacy rescue, senior engineering capacity. 25+ years experience. Clients: Sonic Equipment, ING, Picnic, Schiphol, Electronic Arts. Netherlands.',
+        property: 'og:description',
+      },
+      {
+        content: 'https://crafity.com',
+        property: 'og:url',
+      },
+      {
+        content: 'website',
+        property: 'og:type',
       },
     ],
   }),
@@ -42,10 +64,27 @@ function RootComponent() {
 }
 
 function RootDocument({ children }: Readonly<{ children: ReactNode }>) {
+  const structuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    'description':
+      'Boutique engineering firm specializing in e-commerce modernization and legacy system rescue.',
+    'foundingDate': '2010',
+    'logo': 'https://crafity.com/logo.svg',
+    'name': 'Crafity',
+    'url': 'https://crafity.com',
+  }
+
   return (
     <html lang="en">
       <head>
         <HeadContent />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(structuredData),
+          }}
+          type="application/ld+json"
+        />
       </head>
       <body>
         {children}

@@ -5,24 +5,29 @@
   font-size: var(--font-size-terminal);
   gap: var(--spacing-12);
 
-  .link {
-    color: var(--text-primary);
-    text-decoration: none;
-    transition: var(--transition-all);
+  @media (--md-n-below) {
+    padding-top: 0;
+    gap: var(--spacing-6);
+  }
+}
 
-    &::before {
-      color: var(--accent-primary);
-      content: '> ';
-      opacity: 0;
-      transition: var(--transition-opacity);
-    }
+.link {
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: var(--transition-all);
 
-    &:hover::before {
-      opacity: 1;
-    }
+  &::before {
+    color: var(--accent-primary);
+    content: '> ';
+    opacity: 0;
+    transition: var(--transition-opacity);
+  }
 
-    &:hover {
-      color: var(--accent-secondary);
-    }
+  &:hover::before {
+    opacity: 1;
+  }
+
+  &:hover {
+    color: var(--accent-secondary);
   }
 }
