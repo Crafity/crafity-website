@@ -1,0 +1,39 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.statement {
+  max-width: 800px;
+  margin: 0 auto var(--spacing-16);
+  text-align: center;
+
+  @media (--md-n-below) {
+    margin-bottom: var(--spacing-12);
+  }
+}
+
+.divider {
+  max-width: 600px;
+  height: 2px;
+  margin: 0 auto var(--spacing-20);
+  background: linear-gradient(
+    90deg,
+    var(--accent-secondary),
+    var(--accent-primary)
+  );
+
+  @media (--md-n-below) {
+    margin-bottom: var(--spacing-12);
+  }
+}
+
+.principles {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-20);
+
+  @media (--md-n-below) {
+    gap: var(--spacing-12);
+  }
+}
