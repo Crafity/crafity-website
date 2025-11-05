@@ -2,10 +2,10 @@
   display: flex;
   max-width: 500px;
   align-items: center;
-  padding: 15px;
+  padding: var(--spacing-3-5);
   margin: 0 auto;
   font-size: var(--font-size-body-large);
-  gap: 12px;
+  gap: var(--spacing-3);
   text-decoration: none;
   transition: var(--transition-color);
 
@@ -26,8 +26,8 @@
   display: inline-block;
   width: var(--spacing-2);
   height: var(--spacing-4);
-  animation: blink 1s infinite;
   background: var(--accent-secondary);
+  animation: blink 1s infinite;
 }
 
 @keyframes blink {

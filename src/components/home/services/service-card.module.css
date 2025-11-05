@@ -1,17 +1,17 @@
 .card {
   position: relative;
-  padding: var(--spacing-10);
-  padding-left: var(--spacing-12);
+  margin-left: var(--spacing-16);
 
-  &.even {
-    padding-left: var(--spacing-24);
+  &:nth-child(even) {
+    margin-left: var(--spacing-48);
   }
 
   @media (--md-n-below) {
-    padding-left: var(--spacing-8);
+    margin-left: var(--spacing-8);
 
-    &.even {
-      padding-left: var(--spacing-8);
+    &:nth-child(2),
+    &:nth-child(4) {
+      margin-left: var(--spacing-8);
     }
   }
 }
@@ -19,14 +19,11 @@
 .accent {
   position: absolute;
   top: 0;
-  left: 0;
-  width: 4px;
-  height: 100%;
-  background: var(--accent-primary);
-
-  .even & {
-    background: var(--accent-secondary);
-  }
+  left: -40px;
+  width: 30px;
+  height: 30px;
+  border-top: 4px solid var(--accent-primary);
+  border-left: 4px solid var(--accent-primary);
 }
 
 .number {
@@ -34,16 +31,12 @@
   color: var(--accent-secondary);
   font-size: var(--font-size-terminal);
   letter-spacing: var(--letter-spacing-wide);
-
-  .even & {
-    color: var(--accent-primary);
-  }
 }
 
 .title {
   margin-bottom: var(--spacing-4);
   color: var(--text-primary);
-  font-size: var(--font-size-h5);
+  font-size: var(--font-size-h4);
   letter-spacing: var(--letter-spacing-wide);
   line-height: var(--line-height-normal);
 }
@@ -56,7 +49,8 @@
 }
 
 .examples {
-  color: var(--text-secondary);
+  color: var(--accent-primary);
   font-size: var(--font-size-terminal);
   letter-spacing: var(--letter-spacing-wide);
+  opacity: 0.8;
 }

@@ -39,8 +39,8 @@ export function Services() {
       <h2 className={styles.title}>WHAT WE DO</h2>
 
       <div className={styles.services}>
-        {services.map((service, index) => (
-          <ServiceCard key={service.number} index={index} {...service} />
+        {services.map(service => (
+          <ServiceCard key={service.number} {...service} />
         ))}
       </div>
     </div>

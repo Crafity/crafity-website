@@ -1,11 +1,8 @@
-import { clsx } from 'clsx'
-
 import styles from './service-card.module.css'
 
 interface ServiceCardProps {
   description: string
   examples: string
-  index: number
   number: string
   title: string
 }
@@ -13,14 +10,11 @@ interface ServiceCardProps {
 export function ServiceCard({
   description,
   examples,
-  index,
   number,
   title,
 }: ServiceCardProps) {
-  const isEven = index % 2 === 0
-
   return (
-    <div className={clsx(styles.card, isEven && styles.even)}>
+    <div className={styles.card}>
       <div className={styles.accent} />
 
       <div className={styles.number}>{number}</div>

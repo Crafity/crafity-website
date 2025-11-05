@@ -9,7 +9,6 @@ import styles from './hero.module.css'
 export function Hero() {
   return (
     <div className={styles.hero}>
-      <HeroStatement />
       <TerminalWindow
         className={styles['terminal-window']}
         title="crafity-init v14.0">
@@ -35,6 +34,7 @@ export function Hero() {
           ✓ Trusted by: Sonic Equipment, Schiphol, eBay, CarNext
         </div>
       </TerminalWindow>
+      <HeroStatement />
       <StatsGrid />
       <CommandInput />
     </div>

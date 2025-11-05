@@ -1,17 +1,17 @@
 .statement {
   max-width: 1000px;
   margin: 0 auto;
-  font-size: 96px;
-  letter-spacing: -2px;
-  line-height: 1.1;
+  font-size: var(--font-size-hero);
+  letter-spacing: var(--letter-spacing-hero);
+  line-height: var(--line-height-tight);
   text-align: left;
 
   @media (--lg-n-below) {
-    font-size: 56px;
+    font-size: var(--spacing-14);
   }
 
   @media (--md-n-below) {
-    font-size: 40px;
+    font-size: var(--font-size-h3);
   }
 }
 

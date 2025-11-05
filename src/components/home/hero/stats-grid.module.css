@@ -2,7 +2,7 @@
   display: grid;
   max-width: 900px;
   margin: 0 auto;
-  gap: 80px;
+  gap: var(--spacing-8);
   grid-template-columns: repeat(3, 1fr);
 
   @media (--md-n-below) {
