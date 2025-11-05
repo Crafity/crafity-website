@@ -3,3 +3,4 @@
 .tanstack
 node_modules
 *.bak
+.claude
