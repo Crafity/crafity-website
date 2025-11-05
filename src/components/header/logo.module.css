@@ -1,27 +1,27 @@
 .logo-container {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: var(--spacing-4);
 
   .terminal-prompt {
-    color: var(--color-primary);
+    color: var(--accent-secondary);
     font-family: var(--mono-font-family);
   }
 
   .logo {
-    color: var(--color);
+    color: var(--text-primary);
     font-family: var(--accent-font-family);
-    font-size: 28px;
-    font-weight: 700;
-    letter-spacing: 2px;
+    font-size: var(--font-size-h5);
+    font-weight: var(--font-weight-bold);
+    letter-spacing: var(--letter-spacing-wider);
   }
 
   .tagline {
-    margin-left: 20px;
-    color: var(--color-primary);
+    margin-left: var(--spacing-5);
+    color: var(--accent-secondary);
     font-family: var(--mono-font-family);
     font-size: 13px;
-    letter-spacing: 1px;
+    letter-spacing: var(--letter-spacing-wide);
     opacity: 0.8;
   }
 }

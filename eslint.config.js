@@ -45,6 +45,11 @@ const jsxLanguageOptions = {
 // ============================================================================
 
 export default [
+  // Global ignores
+  {
+    ignores: ['.nitro/**', '.output/**', '.tanstack/**', 'node_modules/**'],
+  },
+
   // Base configurations
   js.configs.recommended,
   ...tseslint.configs.recommended,

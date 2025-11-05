@@ -1,5 +1,38 @@
 :root {
+  /* Font Families */
   --font-family: 'Inter', sans-serif;
   --mono-font-family: 'JetBrains Mono', monospace;
   --accent-font-family: 'Space Grotesk', sans-serif;
+
+  /* Font Sizes */
+  --font-size-hero: 96px;
+  --font-size-h1: 60px;
+  --font-size-h2: 52px;
+  --font-size-h3: 40px;
+  --font-size-h4: 32px;
+  --font-size-h5: 28px;
+  --font-size-h6: 24px;
+  --font-size-body-large: 20px;
+  --font-size-body: 18px;
+  --font-size-body-small: 16px;
+  --font-size-terminal: 14px;
+  --font-size-meta: 12px;
+
+  /* Line Heights */
+  --line-height-tight: 1.1;
+  --line-height-normal: 1.2;
+  --line-height-relaxed: 1.6;
+  --line-height-loose: 1.7;
+
+  /* Letter Spacing */
+  --letter-spacing-hero: -2px;
+  --letter-spacing-tight: -1.5px;
+  --letter-spacing-normal: -1px;
+  --letter-spacing-wide: 1px;
+  --letter-spacing-wider: 2px;
+
+  /* Font Weights */
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
 }

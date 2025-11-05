@@ -1,20 +1,20 @@
 .navigation {
   display: flex;
-  padding-top: 8px;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 14px;
-  gap: 48px;
+  padding-top: var(--spacing-2);
+  font-family: var(--mono-font-family);
+  font-size: var(--font-size-terminal);
+  gap: var(--spacing-12);
 
   .link {
-    color: #fafafa;
+    color: var(--text-primary);
     text-decoration: none;
-    transition: all 0.2s;
+    transition: var(--transition-all);
 
     &::before {
-      color: #ff4500;
+      color: var(--accent-primary);
       content: '> ';
       opacity: 0;
-      transition: opacity 0.2s;
+      transition: var(--transition-opacity);
     }
 
     &:hover::before {
@@ -22,7 +22,7 @@
     }
 
     &:hover {
-      color: #95c5ef;
+      color: var(--accent-secondary);
     }
   }
 }
