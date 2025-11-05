@@ -2,6 +2,7 @@ import { createFileRoute } from '@tanstack/react-router'
 
 import { Header } from '@/components/header/header'
 import { ClientTrust } from '@/components/home/client-trust/client-trust'
+import { FeaturedWork } from '@/components/home/featured-work/featured-work'
 import { Hero } from '@/components/home/hero/hero'
 import { Footer } from '@/components/layout/footer/footer'
 import { SectionContainer } from '@/components/layout/section-container/section-container'
@@ -20,6 +21,9 @@ function Home() {
       </SectionContainer>
       <SectionContainer>
         <ClientTrust />
+      </SectionContainer>
+      <SectionContainer>
+        <FeaturedWork />
       </SectionContainer>
       <Footer />
     </PageContainer>
