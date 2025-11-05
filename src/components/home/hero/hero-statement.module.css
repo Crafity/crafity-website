@@ -1,0 +1,35 @@
+.statement {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: left;
+
+  @media (--lg-n-below) {
+    font-size: 56px;
+  }
+
+  @media (--md-n-below) {
+    font-size: 40px;
+  }
+}
+
+.line1,
+.line2,
+.line3 {
+  display: block;
+}
+
+.line1 {
+  color: var(--text-primary);
+}
+
+.line2 {
+  color: var(--accent-primary);
+}
+
+.line3 {
+  color: var(--text-primary);
+}
+
+.highlight {
+  color: var(--accent-secondary);
+}

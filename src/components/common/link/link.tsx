@@ -1,5 +1,6 @@
 import { ReactNode } from 'react'
 import { Link as RouterLink } from '@tanstack/react-router'
+import { clsx } from 'clsx'
 
 import styles from './link.module.css'
 
@@ -23,9 +24,7 @@ function isProtocolLink(href: string): boolean {
 }
 
 export function Link({ children, className, href, unstyled }: LinkProps) {
-  const linkClassName = unstyled
-    ? className
-    : [styles.link, className].filter(Boolean).join(' ')
+  const linkClassName = clsx(!unstyled && styles.link, className)
 
   // External links (http/https)
   if (isExternalLink(href)) {

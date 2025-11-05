@@ -28,21 +28,19 @@
 ### Core Principles
 
 **Quality Over Speed**
+
 - No shortcuts. Every line of code is maintainable.
 - Write code that your future team will thank you for.
 - If it's worth building, it's worth building right.
 
-**Terminal Aesthetic Balance**
-- Terminal elements = 30% accent, 70% clean typography
-- Use terminal styling strategically, not everywhere
-- Let content breathe with generous whitespace
-
 **Design System First**
+
 - Always use design tokens, never hardcode values
 - Semantic naming over descriptive (e.g., `--text-primary` not `--white`)
 - Consistency across all components
 
 **Accessibility by Default**
+
 - Semantic HTML elements
 - Keyboard navigation support
 - ARIA labels where needed
@@ -93,11 +91,13 @@ src/
 ### File Naming Conventions
 
 **Components:**
+
 - Folder and file names: `kebab-case` (e.g., `section-container/`)
 - Component name: `PascalCase` (e.g., `SectionContainer`)
 - CSS Module: Match component file (e.g., `section-container.module.css`)
 
 **CSS Classes:**
+
 - Always use `kebab-case` (e.g., `.terminal-window`, `.nav-link`)
 - Never use `camelCase` or `PascalCase` in CSS
 - Use bracket notation in JSX when needed: `styles['bottom-text']`
@@ -109,6 +109,7 @@ src/
 ### Design Token Usage
 
 **✅ ALWAYS USE TOKENS:**
+
 ```css
 /* Good */
 .container {
@@ -132,6 +133,7 @@ src/
 ### CSS Modules Pattern
 
 **Every component has its own CSS Module:**
+
 ```tsx
 // component-name.tsx
 import styles from './component-name.module.css'
@@ -142,6 +144,7 @@ export function ComponentName() {
 ```
 
 **CSS Module Structure:**
+
 ```css
 /* component-name.module.css */
 
@@ -191,6 +194,7 @@ Stylelint automatically orders CSS properties using `stylelint-config-idiomatic-
 ### Conditional Classes with clsx
 
 **✅ USE clsx FOR MULTIPLE CLASSES:**
+
 ```tsx
 import { clsx } from 'clsx'
 
@@ -207,11 +211,17 @@ import { clsx } from 'clsx'
 ### Global Typography Defaults
 
 **Define typography in global.css to reduce duplication:**
+
 ```css
 /* global.css */
 
 /* Semantic HTML defaults */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--accent-font-family);
   font-weight: var(--font-weight-bold);
 }
@@ -227,13 +237,16 @@ p {
   line-height: var(--line-height-loose);
 }
 
-code, kbd, pre {
+code,
+kbd,
+pre {
   font-family: var(--mono-font-family);
   font-size: var(--font-size-terminal);
 }
 ```
 
 **Only override when necessary:**
+
 ```css
 /* Component override when needed */
 .title {
@@ -249,6 +262,7 @@ code, kbd, pre {
 ### Component Template
 
 **Standard component structure:**
+
 ```tsx
 import { ReactNode } from 'react'
 import { clsx } from 'clsx'
@@ -273,6 +287,7 @@ export function ComponentName({ children, className, id }: ComponentNameProps) {
 ### Props Interface Standards
 
 **✅ ALWAYS:**
+
 - Define explicit interfaces for all props
 - Sort props alphabetically (enforced by ESLint)
 - Use `ReactNode` for children
@@ -292,6 +307,7 @@ interface CardProps {
 ### Smart Link Component Pattern
 
 **Automatic link type detection:**
+
 ```tsx
 export function Link({ children, className, href, unstyled }: LinkProps) {
   const linkClassName = clsx(!unstyled && styles.link, className)
@@ -311,20 +327,33 @@ export function Link({ children, className, href, unstyled }: LinkProps) {
 
   // Anchor links (#)
   if (href.startsWith('#')) {
-    return <a className={linkClassName} href={href}>{children}</a>
+    return (
+      <a className={linkClassName} href={href}>
+        {children}
+      </a>
+    )
   }
 
   // Protocol links (mailto:, tel:)
   if (href.startsWith('mailto:') || href.startsWith('tel:')) {
-    return <a className={linkClassName} href={href}>{children}</a>
+    return (
+      <a className={linkClassName} href={href}>
+        {children}
+      </a>
+    )
   }
 
   // Internal routes (TanStack Router)
-  return <RouterLink className={linkClassName} to={href}>{children}</RouterLink>
+  return (
+    <RouterLink className={linkClassName} to={href}>
+      {children}
+    </RouterLink>
+  )
 }
 ```
 
 **Benefits:**
+
 - DRY principle - no repeated `target="_blank" rel="noopener noreferrer"`
 - Automatic security for external links
 - Works with both plain anchors and TanStack Router
@@ -333,17 +362,16 @@ export function Link({ children, className, href, unstyled }: LinkProps) {
 ### Component Composition
 
 **Support className prop for extensibility:**
+
 ```tsx
 // Parent component can extend styling
-<TerminalWindow className={styles.customTerminal} title="crafity">
+;<TerminalWindow className={styles.customTerminal} title="crafity">
   {content}
 </TerminalWindow>
 
 // TerminalWindow accepts and merges className
 export function TerminalWindow({ children, className, title }: Props) {
-  return <div className={clsx(styles.terminal, className)}>
-    {/* ... */}
-  </div>
+  return <div className={clsx(styles.terminal, className)}>{/* ... */}</div>
 }
 ```
 
@@ -354,6 +382,7 @@ export function TerminalWindow({ children, className, title }: Props) {
 ### Strict Mode Always
 
 **tsconfig.json:**
+
 ```json
 {
   "compilerOptions": {
@@ -366,6 +395,7 @@ export function TerminalWindow({ children, className, title }: Props) {
 ### Type Safety
 
 **✅ DO:**
+
 ```tsx
 // Explicit interface
 interface StatProps {
@@ -374,21 +404,31 @@ interface StatProps {
 }
 
 export function Stat({ label, number }: StatProps) {
-  return <div>{number} {label}</div>
+  return (
+    <div>
+      {number} {label}
+    </div>
+  )
 }
 ```
 
 **❌ DON'T:**
+
 ```tsx
 // Implicit any
 export function Stat(props) {
-  return <div>{props.number} {props.label}</div>
+  return (
+    <div>
+      {props.number} {props.label}
+    </div>
+  )
 }
 ```
 
 ### Import Organization (ESLint Enforced)
 
 **Automatic import sorting via `simple-import-sort`:**
+
 ```tsx
 // 1. React first
 import { ReactNode } from 'react'
@@ -422,6 +462,7 @@ import styles from './component.module.css'
 ### Semantic Naming Convention
 
 **✅ USE SEMANTIC NAMES:**
+
 ```css
 :root {
   /* What it IS (semantic) */
@@ -432,6 +473,7 @@ import styles from './component.module.css'
 ```
 
 **❌ DON'T USE DESCRIPTIVE NAMES:**
+
 ```css
 :root {
   /* What it LOOKS LIKE (descriptive) */
@@ -442,23 +484,25 @@ import styles from './component.module.css'
 ```
 
 **Why?** Semantic names work with both light and dark themes:
+
 ```css
 /* Dark theme */
 :root {
-  --bg-primary: #0a0a0a;    /* black */
-  --text-primary: #fafafa;   /* white */
+  --bg-primary: #0a0a0a; /* black */
+  --text-primary: #fafafa; /* white */
 }
 
 /* Light theme */
 [data-theme='light'] {
-  --bg-primary: #fafafa;     /* white */
-  --text-primary: #0a0a0a;   /* black */
+  --bg-primary: #fafafa; /* white */
+  --text-primary: #0a0a0a; /* black */
 }
 ```
 
 ### Theme Support
 
 **Both dark and light themes fully defined:**
+
 ```css
 /* color-tokens.css */
 :root {
@@ -477,6 +521,7 @@ import styles from './component.module.css'
 ### Shadow Token Pattern
 
 **Standardize box-shadows:**
+
 ```css
 /* shadow-tokens.css */
 :root {
@@ -494,6 +539,7 @@ import styles from './component.module.css'
 ```
 
 **Usage:**
+
 ```css
 .terminal {
   box-shadow: var(--shadow-glow-blue);
@@ -507,6 +553,7 @@ import styles from './component.module.css'
 ### Breakpoint System
 
 **Custom media queries in breakpoints.css:**
+
 ```css
 @custom-media --sm (width >= 640px);
 @custom-media --md (width >= 768px);
@@ -525,6 +572,7 @@ import styles from './component.module.css'
 ### Mobile-First Approach
 
 **✅ MOBILE FIRST:**
+
 ```css
 /* Base styles (mobile) */
 .container {
@@ -542,6 +590,7 @@ import styles from './component.module.css'
 ```
 
 **Common mobile adjustments:**
+
 ```css
 @media (--md-n-below) {
   .grid {
@@ -584,6 +633,7 @@ import styles from './component.module.css'
 ### Font Loading
 
 **Self-host fonts, preload critical fonts:**
+
 ```tsx
 // __root.tsx
 <head>
@@ -619,6 +669,7 @@ pnpm run build         # Production build
 ### Pre-commit Checklist
 
 **Before committing:**
+
 1. ✅ Run `pnpm run lint:fix`
 2. ✅ Run `pnpm run stylelint:fix`
 3. ✅ Run `pnpm run build` (ensure no errors)
@@ -628,6 +679,7 @@ pnpm run build         # Production build
 ### ESLint Key Rules
 
 **Automatically enforced:**
+
 - Import sorting (React first, then external packages, then relative)
 - JSX prop sorting (reserved props first, alphabetical)
 - Interface/type key sorting
@@ -638,6 +690,7 @@ pnpm run build         # Production build
 ### Stylelint Key Rules
 
 **Automatically enforced:**
+
 - Property ordering (idiomatic order)
 - kebab-case class names
 - Font family name quotes
@@ -651,6 +704,7 @@ pnpm run build         # Production build
 ### CSS Mistakes
 
 **❌ DON'T: Hardcode values**
+
 ```css
 .card {
   padding: 32px;
@@ -659,6 +713,7 @@ pnpm run build         # Production build
 ```
 
 **✅ DO: Use tokens**
+
 ```css
 .card {
   padding: var(--spacing-8);
@@ -669,27 +724,43 @@ pnpm run build         # Production build
 ---
 
 **❌ DON'T: Repeat font-family everywhere**
+
 ```css
-.title { font-family: 'Space Grotesk', sans-serif; }
-.heading { font-family: 'Space Grotesk', sans-serif; }
+.title {
+  font-family: 'Space Grotesk', sans-serif;
+}
+.heading {
+  font-family: 'Space Grotesk', sans-serif;
+}
 ```
 
 **✅ DO: Set global defaults**
+
 ```css
 /* global.css */
-h1, h2, h3 { font-family: var(--accent-font-family); }
+h1,
+h2,
+h3 {
+  font-family: var(--accent-font-family);
+}
 ```
 
 ---
 
 **❌ DON'T: Use camelCase in CSS**
+
 ```css
-.bottomText { color: var(--text-secondary); }
+.bottomText {
+  color: var(--text-secondary);
+}
 ```
 
 **✅ DO: Use kebab-case**
+
 ```css
-.bottom-text { color: var(--text-secondary); }
+.bottom-text {
+  color: var(--text-secondary);
+}
 ```
 
 ---
@@ -697,13 +768,13 @@ h1, h2, h3 { font-family: var(--accent-font-family); }
 ### Component Mistakes
 
 **❌ DON'T: Manual className joining**
+
 ```tsx
-const className = [styles.card, large && styles.large]
-  .filter(Boolean)
-  .join(' ')
+const className = [styles.card, large && styles.large].filter(Boolean).join(' ')
 ```
 
 **✅ DO: Use clsx**
+
 ```tsx
 const className = clsx(styles.card, large && styles.large)
 ```
@@ -711,12 +782,14 @@ const className = clsx(styles.card, large && styles.large)
 ---
 
 **❌ DON'T: Repeat link attributes**
+
 ```tsx
 <a href="https://..." target="_blank" rel="noopener noreferrer">LinkedIn</a>
 <a href="https://..." target="_blank" rel="noopener noreferrer">GitHub</a>
 ```
 
 **✅ DO: Use Link component**
+
 ```tsx
 <Link href="https://...">LinkedIn</Link>
 <Link href="https://...">GitHub</Link>
@@ -725,6 +798,7 @@ const className = clsx(styles.card, large && styles.large)
 ---
 
 **❌ DON'T: Omit prop interfaces**
+
 ```tsx
 export function Card(props) {
   return <div>{props.title}</div>
@@ -732,6 +806,7 @@ export function Card(props) {
 ```
 
 **✅ DO: Define explicit interfaces**
+
 ```tsx
 interface CardProps {
   title: string
@@ -747,24 +822,32 @@ export function Card({ title }: CardProps) {
 ### TypeScript Mistakes
 
 **❌ DON'T: Use `any`**
+
 ```tsx
-const handleClick = (event: any) => { /* ... */ }
+const handleClick = (event: any) => {
+  /* ... */
+}
 ```
 
 **✅ DO: Use proper types**
+
 ```tsx
-const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => { /* ... */ }
+const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+  /* ... */
+}
 ```
 
 ---
 
 **❌ DON'T: Ignore TypeScript errors**
+
 ```tsx
 // @ts-ignore
 const result = dangerousFunction()
 ```
 
 **✅ DO: Fix the underlying issue**
+
 ```tsx
 const result = safeFunctionWithTypes()
 ```
@@ -776,6 +859,7 @@ const result = safeFunctionWithTypes()
 ### Commit Message Format
 
 **Use conventional commits:**
+
 ```
 feat: add shadow tokens for consistent box-shadows
 fix: correct terminal window border color in light theme
@@ -785,6 +869,7 @@ chore: update dependencies
 ```
 
 **Types:**
+
 - `feat`: New feature
 - `fix`: Bug fix
 - `refactor`: Code restructuring (no behavior change)
@@ -804,6 +889,7 @@ docs/best-practices
 ### Pull Request Checklist
 
 **Before creating PR:**
+
 - [ ] All linting passes
 - [ ] Build succeeds
 - [ ] Tested in browser (Chrome, Firefox, Safari)
@@ -818,6 +904,7 @@ docs/best-practices
 ### When Working with Claude Code or AI Assistants
 
 **✅ DO:**
+
 - Provide context about design tokens and component patterns
 - Reference this document when asking for help
 - Ask agent to use existing patterns (Link component, clsx, tokens)
@@ -825,6 +912,7 @@ docs/best-practices
 - Verify changes work in browser
 
 **❌ DON'T:**
+
 - Let agent hardcode values instead of using tokens
 - Accept solutions that don't match project patterns
 - Skip linting/building after changes
@@ -833,6 +921,7 @@ docs/best-practices
 ### Effective Prompts
 
 **Good prompt examples:**
+
 ```
 Create a new Card component following project patterns:
 - Use design tokens from src/css/
@@ -895,6 +984,7 @@ When creating a new component, ensure you have:
 ### Token Reference
 
 **Common tokens you'll use most:**
+
 ```css
 /* Colors */
 --bg-primary, --bg-secondary

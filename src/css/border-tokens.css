@@ -11,6 +11,6 @@
   --radius-full: 9999px;
 
   /* Shortcuts */
-  --border-default: var(--border-width-thin) solid var(--border-default);
+  --border-default: var(--border-width-thin) solid var(--border-default-color);
   --border-accent: var(--border-width-medium) solid var(--accent-primary);
 }

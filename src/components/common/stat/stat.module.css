@@ -1,6 +1,6 @@
 .stat {
   padding: var(--spacing-8);
-  border: var(--border-width-thin) solid var(--border-default);
+  border: var(--border-default);
   background: var(--bg-secondary);
   text-align: center;
 }

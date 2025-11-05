@@ -1,4 +1,5 @@
 import { ReactNode } from 'react'
+import { clsx } from 'clsx'
 
 import styles from './section-container.module.css'
 
@@ -13,10 +14,8 @@ export function SectionContainer({
   className,
   id,
 }: SectionContainerProps) {
-  const classNames = [styles.section, className].filter(Boolean).join(' ')
-
   return (
-    <section className={classNames} id={id}>
+    <section className={clsx(styles.section, className)} id={id}>
       {children}
     </section>
   )

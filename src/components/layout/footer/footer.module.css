@@ -1,6 +1,6 @@
 .footer {
   padding: var(--spacing-24) 0 var(--spacing-12);
-  border-top: var(--border-width-thin) solid var(--border-default);
+  border-top: var(--border-default);
   margin-top: var(--spacing-24);
 
   @media (--lg-n-below) {
@@ -75,7 +75,7 @@
 .divider {
   height: var(--border-width-thin);
   margin-bottom: var(--spacing-8);
-  background: var(--border-default);
+  background: var(--border-default-color);
 }
 
 .bottom {

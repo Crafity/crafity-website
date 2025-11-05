@@ -1,0 +1,38 @@
+.command {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  gap: var(--spacing-2);
+  text-decoration: none;
+  transition: var(--transition-color);
+
+  &:hover {
+    color: var(--accent-secondary);
+  }
+}
+
+.prompt {
+  color: var(--accent-secondary);
+}
+
+.text {
+  color: var(--text-primary);
+}
+
+.cursor {
+  animation: blink 1s infinite;
+  color: var(--text-primary);
+}
+
+@keyframes blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+
+  51%,
+  100% {
+    opacity: 0;
+  }
+}
