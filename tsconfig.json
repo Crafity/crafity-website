@@ -32,5 +32,6 @@
       "@/components/*": ["./components/*"],
       "@/*": ["./*"]
     }
-  }
+  },
+  "include": ["src", ".storybook/*"]
 }

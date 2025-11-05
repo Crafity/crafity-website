@@ -1,12 +1,12 @@
 import { createFileRoute } from '@tanstack/react-router'
 
-import { Header } from '@/components/header/header'
 import { Approach } from '@/components/home/approach/approach'
 import { ClientTrust } from '@/components/home/client-trust/client-trust'
 import { FeaturedWork } from '@/components/home/featured-work/featured-work'
 import { Hero } from '@/components/home/hero/hero'
 import { Services } from '@/components/home/services/services'
 import { Footer } from '@/components/layout/footer/footer'
+import { Header } from '@/components/layout/header/header'
 import { SectionContainer } from '@/components/layout/section-container/section-container'
 import { PageContainer } from '@/components/page/page-container'
 

@@ -9,6 +9,8 @@ import postcssNested from 'postcss-nested'
 import { defineConfig } from 'vite'
 import tsConfigPaths from 'vite-tsconfig-paths'
 
+const isStorybook = process.env.STORYBOOK === 'true'
+
 export default defineConfig({
   css: {
     postcss: {
@@ -21,7 +23,9 @@ export default defineConfig({
       ],
     },
   },
-  plugins: [tsConfigPaths(), tanstackStart(), viteReact(), nitro()],
+  plugins: isStorybook
+    ? [tsConfigPaths(), viteReact()]
+    : [tsConfigPaths(), tanstackStart(), viteReact(), nitro()],
   server: {
     port: 3000,
   },

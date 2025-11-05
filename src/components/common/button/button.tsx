@@ -7,11 +7,11 @@ export interface ButtonProps {
   type?: 'button' | 'submit' | 'reset'
 }
 
-export interface ButtonLinkProps {
+export interface ButtonHrefProps extends ButtonProps {
   href: string
 }
 
-export interface ButtonOnClickProps {
+export interface ButtonOnClickProps extends ButtonProps {
   onClick: () => void
 }
 
@@ -19,7 +19,7 @@ export function Button({
   children,
   type = 'button',
   ...rest
-}: ButtonProps & (ButtonLinkProps | ButtonOnClickProps)) {
+}: ButtonHrefProps | ButtonOnClickProps): ReactNode {
   if ('href' in rest) {
     return (
       <a className={styles.button} href={rest.href}>

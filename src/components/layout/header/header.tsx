@@ -1,7 +1,7 @@
 import styles from './header.module.css'
 
-import { Logo } from '@/components/header/logo'
-import { Navigation } from '@/components/header/navigation'
+import { Logo } from '@/components/layout/header/logo'
+import { Navigation } from '@/components/layout/header/navigation'
 
 export function Header() {
   return (
