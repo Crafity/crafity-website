@@ -1,30 +1,31 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
 
-import { Footer } from './footer'
+import { CTA } from './cta'
 
-const meta: Meta<typeof Footer> = {
-  component: Footer,
+const meta: Meta<typeof CTA> = {
+  component: CTA,
   parameters: {
     docs: {
       description: {
         component:
-          'Site footer with company information, contact details, social links, and theme toggle. Features responsive grid layout.',
+          'Call-to-action section with centered layout, title, description, terminal-styled email button, and contact information.',
       },
     },
-    layout: 'fullscreen',
+    layout: 'padded',
   },
   tags: ['autodocs'],
-  title: 'Layout/Footer',
+  title: 'Home/CTA',
 }
 
 export default meta
-type Story = StoryObj<typeof Footer>
+type Story = StoryObj<typeof CTA>
 
 export const Default: Story = {
   parameters: {
     docs: {
       description: {
-        story: 'Default footer with all content and theme toggle.',
+        story:
+          'Default CTA section with all elements. The email button opens the default mail client.',
       },
     },
   },
@@ -34,7 +35,7 @@ export const Mobile: Story = {
   parameters: {
     docs: {
       description: {
-        story: 'Footer on mobile viewport with stacked layout.',
+        story: 'CTA section on mobile viewport with centered layout.',
       },
     },
     viewport: {
@@ -47,7 +48,7 @@ export const Tablet: Story = {
   parameters: {
     docs: {
       description: {
-        story: 'Footer on tablet viewport.',
+        story: 'CTA section on tablet viewport.',
       },
     },
     viewport: {

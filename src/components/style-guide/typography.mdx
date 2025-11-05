@@ -1,0 +1,169 @@
+import { Meta, Typeset } from '@storybook/blocks'
+
+<Meta title="Style Guide/Typography" />
+
+# Typography
+
+Our typography system uses three carefully selected typefaces to create a terminal-inspired, technical aesthetic while maintaining excellent readability.
+
+## Font Families
+
+### Primary: Inter
+The default font for body text and UI elements. A highly legible sans-serif optimized for digital interfaces.
+
+```css
+font-family: var(--font-family); /* 'Inter', sans-serif */
+```
+
+<Typeset
+  fontFamily="Inter"
+  fontSizes={[12, 14, 16, 18, 20, 24, 28, 32, 40, 52, 60, 96]}
+  fontWeight={400}
+  sampleText="The quick brown fox jumps over the lazy dog"
+/>
+
+### Monospace: JetBrains Mono
+Used for code, terminal elements, and technical UI components. Designed for developers with excellent character distinction.
+
+```css
+font-family: var(--mono-font-family); /* 'JetBrains Mono', monospace */
+```
+
+<Typeset
+  fontFamily="JetBrains Mono"
+  fontSizes={[12, 14, 16, 18, 20]}
+  fontWeight={400}
+  sampleText="> start_conversation && build_amazing_things"
+/>
+
+### Accent: Space Grotesk
+Used for headings and brand elements. A geometric sans-serif with character.
+
+```css
+font-family: var(--accent-font-family); /* 'Space Grotesk', sans-serif */
+```
+
+<Typeset
+  fontFamily="Space Grotesk"
+  fontSizes={[24, 28, 32, 40, 52, 60, 96]}
+  fontWeight={700}
+  sampleText="CRAFITY"
+/>
+
+## Type Scale
+
+Our type scale provides hierarchy from small metadata to large hero text.
+
+| Token | Size | Use Case |
+|-------|------|----------|
+| `--font-size-hero` | 96px | Hero statements, landing page headlines |
+| `--font-size-h1` | 60px | Main page titles |
+| `--font-size-h2` | 52px | Section headers |
+| `--font-size-h3` | 40px | Subsection headers |
+| `--font-size-h4` | 32px | Card titles, component headers |
+| `--font-size-h5` | 28px | Small headers |
+| `--font-size-h6` | 24px | Smallest headers |
+| `--font-size-body-large` | 20px | Large body text, intro paragraphs |
+| `--font-size-body` | 18px | Default body text |
+| `--font-size-body-small` | 16px | Small body text, captions |
+| `--font-size-terminal` | 14px | Terminal text, code |
+| `--font-size-meta` | 12px | Metadata, labels, fine print |
+
+## Font Weights
+
+Three weights provide emphasis hierarchy:
+
+| Token | Weight | Use Case |
+|-------|--------|----------|
+| `--font-weight-regular` | 400 | Body text, default weight |
+| `--font-weight-medium` | 500 | Emphasis, semi-bold |
+| `--font-weight-bold` | 700 | Headings, strong emphasis |
+
+## Line Heights
+
+Optimized for readability across different text sizes:
+
+| Token | Value | Use Case |
+|-------|-------|----------|
+| `--line-height-tight` | 1.1 | Large headings, hero text |
+| `--line-height-normal` | 1.2 | Regular headings |
+| `--line-height-relaxed` | 1.6 | Body text, paragraphs |
+| `--line-height-loose` | 1.7 | Long-form content |
+
+## Letter Spacing
+
+Subtle letter spacing adjustments for visual refinement:
+
+| Token | Value | Use Case |
+|-------|-------|----------|
+| `--letter-spacing-hero` | -2px | Hero text (tight) |
+| `--letter-spacing-tight` | -1.5px | Large headings (tight) |
+| `--letter-spacing-normal` | -1px | Regular headings (slight negative) |
+| `--letter-spacing-wide` | 1px | Uppercase text, labels |
+| `--letter-spacing-wider` | 2px | Brand text, logo |
+
+## Usage Examples
+
+### Hero Text
+```css
+.hero {
+  font-family: var(--font-family);
+  font-size: var(--font-size-hero);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--letter-spacing-hero);
+}
+```
+
+### Body Text
+```css
+.body {
+  font-family: var(--font-family);
+  font-size: var(--font-size-body);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-relaxed);
+}
+```
+
+### Terminal/Code
+```css
+.terminal {
+  font-family: var(--mono-font-family);
+  font-size: var(--font-size-terminal);
+  line-height: var(--line-height-normal);
+}
+```
+
+### Brand/Logo
+```css
+.logo {
+  font-family: var(--accent-font-family);
+  font-size: var(--font-size-h5);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--letter-spacing-wider);
+}
+```
+
+## Responsive Typography
+
+Font sizes are adjusted for mobile devices:
+
+```css
+@media (--lg-n-below) {
+  /* Tablet */
+  --font-size-hero: 56px;
+}
+
+@media (--md-n-below) {
+  /* Mobile */
+  --font-size-hero: 40px;
+}
+```
+
+## Accessibility
+
+- Minimum font size of 12px for metadata
+- Default body text at 18px for comfortable reading
+- Line heights optimized for readability (1.6-1.7 for body text)
+- Sufficient letter spacing to prevent character crowding
+- All text maintains WCAG AA color contrast ratios

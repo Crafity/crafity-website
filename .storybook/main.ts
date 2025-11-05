@@ -11,6 +11,7 @@ const config: StorybookConfig = {
         sourceLoaderOptions: null,
       },
     },
+    '@storybook/addon-a11y',
     '@chromatic-com/storybook',
   ],
   core: {
@@ -24,6 +25,9 @@ const config: StorybookConfig = {
     options: {},
   },
   publicDir: ['../public/assets'],
-  stories: ['../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
+  stories: [
+    '../src/components/style-guide/**/*.mdx',
+    '../src/**/*.stories.@(js|jsx|mjs|ts|tsx)',
+  ],
 }
 export default config

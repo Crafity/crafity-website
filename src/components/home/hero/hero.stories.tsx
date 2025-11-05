@@ -1,30 +1,31 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
 
-import { Footer } from './footer'
+import { Hero } from './hero'
 
-const meta: Meta<typeof Footer> = {
-  component: Footer,
+const meta: Meta<typeof Hero> = {
+  component: Hero,
   parameters: {
     docs: {
       description: {
         component:
-          'Site footer with company information, contact details, social links, and theme toggle. Features responsive grid layout.',
+          'Complete hero section featuring terminal window, hero statement, stats grid, and command input. This is a composition component that brings together multiple sub-components.',
       },
     },
-    layout: 'fullscreen',
+    layout: 'padded',
   },
   tags: ['autodocs'],
-  title: 'Layout/Footer',
+  title: 'Home/Hero',
 }
 
 export default meta
-type Story = StoryObj<typeof Footer>
+type Story = StoryObj<typeof Hero>
 
 export const Default: Story = {
   parameters: {
     docs: {
       description: {
-        story: 'Default footer with all content and theme toggle.',
+        story:
+          'Complete hero section with all elements: terminal window, hero statement, stats, and CTA.',
       },
     },
   },
@@ -34,7 +35,7 @@ export const Mobile: Story = {
   parameters: {
     docs: {
       description: {
-        story: 'Footer on mobile viewport with stacked layout.',
+        story: 'Hero section on mobile viewport - all elements stack vertically.',
       },
     },
     viewport: {
@@ -47,7 +48,7 @@ export const Tablet: Story = {
   parameters: {
     docs: {
       description: {
-        story: 'Footer on tablet viewport.',
+        story: 'Hero section on tablet viewport.',
       },
     },
     viewport: {

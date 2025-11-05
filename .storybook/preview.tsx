@@ -10,6 +10,7 @@ import {
 } from '@tanstack/react-router'
 import { INITIAL_VIEWPORTS } from 'storybook/viewport'
 
+import { withTheme } from './decorators/theme-decorator'
 import './preview.css'
 
 const customViewports = {
@@ -44,6 +45,7 @@ const customViewports = {
 
 const preview: Preview = {
   decorators: [
+    withTheme,
     (Story, _context) => {
       return (
         <StrictMode>
@@ -59,6 +61,22 @@ const preview: Preview = {
       )
     },
   ],
+  globalTypes: {
+    theme: {
+      description: 'Global theme for components',
+      defaultValue: 'dark',
+      name: 'Theme',
+      toolbar: {
+        dynamicTitle: true,
+        icon: 'circlehollow',
+        items: [
+          { icon: 'moon', title: 'Dark', value: 'dark' },
+          { icon: 'sun', title: 'Light', value: 'light' },
+          { icon: 'cog', title: 'System', value: 'system' },
+        ],
+      },
+    },
+  },
   parameters: {
     controls: {
       matchers: {

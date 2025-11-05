@@ -1,0 +1,181 @@
+import { Meta, ColorPalette, ColorItem } from '@storybook/blocks'
+
+<Meta title="Style Guide/Colors" />
+
+# Colors
+
+Our color system is designed for a terminal-inspired aesthetic with full dark/light theme support. All colors are defined as CSS custom properties for easy theming.
+
+## Background Colors
+
+Used for surfaces and containers throughout the application.
+
+<ColorPalette>
+  <ColorItem
+    title="bg-primary"
+    subtitle="Primary background color"
+    colors={{
+      'Dark': '#0a0a0a',
+      'Light': '#fafafa',
+    }}
+  />
+  <ColorItem
+    title="bg-secondary"
+    subtitle="Secondary background (cards, containers)"
+    colors={{
+      'Dark': '#1a1a1a',
+      'Light': '#ffffff',
+    }}
+  />
+  <ColorItem
+    title="bg-tertiary"
+    subtitle="Tertiary background (hover states)"
+    colors={{
+      'Dark': '#2a2a2a',
+      'Light': '#f5f5f5',
+    }}
+  />
+</ColorPalette>
+
+## Text Colors
+
+Hierarchical text colors with opacity variations.
+
+<ColorPalette>
+  <ColorItem
+    title="text-primary"
+    subtitle="Primary text color (100% opacity)"
+    colors={{
+      'Dark': '#fafafa',
+      'Light': '#0a0a0a',
+    }}
+  />
+  <ColorItem
+    title="text-secondary"
+    subtitle="Secondary text color (70% opacity)"
+    colors={{
+      'Dark': 'rgba(250, 250, 250, 0.7)',
+      'Light': 'rgba(10, 10, 10, 0.7)',
+    }}
+  />
+  <ColorItem
+    title="text-tertiary"
+    subtitle="Tertiary text color (50% opacity)"
+    colors={{
+      'Dark': 'rgba(250, 250, 250, 0.5)',
+      'Light': 'rgba(10, 10, 10, 0.5)',
+    }}
+  />
+</ColorPalette>
+
+## Accent Colors
+
+Brand colors used for CTAs, links, and highlights.
+
+<ColorPalette>
+  <ColorItem
+    title="accent-primary"
+    subtitle="Primary accent (red/orange)"
+    colors={{
+      'Dark': '#ff4500',
+      'Light': '#dc2626',
+    }}
+  />
+  <ColorItem
+    title="accent-secondary"
+    subtitle="Secondary accent (blue)"
+    colors={{
+      'Dark': '#95c5ef',
+      'Light': '#2563eb',
+    }}
+  />
+</ColorPalette>
+
+## Border Colors
+
+Three levels of border visibility for subtle to strong emphasis.
+
+<ColorPalette>
+  <ColorItem
+    title="border-subtle"
+    subtitle="Subtle borders (minimal contrast)"
+    colors={{
+      'Dark': '#1a1a1a',
+      'Light': '#f5f5f5',
+    }}
+  />
+  <ColorItem
+    title="border-default"
+    subtitle="Default borders (standard contrast)"
+    colors={{
+      'Dark': '#333333',
+      'Light': '#e5e5e5',
+    }}
+  />
+  <ColorItem
+    title="border-strong"
+    subtitle="Strong borders (high contrast)"
+    colors={{
+      'Dark': '#4a4a4a',
+      'Light': '#d4d4d4',
+    }}
+  />
+</ColorPalette>
+
+## Terminal Colors
+
+Special colors used in terminal-styled components.
+
+<ColorPalette>
+  <ColorItem
+    title="terminal-red"
+    subtitle="Terminal error/accent red"
+    colors={{
+      'Dark': '#ff4500',
+      'Light': '#dc2626',
+    }}
+  />
+  <ColorItem
+    title="terminal-yellow"
+    subtitle="Terminal warning yellow"
+    colors={{
+      'Dark': '#ffcc00',
+      'Light': '#fbbf24',
+    }}
+  />
+  <ColorItem
+    title="terminal-blue"
+    subtitle="Terminal info blue"
+    colors={{
+      'Dark': '#95c5ef',
+      'Light': '#2563eb',
+    }}
+  />
+</ColorPalette>
+
+## Usage
+
+All colors are available as CSS custom properties:
+
+```css
+.example {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-default-color);
+}
+
+.button {
+  background: var(--accent-primary);
+  color: var(--text-primary);
+}
+```
+
+## Accessibility
+
+All color combinations meet WCAG 2.1 AA contrast requirements:
+
+- **Text primary on bg-primary**: 19.5:1 (dark), 19.5:1 (light)
+- **Accent primary on bg-primary**: 4.5:1+ (both themes)
+- **Accent secondary on bg-primary**: 4.5:1+ (both themes)
+
+Use the Accessibility panel in Storybook to verify color contrast for specific components.

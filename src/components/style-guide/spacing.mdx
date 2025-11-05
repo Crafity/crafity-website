@@ -1,0 +1,223 @@
+import { Meta } from '@storybook/blocks'
+
+<Meta title="Style Guide/Spacing" />
+
+# Spacing
+
+Our spacing system provides a consistent scale for layout, padding, margins, and gaps. All values use rem units (relative to root font size) for better scaling and accessibility.
+
+## Spacing Scale
+
+The scale follows a logical progression from 2px to 384px, providing flexibility for micro-adjustments to large layout spacing.
+
+### Base Scale (0-16px)
+
+| Token | Value | Pixels | Common Use Cases |
+|-------|-------|--------|------------------|
+| `--spacing-0` | 0px | 0px | Reset spacing |
+| `--spacing-0-1` | 1px | 1px | Hairline borders, fine adjustments |
+| `--spacing-0-5` | 0.125rem | 2px | Micro spacing |
+| `--spacing-1` | 0.25rem | 4px | Very tight spacing, icon gaps |
+| `--spacing-1-5` | 0.375rem | 6px | Tight spacing |
+| `--spacing-2` | 0.5rem | 8px | Small gaps, compact padding |
+| `--spacing-2-5` | 0.625rem | 10px | Between small and medium |
+| `--spacing-3` | 0.75rem | 12px | Default small spacing |
+| `--spacing-3-5` | 0.875rem | 14px | Button padding, form inputs |
+| `--spacing-4` | 1rem | 16px | Base spacing unit |
+
+### Medium Scale (20-48px)
+
+| Token | Value | Pixels | Common Use Cases |
+|-------|-------|--------|------------------|
+| `--spacing-5` | 1.25rem | 20px | Medium padding, comfortable gaps |
+| `--spacing-6` | 1.5rem | 24px | Card padding, section gaps |
+| `--spacing-7` | 1.75rem | 28px | Between medium and large |
+| `--spacing-8` | 2rem | 32px | Large padding, prominent gaps |
+| `--spacing-9` | 2.25rem | 36px | Extra large padding |
+| `--spacing-10` | 2.5rem | 40px | Section padding, header/footer |
+| `--spacing-11` | 2.75rem | 44px | Between large and extra large |
+| `--spacing-12` | 3rem | 48px | Major section spacing |
+
+### Large Scale (56-160px)
+
+| Token | Value | Pixels | Common Use Cases |
+|-------|-------|--------|------------------|
+| `--spacing-14` | 3.5rem | 56px | Large section gaps |
+| `--spacing-16` | 4rem | 64px | Hero section padding, major gaps |
+| `--spacing-20` | 5rem | 80px | Very large section spacing |
+| `--spacing-24` | 6rem | 96px | Hero elements, major sections |
+| `--spacing-28` | 7rem | 112px | Extra large sections |
+| `--spacing-32` | 8rem | 128px | Massive spacing |
+| `--spacing-36` | 9rem | 144px | Hero section spacing |
+| `--spacing-40` | 10rem | 160px | Maximum comfortable spacing |
+
+### Extra Large Scale (176-384px)
+
+| Token | Value | Pixels | Common Use Cases |
+|-------|-------|--------|------------------|
+| `--spacing-44` | 11rem | 176px | Very large layout spacing |
+| `--spacing-48` | 12rem | 192px | Maximum section spacing |
+| `--spacing-52` | 13rem | 208px | Extended spacing |
+| `--spacing-56` | 14rem | 224px | Large viewport spacing |
+| `--spacing-60` | 15rem | 240px | Maximum layout spacing |
+| `--spacing-64` | 16rem | 256px | Extra large sections |
+| `--spacing-72` | 18rem | 288px | Massive gaps |
+| `--spacing-80` | 20rem | 320px | Extreme spacing |
+| `--spacing-96` | 24rem | 384px | Maximum spacing value |
+
+### Special Values
+
+| Token | Value | Common Use Cases |
+|-------|-------|------------------|
+| `--spacing-auto` | auto | Centered layouts, flexible spacing |
+
+## Visual Reference
+
+<div style={{ display: 'flex', flexDirection: 'column', gap: '24px', marginTop: '32px' }}>
+  {[
+    { name: 'spacing-1', size: '4px' },
+    { name: 'spacing-2', size: '8px' },
+    { name: 'spacing-3', size: '12px' },
+    { name: 'spacing-4', size: '16px' },
+    { name: 'spacing-5', size: '20px' },
+    { name: 'spacing-6', size: '24px' },
+    { name: 'spacing-8', size: '32px' },
+    { name: 'spacing-10', size: '40px' },
+    { name: 'spacing-12', size: '48px' },
+    { name: 'spacing-16', size: '64px' },
+    { name: 'spacing-20', size: '80px' },
+    { name: 'spacing-24', size: '96px' },
+  ].map(({ name, size }) => (
+    <div key={name} style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+      <code style={{ width: '140px', fontSize: '14px', fontFamily: 'monospace' }}>
+        --{name}
+      </code>
+      <div
+        style={{
+          width: size,
+          height: '24px',
+          background: 'var(--accent-secondary)',
+          borderRadius: '2px',
+        }}
+      />
+      <span style={{ fontSize: '14px', color: 'var(--text-secondary)' }}>{size}</span>
+    </div>
+  ))}
+</div>
+
+## Usage Examples
+
+### Component Padding
+```css
+.card {
+  padding: var(--spacing-6); /* 24px */
+}
+
+.button {
+  padding: var(--spacing-3-5) var(--spacing-8); /* 14px 32px */
+}
+```
+
+### Layout Gaps
+```css
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-24); /* 96px */
+}
+
+.grid {
+  display: grid;
+  gap: var(--spacing-6); /* 24px */
+}
+```
+
+### Margins
+```css
+.header {
+  margin-bottom: var(--spacing-10); /* 40px */
+}
+
+.card {
+  margin-left: var(--spacing-16); /* 64px */
+}
+```
+
+### Section Spacing
+```css
+.hero {
+  padding: var(--spacing-24) 0; /* 96px vertical */
+  margin-bottom: var(--spacing-36); /* 144px */
+}
+```
+
+## Responsive Spacing
+
+Spacing can be adjusted for different breakpoints:
+
+```css
+.section {
+  gap: var(--spacing-24); /* 96px on desktop */
+
+  @media (--md-n-below) {
+    gap: var(--spacing-12); /* 48px on mobile */
+  }
+}
+```
+
+## Best Practices
+
+### Use Consistent Increments
+Stick to the defined scale rather than arbitrary values. This ensures visual consistency across the application.
+
+✅ Good:
+```css
+padding: var(--spacing-6); /* 24px */
+```
+
+❌ Bad:
+```css
+padding: 23px; /* Not in scale */
+```
+
+### Choose Appropriate Scale
+- **0-16px**: Micro-adjustments, tight spacing, icons
+- **20-48px**: Component padding, comfortable gaps
+- **56-160px**: Section spacing, hero elements
+- **176-384px**: Large layout spacing, major sections
+
+### Combine for Complex Layouts
+```css
+.card {
+  padding: var(--spacing-6) var(--spacing-8); /* 24px 32px */
+  margin-bottom: var(--spacing-10); /* 40px */
+  gap: var(--spacing-4); /* 16px */
+}
+```
+
+### Responsive Adjustments
+Always reduce spacing on smaller screens:
+
+```css
+.container {
+  padding: var(--spacing-24);
+
+  @media (--md-n-below) {
+    padding: var(--spacing-12);
+  }
+
+  @media (--sm-n-below) {
+    padding: var(--spacing-6);
+  }
+}
+```
+
+## Accessibility
+
+Using rem-based spacing ensures:
+- Scales with user font size preferences
+- Maintains proportions when zooming
+- Respects accessibility settings
+- Consistent spacing across devices
+
+All spacing values scale proportionally when users adjust their browser's default font size.

@@ -1,0 +1,91 @@
+import { Meta } from '@storybook/blocks'
+
+<Meta title="Style Guide/Overview" />
+
+# Crafity Design System
+
+**Built with passion**
+
+Our design system uses a terminal-inspired aesthetic with a focus on clarity, performance, and developer experience. Every component is built with semantic HTML, accessibility in mind, and full TypeScript support.
+
+## Design Principles
+
+### 1. Terminal Aesthetic
+Monospace fonts, command-line inspired interactions, and a minimalist color palette create a developer-focused experience.
+
+### 2. Accessibility First
+All components are built with WCAG 2.1 AA compliance in mind. Semantic HTML, proper ARIA labels, and keyboard navigation are standard.
+
+### 3. Token-Based Design
+All styling values (colors, spacing, typography) are defined as CSS custom properties for consistency and easy theming.
+
+### 4. Mobile-First Responsive
+Components are designed mobile-first with breakpoints at:
+- **sm**: 414px (mobile)
+- **md**: 1024px (tablet)
+- **lg**: 1440px (desktop)
+
+## Design Tokens
+
+Our design system is built on a comprehensive token system:
+
+- **[Colors](/story/style-guide-colors--docs)** - Backgrounds, text, accents, borders, and terminal colors
+- **[Typography](/story/style-guide-typography--docs)** - Font families, sizes, weights, line heights, and letter spacing
+- **[Spacing](/story/style-guide-spacing--docs)** - Consistent spacing scale from 2px to 384px
+
+## Components
+
+### Layout
+Foundation components that define page structure:
+- **Header** - Site navigation and branding
+- **Footer** - Site footer with contact info
+- **SectionContainer** - Content wrapper with max-width
+
+### Common
+Reusable UI components:
+- **Button** - Interactive buttons and links
+- **Stat** - Statistics display
+- **TerminalWindow** - Terminal-styled container
+- **ThemeToggle** - Dark/Light/System theme switcher
+
+### Home
+Domain-specific components for the homepage:
+- **Hero** - Hero section with terminal and stats
+- **Services** - Service cards with diagonal accents
+- **Approach** - Approach cards
+- **CTA** - Call-to-action section
+
+## Theme Support
+
+The design system supports three theme modes:
+- **Dark** (default) - Dark backgrounds with high contrast
+- **Light** - Light backgrounds for accessibility
+- **System** - Follows OS preference
+
+Use the theme toggle in the Storybook toolbar to preview components in different themes.
+
+## Accessibility
+
+All components are tested with:
+- **@storybook/addon-a11y** - Automated WCAG compliance checks
+- **Keyboard navigation** - Full keyboard support
+- **Screen readers** - Proper semantic HTML and ARIA labels
+- **Color contrast** - WCAG AA compliant color combinations
+
+## Technology Stack
+
+- **React 19.2.0** - UI library
+- **TanStack Start** - Meta-framework
+- **TypeScript** - Type-safe development
+- **CSS Modules** - Scoped styling
+- **PostCSS** - CSS processing with nesting and custom media queries
+
+## Getting Started
+
+Browse the component categories in the sidebar to explore individual components, their variants, and usage examples.
+
+Each component includes:
+- Interactive controls to adjust props
+- Multiple variants showing different states
+- Documentation of props and usage
+- Accessibility information
