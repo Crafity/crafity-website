@@ -1,9 +1,11 @@
 .command {
   display: flex;
+  max-width: 500px;
   align-items: center;
-  justify-content: center;
+  padding: 15px;
   margin: 0 auto;
-  gap: var(--spacing-2);
+  font-size: var(--font-size-body-large);
+  gap: 12px;
   text-decoration: none;
   transition: var(--transition-color);
 
@@ -21,8 +23,11 @@
 }
 
 .cursor {
+  display: inline-block;
+  width: var(--spacing-2);
+  height: var(--spacing-4);
   animation: blink 1s infinite;
-  color: var(--text-primary);
+  background: var(--accent-secondary);
 }
 
 @keyframes blink {

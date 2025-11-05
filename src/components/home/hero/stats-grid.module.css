@@ -1,8 +1,8 @@
 .grid {
   display: grid;
-  max-width: 1000px;
+  max-width: 900px;
   margin: 0 auto;
-  gap: var(--spacing-8);
+  gap: 80px;
   grid-template-columns: repeat(3, 1fr);
 
   @media (--md-n-below) {

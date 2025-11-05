@@ -1,6 +1,9 @@
 .statement {
-  max-width: 1200px;
+  max-width: 1000px;
   margin: 0 auto;
+  font-size: 96px;
+  letter-spacing: -2px;
+  line-height: 1.1;
   text-align: left;
 
   @media (--lg-n-below) {

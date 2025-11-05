@@ -9,7 +9,6 @@ export function FeaturedWork() {
 
       <div className={styles.grid}>
         <ProjectCard
-          large
           client="SONIC EQUIPMENT"
           description="Transformed a legacy monolith into a modern headless architecture—without a single minute of downtime. Over 18 months, we orchestrated a complete platform evolution: from building the technical foundation and CI/CD pipelines to implementing a comprehensive design system. Every component was battle-tested in isolation before going live, so customers saw continuous improvements rather than waiting for the big reveal."
           tags={[

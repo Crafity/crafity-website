@@ -5,7 +5,7 @@ export function CommandInput() {
     <a className={styles.command} href="#work">
       <span className={styles.prompt}>$</span>
       <span className={styles.text}>explore_work</span>
-      <span className={styles.cursor}>_</span>
+      <span className={styles.cursor} />
     </a>
   )
 }
