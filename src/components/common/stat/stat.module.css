@@ -1,0 +1,21 @@
+.stat {
+  padding: var(--spacing-8);
+  border: var(--border-width-thin) solid var(--border-default);
+  background: var(--bg-secondary);
+  text-align: center;
+}
+
+.number {
+  margin-bottom: var(--spacing-2);
+  color: var(--accent-primary);
+  font-size: var(--font-size-h3);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--letter-spacing-normal);
+  line-height: var(--line-height-tight);
+}
+
+.label {
+  color: var(--text-primary);
+  font-size: var(--font-size-body-small);
+  line-height: var(--line-height-normal);
+}
