@@ -3,6 +3,10 @@
   border: var(--border-width-medium) solid var(--accent-secondary);
   background: var(--bg-secondary);
   box-shadow: var(--shadow-glow-blue);
+
+  @media (--md-n-below) {
+    padding: var(--spacing-4);
+  }
 }
 
 .header {
@@ -12,6 +16,11 @@
   border-bottom: 1px solid var(--border-default-color);
   margin-bottom: var(--spacing-5);
   gap: var(--spacing-3);
+
+  @media (--md-n-below) {
+    padding-bottom: var(--spacing-3);
+    margin-bottom: var(--spacing-3);
+  }
 }
 
 .dots {

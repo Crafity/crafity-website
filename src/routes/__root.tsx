@@ -14,6 +14,27 @@ export const Route = createRootRoute({
   head: () => ({
     links: [
       {
+        as: 'font',
+        crossOrigin: 'anonymous',
+        href: '/fonts/inter-regular.woff2',
+        rel: 'preload',
+        type: 'font/woff2',
+      },
+      {
+        as: 'font',
+        crossOrigin: 'anonymous',
+        href: '/fonts/space-grotesk-bold.woff2',
+        rel: 'preload',
+        type: 'font/woff2',
+      },
+      {
+        as: 'font',
+        crossOrigin: 'anonymous',
+        href: '/fonts/jetbrains-mono-regular.woff2',
+        rel: 'preload',
+        type: 'font/woff2',
+      },
+      {
         href: globalCss,
         rel: 'stylesheet',
       },

@@ -12,6 +12,7 @@
   width: 100%;
   max-width: 730px;
   margin: 0 auto;
+  font-family: var(--mono-font-family);
 }
 
 .command {
@@ -66,4 +67,28 @@
 
 .success {
   color: var(--accent-secondary);
+}
+
+/* Responsive text visibility */
+.mobile-text {
+  display: none;
+}
+
+.no-wrap {
+  white-space: nowrap;
+}
+
+@media (--md-n-below) {
+  .desktop-text {
+    display: none;
+  }
+
+  .mobile-text {
+    display: inline;
+  }
+
+  .terminal-window,
+  .terminal-window * {
+    font-size: 13px;
+  }
 }
