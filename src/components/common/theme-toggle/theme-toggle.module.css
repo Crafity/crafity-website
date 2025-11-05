@@ -1,0 +1,17 @@
+.toggle {
+  all: unset;
+  display: inline-flex;
+  width: var(--spacing-10);
+  height: var(--spacing-10);
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  cursor: pointer;
+  filter: grayscale();
+  font-size: 20px;
+  transition: var(--transition-all);
+
+  &:hover {
+    filter: none;
+  }
+}
