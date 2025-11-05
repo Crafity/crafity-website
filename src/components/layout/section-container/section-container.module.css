@@ -1,0 +1,7 @@
+.section {
+  padding: var(--spacing-24) 0; /* 96px */
+
+  @media (--lg-n-below) {
+    padding: var(--spacing-16) 0; /* 64px */
+  }
+}

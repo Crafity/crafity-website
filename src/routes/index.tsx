@@ -4,6 +4,8 @@ import * as fs from 'node:fs'
 
 import { Button } from '@/components/button/button'
 import { Header } from '@/components/header/header'
+import { Footer } from '@/components/layout/footer/footer'
+import { SectionContainer } from '@/components/layout/section-container/section-container'
 import { PageContainer } from '@/components/page/page-container'
 
 const filePath = 'count.txt'
@@ -40,14 +42,17 @@ function Home() {
   return (
     <PageContainer>
       <Header />
-      <Button
-        onClick={() => {
-          updateCount({ data: 1 }).then(() => {
-            router.invalidate()
-          })
-        }}>
-        Add 1 to {state}?
-      </Button>
+      <SectionContainer>
+        <Button
+          onClick={() => {
+            updateCount({ data: 1 }).then(() => {
+              router.invalidate()
+            })
+          }}>
+          Add 1 to {state}?
+        </Button>
+      </SectionContainer>
+      <Footer />
     </PageContainer>
   )
 }

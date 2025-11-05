@@ -26,3 +26,73 @@ body {
     pointer-events: none;
   }
 }
+
+/* Typography defaults */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--accent-font-family);
+  font-weight: var(--font-weight-bold);
+}
+
+h1 {
+  font-size: var(--font-size-h1);
+  letter-spacing: var(--letter-spacing-tight);
+  line-height: var(--line-height-tight);
+}
+
+h2 {
+  font-size: var(--font-size-h2);
+  letter-spacing: var(--letter-spacing-tight);
+  line-height: var(--line-height-tight);
+}
+
+h3 {
+  font-size: var(--font-size-h3);
+  letter-spacing: var(--letter-spacing-normal);
+  line-height: var(--line-height-normal);
+}
+
+h4 {
+  font-size: var(--font-size-h4);
+  letter-spacing: var(--letter-spacing-normal);
+  line-height: var(--line-height-normal);
+}
+
+h5 {
+  font-size: var(--font-size-h5);
+  line-height: var(--line-height-normal);
+}
+
+h6 {
+  font-size: var(--font-size-h6);
+  line-height: var(--line-height-normal);
+}
+
+p {
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-loose);
+}
+
+code,
+kbd,
+pre {
+  font-family: var(--mono-font-family);
+  font-size: var(--font-size-terminal);
+}
+
+/* Utility classes for manual font overrides */
+.font-mono {
+  font-family: var(--mono-font-family);
+}
+
+.font-accent {
+  font-family: var(--accent-font-family);
+}
+
+.font-body {
+  font-family: var(--font-family);
+}

@@ -1,17 +1,19 @@
 import styles from './navigation.module.css'
 
+import { Link } from '@/components/common/link/link'
+
 export function Navigation() {
   return (
     <nav className={styles.navigation}>
-      <a className={styles.link} href="#work">
+      <Link className={styles.link} href="#work">
         Work
-      </a>
-      <a className={styles.link} href="#approach">
+      </Link>
+      <Link className={styles.link} href="#approach">
         Approach
-      </a>
-      <a className={styles.link} href="#contact">
+      </Link>
+      <Link className={styles.link} href="#contact">
         Contact
-      </a>
+      </Link>
     </nav>
   )
 }

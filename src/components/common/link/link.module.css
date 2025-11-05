@@ -1,0 +1,9 @@
+.link {
+  color: var(--accent-secondary);
+  text-decoration: none;
+  transition: var(--transition-color);
+
+  &:hover {
+    color: var(--accent-primary);
+  }
+}
