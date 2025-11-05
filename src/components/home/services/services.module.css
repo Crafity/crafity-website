@@ -1,0 +1,23 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.title {
+  margin-bottom: var(--spacing-20);
+  text-align: center;
+
+  @media (--md-n-below) {
+    margin-bottom: var(--spacing-12);
+  }
+}
+
+.services {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-16);
+
+  @media (--md-n-below) {
+    gap: var(--spacing-12);
+  }
+}
