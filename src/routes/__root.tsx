@@ -7,6 +7,7 @@ import {
   Scripts,
 } from '@tanstack/react-router'
 
+import { CookieBanner } from '../components/common/cookie-banner/cookie-banner'
 import globalCss from '../global.css?url'
 
 export const Route = createRootRoute({
@@ -79,6 +80,7 @@ export const Route = createRootRoute({
 function RootComponent() {
   return (
     <RootDocument>
+      <CookieBanner />
       <Outlet />
     </RootDocument>
   )
@@ -88,12 +90,12 @@ function RootDocument({ children }: Readonly<{ children: ReactNode }>) {
   const structuredData = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    'description':
+    description:
       'Boutique engineering firm specializing in e-commerce modernization and legacy system rescue.',
-    'foundingDate': '2010',
-    'logo': 'https://crafity.com/logo.svg',
-    'name': 'Crafity',
-    'url': 'https://crafity.com',
+    foundingDate: '2010',
+    logo: 'https://crafity.com/logo.svg',
+    name: 'Crafity',
+    url: 'https://crafity.com',
   }
 
   return (

@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react'
 
-import styles from './theme-toggle.module.css'
 import { DarkIcon, LightIcon, SystemIcon } from './theme-icons'
+
+import styles from './theme-toggle.module.css'
 
 type Theme = 'dark' | 'light' | 'system'
 
@@ -19,7 +20,7 @@ export function ThemeToggle() {
     const effectiveTheme =
       theme === 'system' ? (prefersDark ? 'dark' : 'light') : theme
 
-    document.documentElement.setAttribute('data-theme', effectiveTheme)
+    document.documentElement.dataset.theme = effectiveTheme
     localStorage.setItem('theme', theme)
   }, [theme])
 

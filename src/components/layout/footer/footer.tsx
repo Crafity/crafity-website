@@ -1,5 +1,6 @@
 import styles from './footer.module.css'
 
+import { revokeConsent } from '@/components/common/cookie-banner/cookie-banner'
 import { Link } from '@/components/common/link/link'
 
 export function Footer() {
@@ -23,6 +24,9 @@ export function Footer() {
           <Link className={styles.link} href="#contact">
             Contact
           </Link>
+          <Link external className={styles.link} href="/storybook/?">
+            Storybook
+          </Link>
         </div>
 
         <div className={styles.column}>
@@ -42,6 +46,9 @@ export function Footer() {
           <Link className={styles.link} href="/privacy">
             Privacy Policy
           </Link>
+          <button className={styles.link} onClick={revokeConsent} type="button">
+            Cookie Settings
+          </button>
         </div>
       </div>
 

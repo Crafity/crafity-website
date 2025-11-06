@@ -31,6 +31,11 @@ export const Default: Story = {
 }
 
 export const Mobile: Story = {
+  globals: {
+    viewport: {
+      value: 'xs',
+    },
+  },
   parameters: {
     docs: {
       description: {
@@ -38,21 +43,20 @@ export const Mobile: Story = {
           'Header on mobile viewport. Logo and tagline wrap, navigation gap reduces.',
       },
     },
-    viewport: {
-      defaultViewport: 'sm',
-    },
   },
 }
 
 export const Tablet: Story = {
+  globals: {
+    viewport: {
+      value: 'md',
+    },
+  },
   parameters: {
     docs: {
       description: {
         story: 'Header on tablet viewport.',
       },
-    },
-    viewport: {
-      defaultViewport: 'md',
     },
   },
 }

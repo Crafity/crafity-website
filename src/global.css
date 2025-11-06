@@ -21,10 +21,12 @@ body {
   background: var(--bg-primary);
   color: var(--text-primary);
   font-family: var(--font-family);
+  font-size: var(--font-size-base);
 
   /* Better font rendering on MacOS/iOS */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  line-height: var(--line-height-loose);
 
   /* Prevent iOS Safari from auto-adjusting font sizes in landscape */
   text-size-adjust: 100%;
@@ -95,8 +97,9 @@ h6 {
 }
 
 p {
-  font-size: var(--font-size-base);
-  line-height: var(--line-height-loose);
+  /* font-size: var(--font-size-base); */
+
+  /* line-height: var(--line-height-loose); */
   overflow-wrap: break-word;
 
   /* Better text wrapping for paragraphs - avoids orphans */

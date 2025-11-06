@@ -11,6 +11,7 @@ import {
 import { INITIAL_VIEWPORTS } from 'storybook/viewport'
 
 import { withTheme } from './decorators/theme-decorator'
+
 import './preview.css'
 
 /**
@@ -26,46 +27,6 @@ import './preview.css'
  * 3xl = 1920px+      (3x Extra Large - Ultra Wide)
  */
 const customViewports = {
-  xs: {
-    name: 'XS - Extra Small (375px)',
-    styles: {
-      height: '667px',
-      width: '375px',
-    },
-    type: 'mobile',
-  },
-  sm: {
-    name: 'SM - Small (640px)',
-    styles: {
-      height: '800px',
-      width: '640px',
-    },
-    type: 'mobile',
-  },
-  md: {
-    name: 'MD - Medium (768px)',
-    styles: {
-      height: '1024px',
-      width: '768px',
-    },
-    type: 'tablet',
-  },
-  lg: {
-    name: 'LG - Large (1024px)',
-    styles: {
-      height: '768px',
-      width: '1024px',
-    },
-    type: 'desktop',
-  },
-  xl: {
-    name: 'XL - Extra Large (1280px)',
-    styles: {
-      height: '800px',
-      width: '1280px',
-    },
-    type: 'desktop',
-  },
   '2xl': {
     name: '2XL - 2x Extra Large (1536px)',
     styles: {
@@ -82,8 +43,48 @@ const customViewports = {
     },
     type: 'desktop',
   },
+  lg: {
+    name: 'LG - Large (1024px)',
+    styles: {
+      height: '768px',
+      width: '1024px',
+    },
+    type: 'desktop',
+  },
+  md: {
+    name: 'MD - Medium (768px)',
+    styles: {
+      height: '1024px',
+      width: '768px',
+    },
+    type: 'tablet',
+  },
   responsive: {
     name: 'Responsive (100%)',
+  },
+  sm: {
+    name: 'SM - Small (640px)',
+    styles: {
+      height: '800px',
+      width: '640px',
+    },
+    type: 'mobile',
+  },
+  xl: {
+    name: 'XL - Extra Large (1280px)',
+    styles: {
+      height: '800px',
+      width: '1280px',
+    },
+    type: 'desktop',
+  },
+  xs: {
+    name: 'XS - Extra Small (375px)',
+    styles: {
+      height: '667px',
+      width: '375px',
+    },
+    type: 'mobile',
   },
 }
 
@@ -107,8 +108,8 @@ const preview: Preview = {
   ],
   globalTypes: {
     theme: {
-      description: 'Global theme for components',
       defaultValue: 'dark',
+      description: 'Global theme for components',
       name: 'Theme',
       toolbar: {
         dynamicTitle: true,

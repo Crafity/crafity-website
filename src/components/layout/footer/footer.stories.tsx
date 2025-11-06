@@ -31,27 +31,31 @@ export const Default: Story = {
 }
 
 export const Mobile: Story = {
+  globals: {
+    viewport: {
+      value: 'xs',
+    },
+  },
   parameters: {
     docs: {
       description: {
         story: 'Footer on mobile viewport with stacked layout.',
       },
     },
-    viewport: {
-      defaultViewport: 'sm',
-    },
   },
 }
 
 export const Tablet: Story = {
+  globals: {
+    viewport: {
+      value: 'md',
+    },
+  },
   parameters: {
     docs: {
       description: {
         story: 'Footer on tablet viewport.',
       },
-    },
-    viewport: {
-      defaultViewport: 'md',
     },
   },
 }

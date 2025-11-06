@@ -1,0 +1,129 @@
+@import url('../../../css/breakpoints.css');
+
+/* Overlay for positioning - bottom right corner */
+.overlay {
+  position: fixed;
+  z-index: var(--cookie-consent-banner);
+  right: var(--spacing-4);
+  bottom: var(--spacing-4);
+  left: var(--spacing-4);
+  animation: slide-in var(--duration-slow) var(--ease-out) forwards;
+  pointer-events: none;
+
+  @media (--sm-n-above) {
+    right: var(--spacing-6);
+    bottom: var(--spacing-6);
+    left: unset;
+    max-width: 420px;
+  }
+}
+
+/* Banner container - compact box in bottom right */
+.banner {
+  padding: var(--spacing-3) var(--spacing-4);
+  border: var(--border-default);
+  border-radius: var(--border-radius-md);
+  background: var(--bg-secondary);
+  box-shadow: 0 4px 16px rgb(0 0 0 / 25%);
+  pointer-events: auto;
+
+  @media (--md) {
+    max-width: 480px;
+  }
+}
+
+/* Content wrapper - horizontal on desktop */
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  font-size: var(--font-size-base-sm);
+  gap: var(--spacing-3);
+}
+
+/* Cookie icon - small and subtle */
+.icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: var(--accent-secondary);
+}
+
+/* Message text with inline link - compact */
+.message {
+  flex: 1;
+  color: var(--text-primary);
+
+  @media (--md) {
+    font-size: var(--font-size-sm);
+    line-height: 1.5;
+  }
+}
+
+.link {
+  color: var(--accent-secondary);
+  text-decoration: none;
+  transition: var(--transition-color);
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+/* Actions section - buttons stacked below text */
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--spacing-2);
+}
+
+/* Buttons - compact and side by side */
+.button-allow,
+.button-decline {
+  padding: var(--spacing-2) var(--spacing-4);
+  border: 1px solid var(--border-default-color);
+  border-radius: var(--border-radius-sm);
+  background: transparent;
+  color: var(--text-primary);
+  cursor: pointer;
+  font-weight: var(--font-weight-medium);
+  line-height: 1;
+  transition:
+    var(--transition-bg),
+    var(--transition-color),
+    border-color var(--duration-fast) var(--ease-out);
+  white-space: nowrap;
+
+  &:active {
+    transform: scale(0.97);
+  }
+}
+
+.button-decline:hover {
+  border-color: var(--border-strong-color);
+  background: var(--bg-tertiary);
+}
+
+.button-allow {
+  border: 1px solid var(--accent-secondary);
+  background: var(--accent-secondary);
+  color: var(--bg-primary);
+
+  &:hover {
+    opacity: 0.9;
+  }
+}
+
+/* Animations */
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

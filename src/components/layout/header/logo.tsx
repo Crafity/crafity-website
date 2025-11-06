@@ -1,9 +1,10 @@
 import { Link } from '@tanstack/react-router'
+
 import styles from './logo.module.css'
 
 export function Logo() {
   return (
-    <Link className={styles['logo-container']} to={'/'}>
+    <Link className={styles['logo-container']} to="/">
       <picture className={styles['logo-icon']}>
         <source
           media="(prefers-color-scheme: light)"

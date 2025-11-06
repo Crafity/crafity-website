@@ -7,6 +7,7 @@ import styles from './link.module.css'
 interface LinkProps {
   children: ReactNode
   className?: string
+  external?: boolean
   href: string
   unstyled?: boolean
 }
@@ -23,11 +24,17 @@ function isProtocolLink(href: string): boolean {
   return href.startsWith('mailto:') || href.startsWith('tel:')
 }
 
-export function Link({ children, className, href, unstyled }: LinkProps) {
+export function Link({
+  children,
+  className,
+  external,
+  href,
+  unstyled,
+}: LinkProps) {
   const linkClassName = clsx(!unstyled && styles.link, className)
 
   // External links (http/https)
-  if (isExternalLink(href)) {
+  if (external || isExternalLink(href)) {
     return (
       <a
         className={linkClassName}

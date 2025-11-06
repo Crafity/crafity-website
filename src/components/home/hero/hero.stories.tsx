@@ -32,27 +32,32 @@ export const Default: Story = {
 }
 
 export const Mobile: Story = {
+  globals: {
+    viewport: {
+      value: 'xs',
+    },
+  },
   parameters: {
     docs: {
       description: {
-        story: 'Hero section on mobile viewport - all elements stack vertically.',
+        story:
+          'Hero section on mobile viewport - all elements stack vertically.',
       },
-    },
-    viewport: {
-      defaultViewport: 'sm',
     },
   },
 }
 
 export const Tablet: Story = {
+  globals: {
+    viewport: {
+      value: 'md',
+    },
+  },
   parameters: {
     docs: {
       description: {
         story: 'Hero section on tablet viewport.',
       },
-    },
-    viewport: {
-      defaultViewport: 'md',
     },
   },
 }

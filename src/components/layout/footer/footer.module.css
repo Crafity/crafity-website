@@ -69,8 +69,13 @@
 }
 
 .link {
+  border: none;
+  background: none;
   color: var(--text-secondary);
+  cursor: pointer;
   font-size: var(--font-size-base-sm);
+  text-align: left;
+  transition: var(--transition-color);
 
   &:hover {
     color: var(--accent-secondary);

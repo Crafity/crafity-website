@@ -11,9 +11,9 @@ export const withTheme: Decorator = (Story, context) => {
       const prefersDark = window.matchMedia(
         '(prefers-color-scheme: dark)',
       ).matches
-      root.setAttribute('data-theme', prefersDark ? 'dark' : 'light')
+      root.dataset.theme = prefersDark ? 'dark' : 'light'
     } else {
-      root.setAttribute('data-theme', theme)
+      root.dataset.theme = theme
     }
   }, [theme])
 

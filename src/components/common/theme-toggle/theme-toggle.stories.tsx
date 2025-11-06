@@ -43,15 +43,13 @@ export const InContext: Story = {
           flexDirection: 'column',
           gap: '16px',
           padding: '24px',
-        }}
-      >
+        }}>
         <div
           style={{
             color: 'var(--text-primary)',
             fontFamily: 'var(--mono-font-family)',
             fontSize: '14px',
-          }}
-        >
+          }}>
           Theme preference:
         </div>
         <Story />
@@ -59,8 +57,7 @@ export const InContext: Story = {
           style={{
             color: 'var(--text-secondary)',
             fontSize: '12px',
-          }}
-        >
+          }}>
           Toggle the theme to see the background and text colors change
         </div>
       </div>

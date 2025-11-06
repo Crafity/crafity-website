@@ -1,8 +1,8 @@
 .container {
   /* Mobile baseline */
   max-width: 900px;
-  margin: 0 auto;
   padding: var(--spacing-16) 0;
+  margin: 0 auto;
 
   /* Desktop: larger padding */
   @media (--lg-n-above) {
@@ -53,8 +53,8 @@
 }
 
 .section ul {
-  margin: var(--spacing-4) 0 var(--spacing-6);
   padding-left: var(--spacing-6);
+  margin: var(--spacing-4) 0 var(--spacing-6);
   color: var(--text-secondary);
 }
 
@@ -79,11 +79,11 @@
 }
 
 .contactBox {
-  margin: var(--spacing-6) 0;
   padding: var(--spacing-6);
-  background: var(--bg-secondary);
   border: 1px solid var(--border-default-color);
   border-radius: 8px;
+  margin: var(--spacing-6) 0;
+  background: var(--bg-secondary);
 }
 
 .contactBox strong {
@@ -94,8 +94,8 @@
 }
 
 .contactBox ul {
-  margin: 0;
   padding-left: var(--spacing-6);
+  margin: 0;
   list-style: none;
 }
 
@@ -105,7 +105,7 @@
 }
 
 .contactBox li::before {
-  content: '→';
   margin-right: var(--spacing-2);
   color: var(--accent-secondary);
+  content: '→';
 }

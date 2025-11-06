@@ -134,9 +134,8 @@ export const WithColoredOutput: Story = {
         <span style={{ color: 'var(--accent-primary)' }}>1 passed</span>, 1
         total
         <br />
-        Tests: <span style={{ color: 'var(--accent-primary)' }}>
-          5 passed
-        </span>, 5 total
+        Tests: <span style={{ color: 'var(--accent-primary)' }}>5 passed</span>,
+        5 total
       </div>
     ),
     title: 'npm',

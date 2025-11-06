@@ -32,27 +32,31 @@ export const Default: Story = {
 }
 
 export const Mobile: Story = {
+  globals: {
+    viewport: {
+      value: 'xs',
+    },
+  },
   parameters: {
     docs: {
       description: {
         story: 'CTA section on mobile viewport with centered layout.',
       },
     },
-    viewport: {
-      defaultViewport: 'sm',
-    },
   },
 }
 
 export const Tablet: Story = {
+  globals: {
+    viewport: {
+      value: 'md',
+    },
+  },
   parameters: {
     docs: {
       description: {
         story: 'CTA section on tablet viewport.',
       },
-    },
-    viewport: {
-      defaultViewport: 'md',
     },
   },
 }

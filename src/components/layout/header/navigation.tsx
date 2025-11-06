@@ -5,13 +5,13 @@ import { Link } from '@/components/common/link/link'
 export function Navigation() {
   return (
     <nav className={styles.navigation}>
-      <Link className={styles.link} href="#work">
+      <Link className={styles.link} href="/#work">
         Work
       </Link>
-      <Link className={styles.link} href="#approach">
+      <Link className={styles.link} href="/#approach">
         Approach
       </Link>
-      <Link className={styles.link} href="#contact">
+      <Link className={styles.link} href="/#contact">
         Contact
       </Link>
     </nav>
