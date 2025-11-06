@@ -25,7 +25,16 @@ export default defineConfig({
   },
   plugins: isStorybook
     ? [tsConfigPaths(), viteReact()]
-    : [tsConfigPaths(), tanstackStart(), viteReact(), nitro()],
+    : [
+        tsConfigPaths(),
+        tanstackStart(),
+        viteReact({
+          babel: {
+            plugins: ['babel-plugin-react-compiler'],
+          },
+        }),
+        nitro(),
+      ],
   server: {
     port: 3000,
   },
