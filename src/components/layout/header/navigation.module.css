@@ -4,7 +4,7 @@
   align-items: flex-start;
   padding-top: 0;
   font-family: var(--mono-font-family);
-  font-size: var(--font-size-terminal);
+  font-size: var(--font-size-xs);
   gap: var(--spacing-6);
 
   /* Tablet: center alignment */

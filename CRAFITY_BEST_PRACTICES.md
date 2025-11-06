@@ -459,6 +459,139 @@ import styles from './component.module.css'
 6. **shadow-tokens.css** - Box shadows and glow effects
 7. **breakpoints.css** - Responsive breakpoints
 
+### Token Architecture: 2-Tier System
+
+**Crafity uses a 2-tier token architecture for typography:**
+
+1. **Primitive Tokens** - Abstract, reusable values (defined in `typography-tokens.css`)
+2. **Component Aliases** - Context-specific variables (defined in component CSS)
+
+**Primitive tokens should:**
+- Use T-shirt sizing for intuitive understanding (3xl, 2xl, xl, lg, md, sm, xs, 2xs)
+- Include property type in name for clarity (`--font-size-lg`, not `--font-lg`)
+- Follow triptych notation: `[namespace]-[property]-[variant]`
+- Be abstract and reusable across components
+- NEVER be used directly in production code (use component aliases instead)
+
+**Component aliases should:**
+- Have local, meaningful names (`--hero-statement-font-size`, `--card-title-font-size`)
+- Reference primitive tokens as their value
+- Include property type suffix for clarity (`-font-size`, `-font-weight`, `-line-height`)
+- Only be created when there's value (see "When to Create Aliases" below)
+
+**Example:**
+
+```css
+/* typography-tokens.css - Primitive tokens (DO NOT use directly) */
+:root {
+  --font-size-3xl: 92px;
+  --font-size-2xl: 72px;
+  --font-size-xl: 54px;
+  --font-size-lg: 40px;
+  --font-size-md: 32px;
+  --font-size-base: 18px;
+  --font-size-xs: 14px;
+}
+
+/* hero.module.css - Component aliases */
+.hero {
+  /* Define aliases for responsive values */
+  --hero-statement-font-size: var(--font-size-xl);
+
+  @media (--md-n-above) {
+    --hero-statement-font-size: var(--font-size-2xl);
+  }
+
+  @media (--lg-n-above) {
+    --hero-statement-font-size: var(--font-size-3xl);
+  }
+}
+
+.statement {
+  /* Use the alias */
+  font-size: var(--hero-statement-font-size);
+
+  /* Static properties: use primitives directly */
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+}
+```
+
+### When to Create Component Aliases
+
+**✅ CREATE ALIASES WHEN:**
+
+1. **Value changes via media query** (most common reason)
+```css
+.hero {
+  --hero-title-font-size: var(--font-size-lg);
+
+  @media (--md-n-above) {
+    --hero-title-font-size: var(--font-size-2xl); /* Changes responsively */
+  }
+}
+.title {
+  font-size: var(--hero-title-font-size); /* ✅ Use alias */
+}
+```
+
+2. **Multiple elements use the same value**
+```css
+.card {
+  --card-spacing: var(--spacing-8);
+}
+.card-header,
+.card-body,
+.card-footer {
+  padding: var(--card-spacing); /* ✅ DRY principle */
+}
+```
+
+3. **Theme/context variations**
+```css
+.button {
+  --button-bg-color: var(--accent-primary);
+}
+.button.secondary {
+  --button-bg-color: var(--accent-secondary);
+}
+.button {
+  background: var(--button-bg-color); /* ✅ Easy theming */
+}
+```
+
+**❌ DON'T CREATE ALIASES WHEN:**
+
+1. **Single use, no variation** (use primitive directly)
+```css
+/* ❌ Unnecessary alias */
+.title {
+  --title-color: var(--text-primary);
+  color: var(--title-color);
+}
+
+/* ✅ Use primitive directly */
+.title {
+  color: var(--text-primary);
+}
+```
+
+2. **No responsive changes** (use primitive directly)
+```css
+/* ❌ Pointless wrapper */
+.description {
+  --description-line-height: var(--line-height-relaxed);
+  line-height: var(--description-line-height);
+}
+
+/* ✅ Use primitive directly */
+.description {
+  line-height: var(--line-height-relaxed);
+}
+```
+
+**Rule of Thumb:** Aliases are a signal that "this value changes based on context" (responsive, theme, reuse). If it's static and single-use, skip the alias.
+
 ### Semantic Naming Convention
 
 **✅ USE SEMANTIC NAMES:**

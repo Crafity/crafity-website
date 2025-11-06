@@ -26,14 +26,14 @@
 .number {
   margin-bottom: var(--spacing-2);
   color: var(--accent-secondary);
-  font-size: var(--font-size-terminal);
+  font-size: var(--font-size-xs);
   letter-spacing: var(--letter-spacing-wide);
 }
 
 .title {
   margin-bottom: var(--spacing-4);
   color: var(--text-primary);
-  font-size: var(--font-size-h4);
+  font-size: var(--font-size-md);
   letter-spacing: var(--letter-spacing-wide);
   line-height: var(--line-height-normal);
 }
@@ -41,13 +41,12 @@
 .description {
   margin-bottom: var(--spacing-4);
   color: var(--text-primary);
-  font-size: var(--font-size-body);
   line-height: var(--line-height-relaxed);
 }
 
 .examples {
   color: var(--accent-primary);
-  font-size: var(--font-size-terminal);
+  font-size: var(--font-size-xs);
   letter-spacing: var(--letter-spacing-wide);
   opacity: 0.8;
 }

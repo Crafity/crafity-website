@@ -34,13 +34,12 @@
 .title {
   margin-bottom: var(--spacing-4);
   color: var(--text-primary);
-  font-size: var(--font-size-h5);
+  font-size: var(--font-size-sm);
   letter-spacing: var(--letter-spacing-wide);
   line-height: var(--line-height-normal);
 }
 
 .description {
   color: var(--text-primary);
-  font-size: var(--font-size-body);
   line-height: var(--line-height-relaxed);
 }

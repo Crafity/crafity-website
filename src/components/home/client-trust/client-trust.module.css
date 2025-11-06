@@ -19,7 +19,7 @@
 .label {
   margin-bottom: var(--spacing-8);
   color: var(--text-secondary);
-  font-size: var(--font-size-meta);
+  font-size: var(--font-size-2xs);
   letter-spacing: var(--letter-spacing-wide);
 }
 
@@ -33,7 +33,7 @@
 
   .client {
     color: var(--accent-primary);
-    font-size: var(--font-size-body-large);
+    font-size: var(--font-size-base-lg);
   }
 
   /* Desktop: larger gap and font */
@@ -41,7 +41,7 @@
     gap: var(--spacing-6);
 
     .client {
-      font-size: var(--font-size-h6);
+      font-size: var(--font-size-base-xl);
     }
   }
 }
@@ -55,7 +55,7 @@
 
   .client {
     color: var(--text-primary);
-    font-size: var(--font-size-terminal);
+    font-size: var(--font-size-xs);
 
     &::after {
       margin-left: var(--spacing-3);
@@ -72,7 +72,7 @@
     gap: var(--spacing-4);
 
     .client {
-      font-size: var(--font-size-body-small);
+      font-size: var(--font-size-base-sm);
 
       &::after {
         margin-left: var(--spacing-4);

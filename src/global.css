@@ -40,41 +40,41 @@ h6 {
 }
 
 h1 {
-  font-size: var(--font-size-h1);
+  font-size: var(--font-size-xl);
   letter-spacing: var(--letter-spacing-tight);
   line-height: var(--line-height-tight);
 }
 
 h2 {
-  font-size: var(--font-size-h2);
+  font-size: var(--font-size-lg);
   letter-spacing: var(--letter-spacing-tight);
   line-height: var(--line-height-tight);
 }
 
 h3 {
-  font-size: var(--font-size-h3);
+  font-size: var(--font-size-md);
   letter-spacing: var(--letter-spacing-normal);
   line-height: var(--line-height-normal);
 }
 
 h4 {
-  font-size: var(--font-size-h4);
+  font-size: var(--font-size-md);
   letter-spacing: var(--letter-spacing-normal);
   line-height: var(--line-height-normal);
 }
 
 h5 {
-  font-size: var(--font-size-h5);
+  font-size: var(--font-size-sm);
   line-height: var(--line-height-normal);
 }
 
 h6 {
-  font-size: var(--font-size-h6);
+  font-size: var(--font-size-base-xl);
   line-height: var(--line-height-normal);
 }
 
 p {
-  font-size: var(--font-size-body);
+  font-size: var(--font-size-base);
   line-height: var(--line-height-loose);
 }
 
@@ -82,7 +82,7 @@ code,
 kbd,
 pre {
   font-family: var(--mono-font-family);
-  font-size: var(--font-size-terminal);
+  font-size: var(--font-size-xs);
 }
 
 /* Utility classes for manual font overrides */

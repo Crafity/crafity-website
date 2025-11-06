@@ -15,19 +15,19 @@
   /* Mobile baseline */
   margin-bottom: var(--spacing-2);
   color: var(--accent-secondary);
-  font-size: var(--font-size-h4);
+  font-size: var(--font-size-md);
   font-weight: var(--font-weight-bold);
   letter-spacing: var(--letter-spacing-normal);
   line-height: var(--line-height-tight);
 
   /* Desktop: larger font */
   @media (--md-n-above) {
-    font-size: var(--font-size-h3);
+    font-size: var(--font-size-lg);
   }
 }
 
 .label {
   color: var(--text-primary);
-  font-size: var(--font-size-body-small);
+  font-size: var(--font-size-base-sm);
   line-height: var(--line-height-normal);
 }

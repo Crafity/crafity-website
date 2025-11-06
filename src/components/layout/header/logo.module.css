@@ -33,7 +33,7 @@
 .logo {
   color: var(--text-primary);
   font-family: var(--accent-font-family);
-  font-size: var(--font-size-h5);
+  font-size: var(--font-size-sm);
   font-weight: var(--font-weight-bold);
   letter-spacing: var(--letter-spacing-wider);
 }
@@ -41,7 +41,7 @@
 .tagline {
   color: var(--accent-secondary);
   font-family: var(--mono-font-family);
-  font-size: 13px;
+  font-size: var(--font-size-xs);
   letter-spacing: var(--letter-spacing-wide);
   opacity: 0.8;
 }

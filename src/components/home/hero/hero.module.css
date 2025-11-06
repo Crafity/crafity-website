@@ -92,7 +92,7 @@
 /* Mobile: smaller terminal font */
 .terminal-window,
 .terminal-window * {
-  font-size: 13px;
+  font-size: var(--font-size-xs);
 }
 
 /* Desktop: show desktop-text, hide mobile-text, reset font size */

@@ -2,19 +2,19 @@
   /* Mobile baseline */
   max-width: 1000px;
   margin: 0 auto;
-  font-size: var(--font-size-hero-md);
+  font-size: var(--font-size-xl);
   letter-spacing: var(--letter-spacing-hero);
   line-height: var(--line-height-tight);
   text-align: left;
 
   /* Tablet: larger font */
   @media (--md-n-above) {
-    font-size: var(--font-size-hero-lg);
+    font-size: var(--font-size-2xl);
   }
 
   /* Desktop: largest font */
   @media (--lg-n-above) {
-    font-size: var(--font-size-hero);
+    font-size: var(--font-size-3xl);
   }
 }
 

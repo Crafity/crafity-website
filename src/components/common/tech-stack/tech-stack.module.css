@@ -9,7 +9,7 @@
   padding: var(--spacing-1) var(--spacing-3);
   border: var(--border-default);
   color: var(--text-secondary);
-  font-size: var(--font-size-meta);
+  font-size: var(--font-size-2xs);
   white-space: nowrap;
 
   &::before {

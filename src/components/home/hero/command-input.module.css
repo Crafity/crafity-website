@@ -4,7 +4,7 @@
   align-items: center;
   padding: var(--spacing-3-5);
   margin: 0 auto;
-  font-size: var(--font-size-body-large);
+  font-size: var(--font-size-base-lg);
   gap: var(--spacing-3);
   text-decoration: none;
   transition: var(--transition-color);

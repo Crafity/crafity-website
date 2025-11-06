@@ -39,7 +39,7 @@
 .logo {
   color: var(--text-primary);
   font-family: var(--accent-font-family);
-  font-size: var(--font-size-h6);
+  font-size: var(--font-size-base-xl);
   font-weight: var(--font-weight-bold);
   letter-spacing: var(--letter-spacing-wider);
   line-height: var(--line-height-normal);
@@ -48,21 +48,21 @@
 .tagline {
   color: var(--accent-secondary);
   font-family: var(--mono-font-family);
-  font-size: var(--font-size-terminal);
+  font-size: var(--font-size-xs);
   letter-spacing: var(--letter-spacing-wide);
   opacity: 0.8;
 }
 
 .year {
   color: var(--text-secondary);
-  font-size: var(--font-size-body-small);
+  font-size: var(--font-size-base-sm);
 }
 
 .title {
   margin-bottom: var(--spacing-2);
   color: var(--text-primary);
   font-family: var(--mono-font-family);
-  font-size: var(--font-size-meta);
+  font-size: var(--font-size-2xs);
   font-weight: var(--font-weight-bold);
   letter-spacing: var(--letter-spacing-wide);
   text-transform: uppercase;
@@ -70,7 +70,7 @@
 
 .link {
   color: var(--text-secondary);
-  font-size: var(--font-size-body-small);
+  font-size: var(--font-size-base-sm);
 
   &:hover {
     color: var(--accent-secondary);
@@ -100,12 +100,12 @@
 
 .bottom-text {
   color: var(--text-secondary);
-  font-size: var(--font-size-terminal);
+  font-size: var(--font-size-xs);
 }
 
 .exit {
   color: var(--text-tertiary);
   font-family: var(--mono-font-family);
-  font-size: var(--font-size-terminal);
+  font-size: var(--font-size-xs);
   text-align: center;
 }
