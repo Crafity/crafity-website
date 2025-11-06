@@ -12,18 +12,15 @@
 }
 
 .number {
-  /* Mobile baseline */
   margin-bottom: var(--spacing-2);
   color: var(--accent-secondary);
-  font-size: var(--font-size-md);
+
+  /* Fluid typography: scales smoothly from 32px (375px viewport) to 40px (1440px viewport) */
+  font-size: clamp(2rem, 1.8239rem + 0.7512vw, 2.5rem);
+
   font-weight: var(--font-weight-bold);
   letter-spacing: var(--letter-spacing-normal);
   line-height: var(--line-height-tight);
-
-  /* Desktop: larger font */
-  @media (--md-n-above) {
-    font-size: var(--font-size-lg);
-  }
 }
 
 .label {

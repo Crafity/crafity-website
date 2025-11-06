@@ -1,21 +1,16 @@
 .statement {
-  /* Mobile baseline */
   max-width: 1000px;
   margin: 0 auto;
-  font-size: var(--font-size-xl);
+
+  /* Fluid typography: scales smoothly from 54px (375px viewport) to 92px (1440px viewport) */
+
+  font-size: clamp(2.375rem, 1.5387rem + 5.5681vw, 5.75rem);
+
+  /* font-size: clamp(3.375rem, 2.5387rem + 3.5681vw, 5.75rem); */
+
   letter-spacing: var(--letter-spacing-hero);
   line-height: var(--line-height-tight);
   text-align: left;
-
-  /* Tablet: larger font */
-  @media (--md-n-above) {
-    font-size: var(--font-size-2xl);
-  }
-
-  /* Desktop: largest font */
-  @media (--lg-n-above) {
-    font-size: var(--font-size-3xl);
-  }
 }
 
 .line1,
