@@ -5,8 +5,9 @@
   background: var(--bg-secondary);
   text-align: center;
 
-  /* Desktop: larger padding */
+  /* Desktop: larger padding en fluid width */
   @media (--md-n-above) {
+    width: clamp(190px, 15vw, 250px);
     padding: var(--spacing-5);
   }
 }
@@ -17,7 +18,6 @@
 
   /* Fluid typography: scales smoothly from 32px (375px viewport) to 40px (1440px viewport) */
   font-size: clamp(2rem, 1.8239rem + 0.7512vw, 2.5rem);
-
   font-weight: var(--font-weight-bold);
   letter-spacing: var(--letter-spacing-normal);
   line-height: var(--line-height-tight);

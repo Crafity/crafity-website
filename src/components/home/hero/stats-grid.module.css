@@ -1,13 +1,37 @@
 .grid {
-  /* Mobile baseline: single column */
-  display: grid;
-  max-width: 900px;
+  /* Mobile: horizontal scrolling met peek effect */
+  display: flex;
+  max-width: 100%;
   margin: 0 auto;
-  gap: var(--spacing-8);
-  grid-template-columns: 1fr;
+  gap: var(--spacing-4);
 
-  /* Desktop: 3 columns */
-  @media (--md-n-above) {
+  /* Hide scrollbar */
+  -ms-overflow-style: none;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+
+  /* Desktop: terug naar grid */
+  @media (--sm-n-above) {
+    display: grid;
+    gap: var(--spacing-8);
     grid-template-columns: repeat(3, 1fr);
+    overflow-x: visible;
+    scroll-snap-type: none;
+  }
+}
+
+.grid::-webkit-scrollbar {
+  display: none;
+}
+
+.stat {
+  /* Mobile: max 150px breed, of 80vw als dat kleiner is */
+  flex: 0 0 min(80vw, 250px);
+  scroll-snap-align: center;
+
+  @media (--sm-n-above) {
+    flex: initial;
   }
 }
