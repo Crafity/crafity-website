@@ -1,7 +1,6 @@
 import styles from './footer.module.css'
 
 import { Link } from '@/components/common/link/link'
-import { ThemeToggle } from '@/components/common/theme-toggle/theme-toggle'
 
 export function Footer() {
   return (
@@ -11,7 +10,6 @@ export function Footer() {
           <div className={styles.logo}>CRAFITY</div>
           <div className={styles.tagline}>Built with passion</div>
           <div className={styles.year}>Since 2010</div>
-          <ThemeToggle />
         </div>
 
         <div className={styles.column}>

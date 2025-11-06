@@ -6,6 +6,7 @@
   gap: var(--spacing-12);
 
   @media (--md-n-below) {
+    align-items: center;
     padding-top: 0;
     gap: var(--spacing-6);
   }

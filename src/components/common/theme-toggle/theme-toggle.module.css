@@ -5,13 +5,23 @@
   height: var(--spacing-10);
   align-items: center;
   justify-content: center;
-  border: 0;
+  border: var(--border-width-thin) solid var(--border-default-color);
+  color: var(--text-secondary);
   cursor: pointer;
-  filter: grayscale();
-  font-size: 20px;
   transition: var(--transition-all);
 
   &:hover {
-    filter: none;
+    border-color: var(--accent-secondary);
+    color: var(--accent-secondary);
+    box-shadow: 0 0 20px rgba(149, 197, 239, 0.2);
+  }
+
+  &:active {
+    border-color: var(--accent-primary);
+    color: var(--accent-primary);
+  }
+
+  svg {
+    display: block;
   }
 }

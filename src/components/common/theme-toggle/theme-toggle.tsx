@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 
 import styles from './theme-toggle.module.css'
+import { DarkIcon, LightIcon, SystemIcon } from './theme-icons'
 
 type Theme = 'dark' | 'light' | 'system'
 
@@ -23,18 +24,37 @@ export function ThemeToggle() {
   }, [theme])
 
   const cycleTheme = () => {
+    const prefersDark = window.matchMedia(
+      '(prefers-color-scheme: dark)',
+    ).matches
+
     setTheme(current => {
-      if (current === 'system') return 'dark'
-      if (current === 'dark') return 'light'
-      return 'system'
+      if (current === 'system') {
+        // If system, go to opposite of current system preference
+        return prefersDark ? 'light' : 'dark'
+      }
+      if (prefersDark) {
+        // System prefers dark: system → light → dark → system
+        if (current === 'light') return 'dark'
+        return 'system'
+      } else {
+        // System prefers light: system → dark → light → system
+        if (current === 'dark') return 'light'
+        return 'system'
+      }
     })
   }
 
   return (
-    <button className={styles.toggle} onClick={cycleTheme} type="button">
-      {theme === 'system' && '⚙️'}
-      {theme === 'dark' && '🌙'}
-      {theme === 'light' && '☀️'}
+    <button
+      aria-label={`Current theme: ${theme}. Click to cycle.`}
+      className={styles.toggle}
+      onClick={cycleTheme}
+      title={`Theme: ${theme}`}
+      type="button">
+      {theme === 'system' && <SystemIcon />}
+      {theme === 'dark' && <DarkIcon />}
+      {theme === 'light' && <LightIcon />}
     </button>
   )
 }
