@@ -1,17 +1,20 @@
 .statement {
+  /* Mobile baseline */
   max-width: 1000px;
   margin: 0 auto;
-  font-size: var(--font-size-hero);
+  font-size: var(--font-size-hero-md);
   letter-spacing: var(--letter-spacing-hero);
   line-height: var(--line-height-tight);
   text-align: left;
 
-  @media (--lg-n-below) {
+  /* Tablet: larger font */
+  @media (--md-n-above) {
     font-size: var(--font-size-hero-lg);
   }
 
-  @media (--md-n-below) {
-    font-size: var(--font-size-hero-md);
+  /* Desktop: largest font */
+  @media (--lg-n-above) {
+    font-size: var(--font-size-hero);
   }
 }
 

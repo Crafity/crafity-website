@@ -26,8 +26,8 @@
   display: inline-block;
   width: var(--spacing-2);
   height: var(--spacing-4);
-  background: var(--accent-secondary);
   animation: blink 1s infinite;
+  background: var(--accent-secondary);
 }
 
 @keyframes blink {

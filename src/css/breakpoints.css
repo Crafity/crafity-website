@@ -13,7 +13,7 @@
 
 /* xs - Extra Small (Mobile) */
 @custom-media --xs-only (width < 640px);
-@custom-media --xs-n-above (width >= 0px);
+@custom-media --xs-n-above (width >= 0);
 @custom-media --xs-n-below (width < 640px);
 
 /* sm - Small (Large Mobile) */

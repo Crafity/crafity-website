@@ -4,20 +4,24 @@
 }
 
 .title {
-  margin-bottom: var(--spacing-20);
+  /* Mobile baseline */
+  margin-bottom: var(--spacing-12);
   text-align: center;
 
-  @media (--md-n-below) {
-    margin-bottom: var(--spacing-12);
+  /* Desktop: larger margin */
+  @media (--md-n-above) {
+    margin-bottom: var(--spacing-20);
   }
 }
 
 .services {
+  /* Mobile baseline */
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-24);
+  gap: var(--spacing-12);
 
-  @media (--md-n-below) {
-    gap: var(--spacing-12);
+  /* Desktop: larger gap */
+  @media (--md-n-above) {
+    gap: var(--spacing-24);
   }
 }

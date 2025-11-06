@@ -1,17 +1,14 @@
 .card {
+  /* Mobile baseline: consistent margin */
   position: relative;
-  margin-left: var(--spacing-16);
+  margin-left: var(--spacing-8);
 
-  &:nth-child(even) {
-    margin-left: var(--spacing-48);
-  }
+  /* Desktop: alternating indents */
+  @media (--md-n-above) {
+    margin-left: var(--spacing-16);
 
-  @media (--md-n-below) {
-    margin-left: var(--spacing-8);
-
-    &:nth-child(2),
-    &:nth-child(4) {
-      margin-left: var(--spacing-8);
+    &:nth-child(even) {
+      margin-left: var(--spacing-48);
     }
   }
 }

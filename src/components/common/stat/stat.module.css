@@ -1,24 +1,28 @@
 .stat {
-  padding: var(--spacing-5);
+  /* Mobile baseline */
+  padding: var(--spacing-4);
   border: var(--border-default);
   background: var(--bg-secondary);
   text-align: center;
 
-  @media (--md-n-below) {
-    padding: var(--spacing-4);
+  /* Desktop: larger padding */
+  @media (--md-n-above) {
+    padding: var(--spacing-5);
   }
 }
 
 .number {
+  /* Mobile baseline */
   margin-bottom: var(--spacing-2);
   color: var(--accent-secondary);
-  font-size: var(--font-size-h3);
+  font-size: var(--font-size-h4);
   font-weight: var(--font-weight-bold);
   letter-spacing: var(--letter-spacing-normal);
   line-height: var(--line-height-tight);
 
-  @media (--md-n-below) {
-    font-size: var(--font-size-h4);
+  /* Desktop: larger font */
+  @media (--md-n-above) {
+    font-size: var(--font-size-h3);
   }
 }
 

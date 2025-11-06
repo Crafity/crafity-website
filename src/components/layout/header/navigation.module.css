@@ -1,18 +1,21 @@
 .navigation {
+  /* Mobile baseline */
   display: flex;
-  align-items: center;
-  padding-top: var(--spacing-2);
+  align-items: flex-start;
+  padding-top: 0;
   font-family: var(--mono-font-family);
   font-size: var(--font-size-terminal);
-  gap: var(--spacing-12);
+  gap: var(--spacing-6);
 
-  @media (--sm-n-below) {
-    align-items: flex-start;
+  /* Tablet: center alignment */
+  @media (--sm-n-above) {
+    align-items: center;
   }
 
-  @media (--md-n-below) {
-    padding-top: 0;
-    gap: var(--spacing-6);
+  /* Desktop: larger gap and top padding */
+  @media (--md-n-above) {
+    padding-top: var(--spacing-2);
+    gap: var(--spacing-12);
   }
 }
 

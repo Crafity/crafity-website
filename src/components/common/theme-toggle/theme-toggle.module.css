@@ -10,6 +10,11 @@
   cursor: pointer;
   transition: var(--transition-all);
 
+  svg {
+    display: block;
+    transition: var(--transition-all);
+  }
+
   &:hover svg {
     color: var(--accent-secondary);
     filter: drop-shadow(1px 1px 20px rgb(149 197 239 / 80%));
@@ -19,10 +24,5 @@
 
   &:active svg {
     color: var(--accent-primary);
-  }
-
-  svg {
-    display: block;
-    transition: var(--transition-all);
   }
 }

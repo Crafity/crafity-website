@@ -1,7 +1,9 @@
 .section {
-  padding: var(--spacing-24) 0; /* 96px */
+  /* Mobile baseline: 64px */
+  padding: var(--spacing-16) 0;
 
-  @media (--lg-n-below) {
-    padding: var(--spacing-16) 0; /* 64px */
+  /* Desktop: 96px */
+  @media (--lg-n-above) {
+    padding: var(--spacing-24) 0;
   }
 }

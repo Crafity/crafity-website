@@ -1,9 +1,11 @@
 .page-container {
+  /* Mobile baseline */
   max-width: 1400px;
-  padding: 0 var(--spacing-14);
+  padding: 0 var(--spacing-5);
   margin: 0 auto;
 
-  @media (--sm-n-below) {
-    padding: 0 var(--spacing-5);
+  /* Desktop: larger padding */
+  @media (--sm-n-above) {
+    padding: 0 var(--spacing-14);
   }
 }
