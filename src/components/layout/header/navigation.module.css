@@ -10,12 +10,12 @@
   /* Tablet: center alignment */
   @media (--sm-n-above) {
     align-items: center;
+    justify-content: flex-end;
   }
 
   /* Desktop: larger gap and top padding */
   @media (--md-n-above) {
-    padding-top: var(--spacing-2);
-    gap: var(--spacing-12);
+    gap: var(--spacing-4);
   }
 }
 
@@ -23,6 +23,7 @@
   color: var(--text-primary);
   text-decoration: none;
   transition: var(--transition-all);
+  white-space: nowrap;
 
   &::before {
     color: var(--accent-primary);

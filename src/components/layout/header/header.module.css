@@ -1,17 +1,66 @@
 .header {
-  /* Mobile baseline: stacked layout */
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
+  /* Mobile baseline: 2 rows, logo + toggle on first row */
+  display: grid;
+  align-items: center;
   padding: var(--spacing-10) 0;
   border-bottom: var(--border-default);
   gap: var(--spacing-6);
+  grid-template-columns: 1fr auto auto;
+  grid-template-rows: auto auto;
 
-  /* Desktop: horizontal layout */
+  /* Tablet: single row, 4 columns */
   @media (--sm-n-above) {
-    flex-direction: row;
-    align-items: center;
-    gap: 0;
+    grid-template-columns: minmax(200px, auto) 1fr auto auto;
+    grid-template-rows: auto;
+  }
+
+  /* Desktop: 3 columns, more space for logo */
+  @media (--md-n-above) {
+    grid-template-columns: auto 1fr auto;
+  }
+}
+
+.header > :nth-child(1) {
+  /* Logo: span 2 columns on mobile */
+  grid-column: 1 / 3;
+  grid-row: 1;
+
+  /* Tablet: single column */
+  @media (--sm-n-above) {
+    grid-column: 1;
+    grid-row: 1;
+  }
+}
+
+.header > :nth-child(2) {
+  /* Navigation: span all 3 columns, second row on mobile */
+  grid-column: 1 / -1;
+  grid-row: 2;
+
+  /* Tablet: columns 2-3 */
+  @media (--sm-n-above) {
+    grid-column: 2 / 4;
+    grid-row: 1;
+  }
+
+  /* Desktop: column 2 */
+  @media (--md-n-above) {
+    grid-column: 2;
+  }
+}
+
+.header > :nth-child(3) {
+  /* ThemeToggle: last column, first row (all breakpoints) */
+  grid-column: 3;
+  grid-row: 1;
+
+  /* Tablet: column 4 */
+  @media (--sm-n-above) {
+    grid-column: 4;
+  }
+
+  /* Desktop: column 3 */
+  @media (--md-n-above) {
+    grid-column: 3;
   }
 }

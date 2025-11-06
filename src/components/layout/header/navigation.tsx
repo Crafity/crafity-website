@@ -1,7 +1,6 @@
 import styles from './navigation.module.css'
 
 import { Link } from '@/components/common/link/link'
-import { ThemeToggle } from '@/components/common/theme-toggle/theme-toggle'
 
 export function Navigation() {
   return (
@@ -15,7 +14,6 @@ export function Navigation() {
       <Link className={styles.link} href="#contact">
         Contact
       </Link>
-      <ThemeToggle />
     </nav>
   )
 }

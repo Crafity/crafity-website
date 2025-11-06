@@ -1,16 +1,24 @@
 .logo-container {
   /* Mobile baseline */
   display: flex;
+  flex-wrap: nowrap;
   align-items: flex-start;
-  gap: var(--spacing-4);
+
+  /* gap: var(--spacing-4); */
 
   /* Desktop: center alignment */
   @media (--md-n-above) {
-    align-items: center;
+    /* align-items: center; */
   }
 }
 
 .terminal-prompt {
+  display: flex;
+  width: var(--font-size-sm);
+  min-width: var(--font-size-sm);
+  height: var(--font-size-sm);
+  flex: 0 0;
+  align-items: center;
   color: var(--accent-secondary);
   font-family: var(--mono-font-family);
 }
@@ -18,7 +26,7 @@
 .logo-wrapper {
   /* Mobile baseline: stacked */
   display: flex;
-  flex-direction: column;
+  flex-flow: column wrap;
   align-items: flex-start;
   gap: var(--spacing-1);
 
@@ -26,11 +34,13 @@
   @media (--md-n-above) {
     flex-direction: row;
     align-items: center;
-    gap: var(--spacing-5);
+
+    /* gap: var(--spacing-5); */
   }
 }
 
 .logo {
+  margin-right: var(--spacing-5);
   color: var(--text-primary);
   font-family: var(--accent-font-family);
   font-size: var(--font-size-sm);
@@ -44,4 +54,5 @@
   font-size: var(--font-size-xs);
   letter-spacing: var(--letter-spacing-wide);
   opacity: 0.8;
+  white-space: nowrap;
 }
