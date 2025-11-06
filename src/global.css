@@ -5,12 +5,29 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+
+  /* Remove tap highlight on mobile webkit browsers */
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Smooth scrolling for anchor links (respects user motion preferences) */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
 body {
   background: var(--bg-primary);
   color: var(--text-primary);
   font-family: var(--font-family);
+
+  /* Better font rendering on MacOS/iOS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Prevent iOS Safari from auto-adjusting font sizes in landscape */
+  text-size-adjust: 100%;
 
   &::before {
     position: fixed;
@@ -37,6 +54,10 @@ h5,
 h6 {
   font-family: var(--accent-font-family);
   font-weight: var(--font-weight-bold);
+  overflow-wrap: break-word;
+
+  /* Better text wrapping for headings - balances text across lines */
+  text-wrap: balance;
 }
 
 h1 {
@@ -76,6 +97,28 @@ h6 {
 p {
   font-size: var(--font-size-base);
   line-height: var(--line-height-loose);
+  overflow-wrap: break-word;
+
+  /* Better text wrapping for paragraphs - avoids orphans */
+  text-wrap: pretty;
+}
+
+/* Better defaults for media elements */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* Better defaults for form elements */
+button,
+input,
+select,
+textarea {
+  font: inherit;
 }
 
 code,

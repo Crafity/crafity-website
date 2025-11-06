@@ -28,7 +28,9 @@
 
 .stat {
   /* Mobile: max 150px breed, of 80vw als dat kleiner is */
-  flex: 0 0 min(80vw, 250px);
+
+  /* flex: 0 0 min(80vw, 180px); */
+  flex: 0 0 50vw;
   scroll-snap-align: center;
 
   @media (--sm-n-above) {
