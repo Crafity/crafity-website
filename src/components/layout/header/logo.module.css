@@ -2,7 +2,7 @@
   /* Mobile baseline */
   display: flex;
   flex-wrap: nowrap;
-  align-items: flex-start;
+  align-items: center;
 
   /* gap: var(--spacing-4); */
 
@@ -10,17 +10,6 @@
   @media (--md-n-above) {
     /* align-items: center; */
   }
-}
-
-.terminal-prompt {
-  display: flex;
-  width: var(--font-size-sm);
-  min-width: var(--font-size-sm);
-  height: var(--font-size-sm);
-  flex: 0 0;
-  align-items: center;
-  color: var(--accent-secondary);
-  font-family: var(--mono-font-family);
 }
 
 .logo-wrapper {
@@ -39,13 +28,33 @@
   }
 }
 
+.logo-icon {
+  width: 64px;
+  min-width: 64px;
+}
+
 .logo {
   margin-right: var(--spacing-5);
   color: var(--text-primary);
   font-family: var(--accent-font-family);
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-lg);
   font-weight: var(--font-weight-bold);
   letter-spacing: var(--letter-spacing-wider);
+
+  /* Mobile: slightly smaller */
+  @media (--xs-only) {
+    margin-right: var(--spacing-4);
+  }
+
+  /* Tablet: adjust spacing for smaller icon */
+  @media (--sm-n-above) and (--md-n-below) {
+    margin-right: var(--spacing-4);
+  }
+
+  /* Desktop: slightly larger for impact */
+  @media (--lg-n-above) {
+    margin-right: var(--spacing-6);
+  }
 }
 
 .tagline {
@@ -55,4 +64,20 @@
   letter-spacing: var(--letter-spacing-wide);
   opacity: 0.8;
   white-space: nowrap;
+
+  /* Mobile: wrap to new line if too cramped */
+  @media (--xs-only) {
+    flex-basis: 100%;
+    font-size: 11px;
+  }
+
+  /* Small tablets: hide if space is tight */
+  @media (--sm-only) {
+    display: none;
+  }
+
+  /* Medium and up: always visible */
+  @media (--md-n-above) {
+    display: block;
+  }
 }
