@@ -3,6 +3,10 @@
   border: var(--border-default);
   background: var(--bg-secondary);
   text-align: center;
+
+  @media (--md-n-below) {
+    padding: var(--spacing-4);
+  }
 }
 
 .number {
@@ -12,6 +16,10 @@
   font-weight: var(--font-weight-bold);
   letter-spacing: var(--letter-spacing-normal);
   line-height: var(--line-height-tight);
+
+  @media (--md-n-below) {
+    font-size: var(--font-size-h4);
+  }
 }
 
 .label {

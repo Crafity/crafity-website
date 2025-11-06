@@ -13,33 +13,77 @@ import { INITIAL_VIEWPORTS } from 'storybook/viewport'
 import { withTheme } from './decorators/theme-decorator'
 import './preview.css'
 
+/**
+ * T-shirt Sizing Viewports
+ * Aligned with breakpoints.css system
+ *
+ * xs  = 0-639px      (Extra Small - Mobile)
+ * sm  = 640-767px    (Small - Large Mobile)
+ * md  = 768-1023px   (Medium - Tablet)
+ * lg  = 1024-1279px  (Large - Laptop)
+ * xl  = 1280-1535px  (Extra Large - Desktop)
+ * 2xl = 1536-1919px  (2x Extra Large - Large Desktop)
+ * 3xl = 1920px+      (3x Extra Large - Ultra Wide)
+ */
 const customViewports = {
-  lg: {
-    name: 'lg',
+  xs: {
+    name: 'XS - Extra Small (375px)',
     styles: {
-      height: '801px',
-      width: '1440px',
+      height: '667px',
+      width: '375px',
     },
-    type: 'desktop',
+    type: 'mobile',
+  },
+  sm: {
+    name: 'SM - Small (640px)',
+    styles: {
+      height: '800px',
+      width: '640px',
+    },
+    type: 'mobile',
   },
   md: {
-    name: 'md',
+    name: 'MD - Medium (768px)',
     styles: {
-      height: '801px',
-      width: '1024px',
+      height: '1024px',
+      width: '768px',
     },
     type: 'tablet',
   },
-  responsive: {
-    name: 'Responsive',
-  },
-  sm: {
-    name: 'sm',
+  lg: {
+    name: 'LG - Large (1024px)',
     styles: {
-      height: '801px',
-      width: '414px',
+      height: '768px',
+      width: '1024px',
     },
-    type: 'mobile',
+    type: 'desktop',
+  },
+  xl: {
+    name: 'XL - Extra Large (1280px)',
+    styles: {
+      height: '800px',
+      width: '1280px',
+    },
+    type: 'desktop',
+  },
+  '2xl': {
+    name: '2XL - 2x Extra Large (1536px)',
+    styles: {
+      height: '864px',
+      width: '1536px',
+    },
+    type: 'desktop',
+  },
+  '3xl': {
+    name: '3XL - 3x Extra Large (1920px)',
+    styles: {
+      height: '1080px',
+      width: '1920px',
+    },
+    type: 'desktop',
+  },
+  responsive: {
+    name: 'Responsive (100%)',
   },
 }
 

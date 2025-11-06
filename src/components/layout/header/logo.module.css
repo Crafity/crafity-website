@@ -4,13 +4,25 @@
   gap: var(--spacing-4);
 
   @media (--md-n-below) {
-    flex-wrap: wrap;
+    align-items: flex-start;
   }
 }
 
 .terminal-prompt {
   color: var(--accent-secondary);
   font-family: var(--mono-font-family);
+}
+
+.logo-wrapper {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-5);
+
+  @media (--md-n-below) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-1);
+  }
 }
 
 .logo {
@@ -22,16 +34,9 @@
 }
 
 .tagline {
-  margin-left: var(--spacing-5);
   color: var(--accent-secondary);
   font-family: var(--mono-font-family);
   font-size: 13px;
   letter-spacing: var(--letter-spacing-wide);
   opacity: 0.8;
-
-  @media (--md-n-below) {
-    flex-basis: 100%;
-    margin-left: 0;
-    padding-left: calc(var(--spacing-4) + 1ch);
-  }
 }

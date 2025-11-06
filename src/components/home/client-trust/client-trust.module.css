@@ -34,6 +34,14 @@
     color: var(--accent-primary);
     font-size: var(--font-size-h6);
   }
+
+  @media (--md-n-below) {
+    gap: var(--spacing-4);
+
+    .client {
+      font-size: var(--font-size-body-large);
+    }
+  }
 }
 
 .supporting {
@@ -53,6 +61,18 @@
 
     &:last-child::after {
       content: '';
+    }
+  }
+
+  @media (--md-n-below) {
+    gap: var(--spacing-3);
+
+    .client {
+      font-size: var(--font-size-terminal);
+
+      &::after {
+        margin-left: var(--spacing-3);
+      }
     }
   }
 }

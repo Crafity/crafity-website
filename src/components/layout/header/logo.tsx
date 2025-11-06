@@ -4,8 +4,10 @@ export function Logo() {
   return (
     <div className={styles['logo-container']}>
       <span className={styles['terminal-prompt']}>$</span>
-      <div className={styles.logo}>CRAFITY</div>
-      <div className={styles.tagline}>// Built with passion</div>
+      <div className={styles['logo-wrapper']}>
+        <div className={styles.logo}>CRAFITY</div>
+        <div className={styles.tagline}>// Built with passion</div>
+      </div>
     </div>
   )
 }

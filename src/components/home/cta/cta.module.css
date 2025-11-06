@@ -12,6 +12,11 @@
   font-weight: var(--font-weight-bold);
   letter-spacing: var(--letter-spacing-tight);
   line-height: var(--line-height-normal);
+
+  @media (--md-n-below) {
+    margin-bottom: var(--spacing-4);
+    font-size: var(--font-size-h3);
+  }
 }
 
 .description {
@@ -20,6 +25,15 @@
   font-family: var(--font-family);
   font-size: var(--font-size-body-large);
   line-height: var(--line-height-relaxed);
+
+  @media (--md-n-below) {
+    margin-bottom: var(--spacing-8);
+    font-size: var(--font-size-body);
+  }
+}
+
+.prompt {
+  color: var(--accent-secondary);
 }
 
 .command {
@@ -43,10 +57,6 @@
   &:hover .prompt {
     color: var(--bg-primary);
   }
-}
-
-.prompt {
-  color: var(--accent-secondary);
 }
 
 .contact {

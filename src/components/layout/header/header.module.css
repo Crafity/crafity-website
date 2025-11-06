@@ -5,7 +5,7 @@
   padding: var(--spacing-10) 0;
   border-bottom: var(--border-default);
 
-  @media (--md-n-below) {
+  @media (--sm-n-below) {
     flex-direction: column;
     gap: var(--spacing-6);
   }

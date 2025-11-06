@@ -7,11 +7,11 @@
   text-align: left;
 
   @media (--lg-n-below) {
-    font-size: var(--spacing-14);
+    font-size: var(--font-size-hero-lg);
   }
 
   @media (--md-n-below) {
-    font-size: var(--font-size-h3);
+    font-size: var(--font-size-hero-md);
   }
 }
 

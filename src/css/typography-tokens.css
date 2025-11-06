@@ -5,7 +5,10 @@
   --accent-font-family: 'Space Grotesk', sans-serif;
 
   /* Font Sizes */
-  --font-size-hero: 96px;
+  --font-size-hero: 92px;
+  --font-size-hero-lg: 80px;
+  --font-size-hero-md: 54px;
+  --font-size-hero-sm: 96px;
   --font-size-h1: 60px;
   --font-size-h2: 52px;
   --font-size-h3: 40px;

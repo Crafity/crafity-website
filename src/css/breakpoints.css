@@ -1,24 +1,47 @@
-/* sm */
-@custom-media --sm-only (0 <= width < 576px);
-@custom-media --sm-n-above (width >= 576px);
-@custom-media --sm-n-below (width < 576px);
+/**
+ * Breakpoint System - T-shirt Sizing
+ * Based on modern content-first responsive design principles
+ *
+ * xs  = 0-639px      (Extra Small - Mobile)
+ * sm  = 640-767px    (Small - Large Mobile)
+ * md  = 768-1023px   (Medium - Tablet)
+ * lg  = 1024-1279px  (Large - Laptop)
+ * xl  = 1280-1535px  (Extra Large - Desktop)
+ * 2xl = 1536-1919px  (2x Extra Large - Large Desktop)
+ * 3xl = 1920px+      (3x Extra Large - Ultra Wide)
+ */
 
-/* md */
-@custom-media --md-only (576px <= width < 768px);
-@custom-media --md-n-above (width >= 576px);
-@custom-media --md-n-below (width < 576px);
+/* xs - Extra Small (Mobile) */
+@custom-media --xs-only (width < 640px);
+@custom-media --xs-n-above (width >= 0px);
+@custom-media --xs-n-below (width < 640px);
 
-/* lg */
-@custom-media --lg-only (768px <= width < 1024px);
-@custom-media --lg-n-above (width >= 768px);
-@custom-media --lg-n-below (width < 768px);
+/* sm - Small (Large Mobile) */
+@custom-media --sm-only (640px <= width < 768px);
+@custom-media --sm-n-above (width >= 640px);
+@custom-media --sm-n-below (width < 640px);
 
-/* xl */
-@custom-media --xl-only (1024px <= width < 1440px);
-@custom-media --xl-n-above (width >= 1024px);
-@custom-media --xl-n-below (width < 1024px);
+/* md - Medium (Tablet) */
+@custom-media --md-only (768px <= width < 1024px);
+@custom-media --md-n-above (width >= 768px);
+@custom-media --md-n-below (width < 768px);
 
-/* xxl */
-@custom-media --xxl-only (1440px <= width);
-@custom-media --xxl-n-above (width >= 1440px);
-@custom-media --xxl-n-below (width < 1440px);
+/* lg - Large (Laptop) */
+@custom-media --lg-only (1024px <= width < 1280px);
+@custom-media --lg-n-above (width >= 1024px);
+@custom-media --lg-n-below (width < 1024px);
+
+/* xl - Extra Large (Desktop) */
+@custom-media --xl-only (1280px <= width < 1536px);
+@custom-media --xl-n-above (width >= 1280px);
+@custom-media --xl-n-below (width < 1280px);
+
+/* 2xl - 2x Extra Large (Large Desktop) */
+@custom-media --2xl-only (1536px <= width < 1920px);
+@custom-media --2xl-n-above (width >= 1536px);
+@custom-media --2xl-n-below (width < 1536px);
+
+/* 3xl - 3x Extra Large (Ultra Wide) */
+@custom-media --3xl-only (width >= 1920px);
+@custom-media --3xl-n-above (width >= 1920px);
+@custom-media --3xl-n-below (width < 1920px);
