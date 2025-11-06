@@ -1,0 +1,111 @@
+.container {
+  /* Mobile baseline */
+  max-width: 900px;
+  margin: 0 auto;
+  padding: var(--spacing-16) 0;
+
+  /* Desktop: larger padding */
+  @media (--lg-n-above) {
+    padding: var(--spacing-24) 0 var(--spacing-32);
+  }
+}
+
+.header {
+  margin-bottom: var(--spacing-12);
+  text-align: center;
+
+  @media (--md-n-above) {
+    margin-bottom: var(--spacing-16);
+  }
+}
+
+.title {
+  margin-bottom: var(--spacing-4);
+}
+
+.lastUpdated {
+  color: var(--text-tertiary);
+  font-size: var(--font-size-base-sm);
+}
+
+.section {
+  margin-bottom: var(--spacing-12);
+
+  @media (--md-n-above) {
+    margin-bottom: var(--spacing-16);
+  }
+}
+
+.section h2 {
+  margin-bottom: var(--spacing-6);
+  color: var(--text-primary);
+}
+
+.section h3 {
+  margin-top: var(--spacing-8);
+  margin-bottom: var(--spacing-4);
+  color: var(--text-primary);
+}
+
+.section p {
+  margin-bottom: var(--spacing-4);
+  color: var(--text-secondary);
+}
+
+.section ul {
+  margin: var(--spacing-4) 0 var(--spacing-6);
+  padding-left: var(--spacing-6);
+  color: var(--text-secondary);
+}
+
+.section li {
+  margin-bottom: var(--spacing-2);
+  line-height: var(--line-height-relaxed);
+}
+
+.section li strong {
+  color: var(--text-primary);
+}
+
+.section a {
+  color: var(--accent-secondary);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color 0.2s ease;
+}
+
+.section a:hover {
+  color: var(--accent-primary);
+}
+
+.contactBox {
+  margin: var(--spacing-6) 0;
+  padding: var(--spacing-6);
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-default-color);
+  border-radius: 8px;
+}
+
+.contactBox strong {
+  display: block;
+  margin-bottom: var(--spacing-3);
+  color: var(--text-primary);
+  font-size: var(--font-size-base-lg);
+}
+
+.contactBox ul {
+  margin: 0;
+  padding-left: var(--spacing-6);
+  list-style: none;
+}
+
+.contactBox li {
+  margin-bottom: var(--spacing-2);
+  color: var(--text-secondary);
+}
+
+.contactBox li::before {
+  content: '→';
+  margin-right: var(--spacing-2);
+  color: var(--accent-secondary);
+}

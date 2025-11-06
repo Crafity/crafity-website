@@ -1,8 +1,9 @@
+import { Link } from '@tanstack/react-router'
 import styles from './logo.module.css'
 
 export function Logo() {
   return (
-    <div className={styles['logo-container']}>
+    <Link className={styles['logo-container']} to={'/'}>
       <picture className={styles['logo-icon']}>
         <source
           media="(prefers-color-scheme: light)"
@@ -19,6 +20,6 @@ export function Logo() {
         <div className={styles.logo}>CRAFITY</div>
         <div className={styles.tagline}>// Built with passion</div>
       </div>
-    </div>
+    </Link>
   )
 }
