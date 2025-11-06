@@ -1,12 +1,16 @@
 .navigation {
   display: flex;
+  align-items: center;
   padding-top: var(--spacing-2);
   font-family: var(--mono-font-family);
   font-size: var(--font-size-terminal);
   gap: var(--spacing-12);
 
+  @media (--sm-n-below) {
+    align-items: flex-start;
+  }
+
   @media (--md-n-below) {
-    align-items: center;
     padding-top: 0;
     gap: var(--spacing-6);
   }

@@ -5,23 +5,24 @@
   height: var(--spacing-10);
   align-items: center;
   justify-content: center;
-  border: var(--border-width-thin) solid var(--border-default-color);
+  border: 0;
   color: var(--text-secondary);
   cursor: pointer;
   transition: var(--transition-all);
 
-  &:hover {
-    border-color: var(--accent-secondary);
+  &:hover svg {
     color: var(--accent-secondary);
-    box-shadow: 0 0 20px rgba(149, 197, 239, 0.2);
+    filter: drop-shadow(1px 1px 20px rgb(149 197 239 / 80%));
+
+    /* filter: box-shadow(0 0 20px rgb(149 197 239 / 20%)); */
   }
 
-  &:active {
-    border-color: var(--accent-primary);
+  &:active svg {
     color: var(--accent-primary);
   }
 
   svg {
     display: block;
+    transition: var(--transition-all);
   }
 }
