@@ -49,6 +49,7 @@
   color: var(--accent-secondary);
   font-family: var(--mono-font-family);
   font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
   letter-spacing: var(--letter-spacing-wide);
   opacity: 0.8;
 }

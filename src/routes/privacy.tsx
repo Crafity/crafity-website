@@ -7,6 +7,7 @@ import { PrivacyPolicy } from '@/components/privacy/privacy-policy'
 
 export const Route = createFileRoute('/privacy')({
   component: RouteComponent,
+  preload: true,
 })
 
 function RouteComponent() {

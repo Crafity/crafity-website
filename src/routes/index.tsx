@@ -13,6 +13,7 @@ import { PageContainer } from '@/components/page/page-container'
 
 export const Route = createFileRoute('/')({
   component: Home,
+  preload: true,
 })
 
 function Home() {

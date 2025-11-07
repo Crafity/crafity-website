@@ -15,6 +15,9 @@
     "docker:rm": "docker image rm crafity-start -f",
     "docker:build": "docker build -t crafity-start .",
     "docker:run": "docker run -v ./count.txt:/app/count.txt -p 3000:3000 crafity-start",
+    "docker:build:run": "pnpm docker:build && pnpm docker:run",
+    "docker:rebuild": "pnpm docker:rm && pnpm docker:build",
+    "docker:rebuild:run": "pnpm docker:rebuild && pnpm docker:run",
     "storybook:build": "STORYBOOK=true storybook build && mv ./storybook-static ./public/storybook",
     "storybook:dev": "storybook dev -p 6006",
     "storybook:start": "http-server ./storybook-static"

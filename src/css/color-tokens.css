@@ -40,7 +40,9 @@
 
   /* Accents */
   --accent-primary: #ff4500;
-  --accent-secondary: #769cbd;
+
+  /* --accent-secondary: #769cbd; */
+  --accent-secondary: #1f70b7;
 
   /* Borders */
   --border-subtle-color: #e8e6e1;
