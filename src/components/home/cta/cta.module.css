@@ -1,39 +1,9 @@
-.container {
-  max-width: 800px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.title {
-  /* Mobile baseline */
-  margin-bottom: var(--spacing-4);
-  color: var(--text-primary);
-  font-family: var(--accent-font-family);
-  font-size: var(--font-size-lg);
-  font-weight: var(--font-weight-bold);
-  letter-spacing: var(--letter-spacing-tight);
-  line-height: var(--line-height-normal);
-
-  /* Desktop: larger margin and font */
-  @media (--md-n-above) {
-    margin-bottom: var(--spacing-6);
-    font-size: var(--font-size-lg);
-  }
+.stack {
+  align-items: center;
 }
 
 .description {
-  /* Mobile baseline */
-  margin-bottom: var(--spacing-8);
-  color: var(--text-primary);
-  font-family: var(--font-family);
-  font-size: var(--font-size-base);
-  line-height: var(--line-height-relaxed);
-
-  /* Desktop: larger margin and font */
-  @media (--md-n-above) {
-    margin-bottom: var(--spacing-10);
-    font-size: var(--font-size-base-lg);
-  }
+  max-width: 600px;
 }
 
 .prompt {
@@ -64,8 +34,5 @@
 }
 
 .contact {
-  margin-top: var(--spacing-8);
-  color: var(--text-secondary);
-  font-family: var(--mono-font-family);
-  font-size: var(--font-size-base-sm);
+  /* No additional styling needed - handled by Text component */
 }

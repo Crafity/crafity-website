@@ -1,0 +1,12 @@
+.container {
+  max-width: 900px;
+  margin: 0;
+}
+
+.indent {
+  margin-left: var(--spacing-8);
+
+  @media (--md-n-above) {
+    margin-left: var(--spacing-24);
+  }
+}

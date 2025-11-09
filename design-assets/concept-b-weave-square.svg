@@ -1,0 +1,64 @@
+<!-- Concept B: "The Weave" - Square Icon -->
+<svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="256" height="256" rx="48" fill="#0A0A0A"/>
+
+  <!-- Background subtle grid -->
+  <circle cx="64" cy="64" r="4" fill="#95C5EF" opacity="0.15"/>
+  <circle cx="96" cy="64" r="4" fill="#95C5EF" opacity="0.15"/>
+  <circle cx="128" cy="64" r="4" fill="#95C5EF" opacity="0.15"/>
+  <circle cx="160" cy="64" r="4" fill="#95C5EF" opacity="0.15"/>
+  <circle cx="192" cy="64" r="4" fill="#95C5EF" opacity="0.15"/>
+
+  <circle cx="64" cy="96" r="4" fill="#95C5EF" opacity="0.15"/>
+  <circle cx="96" cy="96" r="4" fill="#95C5EF" opacity="0.15"/>
+  <circle cx="128" cy="96" r="4" fill="#95C5EF" opacity="0.15"/>
+  <circle cx="160" cy="96" r="4" fill="#95C5EF" opacity="0.15"/>
+  <circle cx="192" cy="96" r="4" fill="#95C5EF" opacity="0.15"/>
+
+  <circle cx="64" cy="128" r="4" fill="#95C5EF" opacity="0.15"/>
+  <circle cx="96" cy="128" r="4" fill="#95C5EF" opacity="0.15"/>
+  <circle cx="128" cy="128" r="4" fill="#95C5EF" opacity="0.15"/>
+  <circle cx="160" cy="128" r="4" fill="#95C5EF" opacity="0.15"/>
+  <circle cx="192" cy="128" r="4" fill="#95C5EF" opacity="0.15"/>
+
+  <circle cx="64" cy="160" r="4" fill="#95C5EF" opacity="0.15"/>
+  <circle cx="96" cy="160" r="4" fill="#95C5EF" opacity="0.15"/>
+  <circle cx="128" cy="160" r="4" fill="#95C5EF" opacity="0.15"/>
+  <circle cx="160" cy="160" r="4" fill="#95C5EF" opacity="0.15"/>
+  <circle cx="192" cy="160" r="4" fill="#95C5EF" opacity="0.15"/>
+
+  <circle cx="64" cy="192" r="4" fill="#95C5EF" opacity="0.15"/>
+  <circle cx="96" cy="192" r="4" fill="#95C5EF" opacity="0.15"/>
+  <circle cx="128" cy="192" r="4" fill="#95C5EF" opacity="0.15"/>
+  <circle cx="160" cy="192" r="4" fill="#95C5EF" opacity="0.15"/>
+  <circle cx="192" cy="192" r="4" fill="#95C5EF" opacity="0.15"/>
+
+  <!-- Diagonal weave 1 (top-left to bottom-right) - bright blue -->
+  <circle cx="70" cy="70" r="7" fill="#95C5EF" opacity="0.9"/>
+  <circle cx="95" cy="95" r="7" fill="#95C5EF" opacity="0.95"/>
+  <circle cx="120" cy="120" r="7" fill="#95C5EF" opacity="1"/>
+  <circle cx="145" cy="145" r="7" fill="#95C5EF" opacity="0.95"/>
+  <circle cx="170" cy="170" r="7" fill="#95C5EF" opacity="0.9"/>
+
+  <!-- Diagonal weave 2 (top-right to bottom-left) - bright blue -->
+  <circle cx="186" cy="70" r="7" fill="#95C5EF" opacity="0.9"/>
+  <circle cx="161" cy="95" r="7" fill="#95C5EF" opacity="0.95"/>
+  <circle cx="136" cy="120" r="7" fill="#95C5EF" opacity="1"/>
+  <circle cx="111" cy="145" r="7" fill="#95C5EF" opacity="0.95"/>
+  <circle cx="86" cy="170" r="7" fill="#95C5EF" opacity="0.9"/>
+
+  <!-- Intersection points - orange accent -->
+  <circle cx="128" cy="128" r="9" fill="#FF4500" opacity="1"/>
+
+  <!-- Secondary intersections -->
+  <circle cx="103" cy="103" r="6" fill="#FF4500" opacity="0.7"/>
+  <circle cx="153" cy="103" r="6" fill="#FF4500" opacity="0.7"/>
+  <circle cx="103" cy="153" r="6" fill="#FF4500" opacity="0.7"/>
+  <circle cx="153" cy="153" r="6" fill="#FF4500" opacity="0.7"/>
+
+  <!-- Edge fade dots -->
+  <circle cx="55" cy="55" r="5" fill="#95C5EF" opacity="0.5"/>
+  <circle cx="201" cy="55" r="5" fill="#95C5EF" opacity="0.5"/>
+  <circle cx="55" cy="201" r="5" fill="#95C5EF" opacity="0.5"/>
+  <circle cx="201" cy="201" r="5" fill="#95C5EF" opacity="0.5"/>
+</svg>

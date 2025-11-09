@@ -1,15 +1,3 @@
-.hero {
-  /* Mobile baseline */
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-12);
-
-  /* Desktop: larger gap */
-  @media (--md-n-above) {
-    gap: var(--spacing-20);
-  }
-}
-
 .terminal-window {
   width: 100%;
   max-width: 730px;
@@ -27,62 +15,8 @@
   color: var(--text-secondary);
 }
 
-.progress {
-  /* Mobile baseline: stacked */
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  margin-bottom: var(--spacing-4);
-  gap: var(--spacing-3);
-
-  /* Desktop: horizontal */
-  @media (--md-n-above) {
-    flex-direction: row;
-    align-items: center;
-  }
-}
-
-.progress-label {
-  color: var(--text-secondary);
-  white-space: nowrap;
-}
-
-.progress-bar {
-  position: relative;
-  width: 100%;
-  max-width: 400px;
-  height: 6px;
-  background: var(--border-default-color);
-}
-
-.progress-fill {
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    90deg,
-    var(--accent-secondary),
-    var(--accent-primary)
-  );
-}
-
-.progress-percent {
-  color: var(--accent-secondary);
-  white-space: nowrap;
-}
-
 .success {
   color: var(--accent-secondary);
-}
-
-/* Responsive text visibility */
-
-/* Mobile baseline: show mobile-text, hide desktop-text */
-.desktop-text {
-  display: none;
-}
-
-.mobile-text {
-  display: inline;
 }
 
 .no-wrap {
@@ -95,16 +29,8 @@
   font-size: var(--font-size-xs);
 }
 
-/* Desktop: show desktop-text, hide mobile-text, reset font size */
+/* Desktop: reset font size */
 @media (--md-n-above) {
-  .desktop-text {
-    display: inline;
-  }
-
-  .mobile-text {
-    display: none;
-  }
-
   .terminal-window,
   .terminal-window * {
     font-size: inherit;

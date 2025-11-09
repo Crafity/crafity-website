@@ -1,12 +1,17 @@
 import { clsx } from 'clsx'
 
+import { Dots } from '../../common/dots/dots'
+import { Heading } from '../../common/heading/heading'
+import { Link } from '../../common/link/link'
 import { TechStack } from '../../common/tech-stack/tech-stack'
+import { Text } from '../../common/text/text'
 
 import styles from './project-card.module.css'
 
 interface ProjectCardProps {
   client: string
   description: string
+  href?: string
   large?: boolean
   tags: string[]
   title: string
@@ -15,6 +20,7 @@ interface ProjectCardProps {
 export function ProjectCard({
   client,
   description,
+  href,
   large,
   tags,
   title,
@@ -22,23 +28,31 @@ export function ProjectCard({
   return (
     <div className={clsx(styles.card, large && styles.large)}>
       <div className={styles.dots}>
-        <span className={styles.dot} data-color="red" />
-        <span className={styles.dot} data-color="yellow" />
-        <span className={styles.dot} data-color="blue" />
+        <Dots />
       </div>
 
       <div className={styles.header}>
-        <div className={styles.client}>{client}</div>
-        <div className={styles.title}>{title}</div>
+        <Text className={styles.client} size="xs" variant="label">
+          {client}
+        </Text>
+        <Heading className={styles.title} level={3} size="lg">
+          {title}
+        </Heading>
       </div>
 
-      <p className={styles.description}>{description}</p>
+      <Text className={styles.description}>{description}</Text>
 
       <TechStack tags={tags} />
 
-      <button className={styles.link} type="button">
-        → View case study
-      </button>
+      {href ? (
+        <Link unstyled className={styles.link} href={href}>
+          → View case study
+        </Link>
+      ) : (
+        <button className={styles.link} type="button">
+          → View case study
+        </button>
+      )}
     </div>
   )
 }

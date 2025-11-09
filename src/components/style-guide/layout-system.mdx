@@ -1,0 +1,585 @@
+import { Meta } from '@storybook/blocks'
+import { Container } from '../layout/container/container'
+import { Stack } from '../layout/stack/stack'
+import { Section } from '../layout/section/section'
+import { Grid } from '../layout/grid/grid'
+import { Heading } from '../common/heading/heading'
+import { Text } from '../common/text/text'
+import { Divider } from '../common/divider/divider'
+
+<Meta title="Style Guide/Layout System" />
+
+# Layout System
+
+Our layout system follows industry best practices from **Material-UI**, **Chakra UI**, and **Shopify Polaris**.
+It's built on **composition** - combining simple primitives to create complex layouts.
+
+---
+
+## Core Principles
+
+1. **Semantic HTML** - Use proper HTML5 elements (`<section>`, `<h1>-<h6>`, `<p>`)
+2. **Composition over configuration** - Combine simple components rather than creating complex ones
+3. **Responsive by default** - Mobile-first approach with progressive enhancement
+4. **Design tokens only** - No hardcoded values, everything uses tokens from `src/css/`
+
+---
+
+## Content Width Scale
+
+We use **5 semantic content widths** instead of arbitrary pixel values:
+
+| Size            | Width  | Use Case                     | Example                                |
+| --------------- | ------ | ---------------------------- | -------------------------------------- |
+| **narrow**      | 600px  | Forms, CTAs, focused content | Contact forms, newsletter signup       |
+| **base**        | 900px  | Long-form reading            | Articles, case studies, privacy policy |
+| **comfortable** | 1000px | Slightly wider content       | Blog posts with sidebars               |
+| **wide**        | 1200px | Multi-column layouts         | Service grids, team pages              |
+| **full**        | 1400px | Full-width sections          | Hero sections, featured work           |
+
+### When to use which size?
+
+- **narrow**: Optimal for forms (45-75 characters per line for input labels)
+- **base**: Default for most text content (optimal reading width)
+- **wide**: When you have 2-3 columns of content
+- **full**: When content should span most of the viewport
+
+---
+
+## Layout Components
+
+### Container
+
+**Purpose:** Horizontal centering with max-width constraints
+
+```tsx
+<Container size="base">
+  <p>Centered content with 900px max-width</p>
+</Container>
+```
+
+**Props:**
+
+- `size`: 'narrow' | 'base' | 'comfortable' | 'wide' | 'full' (default: 'base')
+- `className`: Optional custom styles
+
+**Features:**
+
+- Automatically adds horizontal padding (16px mobile, 24px desktop)
+- Centers content with `margin: 0 auto`
+- Prevents content from touching viewport edges
+
+---
+
+### Stack
+
+**Purpose:** Vertical spacing between elements
+
+```tsx
+<Stack space="large">
+  <Heading level={2}>Title</Heading>
+  <Text>First paragraph</Text>
+  <Text>Second paragraph</Text>
+</Stack>
+```
+
+**With dividers:**
+
+```tsx
+<Stack space="medium" dividers>
+  <Section1 />
+  <Section2 />
+  <Section3 />
+</Stack>
+```
+
+**Props:**
+
+- `space`: 'small' (32px) | 'medium' (48px) | 'large' (64px) | 'xlarge' (96px) - Default: 'medium'
+- `dividers`: boolean - Add horizontal rules between children
+- `className`: Optional custom styles
+
+**Why use Stack?**
+Instead of adding `margin-bottom` to every element, Stack handles spacing declaratively using CSS flexbox gap. This makes it easier to maintain consistent spacing and adjust it globally.
+
+---
+
+### Section
+
+**Purpose:** Semantic page sections with vertical padding
+
+```tsx
+<Section>
+  <Container size="wide">
+    <h2>Section Content</h2>
+  </Container>
+</Section>
+```
+
+**With custom spacing:**
+
+```tsx
+<Section spacing="large">
+  <Container size="base">
+    <p>Content with extra vertical padding</p>
+  </Container>
+</Section>
+```
+
+**Props:**
+
+- `spacing`: 'normal' (64/96px) | 'large' (96/128px) | 'none' - Default: 'normal'
+- `id`: For anchor links (e.g., `id="services"`)
+- `className`: Optional custom styles
+
+**Note:** Section provides **vertical padding only**. Always combine with Container for horizontal constraints.
+
+---
+
+### Grid
+
+**Purpose:** Responsive grid layouts
+
+```tsx
+<Grid columns={{ mobile: 1, tablet: 2, desktop: 3 }} gap="medium">
+  <Card />
+  <Card />
+  <Card />
+</Grid>
+```
+
+**Props:**
+
+- `columns`: Responsive column configuration
+  - `mobile`: 1 | 2 (default: 1)
+  - `tablet`: 1 | 2 | 3 (default: 2)
+  - `desktop`: 1 | 2 | 3 | 4 (default: 3)
+- `gap`: 'small' (16-24px) | 'medium' (24-32px) | 'large' (32-48px) - Default: 'medium'
+- `className`: Optional custom styles
+
+---
+
+### Divider
+
+**Purpose:** Visual separation between content
+
+```tsx
+{
+  /* Simple divider */
+}
+;<Divider />
+
+{
+  /* Gradient accent divider */
+}
+;<Divider variant="gradient" spacing="large" />
+```
+
+**Props:**
+
+- `variant`: 'default' (1px solid) | 'gradient' (2px gradient accent)
+- `spacing`: 'none' | 'small' (16-24px) | 'medium' (32-48px) | 'large' (48-64px) - Default: 'medium'
+- `className`: Optional custom styles
+
+---
+
+## Typography Components
+
+### Heading
+
+**Purpose:** Semantic headings with flexible visual styling
+
+**Key Concept:** Separate **semantic meaning** (level) from **visual appearance** (size).
+
+```tsx
+{
+  /* Semantic h2, but visually 3xl */
+}
+;<Heading level={2} size="3xl" align="center">
+  Page Title
+</Heading>
+
+{
+  /* Uppercase accent heading */
+}
+;<Heading level={2} variant="accent">
+  FEATURED WORK
+</Heading>
+
+{
+  /* Auto-sized heading (h1 defaults to 3xl) */
+}
+;<Heading level={1}>Main Title</Heading>
+```
+
+**Props:**
+
+- `level`: 1 | 2 | 3 | 4 | 5 | 6 (required - semantic HTML level)
+- `size`: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl' (visual size, auto-defaults if not specified)
+- `variant`: 'default' | 'accent' (uppercase, wide spacing) | 'display' (base font)
+- `align`: 'left' | 'center' | 'right'
+- `className`: Optional custom styles
+
+**Auto-size mapping:**
+
+- h1 → 3xl
+- h2 → 2xl
+- h3 → xl
+- h4 → lg
+- h5 → md
+- h6 → sm
+
+---
+
+### Text
+
+**Purpose:** Body text, captions, labels
+
+```tsx
+{
+  /* Body paragraph */
+}
+;<Text>This is a standard paragraph with secondary color.</Text>
+
+{
+  /* Caption text */
+}
+;<Text variant="caption" color="tertiary" size="sm">
+  Last updated: November 2025
+</Text>
+
+{
+  /* Bold label */
+}
+;<Text variant="label" weight="bold" color="primary">
+  Company Name:
+</Text>
+
+{
+  /* Code text */
+}
+;<Text variant="code">const greeting = "Hello, World!"</Text>
+```
+
+**Props:**
+
+- `variant`: 'body' | 'caption' (smaller, tighter) | 'label' (medium weight) | 'code' (monospace)
+- `size`: 'xs' (12px) | 'sm' (14px) | 'base' (18px) | 'lg' (20px) | 'xl' (32px) - Default: 'base'
+- `color`: 'primary' | 'secondary' | 'tertiary' | 'accent' - Default: 'secondary'
+- `weight`: 'normal' | 'medium' | 'bold' - Default: 'normal'
+- `align`: 'left' | 'center' | 'right'
+- `className`: Optional custom styles
+
+---
+
+## Common Patterns
+
+### Pattern 1: Marketing Section (Homepage)
+
+```tsx
+<Section>
+  <Container size="wide">
+    <Stack space="large">
+      <Heading level={2} variant="accent" align="center">
+        FEATURED WORK
+      </Heading>
+
+      <Grid columns={{ mobile: 1, desktop: 2 }} gap="large">
+        <ProjectCard />
+        <ProjectCard />
+      </Grid>
+    </Stack>
+  </Container>
+</Section>
+```
+
+**When to use:** Homepage sections, marketing pages, service listings
+
+---
+
+### Pattern 2: Long-Form Content (Articles, Privacy)
+
+```tsx
+<Section>
+  <Container size="base">
+    <Stack space="large">
+      <header>
+        <Heading level={1} size="2xl">
+          Privacy Policy
+        </Heading>
+        <Text variant="caption" color="tertiary">
+          Last updated: November 2025
+        </Text>
+      </header>
+
+      <Stack space="medium" dividers>
+        <article>
+          <Heading level={2} size="lg">
+            1. Introduction
+          </Heading>
+          <Text>Content here...</Text>
+        </article>
+
+        <article>
+          <Heading level={2} size="lg">
+            2. Data Collection
+          </Heading>
+          <Text>Content here...</Text>
+        </article>
+      </Stack>
+    </Stack>
+  </Container>
+</Section>
+```
+
+**When to use:** Articles, legal pages, documentation, blog posts
+
+---
+
+### Pattern 3: Case Study Hero
+
+```tsx
+<Section spacing="large">
+  <Container size="full">
+    <Stack space="xlarge">
+      <TerminalWindow title="case-study.log">
+        {/* Terminal content */}
+      </TerminalWindow>
+
+      <Heading level={1} size="2xl" variant="accent" align="center">
+        E-COMMERCE PLATFORM TRANSFORMATION
+      </Heading>
+
+      <Text size="lg" align="center" color="secondary">
+        "From external dependency to in-house capability"
+      </Text>
+
+      <TechStack tags={['Next.js', 'TypeScript', 'Vercel']} />
+    </Stack>
+  </Container>
+</Section>
+```
+
+**When to use:** Case study heroes, project showcases
+
+---
+
+### Pattern 4: Two-Column Layout
+
+```tsx
+<Section>
+  <Container size="wide">
+    <Grid columns={{ mobile: 1, desktop: 2 }} gap="large">
+      <Stack space="medium">
+        <Heading level={3} size="md">
+          Left Column
+        </Heading>
+        <Text>Content...</Text>
+      </Stack>
+
+      <Stack space="medium">
+        <Heading level={3} size="md">
+          Right Column
+        </Heading>
+        <Text>Content...</Text>
+      </Stack>
+    </Grid>
+  </Container>
+</Section>
+```
+
+**When to use:** Features comparison, side-by-side content, testimonials
+
+---
+
+## Migration Guide
+
+### Before (Old Pattern)
+
+```tsx
+{
+  /* ❌ Old way */
+}
+;<PageLayout>
+  <header className={styles.header}>
+    <PageTitle>Privacy Policy</PageTitle>
+    <p className={styles['last-updated']}>Last updated...</p>
+  </header>
+
+  <Typography>
+    <section className={styles.section}>
+      <h2>1. Introduction</h2>
+      <p>Content...</p>
+    </section>
+  </Typography>
+</PageLayout>
+```
+
+### After (New Pattern)
+
+```tsx
+{
+  /* ✅ New way */
+}
+;<Section>
+  <Container size="base">
+    <Stack space="large">
+      <header>
+        <Stack space="small">
+          <Heading level={1} size="2xl">
+            Privacy Policy
+          </Heading>
+          <Text variant="caption" color="tertiary">
+            Last updated: November 2025
+          </Text>
+        </Stack>
+      </header>
+
+      <Stack space="medium" dividers>
+        <article>
+          <Stack space="small">
+            <Heading level={2} size="lg">
+              1. Introduction
+            </Heading>
+            <Text>Content...</Text>
+          </Stack>
+        </article>
+      </Stack>
+    </Stack>
+  </Container>
+</Section>
+```
+
+**Benefits:**
+
+- ✅ More explicit and readable
+- ✅ Easier to adjust spacing
+- ✅ Better semantic HTML
+- ✅ Composable and reusable
+
+---
+
+## Design Tokens Reference
+
+All layout components use design tokens from `src/css/`:
+
+### Content Widths (`layout-tokens.css`)
+
+```css
+--content-narrow: 600px
+--content-base: 900px
+--content-comfortable: 1000px
+--content-wide: 1200px
+--content-full: 1400px
+```
+
+### Spacing (`spacing-tokens.css`)
+
+```css
+--spacing-4: 16px
+--spacing-8: 32px
+--spacing-12: 48px
+--spacing-16: 64px
+--spacing-24: 96px
+--spacing-32: 128px
+```
+
+### Typography (`typography-tokens.css`)
+
+```css
+--font-size-2xs: 12px
+--font-size-xs: 14px
+--font-size-base: 18px
+--font-size-lg: 40px
+--font-size-2xl: 80px
+--font-size-3xl: 92px
+```
+
+---
+
+## Best Practices
+
+### ✅ Do
+
+- **Use semantic HTML** (`<Section>` renders `<section>`, `<Heading level={2}>` renders `<h2>`)
+- **Compose components** (Stack inside Container inside Section)
+- **Use design tokens** (sizes, spacing, colors from tokens)
+- **Keep heading hierarchy logical** (h1 → h2 → h3, don't skip levels)
+- **Separate semantic from visual** (Use `level` for semantics, `size` for appearance)
+
+### ❌ Don't
+
+- **Skip heading levels** (h1 → h3 without h2)
+- **Hardcode spacing or widths** (use tokens instead)
+- **Use heading level for visual styling** (use `size` prop instead)
+- **Nest containers inside containers** (one Container per section)
+- **Mix old and new patterns** (migrate fully or not at all)
+
+---
+
+## Component Replacement Guide
+
+| Old Component            | New Replacement                      | Notes                                    |
+| ------------------------ | ------------------------------------ | ---------------------------------------- |
+| `PageLayout`             | `Section` + `Container`              | PageLayout combined both, now separate   |
+| `ContentWidth`           | `Container`                          | Renamed for clarity                      |
+| `SectionContainer`       | `Section`                            | Merged with Section component            |
+| `PageTitle`              | `Heading level={1}`                  | Use Heading component with size variants |
+| `SectionHeader`          | `Heading level={2} variant="accent"` | More flexible with Heading               |
+| Raw `<h2>` in Typography | `Heading level={2}`                  | Better props and consistency             |
+| Raw `<p>`                | `Text`                               | For consistent styling                   |
+
+---
+
+## Real-World Example
+
+Here's a complete page section using the new system:
+
+```tsx
+function ServicesSection() {
+  return (
+    <Section id="services">
+      <Container size="wide">
+        <Stack space="large">
+          {/* Section heading with decorative accent */}
+          <div>
+            <Divider variant="gradient" spacing="none" />
+            <Heading level={2} variant="accent" align="center">
+              WHAT WE DO
+            </Heading>
+          </div>
+
+          {/* Service grid */}
+          <Grid columns={{ mobile: 1, tablet: 2, desktop: 3 }} gap="large">
+            {services.map(service => (
+              <Stack space="medium" key={service.id}>
+                <Heading level={3} size="md">
+                  {service.title}
+                </Heading>
+                <Text>{service.description}</Text>
+                <Text variant="caption" color="accent">
+                  Learn more →
+                </Text>
+              </Stack>
+            ))}
+          </Grid>
+        </Stack>
+      </Container>
+    </Section>
+  )
+}
+```
+
+---
+
+## Questions?
+
+For implementation details, see:
+
+- **Storybook component docs** - Interactive examples with all props
+
+**Component locations:**
+
+- Layout: `src/components/layout/`
+- Typography: `src/components/common/`
+- Design tokens: `src/css/`

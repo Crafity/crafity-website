@@ -1,16 +1,16 @@
 import { useEffect } from 'react'
-import type { Meta, StoryObj } from '@storybook/react'
+import type { Meta, StoryObj } from '@storybook/react-vite'
 
 import { CookieBanner } from './cookie-banner'
 
-const meta = {
+const meta: Meta<typeof CookieBanner> = {
   component: CookieBanner,
   parameters: {
     layout: 'fullscreen',
   },
   tags: ['autodocs'],
   title: 'Components/Cookie Banner',
-} satisfies Meta<typeof CookieBanner>
+}
 
 export default meta
 type Story = StoryObj<typeof meta>

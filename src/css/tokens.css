@@ -1,6 +1,7 @@
 @import url('./color-tokens.css');
 @import url('./typography-tokens.css');
 @import url('./spacing-tokens.css');
+@import url('./layout-tokens.css');
 @import url('./border-tokens.css');
 @import url('./animation-tokens.css');
 @import url('./shadow-tokens.css');

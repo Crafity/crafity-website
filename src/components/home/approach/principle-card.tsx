@@ -2,6 +2,9 @@ import { clsx } from 'clsx'
 
 import styles from './principle-card.module.css'
 
+import { Heading } from '@/components/common/heading/heading'
+import { Text } from '@/components/common/text/text'
+
 interface PrincipleCardProps {
   description: string
   index: number
@@ -18,8 +21,10 @@ export function PrincipleCard({
   return (
     <div className={clsx(styles.card, isEven && styles.even)}>
       <div className={styles.bar} />
-      <h3 className={styles.title}>{title}</h3>
-      <p className={styles.description}>{description}</p>
+      <Heading className={styles.title} level={3} size="md">
+        {title}
+      </Heading>
+      <Text className={styles.description}>{description}</Text>
     </div>
   )
 }

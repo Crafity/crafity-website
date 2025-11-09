@@ -1,0 +1,54 @@
+<!-- Concept A: "The Pulse" - Square Icon -->
+<svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="256" height="256" rx="48" fill="#0A0A0A"/>
+
+  <!-- Center spark - orange -->
+  <circle cx="128" cy="128" r="10" fill="#FF4500" opacity="1"/>
+
+  <!-- First ring - bright blue -->
+  <circle cx="128" cy="98" r="8" fill="#95C5EF" opacity="0.95"/>
+  <circle cx="158" cy="128" r="8" fill="#95C5EF" opacity="0.95"/>
+  <circle cx="128" cy="158" r="8" fill="#95C5EF" opacity="0.95"/>
+  <circle cx="98" cy="128" r="8" fill="#95C5EF" opacity="0.95"/>
+
+  <!-- Diagonals first ring -->
+  <circle cx="149" cy="107" r="7" fill="#95C5EF" opacity="0.9"/>
+  <circle cx="149" cy="149" r="7" fill="#95C5EF" opacity="0.9"/>
+  <circle cx="107" cy="149" r="7" fill="#95C5EF" opacity="0.9"/>
+  <circle cx="107" cy="107" r="7" fill="#95C5EF" opacity="0.9"/>
+
+  <!-- Second ring - medium -->
+  <circle cx="128" cy="75" r="7" fill="#95C5EF" opacity="0.7"/>
+  <circle cx="181" cy="128" r="7" fill="#95C5EF" opacity="0.7"/>
+  <circle cx="128" cy="181" r="7" fill="#95C5EF" opacity="0.7"/>
+  <circle cx="75" cy="128" r="7" fill="#95C5EF" opacity="0.7"/>
+
+  <!-- Diagonals second ring -->
+  <circle cx="165" cy="91" r="6" fill="#95C5EF" opacity="0.65"/>
+  <circle cx="165" cy="165" r="6" fill="#95C5EF" opacity="0.65"/>
+  <circle cx="91" cy="165" r="6" fill="#95C5EF" opacity="0.65"/>
+  <circle cx="91" cy="91" r="6" fill="#95C5EF" opacity="0.65"/>
+
+  <!-- Third ring - dimmer -->
+  <circle cx="128" cy="58" r="6" fill="#95C5EF" opacity="0.45"/>
+  <circle cx="198" cy="128" r="6" fill="#95C5EF" opacity="0.45"/>
+  <circle cx="128" cy="198" r="6" fill="#95C5EF" opacity="0.45"/>
+  <circle cx="58" cy="128" r="6" fill="#95C5EF" opacity="0.45"/>
+
+  <!-- Diagonals third ring -->
+  <circle cx="177" cy="79" r="5" fill="#95C5EF" opacity="0.4"/>
+  <circle cx="177" cy="177" r="5" fill="#95C5EF" opacity="0.4"/>
+  <circle cx="79" cy="177" r="5" fill="#95C5EF" opacity="0.4"/>
+  <circle cx="79" cy="79" r="5" fill="#95C5EF" opacity="0.4"/>
+
+  <!-- Outer ring - fading -->
+  <circle cx="128" cy="45" r="5" fill="#95C5EF" opacity="0.25"/>
+  <circle cx="211" cy="128" r="5" fill="#95C5EF" opacity="0.25"/>
+  <circle cx="128" cy="211" r="5" fill="#95C5EF" opacity="0.25"/>
+  <circle cx="45" cy="128" r="5" fill="#95C5EF" opacity="0.25"/>
+
+  <circle cx="186" cy="70" r="4" fill="#95C5EF" opacity="0.2"/>
+  <circle cx="186" cy="186" r="4" fill="#95C5EF" opacity="0.2"/>
+  <circle cx="70" cy="186" r="4" fill="#95C5EF" opacity="0.2"/>
+  <circle cx="70" cy="70" r="4" fill="#95C5EF" opacity="0.2"/>
+</svg>

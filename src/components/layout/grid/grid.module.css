@@ -1,0 +1,68 @@
+/**
+ * Grid Component Styles
+ *
+ * Provides responsive grid layouts with customizable columns and gap sizes.
+ * Uses CSS Grid with custom properties for responsive column counts.
+ * Supports all breakpoints from breakpoints.css
+ */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(var(--grid-cols-base, 1), 1fr);
+
+  @media (--xs-n-above) {
+    grid-template-columns: repeat(var(--grid-cols-xs, var(--grid-cols-base, 1)), 1fr);
+  }
+
+  @media (--sm-n-above) {
+    grid-template-columns: repeat(var(--grid-cols-sm, var(--grid-cols-xs, var(--grid-cols-base, 1))), 1fr);
+  }
+
+  @media (--md-n-above) {
+    grid-template-columns: repeat(var(--grid-cols-md, var(--grid-cols-sm, var(--grid-cols-xs, var(--grid-cols-base, 1)))), 1fr);
+  }
+
+  @media (--lg-n-above) {
+    grid-template-columns: repeat(var(--grid-cols-lg, var(--grid-cols-md, var(--grid-cols-sm, var(--grid-cols-xs, var(--grid-cols-base, 1))))), 1fr);
+  }
+
+  @media (--xl-n-above) {
+    grid-template-columns: repeat(var(--grid-cols-xl, var(--grid-cols-lg, var(--grid-cols-md, var(--grid-cols-sm, var(--grid-cols-xs, var(--grid-cols-base, 1)))))), 1fr);
+  }
+
+  @media (--2xl-n-above) {
+    grid-template-columns: repeat(var(--grid-cols-2xl, var(--grid-cols-xl, var(--grid-cols-lg, var(--grid-cols-md, var(--grid-cols-sm, var(--grid-cols-xs, var(--grid-cols-base, 1))))))), 1fr);
+  }
+
+  @media (--3xl-n-above) {
+    grid-template-columns: repeat(var(--grid-cols-3xl, var(--grid-cols-2xl, var(--grid-cols-xl, var(--grid-cols-lg, var(--grid-cols-md, var(--grid-cols-sm, var(--grid-cols-xs, var(--grid-cols-base, 1)))))))), 1fr);
+  }
+}
+
+/* ========================================================================
+   Gap Variants - Using design tokens
+   ======================================================================== */
+
+.small {
+  gap: var(--spacing-4);
+
+  @media (--md-n-above) {
+    gap: var(--spacing-6);
+  }
+}
+
+.medium {
+  gap: var(--spacing-6);
+
+  @media (--md-n-above) {
+    gap: var(--spacing-8);
+  }
+}
+
+.large {
+  gap: var(--spacing-8);
+
+  @media (--md-n-above) {
+    gap: var(--spacing-12);
+  }
+}

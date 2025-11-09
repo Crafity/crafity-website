@@ -35,7 +35,7 @@ export function initGoogleAnalytics() {
   window.dataLayer = window.dataLayer || []
   window.gtag = function gtag() {
     // eslint-disable-next-line prefer-rest-params
-    window.dataLayer.push(arguments)
+    window.dataLayer?.push(arguments)
   }
 
   window.gtag('js', new Date())
@@ -86,7 +86,7 @@ export function trackPageView(path: string) {
 // Type augmentation for gtag
 declare global {
   interface Window {
-    dataLayer: unknown[]
+    dataLayer?: unknown[]
     gtag?: (
       command: 'config' | 'event' | 'js',
       targetId: string | Date,

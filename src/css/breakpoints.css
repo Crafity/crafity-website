@@ -10,6 +10,7 @@
  * 2xl = 1536-1919px  (2x Extra Large - Large Desktop)
  * 3xl = 1920px+      (3x Extra Large - Ultra Wide)
  */
+/* stylelint-disable custom-media-pattern */
 
 /* xs - Extra Small (Mobile) */
 @custom-media --xs-only (width < 640px);

@@ -1,6 +1,8 @@
 import { ServiceCard } from './service-card'
 
-import styles from './services.module.css'
+import { Heading } from '@/components/common/heading/heading'
+import { Container } from '@/components/layout/container/container'
+import { Stack } from '@/components/layout/stack/stack'
 
 const services = [
   {
@@ -35,14 +37,18 @@ const services = [
 
 export function Services() {
   return (
-    <div className={styles.container}>
-      <h2 className={styles.title}>WHAT WE DO</h2>
+    <Container size="wide">
+      <Stack space="xlarge">
+        <Heading align="center" level={2} variant="accent">
+          WHAT WE DO
+        </Heading>
 
-      <div className={styles.services}>
-        {services.map(service => (
-          <ServiceCard key={service.number} {...service} />
-        ))}
-      </div>
-    </div>
+        <Stack space="xlarge">
+          {services.map(service => (
+            <ServiceCard key={service.number} {...service} />
+          ))}
+        </Stack>
+      </Stack>
+    </Container>
   )
 }

@@ -4,6 +4,10 @@
   --border-width-medium: var(--spacing-0-5);
   --border-width-thick: var(--spacing-1);
 
+  /* Border widths for accent decorations */
+  --border-width-accent: var(--spacing-1);
+  --border-width-accent-thin: var(--spacing-0-5);
+
   /* Radius */
   --radius-small: 4px;
   --radius-medium: 8px;

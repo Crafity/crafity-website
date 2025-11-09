@@ -10,7 +10,9 @@ export function ThemeToggle() {
   const [theme, setTheme] = useState<Theme>(() => {
     if (typeof window === 'undefined') return 'system'
     const saved = localStorage.getItem('theme')
-    return (saved as Theme) || 'system'
+    if (saved !== 'dark' && saved !== 'light' && saved !== 'system')
+      return 'system'
+    return saved
   })
 
   useEffect(() => {

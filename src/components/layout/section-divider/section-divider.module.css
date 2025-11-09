@@ -1,0 +1,12 @@
+.divider {
+  max-width: 800px;
+  height: 2px;
+  margin: 0 auto;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--accent-secondary) 20%,
+    var(--accent-primary) 80%,
+    transparent
+  );
+}

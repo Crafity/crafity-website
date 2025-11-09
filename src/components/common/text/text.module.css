@@ -1,0 +1,110 @@
+/**
+ * Text Component Styles
+ *
+ * Paragraph text component with semantic variants for different use cases.
+ */
+
+.text {
+  margin: 0;
+  font-family: var(--font-family);
+  line-height: var(--line-height-relaxed);
+}
+
+/* ========================================================================
+   Size Variants
+   ======================================================================== */
+
+.size-xs {
+  font-size: var(--font-size-2xs);
+}
+
+.size-sm {
+  font-size: var(--font-size-xs);
+}
+
+.size-base {
+  font-size: var(--font-size-base);
+}
+
+.size-lg {
+  font-size: var(--font-size-base-lg);
+}
+
+.size-xl {
+  font-size: var(--font-size-md);
+}
+
+/* ========================================================================
+   Color Variants
+   ======================================================================== */
+
+.color-primary {
+  color: var(--text-primary);
+}
+
+.color-secondary {
+  color: var(--text-secondary);
+}
+
+.color-tertiary {
+  color: var(--text-tertiary);
+}
+
+.color-accent {
+  color: var(--accent-primary);
+}
+
+/* ========================================================================
+   Variant Styles
+   ======================================================================== */
+
+.variant-body {
+  /* Default body text - uses base styles */
+}
+
+.variant-caption {
+  font-size: var(--font-size-xs);
+  line-height: var(--line-height-normal);
+}
+
+.variant-label {
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-normal);
+}
+
+.variant-code {
+  font-family: var(--mono-font-family);
+  font-size: var(--font-size-xs);
+}
+
+/* ========================================================================
+   Weight Variants
+   ======================================================================== */
+
+.weight-normal {
+  font-weight: var(--font-weight-normal);
+}
+
+.weight-medium {
+  font-weight: var(--font-weight-medium);
+}
+
+.weight-bold {
+  font-weight: var(--font-weight-bold);
+}
+
+/* ========================================================================
+   Alignment
+   ======================================================================== */
+
+.align-left {
+  text-align: left;
+}
+
+.align-center {
+  text-align: center;
+}
+
+.align-right {
+  text-align: right;
+}

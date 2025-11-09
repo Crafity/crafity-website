@@ -22,7 +22,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 4px;
+  width: var(--border-width-accent);
   height: 100%;
   background: var(--accent-primary);
 
@@ -33,13 +33,5 @@
 
 .title {
   margin-bottom: var(--spacing-4);
-  color: var(--text-primary);
-  font-size: var(--font-size-sm);
   letter-spacing: var(--letter-spacing-wide);
-  line-height: var(--line-height-normal);
-}
-
-.description {
-  color: var(--text-primary);
-  line-height: var(--line-height-relaxed);
 }

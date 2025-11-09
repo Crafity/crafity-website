@@ -1,15 +1,21 @@
+import { Logo } from './logo'
+import { Navigation } from './navigation'
+
 import styles from './header.module.css'
 
 import { ThemeToggle } from '@/components/common/theme-toggle/theme-toggle'
-import { Logo } from '@/components/layout/header/logo'
-import { Navigation } from '@/components/layout/header/navigation'
+import { Container } from '@/components/layout/container/container'
 
 export function Header() {
   return (
     <header className={styles.header}>
-      <Logo />
-      <Navigation />
-      <ThemeToggle />
+      <Container size="full">
+        <div className={styles.content}>
+          <Logo />
+          <Navigation />
+          <ThemeToggle />
+        </div>
+      </Container>
     </header>
   )
 }

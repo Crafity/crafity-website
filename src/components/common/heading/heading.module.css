@@ -1,0 +1,128 @@
+/**
+ * Heading Component Styles
+ *
+ * Semantic heading component with flexible visual styling.
+ * Separates semantic level (h1-h6) from visual size.
+ */
+
+.heading {
+  margin: 0;
+  color: var(--text-primary);
+  font-family: var(--accent-font-family);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+}
+
+/* ========================================================================
+   Size Variants - Visual sizing independent of semantic level
+   ======================================================================== */
+
+.size-xs {
+  font-size: var(--font-size-base);
+}
+
+.size-sm {
+  font-size: var(--font-size-md);
+}
+
+.size-md {
+  font-size: var(--font-size-lg);
+}
+
+.size-lg {
+  font-size: var(--font-size-xl);
+}
+
+.size-xl {
+  font-size: var(--font-size-2xl);
+}
+
+.size-2xl {
+  font-size: var(--font-size-xl);
+
+  @media (--md-n-above) {
+    font-size: var(--font-size-2xl);
+  }
+
+  @media (--lg-n-above) {
+    font-size: var(--font-size-3xl);
+  }
+}
+
+.size-3xl {
+  font-size: var(--font-size-2xl);
+
+  @media (--md-n-above) {
+    font-size: var(--font-size-3xl);
+  }
+}
+
+/* ========================================================================
+   Responsive Size - When size prop is responsive object
+   ======================================================================== */
+
+.size-responsive {
+  font-size: var(--heading-size-base);
+
+  @media (--xs-n-above) {
+    font-size: var(--heading-size-xs, var(--heading-size-base));
+  }
+
+  @media (--sm-n-above) {
+    font-size: var(--heading-size-sm, var(--heading-size-xs, var(--heading-size-base)));
+  }
+
+  @media (--md-n-above) {
+    font-size: var(--heading-size-md, var(--heading-size-sm, var(--heading-size-xs, var(--heading-size-base))));
+  }
+
+  @media (--lg-n-above) {
+    font-size: var(--heading-size-lg, var(--heading-size-md, var(--heading-size-sm, var(--heading-size-xs, var(--heading-size-base)))));
+  }
+
+  @media (--xl-n-above) {
+    font-size: var(--heading-size-xl, var(--heading-size-lg, var(--heading-size-md, var(--heading-size-sm, var(--heading-size-xs, var(--heading-size-base))))));
+  }
+
+  @media (--2xl-n-above) {
+    font-size: var(--heading-size-2xl, var(--heading-size-xl, var(--heading-size-lg, var(--heading-size-md, var(--heading-size-sm, var(--heading-size-xs, var(--heading-size-base)))))));
+  }
+
+  @media (--3xl-n-above) {
+    font-size: var(--heading-size-3xl, var(--heading-size-2xl, var(--heading-size-xl, var(--heading-size-lg, var(--heading-size-md, var(--heading-size-sm, var(--heading-size-xs, var(--heading-size-base))))))));
+  }
+}
+
+/* ========================================================================
+   Variant Styles
+   ======================================================================== */
+
+.variant-default {
+  letter-spacing: var(--letter-spacing-tight);
+}
+
+.variant-accent {
+  letter-spacing: var(--letter-spacing-wide);
+  text-transform: uppercase;
+}
+
+.variant-display {
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-normal);
+}
+
+/* ========================================================================
+   Alignment
+   ======================================================================== */
+
+.align-left {
+  text-align: left;
+}
+
+.align-center {
+  text-align: center;
+}
+
+.align-right {
+  text-align: right;
+}

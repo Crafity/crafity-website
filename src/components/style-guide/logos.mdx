@@ -1,12 +1,13 @@
 import { Meta } from '@storybook/blocks'
+import { TintedImage } from '../common/tinted-image/tinted-image'
 
 <Meta title="Style Guide/Client Logos" />
 
 # Client Logos
 
-This page showcases all client logos used on the website. The logos are stored in `/public/logos/` and displayed in their original form.
+This page showcases all client logos used on the website. The logos are stored in `/public/logos/` and displayed in both their original form and tinted with the primary accent color.
 
-## Logo Grid
+## Original Logos
 
 <div style={{
   display: 'grid',
@@ -26,14 +27,11 @@ This page showcases all client logos used on the website. The logos are stored i
     borderRadius: '8px',
     border: '1px solid var(--border-default-color)',
   }}>
-    <img src="/logos/AKQA-Logo.svg" alt="AKQA" style={{  width: '100%', height: '80px', objectFit: 'contain' }} />
+    <img src="/logos/AKQA-Logo.svg" alt="AKQA" style={{ width: '100%', height: '80px', objectFit: 'contain' }} />
     <span style={{ fontSize: '0.875rem', color: 'var(--text-secondary)', textAlign: 'center' }}>AKQA</span>
   </div>
 
-{' '}
-
-<div
-  style={{
+  <div style={{
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
@@ -43,25 +41,17 @@ This page showcases all client logos used on the website. The logos are stored i
     borderRadius: '8px',
     border: '1px solid var(--border-default-color)',
   }}>
-  <img
-    src="/logos/Electronic-Arts-Logo.svg"
-    alt="Electronic Arts"
-    style={{ width: '100%', height: '80px', objectFit: 'contain' }}
-  />
-  <span
-    style={{
-      fontSize: '0.875rem',
-      color: 'var(--text-secondary)',
-      textAlign: 'center',
-    }}>
-    Electronic Arts
-  </span>
-</div>
+    <img
+      src="/logos/Electronic-Arts-Logo.svg"
+      alt="Electronic Arts"
+      style={{ width: '100%', height: '80px', objectFit: 'contain' }}
+    />
+    <span style={{ fontSize: '0.875rem', color: 'var(--text-secondary)', textAlign: 'center' }}>
+      Electronic Arts
+    </span>
+  </div>
 
-{' '}
-
-<div
-  style={{
+  <div style={{
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
@@ -71,25 +61,17 @@ This page showcases all client logos used on the website. The logos are stored i
     borderRadius: '8px',
     border: '1px solid var(--border-default-color)',
   }}>
-  <img
-    src="/logos/EBay_logo.svg"
-    alt="eBay"
-    style={{ width: '100%', height: '80px', objectFit: 'contain' }}
-  />
-  <span
-    style={{
-      fontSize: '0.875rem',
-      color: 'var(--text-secondary)',
-      textAlign: 'center',
-    }}>
-    eBay
-  </span>
-</div>
+    <img
+      src="/logos/EBay_logo.svg"
+      alt="eBay"
+      style={{ width: '100%', height: '80px', objectFit: 'contain' }}
+    />
+    <span style={{ fontSize: '0.875rem', color: 'var(--text-secondary)', textAlign: 'center' }}>
+      eBay
+    </span>
+  </div>
 
-{' '}
-
-<div
-  style={{
+  <div style={{
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
@@ -99,25 +81,17 @@ This page showcases all client logos used on the website. The logos are stored i
     borderRadius: '8px',
     border: '1px solid var(--border-default-color)',
   }}>
-  <img
-    src="/logos/ING_Group_N.V._Logo.svg"
-    alt="ING"
-    style={{ width: '100%', height: '80px', objectFit: 'contain' }}
-  />
-  <span
-    style={{
-      fontSize: '0.875rem',
-      color: 'var(--text-secondary)',
-      textAlign: 'center',
-    }}>
-    ING
-  </span>
-</div>
+    <img
+      src="/logos/ING_Group_N.V._Logo.svg"
+      alt="ING"
+      style={{ width: '100%', height: '80px', objectFit: 'contain' }}
+    />
+    <span style={{ fontSize: '0.875rem', color: 'var(--text-secondary)', textAlign: 'center' }}>
+      ING
+    </span>
+  </div>
 
-{' '}
-
-<div
-  style={{
+  <div style={{
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
@@ -127,25 +101,17 @@ This page showcases all client logos used on the website. The logos are stored i
     borderRadius: '8px',
     border: '1px solid var(--border-default-color)',
   }}>
-  <img
-    src="/logos/kamernet.svg"
-    alt="Kamernet"
-    style={{ width: '100%', height: '80px', objectFit: 'contain' }}
-  />
-  <span
-    style={{
-      fontSize: '0.875rem',
-      color: 'var(--text-secondary)',
-      textAlign: 'center',
-    }}>
-    Kamernet
-  </span>
-</div>
+    <img
+      src="/logos/kamernet.svg"
+      alt="Kamernet"
+      style={{ width: '100%', height: '80px', objectFit: 'contain' }}
+    />
+    <span style={{ fontSize: '0.875rem', color: 'var(--text-secondary)', textAlign: 'center' }}>
+      Kamernet
+    </span>
+  </div>
 
-{' '}
-
-<div
-  style={{
+  <div style={{
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
@@ -155,25 +121,17 @@ This page showcases all client logos used on the website. The logos are stored i
     borderRadius: '8px',
     border: '1px solid var(--border-default-color)',
   }}>
-  <img
-    src="/logos/carnext.png"
-    alt="CarNext"
-    style={{ width: '100%', height: '80px', objectFit: 'contain' }}
-  />
-  <span
-    style={{
-      fontSize: '0.875rem',
-      color: 'var(--text-secondary)',
-      textAlign: 'center',
-    }}>
-    CarNext
-  </span>
-</div>
+    <img
+      src="/logos/carnext.png"
+      alt="CarNext"
+      style={{ width: '100%', height: '80px', objectFit: 'contain' }}
+    />
+    <span style={{ fontSize: '0.875rem', color: 'var(--text-secondary)', textAlign: 'center' }}>
+      CarNext
+    </span>
+  </div>
 
-{' '}
-
-<div
-  style={{
+  <div style={{
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
@@ -183,25 +141,17 @@ This page showcases all client logos used on the website. The logos are stored i
     borderRadius: '8px',
     border: '1px solid var(--border-default-color)',
   }}>
-  <img
-    src="/logos/Mediamonks.svg"
-    alt="MediaMonks"
-    style={{ width: '100%', height: '80px', objectFit: 'contain' }}
-  />
-  <span
-    style={{
-      fontSize: '0.875rem',
-      color: 'var(--text-secondary)',
-      textAlign: 'center',
-    }}>
-    MediaMonks
-  </span>
-</div>
+    <img
+      src="/logos/Mediamonks.svg"
+      alt="MediaMonks"
+      style={{ width: '100%', height: '80px', objectFit: 'contain' }}
+    />
+    <span style={{ fontSize: '0.875rem', color: 'var(--text-secondary)', textAlign: 'center' }}>
+      MediaMonks
+    </span>
+  </div>
 
-{' '}
-
-<div
-  style={{
+  <div style={{
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
@@ -211,25 +161,17 @@ This page showcases all client logos used on the website. The logos are stored i
     borderRadius: '8px',
     border: '1px solid var(--border-default-color)',
   }}>
-  <img
-    src="/logos/T-Mobile_logo.svg"
-    alt="T-Mobile"
-    style={{ width: '100%', height: '80px', objectFit: 'contain' }}
-  />
-  <span
-    style={{
-      fontSize: '0.875rem',
-      color: 'var(--text-secondary)',
-      textAlign: 'center',
-    }}>
-    T-Mobile
-  </span>
-</div>
+    <img
+      src="/logos/T-Mobile_logo.svg"
+      alt="T-Mobile"
+      style={{ width: '100%', height: '80px', objectFit: 'contain' }}
+    />
+    <span style={{ fontSize: '0.875rem', color: 'var(--text-secondary)', textAlign: 'center' }}>
+      T-Mobile
+    </span>
+  </div>
 
-{' '}
-
-<div
-  style={{
+  <div style={{
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
@@ -239,25 +181,17 @@ This page showcases all client logos used on the website. The logos are stored i
     borderRadius: '8px',
     border: '1px solid var(--border-default-color)',
   }}>
-  <img
-    src="/logos/nike-vector-logo.svg"
-    alt="Nike"
-    style={{ width: '100%', height: '80px', objectFit: 'contain' }}
-  />
-  <span
-    style={{
-      fontSize: '0.875rem',
-      color: 'var(--text-secondary)',
-      textAlign: 'center',
-    }}>
-    Nike (Vector)
-  </span>
-</div>
+    <img
+      src="/logos/nike-vector-logo.svg"
+      alt="Nike"
+      style={{ width: '100%', height: '80px', objectFit: 'contain' }}
+    />
+    <span style={{ fontSize: '0.875rem', color: 'var(--text-secondary)', textAlign: 'center' }}>
+      Nike (Vector)
+    </span>
+  </div>
 
-{' '}
-
-<div
-  style={{
+  <div style={{
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
@@ -267,25 +201,17 @@ This page showcases all client logos used on the website. The logos are stored i
     borderRadius: '8px',
     border: '1px solid var(--border-default-color)',
   }}>
-  <img
-    src="/logos/nike-logo.svg"
-    alt="Nike"
-    style={{ width: '100%', height: '80px', objectFit: 'contain' }}
-  />
-  <span
-    style={{
-      fontSize: '0.875rem',
-      color: 'var(--text-secondary)',
-      textAlign: 'center',
-    }}>
-    Nike
-  </span>
-</div>
+    <img
+      src="/logos/nike-logo.svg"
+      alt="Nike"
+      style={{ width: '100%', height: '80px', objectFit: 'contain' }}
+    />
+    <span style={{ fontSize: '0.875rem', color: 'var(--text-secondary)', textAlign: 'center' }}>
+      Nike
+    </span>
+  </div>
 
-{' '}
-
-<div
-  style={{
+  <div style={{
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
@@ -295,25 +221,17 @@ This page showcases all client logos used on the website. The logos are stored i
     borderRadius: '8px',
     border: '1px solid var(--border-default-color)',
   }}>
-  <img
-    src="/logos/picnic-de-online-supermarkt-logo-vector.svg"
-    alt="Picnic"
-    style={{ width: '100%', height: '80px', objectFit: 'contain' }}
-  />
-  <span
-    style={{
-      fontSize: '0.875rem',
-      color: 'var(--text-secondary)',
-      textAlign: 'center',
-    }}>
-    Picnic
-  </span>
-</div>
+    <img
+      src="/logos/picnic-de-online-supermarkt-logo-vector.svg"
+      alt="Picnic"
+      style={{ width: '100%', height: '80px', objectFit: 'contain' }}
+    />
+    <span style={{ fontSize: '0.875rem', color: 'var(--text-secondary)', textAlign: 'center' }}>
+      Picnic
+    </span>
+  </div>
 
-{' '}
-
-<div
-  style={{
+  <div style={{
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
@@ -323,25 +241,17 @@ This page showcases all client logos used on the website. The logos are stored i
     borderRadius: '8px',
     border: '1px solid var(--border-default-color)',
   }}>
-  <img
-    src="/logos/nslogo.svg"
-    alt="NS"
-    style={{ width: '100%', height: '80px', objectFit: 'contain' }}
-  />
-  <span
-    style={{
-      fontSize: '0.875rem',
-      color: 'var(--text-secondary)',
-      textAlign: 'center',
-    }}>
-    NS
-  </span>
-</div>
+    <img
+      src="/logos/nslogo.svg"
+      alt="NS"
+      style={{ width: '100%', height: '80px', objectFit: 'contain' }}
+    />
+    <span style={{ fontSize: '0.875rem', color: 'var(--text-secondary)', textAlign: 'center' }}>
+      NS
+    </span>
+  </div>
 
-{' '}
-
-<div
-  style={{
+  <div style={{
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
@@ -351,20 +261,15 @@ This page showcases all client logos used on the website. The logos are stored i
     borderRadius: '8px',
     border: '1px solid var(--border-default-color)',
   }}>
-  <img
-    src="/logos/Politie.svg"
-    alt="Politie"
-    style={{ width: '100%', height: '80px', objectFit: 'contain' }}
-  />
-  <span
-    style={{
-      fontSize: '0.875rem',
-      color: 'var(--text-secondary)',
-      textAlign: 'center',
-    }}>
-    Politie
-  </span>
-</div>
+    <img
+      src="/logos/Politie.svg"
+      alt="Politie"
+      style={{ width: '100%', height: '80px', objectFit: 'contain' }}
+    />
+    <span style={{ fontSize: '0.875rem', color: 'var(--text-secondary)', textAlign: 'center' }}>
+      Politie
+    </span>
+  </div>
 
   <div style={{
     display: 'flex',
@@ -383,7 +288,7 @@ This page showcases all client logos used on the website. The logos are stored i
 
 ## Tinted Logos (Primary Color)
 
-The same logos tinted with the primary accent color using CSS filters and blend modes.
+The same logos tinted with the primary accent color using the `TintedImage` component.
 
 <div style={{
   display: 'grid',
@@ -403,671 +308,13 @@ The same logos tinted with the primary accent color using CSS filters and blend 
     borderRadius: '8px',
     border: '1px solid var(--border-default-color)',
   }}>
-    <div style={{
-      width: '100%',
-      height: '80px',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      position: 'relative',
-    }}>
-      <img
-        src="/logos/AKQA-Logo.svg"
-        alt="AKQA"
-        style={{
-          width: '100%',
-          height: '80px',
-          objectFit: 'contain',
-          filter: 'invert(1) grayscale(100%) brightness(1.2) contrast(1.1)',
-          mixBlendMode: 'screen',
-        }}
-      />
-      <div style={{
-        position: 'absolute',
-        inset: 0,
-        background: 'var(--accent-primary)',
-        mixBlendMode: 'multiply',
-        pointerEvents: 'none',
-      }} />
-    </div>
+    <TintedImage
+      src="/logos/AKQA-Logo.svg"
+      alt="AKQA"
+      filters={{ invert: true }}
+    />
     <span style={{ fontSize: '0.875rem', color: 'var(--text-secondary)', textAlign: 'center' }}>AKQA</span>
   </div>
-
-{' '}
-
-<div
-  style={{
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    gap: '1rem',
-    padding: '1.5rem',
-    background: 'var(--bg-primary)',
-    borderRadius: '8px',
-    border: '1px solid var(--border-default-color)',
-  }}>
-  <div
-    style={{
-      width: '100%',
-      height: '80px',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      position: 'relative',
-    }}>
-    <img
-      src="/logos/Electronic-Arts-Logo.svg"
-      alt="Electronic Arts"
-      style={{
-        width: '100%',
-        height: '80px',
-        objectFit: 'contain',
-        filter: 'invert(1) grayscale(100%) brightness(1.2) contrast(1.1)',
-        mixBlendMode: 'screen',
-      }}
-    />
-    <div
-      style={{
-        position: 'absolute',
-        inset: 0,
-        background: 'var(--accent-primary)',
-        mixBlendMode: 'multiply',
-        pointerEvents: 'none',
-      }}
-    />
-  </div>
-  <span
-    style={{
-      fontSize: '0.875rem',
-      color: 'var(--text-secondary)',
-      textAlign: 'center',
-    }}>
-    Electronic Arts
-  </span>
-</div>
-
-{' '}
-
-<div
-  style={{
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    gap: '1rem',
-    padding: '1.5rem',
-    background: 'var(--bg-primary)',
-    borderRadius: '8px',
-    border: '1px solid var(--border-default-color)',
-  }}>
-  <div
-    style={{
-      width: '100%',
-      height: '80px',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      position: 'relative',
-    }}>
-    <img
-      src="/logos/EBay_logo.svg"
-      alt="eBay"
-      style={{
-        width: '100%',
-        height: '80px',
-        objectFit: 'contain',
-        filter: 'grayscale(100%) brightness(1.2) contrast(1.1)',
-        mixBlendMode: 'screen',
-      }}
-    />
-    <div
-      style={{
-        position: 'absolute',
-        inset: 0,
-        background: 'var(--accent-primary)',
-        mixBlendMode: 'multiply',
-        pointerEvents: 'none',
-      }}
-    />
-  </div>
-  <span
-    style={{
-      fontSize: '0.875rem',
-      color: 'var(--text-secondary)',
-      textAlign: 'center',
-    }}>
-    eBay
-  </span>
-</div>
-
-{' '}
-
-<div
-  style={{
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    gap: '1rem',
-    padding: '1.5rem',
-    background: 'var(--bg-primary)',
-    borderRadius: '8px',
-    border: '1px solid var(--border-default-color)',
-  }}>
-  <div
-    style={{
-      width: '100%',
-      height: '80px',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      position: 'relative',
-    }}>
-    <img
-      src="/logos/ING_Group_N.V._Logo.svg"
-      alt="ING"
-      style={{
-        width: '100%',
-        height: '80px',
-        objectFit: 'contain',
-        filter: 'grayscale(100%) brightness(1.4) contrast(0.3)',
-        mixBlendMode: 'screen',
-      }}
-    />
-    <div
-      style={{
-        position: 'absolute',
-        inset: 0,
-        background: 'var(--accent-primary)',
-        mixBlendMode: 'multiply',
-        pointerEvents: 'none',
-      }}
-    />
-  </div>
-  <span
-    style={{
-      fontSize: '0.875rem',
-      color: 'var(--text-secondary)',
-      textAlign: 'center',
-    }}>
-    ING
-  </span>
-</div>
-
-{' '}
-
-<div
-  style={{
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    gap: '1rem',
-    padding: '1.5rem',
-    background: 'var(--bg-primary)',
-    borderRadius: '8px',
-    border: '1px solid var(--border-default-color)',
-  }}>
-  <div
-    style={{
-      width: '100%',
-      height: '80px',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      position: 'relative',
-    }}>
-    <img
-      src="/logos/kamernet.svg"
-      alt="Kamernet"
-      style={{
-        width: '100%',
-        height: '80px',
-        objectFit: 'contain',
-        filter: 'grayscale(100%) brightness(1.2) contrast(1.1)',
-        mixBlendMode: 'screen',
-      }}
-    />
-    <div
-      style={{
-        position: 'absolute',
-        inset: 0,
-        background: 'var(--accent-primary)',
-        mixBlendMode: 'multiply',
-        pointerEvents: 'none',
-      }}
-    />
-  </div>
-  <span
-    style={{
-      fontSize: '0.875rem',
-      color: 'var(--text-secondary)',
-      textAlign: 'center',
-    }}>
-    Kamernet
-  </span>
-</div>
-
-{' '}
-
-<div
-  style={{
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    gap: '1rem',
-    padding: '1.5rem',
-    background: 'var(--bg-primary)',
-    borderRadius: '8px',
-    border: '1px solid var(--border-default-color)',
-  }}>
-  <div
-    style={{
-      width: '100%',
-      height: '80px',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      position: 'relative',
-    }}>
-    <img
-      src="/logos/carnext.png"
-      alt="CarNext"
-      style={{
-        width: '100%',
-        height: '80px',
-        objectFit: 'contain',
-        filter: 'grayscale(100%) brightness(1.2) contrast(1.1)',
-        mixBlendMode: 'screen',
-      }}
-    />
-    <div
-      style={{
-        position: 'absolute',
-        inset: 0,
-        background: 'var(--accent-primary)',
-        mixBlendMode: 'multiply',
-        pointerEvents: 'none',
-      }}
-    />
-  </div>
-  <span
-    style={{
-      fontSize: '0.875rem',
-      color: 'var(--text-secondary)',
-      textAlign: 'center',
-    }}>
-    CarNext
-  </span>
-</div>
-
-{' '}
-
-<div
-  style={{
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    gap: '1rem',
-    padding: '1.5rem',
-    background: 'var(--bg-primary)',
-    borderRadius: '8px',
-    border: '1px solid var(--border-default-color)',
-  }}>
-  <div
-    style={{
-      width: '100%',
-      height: '80px',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      position: 'relative',
-    }}>
-    <img
-      src="/logos/Mediamonks.svg"
-      alt="MediaMonks"
-      style={{
-        width: '100%',
-        height: '80px',
-        objectFit: 'contain',
-        filter: 'grayscale(100%) brightness(1.2) contrast(1.1)',
-        mixBlendMode: 'screen',
-      }}
-    />
-    <div
-      style={{
-        position: 'absolute',
-        inset: 0,
-        background: 'var(--accent-primary)',
-        mixBlendMode: 'multiply',
-        pointerEvents: 'none',
-      }}
-    />
-  </div>
-  <span
-    style={{
-      fontSize: '0.875rem',
-      color: 'var(--text-secondary)',
-      textAlign: 'center',
-    }}>
-    MediaMonks
-  </span>
-</div>
-
-{' '}
-
-<div
-  style={{
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    gap: '1rem',
-    padding: '1.5rem',
-    background: 'var(--bg-primary)',
-    borderRadius: '8px',
-    border: '1px solid var(--border-default-color)',
-  }}>
-  <div
-    style={{
-      width: '100%',
-      height: '80px',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      position: 'relative',
-    }}>
-    <img
-      src="/logos/T-Mobile_logo.svg"
-      alt="T-Mobile"
-      style={{
-        width: '100%',
-        height: '80px',
-        objectFit: 'contain',
-        filter: 'grayscale(100%) brightness(1.2) contrast(1.1)',
-        mixBlendMode: 'screen',
-      }}
-    />
-    <div
-      style={{
-        position: 'absolute',
-        inset: 0,
-        background: 'var(--accent-primary)',
-        mixBlendMode: 'multiply',
-        pointerEvents: 'none',
-      }}
-    />
-  </div>
-  <span
-    style={{
-      fontSize: '0.875rem',
-      color: 'var(--text-secondary)',
-      textAlign: 'center',
-    }}>
-    T-Mobile
-  </span>
-</div>
-
-{' '}
-
-<div
-  style={{
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    gap: '1rem',
-    padding: '1.5rem',
-    background: 'var(--bg-primary)',
-    borderRadius: '8px',
-    border: '1px solid var(--border-default-color)',
-  }}>
-  <div
-    style={{
-      width: '100%',
-      height: '80px',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      position: 'relative',
-    }}>
-    <img
-      src="/logos/nike-vector-logo.svg"
-      alt="Nike"
-      style={{
-        width: '100%',
-        height: '80px',
-        objectFit: 'contain',
-        filter: 'invert(1) grayscale(100%) brightness(1.2) contrast(1.1)',
-        mixBlendMode: 'screen',
-      }}
-    />
-    <div
-      style={{
-        position: 'absolute',
-        inset: 0,
-        background: 'var(--accent-primary)',
-        mixBlendMode: 'multiply',
-        pointerEvents: 'none',
-      }}
-    />
-  </div>
-  <span
-    style={{
-      fontSize: '0.875rem',
-      color: 'var(--text-secondary)',
-      textAlign: 'center',
-    }}>
-    Nike (Vector)
-  </span>
-</div>
-
-{' '}
-
-<div
-  style={{
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    gap: '1rem',
-    padding: '1.5rem',
-    background: 'var(--bg-primary)',
-    borderRadius: '8px',
-    border: '1px solid var(--border-default-color)',
-  }}>
-  <div
-    style={{
-      width: '100%',
-      height: '80px',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      position: 'relative',
-    }}>
-    <img
-      src="/logos/nike-logo.svg"
-      alt="Nike"
-      style={{
-        width: '100%',
-        height: '80px',
-        objectFit: 'contain',
-        filter: 'invert(1) grayscale(100%) brightness(1.2) contrast(1.1)',
-        mixBlendMode: 'screen',
-      }}
-    />
-    <div
-      style={{
-        position: 'absolute',
-        inset: 0,
-        background: 'var(--accent-primary)',
-        mixBlendMode: 'multiply',
-        pointerEvents: 'none',
-      }}
-    />
-  </div>
-  <span
-    style={{
-      fontSize: '0.875rem',
-      color: 'var(--text-secondary)',
-      textAlign: 'center',
-    }}>
-    Nike
-  </span>
-</div>
-
-{' '}
-
-<div
-  style={{
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    gap: '1rem',
-    padding: '1.5rem',
-    background: 'var(--bg-primary)',
-    borderRadius: '8px',
-    border: '1px solid var(--border-default-color)',
-  }}>
-  <div
-    style={{
-      width: '100%',
-      height: '80px',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      position: 'relative',
-    }}>
-    <img
-      src="/logos/picnic-de-online-supermarkt-logo-vector.svg"
-      alt="Picnic"
-      style={{
-        width: '100%',
-        height: '80px',
-        objectFit: 'contain',
-        filter: 'grayscale(100%) brightness(1.2) contrast(1.1)',
-        mixBlendMode: 'screen',
-      }}
-    />
-    <div
-      style={{
-        position: 'absolute',
-        inset: 0,
-        background: 'var(--accent-primary)',
-        mixBlendMode: 'multiply',
-        pointerEvents: 'none',
-      }}
-    />
-  </div>
-  <span
-    style={{
-      fontSize: '0.875rem',
-      color: 'var(--text-secondary)',
-      textAlign: 'center',
-    }}>
-    Picnic
-  </span>
-</div>
-
-{' '}
-
-<div
-  style={{
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    gap: '1rem',
-    padding: '1.5rem',
-    background: 'var(--bg-primary)',
-    borderRadius: '8px',
-    border: '1px solid var(--border-default-color)',
-  }}>
-  <div
-    style={{
-      width: '100%',
-      height: '80px',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      position: 'relative',
-    }}>
-    <img
-      src="/logos/nslogo.svg"
-      alt="NS"
-      style={{
-        width: '100%',
-        height: '80px',
-        objectFit: 'contain',
-        filter: 'grayscale(100%) brightness(1.2) contrast(1.1)',
-        mixBlendMode: 'screen',
-      }}
-    />
-    <div
-      style={{
-        position: 'absolute',
-        inset: 0,
-        background: 'var(--accent-primary)',
-        mixBlendMode: 'multiply',
-        pointerEvents: 'none',
-      }}
-    />
-  </div>
-  <span
-    style={{
-      fontSize: '0.875rem',
-      color: 'var(--text-secondary)',
-      textAlign: 'center',
-    }}>
-    NS
-  </span>
-</div>
-
-{' '}
-
-<div
-  style={{
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    gap: '1rem',
-    padding: '1.5rem',
-    background: 'var(--bg-primary)',
-    borderRadius: '8px',
-    border: '1px solid var(--border-default-color)',
-  }}>
-  <div
-    style={{
-      width: '100%',
-      height: '80px',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      position: 'relative',
-    }}>
-    <img
-      src="/logos/Politie.svg"
-      alt="Politie"
-      style={{
-        width: '100%',
-        height: '80px',
-        objectFit: 'contain',
-        filter: 'grayscale(100%) brightness(1.2) contrast(1.1)',
-        mixBlendMode: 'screen',
-      }}
-    />
-    <div
-      style={{
-        position: 'absolute',
-        inset: 0,
-        background: 'var(--accent-primary)',
-        mixBlendMode: 'multiply',
-        pointerEvents: 'none',
-      }}
-    />
-  </div>
-  <span
-    style={{
-      fontSize: '0.875rem',
-      color: 'var(--text-secondary)',
-      textAlign: 'center',
-    }}>
-    Politie
-  </span>
-</div>
 
   <div style={{
     display: 'flex',
@@ -1079,51 +326,283 @@ The same logos tinted with the primary accent color using CSS filters and blend 
     borderRadius: '8px',
     border: '1px solid var(--border-default-color)',
   }}>
-    <div style={{
-      width: '100%',
-      height: '80px',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      position: 'relative',
-    }}>
-      <img
-        src="/logos/marktplaats-admarkt-rgb.svg"
-        alt="Marktplaats"
-        style={{
-          width: '100%',
-          height: '80px',
-          objectFit: 'contain',
-          filter: 'grayscale(100%) brightness(1.2) contrast(1.1)',
-          mixBlendMode: 'screen',
-        }}
-      />
-      <div style={{
-        position: 'absolute',
-        inset: 0,
-        background: 'var(--accent-primary)',
-        mixBlendMode: 'multiply',
-        pointerEvents: 'none',
-      }} />
-    </div>
+    <TintedImage
+      src="/logos/Electronic-Arts-Logo.svg"
+      alt="Electronic Arts"
+      filters={{ invert: true }}
+    />
+    <span style={{ fontSize: '0.875rem', color: 'var(--text-secondary)', textAlign: 'center' }}>
+      Electronic Arts
+    </span>
+  </div>
+
+  <div style={{
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    gap: '1rem',
+    padding: '1.5rem',
+    background: 'var(--bg-primary)',
+    borderRadius: '8px',
+    border: '1px solid var(--border-default-color)',
+  }}>
+    <TintedImage
+      src="/logos/EBay_logo.svg"
+      alt="eBay"
+    />
+    <span style={{ fontSize: '0.875rem', color: 'var(--text-secondary)', textAlign: 'center' }}>
+      eBay
+    </span>
+  </div>
+
+  <div style={{
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    gap: '1rem',
+    padding: '1.5rem',
+    background: 'var(--bg-primary)',
+    borderRadius: '8px',
+    border: '1px solid var(--border-default-color)',
+  }}>
+    <TintedImage
+      src="/logos/ING_Group_N.V._Logo.svg"
+      alt="ING"
+      filters={{ brightness: 1.4, contrast: 0.3 }}
+    />
+    <span style={{ fontSize: '0.875rem', color: 'var(--text-secondary)', textAlign: 'center' }}>
+      ING
+    </span>
+  </div>
+
+  <div style={{
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    gap: '1rem',
+    padding: '1.5rem',
+    background: 'var(--bg-primary)',
+    borderRadius: '8px',
+    border: '1px solid var(--border-default-color)',
+  }}>
+    <TintedImage
+      src="/logos/kamernet.svg"
+      alt="Kamernet"
+    />
+    <span style={{ fontSize: '0.875rem', color: 'var(--text-secondary)', textAlign: 'center' }}>
+      Kamernet
+    </span>
+  </div>
+
+  <div style={{
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    gap: '1rem',
+    padding: '1.5rem',
+    background: 'var(--bg-primary)',
+    borderRadius: '8px',
+    border: '1px solid var(--border-default-color)',
+  }}>
+    <TintedImage
+      src="/logos/carnext.png"
+      alt="CarNext"
+    />
+    <span style={{ fontSize: '0.875rem', color: 'var(--text-secondary)', textAlign: 'center' }}>
+      CarNext
+    </span>
+  </div>
+
+  <div style={{
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    gap: '1rem',
+    padding: '1.5rem',
+    background: 'var(--bg-primary)',
+    borderRadius: '8px',
+    border: '1px solid var(--border-default-color)',
+  }}>
+    <TintedImage
+      src="/logos/Mediamonks.svg"
+      alt="MediaMonks"
+    />
+    <span style={{ fontSize: '0.875rem', color: 'var(--text-secondary)', textAlign: 'center' }}>
+      MediaMonks
+    </span>
+  </div>
+
+  <div style={{
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    gap: '1rem',
+    padding: '1.5rem',
+    background: 'var(--bg-primary)',
+    borderRadius: '8px',
+    border: '1px solid var(--border-default-color)',
+  }}>
+    <TintedImage
+      src="/logos/T-Mobile_logo.svg"
+      alt="T-Mobile"
+    />
+    <span style={{ fontSize: '0.875rem', color: 'var(--text-secondary)', textAlign: 'center' }}>
+      T-Mobile
+    </span>
+  </div>
+
+  <div style={{
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    gap: '1rem',
+    padding: '1.5rem',
+    background: 'var(--bg-primary)',
+    borderRadius: '8px',
+    border: '1px solid var(--border-default-color)',
+  }}>
+    <TintedImage
+      src="/logos/nike-vector-logo.svg"
+      alt="Nike"
+      filters={{ invert: true }}
+    />
+    <span style={{ fontSize: '0.875rem', color: 'var(--text-secondary)', textAlign: 'center' }}>
+      Nike (Vector)
+    </span>
+  </div>
+
+  <div style={{
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    gap: '1rem',
+    padding: '1.5rem',
+    background: 'var(--bg-primary)',
+    borderRadius: '8px',
+    border: '1px solid var(--border-default-color)',
+  }}>
+    <TintedImage
+      src="/logos/nike-logo.svg"
+      alt="Nike"
+      filters={{ invert: true }}
+    />
+    <span style={{ fontSize: '0.875rem', color: 'var(--text-secondary)', textAlign: 'center' }}>
+      Nike
+    </span>
+  </div>
+
+  <div style={{
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    gap: '1rem',
+    padding: '1.5rem',
+    background: 'var(--bg-primary)',
+    borderRadius: '8px',
+    border: '1px solid var(--border-default-color)',
+  }}>
+    <TintedImage
+      src="/logos/picnic-de-online-supermarkt-logo-vector.svg"
+      alt="Picnic"
+    />
+    <span style={{ fontSize: '0.875rem', color: 'var(--text-secondary)', textAlign: 'center' }}>
+      Picnic
+    </span>
+  </div>
+
+  <div style={{
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    gap: '1rem',
+    padding: '1.5rem',
+    background: 'var(--bg-primary)',
+    borderRadius: '8px',
+    border: '1px solid var(--border-default-color)',
+  }}>
+    <TintedImage
+      src="/logos/nslogo.svg"
+      alt="NS"
+    />
+    <span style={{ fontSize: '0.875rem', color: 'var(--text-secondary)', textAlign: 'center' }}>
+      NS
+    </span>
+  </div>
+
+  <div style={{
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    gap: '1rem',
+    padding: '1.5rem',
+    background: 'var(--bg-primary)',
+    borderRadius: '8px',
+    border: '1px solid var(--border-default-color)',
+  }}>
+    <TintedImage
+      src="/logos/Politie.svg"
+      alt="Politie"
+    />
+    <span style={{ fontSize: '0.875rem', color: 'var(--text-secondary)', textAlign: 'center' }}>
+      Politie
+    </span>
+  </div>
+
+  <div style={{
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    gap: '1rem',
+    padding: '1.5rem',
+    background: 'var(--bg-primary)',
+    borderRadius: '8px',
+    border: '1px solid var(--border-default-color)',
+  }}>
+    <TintedImage
+      src="/logos/marktplaats-admarkt-rgb.svg"
+      alt="Marktplaats"
+    />
     <span style={{ fontSize: '0.875rem', color: 'var(--text-secondary)', textAlign: 'center' }}>Marktplaats</span>
   </div>
 </div>
 
-## CSS Blend Mode Technique
+## TintedImage Component
 
-The tinted logos use a combination of:
+The tinted logos use the `TintedImage` component which applies:
 
-- `filter: grayscale(100%) brightness(1.2) contrast(1.1)` - Converts to monochrome, increases brightness and adds contrast
+- `filter: grayscale(100%) brightness(1.2) contrast(1.1)` - Converts to monochrome with adjusted brightness/contrast
 - `mixBlendMode: 'screen'` on the image - Lightens the result
 - A colored overlay with `background: var(--accent-primary)` and `mixBlendMode: 'multiply'` - Applies the tint
+- `transform: translate3d(0,0,0)` - Forces GPU acceleration for Safari compatibility
 
-This preserves the tonal values (light and dark areas) while applying your theme colors with better visibility.
+This preserves the tonal values (light and dark areas) while applying theme colors with excellent cross-browser compatibility.
 
-## Notes
+### Usage
 
-- PNG logos (CarNext, logo-large.png) are also included
-- All SVG logos maintain their original colors and styling in the first grid
-- The tinted versions use CSS blend modes to apply theme colors dynamically
-- The grid is responsive and adjusts to different screen sizes
-- Each logo is contained within an 80px height constraint while maintaining aspect ratio
+```tsx
+// Basic usage (default primary color tint)
+<TintedImage src="/logos/ING_Group_N.V._Logo.svg" alt="ING" />
+
+// Black logo (needs invert)
+<TintedImage
+  src="/logos/nike-vector-logo.svg"
+  alt="Nike"
+  filters={{ invert: true }}
+/>
+
+// Custom filters (ING logo needs special settings)
+<TintedImage
+  src="/logos/ING_Group_N.V._Logo.svg"
+  alt="ING"
+  filters={{ brightness: 1.4, contrast: 0.3 }}
+/>
+
+// Custom tint color
+<TintedImage
+  src="/logos/Mediamonks.svg"
+  alt="MediaMonks"
+  tintColor="var(--accent-secondary)"
+/>
+```
+
+For more examples, see the [TintedImage Storybook stories](?path=/story/common-tintedimage--default).

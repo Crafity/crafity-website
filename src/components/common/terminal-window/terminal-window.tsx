@@ -1,6 +1,8 @@
 import { ReactNode } from 'react'
 import { clsx } from 'clsx'
 
+import { Dots } from '../dots/dots'
+
 import styles from './terminal-window.module.css'
 
 interface TerminalWindowProps {
@@ -17,11 +19,7 @@ export function TerminalWindow({
   return (
     <div className={clsx(styles.terminal, className)}>
       <div className={styles.header}>
-        <div className={styles.dots}>
-          <span className={styles.dot} data-color="red" />
-          <span className={styles.dot} data-color="yellow" />
-          <span className={styles.dot} data-color="blue" />
-        </div>
+        <Dots />
         {title && <div className={styles.title}>{title}</div>}
       </div>
       <div className={styles.content}>{children}</div>

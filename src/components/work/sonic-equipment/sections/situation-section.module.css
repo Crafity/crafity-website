@@ -1,0 +1,8 @@
+.constraint-text {
+  padding: var(--spacing-6);
+  border-left: var(--border-width-accent) solid var(--accent-secondary);
+  margin-top: var(--spacing-12);
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+  font-style: italic;
+}

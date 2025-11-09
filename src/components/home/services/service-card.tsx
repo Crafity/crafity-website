@@ -1,5 +1,8 @@
 import styles from './service-card.module.css'
 
+import { Heading } from '@/components/common/heading/heading'
+import { Text } from '@/components/common/text/text'
+
 interface ServiceCardProps {
   description: string
   examples: string
@@ -17,10 +20,16 @@ export function ServiceCard({
     <div className={styles.card}>
       <div className={styles.accent} />
 
-      <div className={styles.number}>{number}</div>
-      <h3 className={styles.title}>{title}</h3>
-      <p className={styles.description}>{description}</p>
-      <div className={styles.examples}>RECENT: {examples}</div>
+      <Text className={styles.number} size="xs" variant="label">
+        {number}
+      </Text>
+      <Heading className={styles.title} level={3} size="md">
+        {title}
+      </Heading>
+      <Text className={styles.description}>{description}</Text>
+      <Text className={styles.examples} size="xs" variant="label">
+        RECENT: {examples}
+      </Text>
     </div>
   )
 }

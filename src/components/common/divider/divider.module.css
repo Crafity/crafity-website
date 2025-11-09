@@ -1,0 +1,28 @@
+/**
+ * Divider Component Styles
+ *
+ * Simple horizontal rule for visual content separation.
+ */
+
+.divider {
+  width: 100%;
+  border: none;
+}
+
+/* ========================================================================
+   Variant Styles
+   ======================================================================== */
+
+.variant-default {
+  height: 1px;
+  background: var(--border-default-color);
+}
+
+.variant-gradient {
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    var(--accent-secondary),
+    var(--accent-primary)
+  );
+}

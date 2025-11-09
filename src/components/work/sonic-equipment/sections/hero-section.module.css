@@ -1,0 +1,61 @@
+/* ==========================================================================
+   HERO SECTION
+   ========================================================================== */
+
+.hero {
+  align-items: center;
+  text-align: left;
+}
+
+/* Terminal Window Styling */
+.terminal-window {
+  width: 100%;
+  max-width: 730px;
+  margin: 0 auto;
+  font-family: var(--mono-font-family);
+}
+
+/* Terminal Content */
+.command {
+  margin-bottom: var(--spacing-4);
+  color: var(--text-primary);
+}
+
+.output {
+  margin-bottom: var(--spacing-4);
+  color: var(--text-secondary);
+}
+
+.success {
+  color: var(--accent-secondary);
+}
+
+/* Tagline */
+.tagline {
+  max-width: 700px;
+  margin: 0;
+  color: var(--text-secondary);
+  font-family: var(--font-family);
+  font-size: var(--font-size-base-lg);
+  font-style: italic;
+  line-height: var(--line-height-relaxed);
+}
+
+/* Metadata */
+.metadata {
+  color: var(--accent-secondary);
+  font-family: var(--mono-font-family);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--letter-spacing-wide);
+}
+
+/* ==========================================================================
+   RESPONSIVE - MOBILE
+   ========================================================================== */
+
+@media (--md-n-below) {
+  .tagline {
+    font-size: var(--font-size-base);
+  }
+}

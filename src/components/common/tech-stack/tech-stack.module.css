@@ -10,10 +10,6 @@
   border: var(--border-default);
   color: var(--text-secondary);
   font-size: var(--font-size-2xs);
+  font-weight: var(--font-weight-medium);
   white-space: nowrap;
-
-  &::before {
-    margin-right: var(--spacing-1);
-    content: '·';
-  }
 }

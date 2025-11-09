@@ -33,5 +33,5 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["src", ".storybook/*"]
+  "include": ["src", ".storybook/*", "vite.config.ts"]
 }

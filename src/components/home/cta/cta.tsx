@@ -1,23 +1,37 @@
 import styles from './cta.module.css'
 
+import { Heading } from '@/components/common/heading/heading'
+import { Text } from '@/components/common/text/text'
+import { Container } from '@/components/layout/container/container'
+import { Stack } from '@/components/layout/stack/stack'
+
 export function CTA() {
   return (
-    <div className={styles.container} id="contact">
-      <h2 className={styles.title}>LET'S BUILD SOMETHING</h2>
+    <Container size="comfortable">
+      <Stack className={styles.stack} space="medium">
+        <Heading align="center" level={2} variant="accent">
+          LET'S BUILD SOMETHING
+        </Heading>
 
-      <p className={styles.description}>
-        Whether you're migrating to headless, rescuing a legacy system, or need
-        senior engineering capacity—let's start the conversation.
-      </p>
+        <Text align="center" className={styles.description}>
+          Whether you're migrating to headless, rescuing a legacy system, or
+          need senior engineering capacity—let's start the conversation.
+        </Text>
 
-      <a className={styles.command} href="mailto:info@crafity.com">
-        <span className={styles.prompt}>$</span>
-        <span>start_conversation</span>
-      </a>
+        <a className={styles.command} href="mailto:info@crafity.com">
+          <span className={styles.prompt}>$</span>
+          <span>start_conversation</span>
+        </a>
 
-      <div className={styles.contact}>
-        info@crafity.com · Randstad, Netherlands
-      </div>
-    </div>
+        <Text
+          align="center"
+          className={styles.contact}
+          color="secondary"
+          size="sm"
+          variant="code">
+          info@crafity.com · Randstad, Netherlands
+        </Text>
+      </Stack>
+    </Container>
   )
 }

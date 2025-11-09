@@ -1,5 +1,10 @@
 import styles from './client-trust.module.css'
 
+import { Divider } from '@/components/common/divider/divider'
+import { Text } from '@/components/common/text/text'
+import { Container } from '@/components/layout/container/container'
+import { Stack } from '@/components/layout/stack/stack'
+
 const featuredClients = [
   'Sonic Equipment',
   'Royal Schiphol Group',
@@ -20,26 +25,37 @@ const supportingClients = [
 
 export function ClientTrust() {
   return (
-    <div className={styles.container}>
-      <div className={styles.divider} />
-      <div className={styles.label}>TRUSTED BY</div>
-      <div className={styles.divider} />
+    <Container size="wide">
+      <Stack space="medium">
+        <div className={styles.header}>
+          <Divider spacing="none" variant="default" />
+          <Text
+            align="center"
+            className={styles.label}
+            color="secondary"
+            size="xs"
+            variant="label">
+            TRUSTED BY
+          </Text>
+          <Divider spacing="none" variant="default" />
+        </div>
 
-      <div className={styles.featured}>
-        {featuredClients.map(client => (
-          <span key={client} className={styles.client}>
-            {client}
-          </span>
-        ))}
-      </div>
+        <div className={styles.featured}>
+          {featuredClients.map(client => (
+            <span key={client} className={styles.client}>
+              {client}
+            </span>
+          ))}
+        </div>
 
-      <div className={styles.supporting}>
-        {supportingClients.map(client => (
-          <span key={client} className={styles.client}>
-            {client}
-          </span>
-        ))}
-      </div>
-    </div>
+        <div className={styles.supporting}>
+          {supportingClients.map(client => (
+            <span key={client} className={styles.client}>
+              {client}
+            </span>
+          ))}
+        </div>
+      </Stack>
+    </Container>
   )
 }

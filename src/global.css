@@ -1,5 +1,6 @@
 @import url('./css/fonts.css');
 @import url('./css/tokens.css');
+@import url('./css/utilities.css');
 
 * {
   box-sizing: border-box;
@@ -30,6 +31,7 @@ body {
 
   /* Prevent iOS Safari from auto-adjusting font sizes in landscape */
   text-size-adjust: 100%;
+  text-wrap: pretty;
 
   &::before {
     position: fixed;

@@ -47,7 +47,14 @@ const jsxLanguageOptions = {
 export default [
   // Global ignores
   {
-    ignores: ['.nitro/**', '.output/**', '.tanstack/**', 'node_modules/**'],
+    ignores: [
+      '.nitro/**',
+      '.output/**',
+      '.tanstack/**',
+      'node_modules/**',
+      'public/storybook/**',
+      '**/*.mdx',
+    ],
   },
 
   // Base configurations

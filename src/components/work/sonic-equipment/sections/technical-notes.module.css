@@ -1,0 +1,75 @@
+/* ==========================================================================
+   TECHNICAL NOTES SECTION
+   ========================================================================== */
+
+.tech-terminal {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.technical-content {
+  color: var(--text-primary);
+  font-family: var(--mono-font-family);
+  font-size: var(--font-size-xs);
+  line-height: var(--line-height-loose);
+}
+
+.tech-section {
+  margin-bottom: var(--spacing-8);
+}
+
+.tech-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--spacing-4);
+  gap: var(--spacing-3);
+}
+
+.tech-icon {
+  color: var(--accent-secondary);
+  font-size: var(--font-size-base-lg);
+}
+
+.tech-title {
+  color: var(--accent-secondary);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--letter-spacing-normal);
+}
+
+.tech-section p {
+  margin-bottom: var(--spacing-4);
+  color: var(--text-primary);
+}
+
+.tech-divider {
+  height: 1px;
+  margin: var(--spacing-8) 0;
+  background: var(--border-default-color);
+  opacity: 0.3;
+}
+
+.technical-content ul {
+  padding-left: var(--spacing-6);
+  margin: var(--spacing-4) 0;
+  list-style: none;
+}
+
+.technical-content li {
+  margin-bottom: var(--spacing-3);
+}
+
+.technical-content li::before {
+  color: var(--accent-secondary);
+  content: '- ';
+}
+
+.technical-content strong {
+  color: var(--accent-secondary);
+  font-weight: var(--font-weight-bold);
+}
+
+.tech-section:last-child,
+.technical-content p:last-child,
+.technical-content li:last-child {
+  margin-bottom: 0;
+}

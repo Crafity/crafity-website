@@ -1,0 +1,22 @@
+.dots {
+  display: flex;
+  gap: var(--spacing-2);
+}
+
+.dot {
+  width: var(--spacing-3); /* 12px */
+  height: var(--spacing-3);
+  border-radius: var(--radius-full);
+}
+
+.dot[data-color='red'] {
+  background: var(--terminal-red);
+}
+
+.dot[data-color='yellow'] {
+  background: var(--terminal-yellow);
+}
+
+.dot[data-color='blue'] {
+  background: var(--terminal-blue);
+}

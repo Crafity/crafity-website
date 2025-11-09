@@ -1,0 +1,29 @@
+.title {
+  margin: 0;
+  color: var(--text-primary);
+  font-family: var(--accent-font-family);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--letter-spacing-tight);
+  line-height: var(--line-height-tight);
+}
+
+/* Default variant: Privacy policy style */
+.default {
+  margin-bottom: var(--spacing-4);
+  font-size: var(--font-size-xl);
+
+  @media (--md-n-above) {
+    font-size: var(--font-size-2xl);
+  }
+}
+
+/* Large variant: Case study style */
+.large {
+  max-width: 900px;
+  font-size: var(--font-size-xl);
+  text-transform: uppercase;
+
+  @media (--md-n-above) {
+    font-size: var(--font-size-2xl);
+  }
+}

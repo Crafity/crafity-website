@@ -12,6 +12,9 @@
     "lint:fix": "eslint . --fix --ext ts,tsx,cjs,js,mdx --report-unused-disable-directives --cache --cache-location node_modules/.cache/.eslintcache",
     "stylelint": "stylelint --config .stylelintrc.cjs \"src/**/*.css\"",
     "stylelint:fix": "stylelint --config .stylelintrc.cjs \"src/**/*.css\" --formatter verbose --fix",
+    "test:all": "npx concurrently -g --names \"TSC,VITEST,ESLINT,STYLELINT\" -c auto --kill-others-on-fail \"pnpm run test:types\"  \"pnpm run test:unit\" \"pnpm run lint\" \"pnpm run stylelint\"",
+    "test:unit": "echo \"No unit tests configured yet.\"",
+    "test:types": "tsc --noEmit --pretty false",
     "docker:rm": "docker image rm crafity-start -f",
     "docker:build": "docker build -t crafity-start .",
     "docker:run": "docker run -v ./count.txt:/app/count.txt -p 3000:3000 crafity-start",
@@ -20,7 +23,9 @@
     "docker:rebuild:run": "pnpm docker:rebuild && pnpm docker:run",
     "storybook:build": "STORYBOOK=true storybook build && mv ./storybook-static ./public/storybook",
     "storybook:dev": "storybook dev -p 6006",
-    "storybook:start": "http-server ./storybook-static"
+    "storybook:start": "http-server ./storybook-static",
+    "check-updates": "npx npm-check-updates",
+    "update-packages": "npx npm-check-updates -u"
   },
   "keywords": [],
   "author": "",
@@ -54,6 +59,7 @@
     "@vitejs/plugin-react": "^5.1.0",
     "autoprefixer": "10.4.21",
     "babel-plugin-react-compiler": "^1.0.0",
+    "concurrently": "^9.2.1",
     "eslint": "^9.39.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-formatter-compact": "^9.0.1",

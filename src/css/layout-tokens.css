@@ -1,0 +1,32 @@
+/**
+ * Layout Tokens
+ *
+ * Semantic content width scale following industry best practices.
+ * Based on optimal reading widths and multi-column layout requirements.
+ */
+
+:root {
+  /* ========================================================================
+     Content Width Scale - Semantic naming
+     ======================================================================== */
+
+  /* Narrow: Forms, CTAs, focused content
+     Optimal for form inputs and narrow reading experiences */
+  --content-narrow: 600px;
+
+  /* Base: Long-form reading (articles, case studies, privacy policy)
+     Optimal character count per line for readability (45-75 chars) */
+  --content-base: 900px;
+
+  /* Comfortable: Slightly wider content
+     For content that needs more breathing room */
+  --content-comfortable: 1000px;
+
+  /* Wide: Multi-column layouts (service grids, team pages)
+     Supports 2-3 column layouts comfortably */
+  --content-wide: 1200px;
+
+  /* Full: Full-width sections (hero, featured work)
+     Maximum content width before too much whitespace */
+  --content-full: 1400px;
+}

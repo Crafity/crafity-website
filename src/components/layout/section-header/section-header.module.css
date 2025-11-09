@@ -1,0 +1,31 @@
+.accent {
+  width: var(--spacing-20); /* 80px */
+  height: var(--spacing-1); /* 4px */
+  margin: 0 auto var(--spacing-6);
+  background: linear-gradient(
+    90deg,
+    var(--accent-secondary),
+    var(--accent-primary)
+  );
+
+  @media (--md-n-above) {
+    margin-bottom: var(--spacing-8);
+  }
+}
+
+.title {
+  margin-bottom: var(--spacing-12);
+  color: var(--text-primary);
+  font-family: var(--accent-font-family);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: var(--letter-spacing-wide);
+  line-height: var(--line-height-normal);
+  text-align: center;
+  text-transform: uppercase;
+
+  @media (--md-n-above) {
+    margin-bottom: var(--spacing-16);
+    font-size: var(--font-size-2xl);
+  }
+}

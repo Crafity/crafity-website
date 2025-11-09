@@ -1,0 +1,65 @@
+<!-- Concept E: "The Bloom" - Square Icon -->
+<svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="256" height="256" rx="48" fill="#0A0A0A"/>
+
+  <!-- Center core - bright orange -->
+  <circle cx="128" cy="128" r="11" fill="#FF4500" opacity="1"/>
+
+  <!-- Ray 1 - pointing up-right (30 degrees) -->
+  <circle cx="142" cy="117" r="7" fill="#95C5EF" opacity="0.95"/>
+  <circle cx="155" cy="107" r="6" fill="#95C5EF" opacity="0.85"/>
+  <circle cx="167" cy="98" r="5" fill="#95C5EF" opacity="0.7"/>
+  <circle cx="178" cy="90" r="4" fill="#95C5EF" opacity="0.5"/>
+  <circle cx="188" cy="83" r="3" fill="#95C5EF" opacity="0.3"/>
+
+  <!-- Ray 2 - pointing right-down (85 degrees) -->
+  <circle cx="148" cy="128" r="7" fill="#95C5EF" opacity="0.95"/>
+  <circle cx="166" cy="130" r="6" fill="#95C5EF" opacity="0.85"/>
+  <circle cx="182" cy="133" r="5" fill="#95C5EF" opacity="0.7"/>
+  <circle cx="196" cy="136" r="4" fill="#95C5EF" opacity="0.5"/>
+  <circle cx="208" cy="139" r="3" fill="#95C5EF" opacity="0.3"/>
+
+  <!-- Ray 3 - pointing down-right (150 degrees) -->
+  <circle cx="140" cy="143" r="7" fill="#95C5EF" opacity="0.95"/>
+  <circle cx="150" cy="157" r="6" fill="#95C5EF" opacity="0.85"/>
+  <circle cx="158" cy="170" r="5" fill="#95C5EF" opacity="0.7"/>
+  <circle cx="165" cy="181" r="4" fill="#95C5EF" opacity="0.5"/>
+  <circle cx="171" cy="191" r="3" fill="#95C5EF" opacity="0.3"/>
+
+  <!-- Ray 4 - pointing down-left (210 degrees) -->
+  <circle cx="116" cy="143" r="7" fill="#95C5EF" opacity="0.95"/>
+  <circle cx="106" cy="157" r="6" fill="#95C5EF" opacity="0.85"/>
+  <circle cx="98" cy="170" r="5" fill="#95C5EF" opacity="0.7"/>
+  <circle cx="91" cy="181" r="4" fill="#95C5EF" opacity="0.5"/>
+  <circle cx="85" cy="191" r="3" fill="#95C5EF" opacity="0.3"/>
+
+  <!-- Ray 5 - pointing left-down (265 degrees) -->
+  <circle cx="108" cy="128" r="7" fill="#95C5EF" opacity="0.95"/>
+  <circle cx="90" cy="130" r="6" fill="#95C5EF" opacity="0.85"/>
+  <circle cx="74" cy="133" r="5" fill="#95C5EF" opacity="0.7"/>
+  <circle cx="60" cy="136" r="4" fill="#95C5EF" opacity="0.5"/>
+  <circle cx="48" cy="139" r="3" fill="#95C5EF" opacity="0.3"/>
+
+  <!-- Ray 6 - pointing up-left (330 degrees) -->
+  <circle cx="114" cy="117" r="7" fill="#95C5EF" opacity="0.95"/>
+  <circle cx="101" cy="107" r="6" fill="#95C5EF" opacity="0.85"/>
+  <circle cx="89" cy="98" r="5" fill="#95C5EF" opacity="0.7"/>
+  <circle cx="78" cy="90" r="4" fill="#95C5EF" opacity="0.5"/>
+  <circle cx="68" cy="83" r="3" fill="#95C5EF" opacity="0.3"/>
+
+  <!-- Ray 7 - pointing up (360/0 degrees) -->
+  <circle cx="128" cy="108" r="7" fill="#95C5EF" opacity="0.95"/>
+  <circle cx="128" cy="90" r="6" fill="#95C5EF" opacity="0.85"/>
+  <circle cx="128" cy="74" r="5" fill="#95C5EF" opacity="0.7"/>
+  <circle cx="128" cy="60" r="4" fill="#95C5EF" opacity="0.5"/>
+  <circle cx="128" cy="48" r="3" fill="#95C5EF" opacity="0.3"/>
+
+  <!-- Secondary orange accents at inner ray points -->
+  <circle cx="142" cy="117" r="3" fill="#FF4500" opacity="0.6"/>
+  <circle cx="148" cy="128" r="3" fill="#FF4500" opacity="0.6"/>
+  <circle cx="140" cy="143" r="3" fill="#FF4500" opacity="0.6"/>
+  <circle cx="116" cy="143" r="3" fill="#FF4500" opacity="0.6"/>
+  <circle cx="108" cy="128" r="3" fill="#FF4500" opacity="0.6"/>
+  <circle cx="114" cy="117" r="3" fill="#FF4500" opacity="0.6"/>
+  <circle cx="128" cy="108" r="3" fill="#FF4500" opacity="0.6"/>
+</svg>

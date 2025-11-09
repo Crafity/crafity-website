@@ -1,0 +1,76 @@
+/**
+ * Container Component Styles
+ *
+ * Provides horizontal centering with semantic max-width constraints.
+ * Includes responsive horizontal padding to prevent content from touching edges.
+ */
+
+.container {
+  width: 100%;
+  padding: 0 var(--spacing-4);
+  margin: 0 auto;
+
+  @media (--md-n-above) {
+    padding: 0 var(--spacing-6);
+  }
+}
+
+/* ========================================================================
+   Size Variants - Using semantic layout tokens
+   ======================================================================== */
+
+.narrow {
+  max-width: var(--content-narrow);
+}
+
+.base {
+  max-width: var(--content-base);
+}
+
+.comfortable {
+  max-width: var(--content-comfortable);
+}
+
+.wide {
+  max-width: var(--content-wide);
+}
+
+.full {
+  max-width: var(--content-full);
+}
+
+/* ========================================================================
+   Responsive Size - When size prop is responsive object
+   ======================================================================== */
+
+.size-responsive {
+  max-width: var(--container-size-base);
+
+  @media (--xs-n-above) {
+    max-width: var(--container-size-xs, var(--container-size-base));
+  }
+
+  @media (--sm-n-above) {
+    max-width: var(--container-size-sm, var(--container-size-xs, var(--container-size-base)));
+  }
+
+  @media (--md-n-above) {
+    max-width: var(--container-size-md, var(--container-size-sm, var(--container-size-xs, var(--container-size-base))));
+  }
+
+  @media (--lg-n-above) {
+    max-width: var(--container-size-lg, var(--container-size-md, var(--container-size-sm, var(--container-size-xs, var(--container-size-base)))));
+  }
+
+  @media (--xl-n-above) {
+    max-width: var(--container-size-xl, var(--container-size-lg, var(--container-size-md, var(--container-size-sm, var(--container-size-xs, var(--container-size-base))))));
+  }
+
+  @media (--2xl-n-above) {
+    max-width: var(--container-size-2xl, var(--container-size-xl, var(--container-size-lg, var(--container-size-md, var(--container-size-sm, var(--container-size-xs, var(--container-size-base)))))));
+  }
+
+  @media (--3xl-n-above) {
+    max-width: var(--container-size-3xl, var(--container-size-2xl, var(--container-size-xl, var(--container-size-lg, var(--container-size-md, var(--container-size-sm, var(--container-size-xs, var(--container-size-base))))))));
+  }
+}

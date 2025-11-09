@@ -2,6 +2,11 @@ import { PrincipleCard } from './principle-card'
 
 import styles from './approach.module.css'
 
+import { Divider } from '@/components/common/divider/divider'
+import { Heading } from '@/components/common/heading/heading'
+import { Container } from '@/components/layout/container/container'
+import { Stack } from '@/components/layout/stack/stack'
+
 const principles = [
   {
     description:
@@ -27,16 +32,24 @@ const principles = [
 
 export function Approach() {
   return (
-    <div className={styles.container} id="approach">
-      <h2 className={styles.statement}>BUILT TO LAST. BUILT WITH PASSION.</h2>
+    <Container size="wide">
+      <Stack space="xlarge">
+        <div className={styles.statement}>
+          <Heading align="center" level={2} variant="accent">
+            BUILT TO LAST. BUILT WITH PASSION.
+          </Heading>
+        </div>
 
-      <div className={styles.divider} />
+        <div className={styles.divider}>
+          <Divider spacing="none" variant="gradient" />
+        </div>
 
-      <div className={styles.principles}>
-        {principles.map((principle, index) => (
-          <PrincipleCard key={principle.title} index={index} {...principle} />
-        ))}
-      </div>
-    </div>
+        <Stack space="xlarge">
+          {principles.map((principle, index) => (
+            <PrincipleCard key={principle.title} index={index} {...principle} />
+          ))}
+        </Stack>
+      </Stack>
+    </Container>
   )
 }

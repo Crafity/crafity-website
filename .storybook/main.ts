@@ -24,7 +24,7 @@ const config: StorybookConfig = {
     name: '@storybook/react-vite',
     options: {},
   },
-  publicDir: ['../public/assets'],
+  // publicDir: ['../public/assets'],
   stories: [
     '../src/components/style-guide/**/*.mdx',
     '../src/**/*.stories.@(js|jsx|mjs|ts|tsx)',

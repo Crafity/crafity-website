@@ -1,0 +1,38 @@
+/**
+ * Section Component Styles
+ *
+ * Provides semantic sectioning with responsive vertical padding.
+ * Consolidates old Section and SectionContainer into one component.
+ */
+
+.section {
+  /* Base section - just semantic HTML */
+}
+
+/* ========================================================================
+   Spacing Variants
+   ======================================================================== */
+
+.normal {
+  /* Mobile: 64px */
+  padding: var(--spacing-16) 0;
+
+  /* Desktop: 96px */
+  @media (--lg-n-above) {
+    padding: var(--spacing-24) 0;
+  }
+}
+
+.large {
+  /* Mobile: 96px */
+  padding: var(--spacing-24) 0;
+
+  /* Desktop: 128px */
+  @media (--lg-n-above) {
+    padding: var(--spacing-32) 0;
+  }
+}
+
+.none {
+  padding: 0;
+}

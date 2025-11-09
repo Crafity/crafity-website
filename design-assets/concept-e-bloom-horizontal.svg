@@ -1,0 +1,83 @@
+<!-- Concept E: "The Bloom" - Horizontal with CRAFITY -->
+<svg width="600" height="120" viewBox="0 0 600 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .wordmark {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        font-size: 56px;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        fill: #FAFAFA;
+      }
+    </style>
+  </defs>
+
+  <!-- Icon with bloom pattern -->
+  <g transform="translate(10, 10)">
+    <rect width="100" height="100" rx="20" fill="#1A1A1A"/>
+
+    <!-- Center core -->
+    <circle cx="50" cy="50" r="5.5" fill="#FF4500" opacity="1"/>
+
+    <!-- Ray 1 - up-right -->
+    <circle cx="57" cy="46" r="3.5" fill="#95C5EF" opacity="0.95"/>
+    <circle cx="63" cy="42" r="3" fill="#95C5EF" opacity="0.85"/>
+    <circle cx="69" cy="39" r="2.5" fill="#95C5EF" opacity="0.7"/>
+    <circle cx="74" cy="36" r="2" fill="#95C5EF" opacity="0.5"/>
+    <circle cx="78" cy="33" r="1.5" fill="#95C5EF" opacity="0.3"/>
+
+    <!-- Ray 2 - right -->
+    <circle cx="59" cy="50" r="3.5" fill="#95C5EF" opacity="0.95"/>
+    <circle cx="67" cy="51" r="3" fill="#95C5EF" opacity="0.85"/>
+    <circle cx="74" cy="52" r="2.5" fill="#95C5EF" opacity="0.7"/>
+    <circle cx="80" cy="53" r="2" fill="#95C5EF" opacity="0.5"/>
+    <circle cx="85" cy="54" r="1.5" fill="#95C5EF" opacity="0.3"/>
+
+    <!-- Ray 3 - down-right -->
+    <circle cx="56" cy="57" r="3.5" fill="#95C5EF" opacity="0.95"/>
+    <circle cx="61" cy="63" r="3" fill="#95C5EF" opacity="0.85"/>
+    <circle cx="65" cy="68" r="2.5" fill="#95C5EF" opacity="0.7"/>
+    <circle cx="68" cy="72" r="2" fill="#95C5EF" opacity="0.5"/>
+    <circle cx="71" cy="76" r="1.5" fill="#95C5EF" opacity="0.3"/>
+
+    <!-- Ray 4 - down-left -->
+    <circle cx="44" cy="57" r="3.5" fill="#95C5EF" opacity="0.95"/>
+    <circle cx="39" cy="63" r="3" fill="#95C5EF" opacity="0.85"/>
+    <circle cx="35" cy="68" r="2.5" fill="#95C5EF" opacity="0.7"/>
+    <circle cx="32" cy="72" r="2" fill="#95C5EF" opacity="0.5"/>
+    <circle cx="29" cy="76" r="1.5" fill="#95C5EF" opacity="0.3"/>
+
+    <!-- Ray 5 - left -->
+    <circle cx="41" cy="50" r="3.5" fill="#95C5EF" opacity="0.95"/>
+    <circle cx="33" cy="51" r="3" fill="#95C5EF" opacity="0.85"/>
+    <circle cx="26" cy="52" r="2.5" fill="#95C5EF" opacity="0.7"/>
+    <circle cx="20" cy="53" r="2" fill="#95C5EF" opacity="0.5"/>
+    <circle cx="15" cy="54" r="1.5" fill="#95C5EF" opacity="0.3"/>
+
+    <!-- Ray 6 - up-left -->
+    <circle cx="43" cy="46" r="3.5" fill="#95C5EF" opacity="0.95"/>
+    <circle cx="37" cy="42" r="3" fill="#95C5EF" opacity="0.85"/>
+    <circle cx="31" cy="39" r="2.5" fill="#95C5EF" opacity="0.7"/>
+    <circle cx="26" cy="36" r="2" fill="#95C5EF" opacity="0.5"/>
+    <circle cx="22" cy="33" r="1.5" fill="#95C5EF" opacity="0.3"/>
+
+    <!-- Ray 7 - up -->
+    <circle cx="50" cy="41" r="3.5" fill="#95C5EF" opacity="0.95"/>
+    <circle cx="50" cy="33" r="3" fill="#95C5EF" opacity="0.85"/>
+    <circle cx="50" cy="26" r="2.5" fill="#95C5EF" opacity="0.7"/>
+    <circle cx="50" cy="20" r="2" fill="#95C5EF" opacity="0.5"/>
+    <circle cx="50" cy="15" r="1.5" fill="#95C5EF" opacity="0.3"/>
+
+    <!-- Orange accents at inner ray points -->
+    <circle cx="57" cy="46" r="1.5" fill="#FF4500" opacity="0.6"/>
+    <circle cx="59" cy="50" r="1.5" fill="#FF4500" opacity="0.6"/>
+    <circle cx="56" cy="57" r="1.5" fill="#FF4500" opacity="0.6"/>
+    <circle cx="44" cy="57" r="1.5" fill="#FF4500" opacity="0.6"/>
+    <circle cx="41" cy="50" r="1.5" fill="#FF4500" opacity="0.6"/>
+    <circle cx="43" cy="46" r="1.5" fill="#FF4500" opacity="0.6"/>
+    <circle cx="50" cy="41" r="1.5" fill="#FF4500" opacity="0.6"/>
+  </g>
+
+  <!-- Wordmark -->
+  <text x="140" y="78" class="wordmark">CRAFITY</text>
+</svg>

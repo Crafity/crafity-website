@@ -19,33 +19,24 @@
   left: -40px;
   width: 30px;
   height: 30px;
-  border-top: 4px solid var(--accent-primary);
-  border-left: 4px solid var(--accent-primary);
+  border-top: var(--border-width-accent) solid var(--accent-primary);
+  border-left: var(--border-width-accent) solid var(--accent-primary);
 }
 
 .number {
   margin-bottom: var(--spacing-2);
   color: var(--accent-secondary);
-  font-size: var(--font-size-xs);
-  letter-spacing: var(--letter-spacing-wide);
 }
 
 .title {
   margin-bottom: var(--spacing-4);
-  color: var(--text-primary);
-  font-size: var(--font-size-md);
   letter-spacing: var(--letter-spacing-wide);
-  line-height: var(--line-height-normal);
 }
 
 .description {
   margin-bottom: var(--spacing-4);
-  color: var(--text-primary);
-  line-height: var(--line-height-relaxed);
 }
 
 .examples {
   color: var(--accent-primary);
-  font-size: var(--font-size-xs);
-  letter-spacing: var(--letter-spacing-wide);
 }

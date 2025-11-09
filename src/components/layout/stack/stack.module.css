@@ -1,0 +1,79 @@
+/**
+ * Stack Component Styles
+ *
+ * Provides consistent vertical spacing between child elements.
+ * Uses CSS flexbox with gap for clean, predictable spacing.
+ */
+
+.stack {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ========================================================================
+   Space Variants - Using design tokens
+   ======================================================================== */
+
+.small {
+  gap: var(--spacing-8);
+}
+
+.medium {
+  gap: var(--spacing-12);
+}
+
+.large {
+  gap: var(--spacing-16);
+}
+
+.xlarge {
+  gap: var(--spacing-24);
+}
+
+/* ========================================================================
+   Responsive Spacing - When space prop is responsive object
+   ======================================================================== */
+
+.space-responsive {
+  gap: var(--stack-gap-base);
+
+  @media (--xs-n-above) {
+    gap: var(--stack-gap-xs, var(--stack-gap-base));
+  }
+
+  @media (--sm-n-above) {
+    gap: var(--stack-gap-sm, var(--stack-gap-xs, var(--stack-gap-base)));
+  }
+
+  @media (--md-n-above) {
+    gap: var(--stack-gap-md, var(--stack-gap-sm, var(--stack-gap-xs, var(--stack-gap-base))));
+  }
+
+  @media (--lg-n-above) {
+    gap: var(--stack-gap-lg, var(--stack-gap-md, var(--stack-gap-sm, var(--stack-gap-xs, var(--stack-gap-base)))));
+  }
+
+  @media (--xl-n-above) {
+    gap: var(--stack-gap-xl, var(--stack-gap-lg, var(--stack-gap-md, var(--stack-gap-sm, var(--stack-gap-xs, var(--stack-gap-base))))));
+  }
+
+  @media (--2xl-n-above) {
+    gap: var(--stack-gap-2xl, var(--stack-gap-xl, var(--stack-gap-lg, var(--stack-gap-md, var(--stack-gap-sm, var(--stack-gap-xs, var(--stack-gap-base)))))));
+  }
+
+  @media (--3xl-n-above) {
+    gap: var(--stack-gap-3xl, var(--stack-gap-2xl, var(--stack-gap-xl, var(--stack-gap-lg, var(--stack-gap-md, var(--stack-gap-sm, var(--stack-gap-xs, var(--stack-gap-base))))))));
+  }
+}
+
+/* ========================================================================
+   Divider - When dividers prop is true
+   ======================================================================== */
+
+.divider {
+  width: 100%;
+  height: 1px;
+  border: none;
+  margin: 0;
+  background: var(--border-default-color);
+}

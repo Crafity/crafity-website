@@ -1,4 +1,9 @@
+/* stylelint-disable no-descending-specificity */
 @import url('../../../css/breakpoints.css');
+
+:root {
+  --size-icon: var(--spacing-5); /* 20px - standard icon size */
+}
 
 /* Overlay for positioning - bottom right corner */
 .overlay {
@@ -43,8 +48,8 @@
 
 /* Cookie icon - small and subtle */
 .icon {
-  width: 20px;
-  height: 20px;
+  width: var(--size-icon);
+  height: var(--size-icon);
   flex-shrink: 0;
   margin-top: 2px;
   color: var(--accent-secondary);
@@ -78,6 +83,16 @@
   gap: var(--spacing-2);
 }
 
+.button-allow {
+  border: 1px solid var(--accent-secondary);
+  background: var(--accent-secondary);
+  color: var(--bg-primary);
+
+  &:hover {
+    opacity: 0.9;
+  }
+}
+
 /* Buttons - compact and side by side */
 .button-allow,
 .button-decline {
@@ -103,16 +118,6 @@
 .button-decline:hover {
   border-color: var(--border-strong-color);
   background: var(--bg-tertiary);
-}
-
-.button-allow {
-  border: 1px solid var(--accent-secondary);
-  background: var(--accent-secondary);
-  color: var(--bg-primary);
-
-  &:hover {
-    opacity: 0.9;
-  }
 }
 
 /* Animations */

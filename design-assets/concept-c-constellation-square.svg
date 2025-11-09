@@ -1,0 +1,45 @@
+<!-- Concept C: "The Constellation" - Square Icon - Optimized ViewBox -->
+<svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="256" height="256" rx="48" fill="#0A0A0A"/>
+
+  <!-- Main constellation nodes - larger bright dots -->
+  <circle cx="64" cy="48" r="11" fill="#95C5EF" opacity="1"/>
+  <circle cx="192" cy="72" r="13" fill="#95C5EF" opacity="1"/>
+  <circle cx="152" cy="160" r="12" fill="#95C5EF" opacity="1"/>
+  <circle cx="80" cy="184" r="10" fill="#95C5EF" opacity="1"/>
+  <circle cx="184" cy="216" r="9" fill="#95C5EF" opacity="0.95"/>
+
+  <!-- Orange accent nodes -->
+  <circle cx="128" cy="112" r="14" fill="#FF4500" opacity="1"/>
+  <circle cx="48" cy="128" r="10" fill="#FF4500" opacity="0.85"/>
+
+  <!-- Secondary constellation dots -->
+  <circle cx="104" cy="56" r="7" fill="#95C5EF" opacity="0.85"/>
+  <circle cx="168" cy="112" r="7" fill="#95C5EF" opacity="0.8"/>
+  <circle cx="112" cy="144" r="6" fill="#95C5EF" opacity="0.75"/>
+  <circle cx="208" cy="136" r="6" fill="#95C5EF" opacity="0.7"/>
+
+  <!-- Tertiary smaller dots for depth -->
+  <circle cx="80" cy="80" r="5" fill="#95C5EF" opacity="0.6"/>
+  <circle cx="152" cy="88" r="5" fill="#95C5EF" opacity="0.55"/>
+  <circle cx="120" cy="184" r="5" fill="#95C5EF" opacity="0.5"/>
+  <circle cx="160" cy="200" r="4" fill="#95C5EF" opacity="0.45"/>
+
+  <!-- Connection lines (subtle) -->
+  <line x1="64" y1="48" x2="104" y2="56" stroke="#95C5EF" stroke-width="1.5" opacity="0.25"/>
+  <line x1="104" y1="56" x2="128" y2="112" stroke="#95C5EF" stroke-width="1.5" opacity="0.25"/>
+  <line x1="128" y1="112" x2="192" y2="72" stroke="#95C5EF" stroke-width="1.5" opacity="0.25"/>
+  <line x1="128" y1="112" x2="168" y2="112" stroke="#95C5EF" stroke-width="1.5" opacity="0.25"/>
+  <line x1="128" y1="112" x2="152" y2="160" stroke="#95C5EF" stroke-width="1.5" opacity="0.25"/>
+  <line x1="48" y1="128" x2="80" y2="184" stroke="#95C5EF" stroke-width="1.5" opacity="0.25"/>
+  <line x1="152" y1="160" x2="184" y2="216" stroke="#95C5EF" stroke-width="1.5" opacity="0.25"/>
+  <line x1="168" y1="112" x2="208" y2="136" stroke="#95C5EF" stroke-width="1.5" opacity="0.25"/>
+
+  <!-- Outer edge ambient dots (very faint) -->
+  <circle cx="24" cy="40" r="4" fill="#95C5EF" opacity="0.3"/>
+  <circle cx="224" cy="56" r="4" fill="#95C5EF" opacity="0.3"/>
+  <circle cx="32" cy="216" r="4" fill="#95C5EF" opacity="0.3"/>
+  <circle cx="216" cy="240" r="4" fill="#95C5EF" opacity="0.25"/>
+  <circle cx="240" cy="168" r="3" fill="#95C5EF" opacity="0.2"/>
+  <circle cx="16" cy="104" r="3" fill="#95C5EF" opacity="0.2"/>
+</svg>

@@ -27,29 +27,6 @@
   }
 }
 
-.dots {
-  display: flex;
-  gap: var(--spacing-2);
-}
-
-.dot {
-  width: 12px;
-  height: 12px;
-  border-radius: var(--radius-full);
-
-  &[data-color='red'] {
-    background: var(--terminal-red);
-  }
-
-  &[data-color='yellow'] {
-    background: var(--terminal-yellow);
-  }
-
-  &[data-color='blue'] {
-    background: var(--terminal-blue);
-  }
-}
-
 .title {
   color: var(--text-secondary);
   font-size: var(--font-size-xs);

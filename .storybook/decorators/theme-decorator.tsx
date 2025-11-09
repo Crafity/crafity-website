@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import type { Decorator } from '@storybook/react-vite'
 
-export const withTheme: Decorator = (Story, context) => {
+export const ThemeDecorator: Decorator = (Story, context) => {
   const theme = context.globals.theme || 'dark'
 
   useEffect(() => {

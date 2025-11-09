@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as WorkSonicEquipmentIndexRouteImport } from './routes/work/sonic-equipment/index'
 
 const PrivacyRoute = PrivacyRouteImport.update({
   id: '/privacy',
@@ -22,31 +23,40 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const WorkSonicEquipmentIndexRoute = WorkSonicEquipmentIndexRouteImport.update({
+  id: '/work/sonic-equipment/',
+  path: '/work/sonic-equipment/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/privacy': typeof PrivacyRoute
+  '/work/sonic-equipment': typeof WorkSonicEquipmentIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/privacy': typeof PrivacyRoute
+  '/work/sonic-equipment': typeof WorkSonicEquipmentIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/privacy': typeof PrivacyRoute
+  '/work/sonic-equipment/': typeof WorkSonicEquipmentIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/privacy'
+  fullPaths: '/' | '/privacy' | '/work/sonic-equipment'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/privacy'
-  id: '__root__' | '/' | '/privacy'
+  to: '/' | '/privacy' | '/work/sonic-equipment'
+  id: '__root__' | '/' | '/privacy' | '/work/sonic-equipment/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   PrivacyRoute: typeof PrivacyRoute
+  WorkSonicEquipmentIndexRoute: typeof WorkSonicEquipmentIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -65,12 +75,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/work/sonic-equipment/': {
+      id: '/work/sonic-equipment/'
+      path: '/work/sonic-equipment'
+      fullPath: '/work/sonic-equipment'
+      preLoaderRoute: typeof WorkSonicEquipmentIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   PrivacyRoute: PrivacyRoute,
+  WorkSonicEquipmentIndexRoute: WorkSonicEquipmentIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

@@ -10,7 +10,7 @@ import {
 } from '@tanstack/react-router'
 import { INITIAL_VIEWPORTS } from 'storybook/viewport'
 
-import { withTheme } from './decorators/theme-decorator'
+import { ThemeDecorator } from './decorators/theme-decorator'
 
 import './preview.css'
 
@@ -90,7 +90,7 @@ const customViewports = {
 
 const preview: Preview = {
   decorators: [
-    withTheme,
+    ThemeDecorator,
     (Story, _context) => {
       return (
         <StrictMode>

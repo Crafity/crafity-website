@@ -8,8 +8,7 @@ import { Hero } from '@/components/home/hero/hero'
 import { Services } from '@/components/home/services/services'
 import { Footer } from '@/components/layout/footer/footer'
 import { Header } from '@/components/layout/header/header'
-import { SectionContainer } from '@/components/layout/section-container/section-container'
-import { PageContainer } from '@/components/page/page-container'
+import { Section } from '@/components/layout/section/section'
 
 export const Route = createFileRoute('/')({
   component: Home,
@@ -18,27 +17,27 @@ export const Route = createFileRoute('/')({
 
 function Home() {
   return (
-    <PageContainer>
+    <>
       <Header />
-      <SectionContainer>
+      <Section>
         <Hero />
-      </SectionContainer>
-      <SectionContainer>
+      </Section>
+      <Section>
         <ClientTrust />
-      </SectionContainer>
-      <SectionContainer>
+      </Section>
+      <Section>
         <FeaturedWork />
-      </SectionContainer>
-      <SectionContainer>
+      </Section>
+      <Section>
         <Services />
-      </SectionContainer>
-      <SectionContainer>
+      </Section>
+      <Section id="approach">
         <Approach />
-      </SectionContainer>
-      <SectionContainer>
+      </Section>
+      <Section id="contact">
         <CTA />
-      </SectionContainer>
+      </Section>
       <Footer />
-    </PageContainer>
+    </>
   )
 }
