@@ -1,15 +1,10 @@
 .progress {
   /* Mobile baseline: stacked */
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: flex-start;
+  align-items: center;
   gap: var(--spacing-3);
-
-  /* Desktop: horizontal */
-  @media (--md-n-above) {
-    flex-direction: row;
-    align-items: center;
-  }
 }
 
 .label {
@@ -23,6 +18,12 @@
   max-width: 400px;
   height: var(--spacing-1-5); /* 6px */
   background: var(--border-default-color);
+
+  /* Desktop: take available space, don't force wrap */
+  @media (--md-n-above) {
+    width: auto;
+    flex: 1;
+  }
 }
 
 .fill {

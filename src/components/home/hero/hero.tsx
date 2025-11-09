@@ -28,7 +28,7 @@ export function Hero() {
                     </span>
                   </>
                 ),
-                md: 'crafity@enterprise:~$ ./deploy --quality=enterprise --speed=startup',
+                sm: 'crafity@enterprise:~$ ./deploy --quality=enterprise --speed=startup',
               }}
             />
           </div>
@@ -36,7 +36,7 @@ export function Hero() {
             <ResponsiveText
               text={{
                 base: '> Initializing...',
-                md: '> Initializing deployment sequence...',
+                sm: '> Initializing deployment sequence...',
               }}
             />
           </div>
@@ -45,7 +45,7 @@ export function Hero() {
               <ResponsiveText
                 text={{
                   base: 'Loading capabilities',
-                  md: 'Loading engineering capabilities',
+                  sm: 'Loading engineering capabilities',
                 }}
               />
             }
@@ -55,7 +55,7 @@ export function Hero() {
             <ResponsiveText
               text={{
                 base: '✓ 25+ years loaded',
-                md: '✓ System ready. 25+ years of experience loaded.',
+                sm: '✓ System ready. 25+ years of experience loaded.',
               }}
             />
           </div>
@@ -63,7 +63,7 @@ export function Hero() {
             <ResponsiveText
               text={{
                 base: '✓ Sonic, Schiphol, eBay+',
-                md: '✓ Trusted by: Sonic Equipment, Schiphol, eBay, CarNext',
+                sm: '✓ Trusted by: Sonic Equipment, Schiphol, eBay, CarNext',
               }}
             />
           </div>

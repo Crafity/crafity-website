@@ -99,6 +99,25 @@ export function getActiveBreakpoints<T>(prop: ResponsiveProp<T>): Breakpoint[] {
 }
 
 /**
+ * Get the breakpoint name where a specific breakpoint should be hidden
+ * Returns the next defined breakpoint in the sequence, or undefined if it's the last one
+ *
+ * @example
+ * ```tsx
+ * // With { base: '...', md: '...' }
+ * getHideAtBreakpoint('base', ['base', 'md']) // Returns: 'md'
+ * getHideAtBreakpoint('md', ['base', 'md']) // Returns: undefined
+ * ```
+ */
+export function getHideAtBreakpoint(
+  currentBreakpoint: Breakpoint,
+  activeBreakpoints: Breakpoint[],
+): Breakpoint | undefined {
+  const currentIndex = activeBreakpoints.indexOf(currentBreakpoint)
+  return activeBreakpoints[currentIndex + 1]
+}
+
+/**
  * Map spacing size names to spacing token numbers
  * Used by Stack and Grid components
  */

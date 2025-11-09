@@ -5,3 +5,4 @@ node_modules
 *.bak
 .claude
 public/storybook
+.playwright-mcp

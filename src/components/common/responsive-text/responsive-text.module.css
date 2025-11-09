@@ -2,124 +2,243 @@
    RESPONSIVE TEXT
    Mobile-first responsive text display based on breakpoint system
 
-   Strategy: Start with base visible, all others hidden. Then progressively
-   show larger breakpoints and hide smaller ones as viewport grows.
+   Strategy: Each span is visible by default at its breakpoint.
+   The data-hide-at attribute specifies when it should be hidden (at the next
+   defined breakpoint). This allows partial breakpoint definitions to work
+   correctly (e.g., { base: '...', md: '...' } works at 700px).
    ========================================================================== */
 
-/* Default state: base visible, all others hidden */
+/* Base: show always, hide based on data-hide-at */
 .text-base {
   display: inline;
 }
 
-.text-xs,
-.text-sm,
-.text-md,
-.text-lg,
-.text-xl,
-.text-2xl,
+.text-base[data-hide-at='xs'] {
+  @media (--xs-n-above) {
+    display: none;
+  }
+}
+
+.text-base[data-hide-at='sm'] {
+  @media (--sm-n-above) {
+    display: none;
+  }
+}
+
+.text-base[data-hide-at='md'] {
+  @media (--md-n-above) {
+    display: none;
+  }
+}
+
+.text-base[data-hide-at='lg'] {
+  @media (--lg-n-above) {
+    display: none;
+  }
+}
+
+.text-base[data-hide-at='xl'] {
+  @media (--xl-n-above) {
+    display: none;
+  }
+}
+
+.text-base[data-hide-at='2xl'] {
+  @media (--2xl-n-above) {
+    display: none;
+  }
+}
+
+.text-base[data-hide-at='3xl'] {
+  @media (--3xl-n-above) {
+    display: none;
+  }
+}
+
+/* xs: hide by default, show at xs, hide based on data-hide-at */
+.text-xs {
+  display: none;
+
+  /* xs breakpoint is 0px+, so same as base */
+  display: inline;
+}
+
+.text-xs[data-hide-at='sm'] {
+  @media (--sm-n-above) {
+    display: none;
+  }
+}
+
+.text-xs[data-hide-at='md'] {
+  @media (--md-n-above) {
+    display: none;
+  }
+}
+
+.text-xs[data-hide-at='lg'] {
+  @media (--lg-n-above) {
+    display: none;
+  }
+}
+
+.text-xs[data-hide-at='xl'] {
+  @media (--xl-n-above) {
+    display: none;
+  }
+}
+
+.text-xs[data-hide-at='2xl'] {
+  @media (--2xl-n-above) {
+    display: none;
+  }
+}
+
+.text-xs[data-hide-at='3xl'] {
+  @media (--3xl-n-above) {
+    display: none;
+  }
+}
+
+/* sm: hide by default, show at sm, hide based on data-hide-at */
+.text-sm {
+  display: none;
+
+  @media (--sm-n-above) {
+    display: inline;
+  }
+}
+
+.text-sm[data-hide-at='md'] {
+  @media (--md-n-above) {
+    display: none;
+  }
+}
+
+.text-sm[data-hide-at='lg'] {
+  @media (--lg-n-above) {
+    display: none;
+  }
+}
+
+.text-sm[data-hide-at='xl'] {
+  @media (--xl-n-above) {
+    display: none;
+  }
+}
+
+.text-sm[data-hide-at='2xl'] {
+  @media (--2xl-n-above) {
+    display: none;
+  }
+}
+
+.text-sm[data-hide-at='3xl'] {
+  @media (--3xl-n-above) {
+    display: none;
+  }
+}
+
+/* md: hide by default, show at md, hide based on data-hide-at */
+.text-md {
+  display: none;
+
+  @media (--md-n-above) {
+    display: inline;
+  }
+}
+
+.text-md[data-hide-at='lg'] {
+  @media (--lg-n-above) {
+    display: none;
+  }
+}
+
+.text-md[data-hide-at='xl'] {
+  @media (--xl-n-above) {
+    display: none;
+  }
+}
+
+.text-md[data-hide-at='2xl'] {
+  @media (--2xl-n-above) {
+    display: none;
+  }
+}
+
+.text-md[data-hide-at='3xl'] {
+  @media (--3xl-n-above) {
+    display: none;
+  }
+}
+
+/* lg: hide by default, show at lg, hide based on data-hide-at */
+.text-lg {
+  display: none;
+
+  @media (--lg-n-above) {
+    display: inline;
+  }
+}
+
+.text-lg[data-hide-at='xl'] {
+  @media (--xl-n-above) {
+    display: none;
+  }
+}
+
+.text-lg[data-hide-at='2xl'] {
+  @media (--2xl-n-above) {
+    display: none;
+  }
+}
+
+.text-lg[data-hide-at='3xl'] {
+  @media (--3xl-n-above) {
+    display: none;
+  }
+}
+
+/* xl: hide by default, show at xl, hide based on data-hide-at */
+.text-xl {
+  display: none;
+
+  @media (--xl-n-above) {
+    display: inline;
+  }
+}
+
+.text-xl[data-hide-at='2xl'] {
+  @media (--2xl-n-above) {
+    display: none;
+  }
+}
+
+.text-xl[data-hide-at='3xl'] {
+  @media (--3xl-n-above) {
+    display: none;
+  }
+}
+
+/* 2xl: hide by default, show at 2xl, hide based on data-hide-at */
+.text-2xl {
+  display: none;
+
+  @media (--2xl-n-above) {
+    display: inline;
+  }
+}
+
+.text-2xl[data-hide-at='3xl'] {
+  @media (--3xl-n-above) {
+    display: none;
+  }
+}
+
+/* 3xl: hide by default, show at 3xl, never hide */
 .text-3xl {
   display: none;
-}
 
-/* ==========================================================================
-   BREAKPOINT OVERRIDES
-   Each breakpoint hides all smaller ones and shows itself
-   ========================================================================== */
-
-/* xs and above (640px+) */
-@media (--xs-n-above) {
-  .text-base {
-    display: none;
-  }
-
-  .text-xs {
-    display: inline;
-  }
-}
-
-/* sm and above (640px+) */
-@media (--sm-n-above) {
-  .text-base,
-  .text-xs {
-    display: none;
-  }
-
-  .text-sm {
-    display: inline;
-  }
-}
-
-/* md and above (768px+) */
-@media (--md-n-above) {
-  .text-base,
-  .text-xs,
-  .text-sm {
-    display: none;
-  }
-
-  .text-md {
-    display: inline;
-  }
-}
-
-/* lg and above (1024px+) */
-@media (--lg-n-above) {
-  .text-base,
-  .text-xs,
-  .text-sm,
-  .text-md {
-    display: none;
-  }
-
-  .text-lg {
-    display: inline;
-  }
-}
-
-/* xl and above (1280px+) */
-@media (--xl-n-above) {
-  .text-base,
-  .text-xs,
-  .text-sm,
-  .text-md,
-  .text-lg {
-    display: none;
-  }
-
-  .text-xl {
-    display: inline;
-  }
-}
-
-/* 2xl and above (1536px+) */
-@media (--2xl-n-above) {
-  .text-base,
-  .text-xs,
-  .text-sm,
-  .text-md,
-  .text-lg,
-  .text-xl {
-    display: none;
-  }
-
-  .text-2xl {
-    display: inline;
-  }
-}
-
-/* 3xl and above (1920px+) */
-@media (--3xl-n-above) {
-  .text-base,
-  .text-xs,
-  .text-sm,
-  .text-md,
-  .text-lg,
-  .text-xl,
-  .text-2xl {
-    display: none;
-  }
-
-  .text-3xl {
+  @media (--3xl-n-above) {
     display: inline;
   }
 }
