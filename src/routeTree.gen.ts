@@ -9,86 +9,118 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as PrivacyRouteImport } from './routes/privacy'
-import { Route as IndexRouteImport } from './routes/index'
-import { Route as WorkSonicEquipmentIndexRouteImport } from './routes/work/sonic-equipment/index'
+import { Route as MainLayoutRouteRouteImport } from './routes/_main-layout/route'
+import { Route as MainLayoutIndexRouteImport } from './routes/_main-layout/index'
+import { Route as MainLayoutPrivacyRouteImport } from './routes/_main-layout/privacy'
+import { Route as MainLayoutWorkSonicEquipmentIndexRouteImport } from './routes/_main-layout/work/sonic-equipment/index'
 
-const PrivacyRoute = PrivacyRouteImport.update({
-  id: '/privacy',
-  path: '/privacy',
+const MainLayoutRouteRoute = MainLayoutRouteRouteImport.update({
+  id: '/_main-layout',
   getParentRoute: () => rootRouteImport,
 } as any)
-const IndexRoute = IndexRouteImport.update({
+const MainLayoutIndexRoute = MainLayoutIndexRouteImport.update({
   id: '/',
   path: '/',
-  getParentRoute: () => rootRouteImport,
+  getParentRoute: () => MainLayoutRouteRoute,
 } as any)
-const WorkSonicEquipmentIndexRoute = WorkSonicEquipmentIndexRouteImport.update({
-  id: '/work/sonic-equipment/',
-  path: '/work/sonic-equipment/',
-  getParentRoute: () => rootRouteImport,
+const MainLayoutPrivacyRoute = MainLayoutPrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
+  getParentRoute: () => MainLayoutRouteRoute,
 } as any)
+const MainLayoutWorkSonicEquipmentIndexRoute =
+  MainLayoutWorkSonicEquipmentIndexRouteImport.update({
+    id: '/work/sonic-equipment/',
+    path: '/work/sonic-equipment/',
+    getParentRoute: () => MainLayoutRouteRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
-  '/': typeof IndexRoute
-  '/privacy': typeof PrivacyRoute
-  '/work/sonic-equipment': typeof WorkSonicEquipmentIndexRoute
+  '/privacy': typeof MainLayoutPrivacyRoute
+  '/': typeof MainLayoutIndexRoute
+  '/work/sonic-equipment': typeof MainLayoutWorkSonicEquipmentIndexRoute
 }
 export interface FileRoutesByTo {
-  '/': typeof IndexRoute
-  '/privacy': typeof PrivacyRoute
-  '/work/sonic-equipment': typeof WorkSonicEquipmentIndexRoute
+  '/privacy': typeof MainLayoutPrivacyRoute
+  '/': typeof MainLayoutIndexRoute
+  '/work/sonic-equipment': typeof MainLayoutWorkSonicEquipmentIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
-  '/': typeof IndexRoute
-  '/privacy': typeof PrivacyRoute
-  '/work/sonic-equipment/': typeof WorkSonicEquipmentIndexRoute
+  '/_main-layout': typeof MainLayoutRouteRouteWithChildren
+  '/_main-layout/privacy': typeof MainLayoutPrivacyRoute
+  '/_main-layout/': typeof MainLayoutIndexRoute
+  '/_main-layout/work/sonic-equipment/': typeof MainLayoutWorkSonicEquipmentIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/privacy' | '/work/sonic-equipment'
+  fullPaths: '/privacy' | '/' | '/work/sonic-equipment'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/privacy' | '/work/sonic-equipment'
-  id: '__root__' | '/' | '/privacy' | '/work/sonic-equipment/'
+  to: '/privacy' | '/' | '/work/sonic-equipment'
+  id:
+    | '__root__'
+    | '/_main-layout'
+    | '/_main-layout/privacy'
+    | '/_main-layout/'
+    | '/_main-layout/work/sonic-equipment/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
-  IndexRoute: typeof IndexRoute
-  PrivacyRoute: typeof PrivacyRoute
-  WorkSonicEquipmentIndexRoute: typeof WorkSonicEquipmentIndexRoute
+  MainLayoutRouteRoute: typeof MainLayoutRouteRouteWithChildren
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/privacy': {
-      id: '/privacy'
-      path: '/privacy'
-      fullPath: '/privacy'
-      preLoaderRoute: typeof PrivacyRouteImport
+    '/_main-layout': {
+      id: '/_main-layout'
+      path: ''
+      fullPath: ''
+      preLoaderRoute: typeof MainLayoutRouteRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/': {
-      id: '/'
+    '/_main-layout/': {
+      id: '/_main-layout/'
       path: '/'
       fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
-      parentRoute: typeof rootRouteImport
+      preLoaderRoute: typeof MainLayoutIndexRouteImport
+      parentRoute: typeof MainLayoutRouteRoute
     }
-    '/work/sonic-equipment/': {
-      id: '/work/sonic-equipment/'
+    '/_main-layout/privacy': {
+      id: '/_main-layout/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof MainLayoutPrivacyRouteImport
+      parentRoute: typeof MainLayoutRouteRoute
+    }
+    '/_main-layout/work/sonic-equipment/': {
+      id: '/_main-layout/work/sonic-equipment/'
       path: '/work/sonic-equipment'
       fullPath: '/work/sonic-equipment'
-      preLoaderRoute: typeof WorkSonicEquipmentIndexRouteImport
-      parentRoute: typeof rootRouteImport
+      preLoaderRoute: typeof MainLayoutWorkSonicEquipmentIndexRouteImport
+      parentRoute: typeof MainLayoutRouteRoute
     }
   }
 }
 
+interface MainLayoutRouteRouteChildren {
+  MainLayoutPrivacyRoute: typeof MainLayoutPrivacyRoute
+  MainLayoutIndexRoute: typeof MainLayoutIndexRoute
+  MainLayoutWorkSonicEquipmentIndexRoute: typeof MainLayoutWorkSonicEquipmentIndexRoute
+}
+
+const MainLayoutRouteRouteChildren: MainLayoutRouteRouteChildren = {
+  MainLayoutPrivacyRoute: MainLayoutPrivacyRoute,
+  MainLayoutIndexRoute: MainLayoutIndexRoute,
+  MainLayoutWorkSonicEquipmentIndexRoute:
+    MainLayoutWorkSonicEquipmentIndexRoute,
+}
+
+const MainLayoutRouteRouteWithChildren = MainLayoutRouteRoute._addFileChildren(
+  MainLayoutRouteRouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
-  IndexRoute: IndexRoute,
-  PrivacyRoute: PrivacyRoute,
-  WorkSonicEquipmentIndexRoute: WorkSonicEquipmentIndexRoute,
+  MainLayoutRouteRoute: MainLayoutRouteRouteWithChildren,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

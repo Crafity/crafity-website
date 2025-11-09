@@ -1,20 +1,16 @@
+/* Card provides: padding, border, background */
 .stat {
-  /* Mobile baseline */
   display: flex;
   min-height: 116px;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: var(--spacing-4);
-  border: var(--border-default);
-  background: var(--bg-secondary);
-  gap: 5px;
+  gap: var(--spacing-1-5);
   text-align: center;
 
-  /* Desktop: larger padding en fluid width */
+  /* Desktop: fluid width */
   @media (--md-n-above) {
     width: clamp(190px, 15vw, 250px);
-    padding: var(--spacing-5);
   }
 }
 

@@ -4,19 +4,39 @@ import { clsx } from 'clsx'
 // eslint-disable-next-line css-modules/no-unused-class
 import styles from './stack.module.css'
 
-import {
-  getSpacingToken,
-  isResponsiveProp,
-  ResponsiveProp,
-} from '@/types/responsive'
+import { isResponsiveProp, ResponsiveProp } from '@/types/responsive'
 
-type SpaceSize = 'small' | 'medium' | 'large' | 'xlarge'
+type SpaceSize =
+  | 'none'
+  | 'minimal'
+  | 'tiny'
+  | 'small'
+  | 'medium'
+  | 'large'
+  | 'xlarge'
 
 interface StackProps {
   children: ReactNode
   className?: string
   dividers?: boolean
   space?: SpaceSize | ResponsiveProp<SpaceSize>
+}
+
+/**
+ * Map spacing size names to spacing token numbers
+ * Used by Stack and Grid components
+ */
+export function getSpacingToken(size: SpaceSize): string {
+  const map = {
+    large: '16',
+    medium: '12',
+    minimal: '2',
+    none: '0',
+    small: '8',
+    tiny: '4',
+    xlarge: '24',
+  }
+  return map[size]
 }
 
 /**
@@ -55,7 +75,7 @@ export function Stack({
   children,
   className,
   dividers = false,
-  space = 'medium',
+  space = 'none',
 }: StackProps) {
   const childArray = Children.toArray(children)
   const isSpaceResponsive = isResponsiveProp(space)

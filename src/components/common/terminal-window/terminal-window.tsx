@@ -1,6 +1,7 @@
 import { ReactNode } from 'react'
 import { clsx } from 'clsx'
 
+import { Card } from '../card/card'
 import { Dots } from '../dots/dots'
 
 import styles from './terminal-window.module.css'
@@ -17,12 +18,12 @@ export function TerminalWindow({
   title,
 }: TerminalWindowProps) {
   return (
-    <div className={clsx(styles.terminal, className)}>
+    <Card glow className={clsx(styles.terminal, className)} variant="outlined">
       <div className={styles.header}>
         <Dots />
         {title && <div className={styles.title}>{title}</div>}
       </div>
       <div className={styles.content}>{children}</div>
-    </div>
+    </Card>
   )
 }

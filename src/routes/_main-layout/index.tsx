@@ -1,0 +1,8 @@
+import { createFileRoute } from '@tanstack/react-router'
+
+import { HomePage } from '@/components/home/home-page/home-page'
+
+export const Route = createFileRoute('/_main-layout/')({
+  component: HomePage,
+  preload: true,
+})

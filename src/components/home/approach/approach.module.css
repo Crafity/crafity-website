@@ -1,9 +1,9 @@
 .statement {
-  max-width: 800px;
+  max-width: var(--content-base);
   margin: 0 auto;
 }
 
 .divider {
-  max-width: 600px;
+  max-width: var(--content-narrow);
   margin: 0 auto;
 }

@@ -1,14 +1,6 @@
+/* Card provides: padding, border (medium width), background, glow shadow */
 .terminal {
-  /* Mobile baseline */
-  padding: var(--spacing-4);
-  border: var(--border-width-medium) solid var(--accent-secondary);
-  background: var(--bg-secondary);
-  box-shadow: var(--shadow-glow-blue);
-
-  /* Desktop: larger padding */
-  @media (--md-n-above) {
-    padding: var(--spacing-6);
-  }
+  /* No additional styling needed for the container */
 }
 
 .header {
@@ -16,7 +8,7 @@
   display: flex;
   align-items: center;
   padding-bottom: var(--spacing-3);
-  border-bottom: 1px solid var(--border-default-color);
+  border-bottom: var(--border-default);
   margin-bottom: var(--spacing-3);
   gap: var(--spacing-3);
 

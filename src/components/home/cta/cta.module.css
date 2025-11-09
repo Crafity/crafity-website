@@ -3,7 +3,7 @@
 }
 
 .description {
-  max-width: 600px;
+  max-width: var(--content-narrow);
 }
 
 .prompt {

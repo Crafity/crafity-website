@@ -1,0 +1,128 @@
+/* Base card styles */
+.card {
+  /* Mobile baseline */
+  padding: var(--spacing-4);
+  background: var(--bg-secondary);
+  transition: var(--transition-all);
+
+  /* Desktop: larger padding */
+  @media (--md-n-above) {
+    padding: var(--spacing-6);
+  }
+}
+
+/* ============================================================================
+   VARIANTS (visual style)
+   ========================================================================== */
+
+/* Filled: Background + thin border (default) */
+.variant-filled {
+  border: var(--border-default);
+}
+
+/* Outlined: Medium border, no special background treatment */
+.variant-outlined {
+  border: var(--border-width-medium) solid var(--border-default-color);
+}
+
+/* Elevated: Background + thin border + shadow */
+.variant-elevated {
+  border: var(--border-default);
+  box-shadow: var(--shadow-large);
+}
+
+/* Transparent: No background + medium border */
+.variant-transparent {
+  border: var(--border-width-medium) solid var(--border-default-color);
+  background: transparent;
+}
+
+/* ============================================================================
+   BORDER SIDE (which sides have border)
+   ========================================================================== */
+
+/* All sides (default) - already handled by variant */
+.border-side-all {
+  /* No override needed, variants already apply full border */
+}
+
+/* Left side only */
+.border-side-left {
+  border: none;
+  border-left: var(--border-width-accent) solid var(--border-default-color);
+}
+
+/* No border */
+.border-side-none {
+  border: none;
+}
+
+/* ============================================================================
+   BORDER WIDTH (thickness of border)
+   ========================================================================== */
+
+/* Thin border (1px) */
+.border-width-thin {
+  border-width: var(--border-width-thin);
+}
+
+/* Medium border (2px) - default in variants */
+.border-width-medium {
+  border-width: var(--border-width-medium);
+}
+
+/* Accent border (4px) */
+.border-width-accent {
+  border-width: var(--border-width-accent);
+}
+
+/* Accent thin border (2px) */
+.border-width-accent-thin {
+  border-width: var(--border-width-accent-thin);
+}
+
+/* Border width overrides for left-only borders */
+.border-side-left.border-width-thin {
+  border-left-width: var(--border-width-thin);
+}
+
+.border-side-left.border-width-medium {
+  border-left-width: var(--border-width-medium);
+}
+
+.border-side-left.border-width-accent {
+  border-left-width: var(--border-width-accent);
+}
+
+.border-side-left.border-width-accent-thin {
+  border-left-width: var(--border-width-accent-thin);
+}
+
+/* ============================================================================
+   RADIUS (border-radius)
+   ========================================================================== */
+
+.radius-none {
+  border-radius: 0;
+}
+
+.radius-small {
+  border-radius: var(--radius-small);
+}
+
+.radius-medium {
+  border-radius: var(--radius-medium);
+}
+
+.radius-large {
+  border-radius: var(--radius-large);
+}
+
+/* ============================================================================
+   GLOW MODIFIER
+   ========================================================================== */
+
+.glow {
+  border-color: var(--accent-secondary);
+  box-shadow: var(--shadow-glow-blue);
+}

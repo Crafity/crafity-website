@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 
 import { initGoogleAnalytics } from '../../../utils/analytics'
+import { Card } from '../card/card'
 
 import styles from './cookie-banner.module.css'
 
@@ -51,7 +52,7 @@ export function CookieBanner() {
 
   return (
     <div className={styles.overlay}>
-      <div className={styles.banner}>
+      <Card className={styles.banner} variant="elevated">
         <div className={styles.content}>
           <svg
             className={styles.icon}
@@ -98,7 +99,7 @@ export function CookieBanner() {
             </button>
           </div>
         </div>
-      </div>
+      </Card>
     </div>
   )
 }

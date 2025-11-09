@@ -1,29 +1,56 @@
 .title {
+  max-width: var(--content-comfortable);
   margin: 0;
   color: var(--text-primary);
   font-family: var(--accent-font-family);
+
+  /* Fluid typography: scales smoothly from 28px (320px viewport) to 80px (1440px viewport)
+   * Formula: clamp(min, min + (max - min) * viewport-factor, max)
+   * Using rem for accessibility (respects user font preferences)
+   * Viewport range: 320px - 1440px (1120px difference)
+   * Size range: 28px - 80px (52px difference)
+   */
+  font-size: clamp(1.75rem, 0.8214rem + 5.6429vw, 6.2rem);
   font-weight: var(--font-weight-bold);
-  letter-spacing: var(--letter-spacing-tight);
+  letter-spacing: var(--letter-spacing-hero);
   line-height: var(--line-height-tight);
+  text-align: left;
 }
 
-/* Default variant: Privacy policy style */
-.default {
-  margin-bottom: var(--spacing-4);
-  font-size: var(--font-size-xl);
+/* Line sub-component for multi-line titles */
+.line {
+  display: block;
 
-  @media (--md-n-above) {
-    font-size: var(--font-size-2xl);
-  }
+  /* Preserve whitespace and prevent text from collapsing */
+  white-space: pre-wrap;
 }
 
-/* Large variant: Case study style */
-.large {
-  max-width: 900px;
-  font-size: var(--font-size-xl);
-  text-transform: uppercase;
+/* Add spacing between lines for better readability */
+.line:not(:last-child) {
+  margin-bottom: 0;
+}
 
-  @media (--md-n-above) {
-    font-size: var(--font-size-2xl);
-  }
+.line-default {
+  color: var(--text-primary);
+}
+
+.line-primary {
+  color: var(--accent-primary);
+}
+
+.line-secondary {
+  color: var(--accent-secondary);
+}
+
+/* Accent sub-component for inline color accents */
+.accent {
+  /* Base class for accent (no specific styling needed) */
+}
+
+.accent-primary {
+  color: var(--accent-primary);
+}
+
+.accent-secondary {
+  color: var(--accent-secondary);
 }

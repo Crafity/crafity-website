@@ -1,14 +1,14 @@
 import styles from './what-changed.module.css'
 
 import { List } from '@/components/common/list/list'
-import { ContentWidth } from '@/components/layout/content-width/content-width'
+import { Container } from '@/components/layout/container/container'
 import { SectionHeader } from '@/components/layout/section-header/section-header'
 
 export function WhatChangedSection() {
   return (
     <>
       <SectionHeader>What Changed</SectionHeader>
-      <ContentWidth indent>
+      <Container size="wide">
         <p className={styles['results-intro']}>
           Sonic now controls their platform:
         </p>
@@ -29,7 +29,7 @@ export function WhatChangedSection() {
           When you serve professional technicians across 65 countries, your
           platform can't be a bottleneck. Now it's not.
         </p>
-      </ContentWidth>
+      </Container>
     </>
   )
 }

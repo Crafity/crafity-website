@@ -97,7 +97,7 @@
 
 .constraint-text {
   padding: var(--spacing-6);
-  border-left: 4px solid var(--accent-secondary);
+  border-left: var(--border-width-accent) solid var(--accent-secondary);
   margin-top: var(--spacing-12);
   background: var(--bg-secondary);
   color: var(--text-secondary);
@@ -129,7 +129,7 @@
    ========================================================================== */
 
 .tech-terminal {
-  max-width: 900px;
+  max-width: var(--content-base);
   margin: 0 auto;
 }
 

@@ -1,6 +1,6 @@
 .divider {
-  max-width: 800px;
-  height: 2px;
+  max-width: var(--content-base);
+  height: var(--spacing-0-5);
   margin: 0 auto;
   background: linear-gradient(
     90deg,

@@ -6,12 +6,10 @@
 }
 
 .command {
-  margin-bottom: var(--spacing-4);
   color: var(--text-primary);
 }
 
 .output {
-  margin-bottom: var(--spacing-4);
   color: var(--text-secondary);
 }
 

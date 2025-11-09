@@ -23,6 +23,9 @@ export function Footer() {
               <Link className={styles.link} href="/#work">
                 Work
               </Link>
+              <Link className={styles.link} href="/#services">
+                What We Do
+              </Link>
               <Link className={styles.link} href="/#approach">
                 Approach
               </Link>

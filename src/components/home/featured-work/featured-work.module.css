@@ -1,5 +1,5 @@
 .container {
-  max-width: 1400px;
+  max-width: var(--content-full);
   margin: 0 auto;
 }
 

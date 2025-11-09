@@ -1,6 +1,6 @@
 .container {
-  max-width: 900px;
-  margin: 0;
+  max-width: var(--content-base);
+  margin: 0 auto;
 }
 
 .indent {

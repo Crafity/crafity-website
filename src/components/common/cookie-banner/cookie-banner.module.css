@@ -23,13 +23,9 @@
   }
 }
 
-/* Banner container - compact box in bottom right */
+/* Card provides: padding, border, border-radius, background, box-shadow */
 .banner {
-  padding: var(--spacing-3) var(--spacing-4);
-  border: var(--border-default);
-  border-radius: var(--border-radius-md);
-  background: var(--bg-secondary);
-  box-shadow: 0 4px 16px rgb(0 0 0 / 25%);
+  padding: var(--spacing-3) var(--spacing-4); /* Override Card's default padding */
   pointer-events: auto;
 
   @media (--md) {
@@ -51,7 +47,7 @@
   width: var(--size-icon);
   height: var(--size-icon);
   flex-shrink: 0;
-  margin-top: 2px;
+  margin-top: var(--spacing-0-5);
   color: var(--accent-secondary);
 }
 
@@ -98,7 +94,7 @@
 .button-decline {
   padding: var(--spacing-2) var(--spacing-4);
   border: 1px solid var(--border-default-color);
-  border-radius: var(--border-radius-sm);
+  border-radius: var(--radius-small);
   background: transparent;
   color: var(--text-primary);
   cursor: pointer;

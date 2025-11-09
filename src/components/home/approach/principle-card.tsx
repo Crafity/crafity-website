@@ -6,7 +6,7 @@ import { Heading } from '@/components/common/heading/heading'
 import { Text } from '@/components/common/text/text'
 
 interface PrincipleCardProps {
-  description: string
+  description: React.ReactNode
   index: number
   title: string
 }

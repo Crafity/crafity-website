@@ -15,55 +15,60 @@ export function HeroSection() {
         <TerminalWindow
           className={styles['terminal-window']}
           title="sonic-case-study.log">
-          <div className={styles.command}>
-            <ResponsiveText
-              text={{
-                base: '$ analyze-project --client="Sonic"',
-                md: '$ analyze-project --client="Sonic Equipment" --duration=19months --scale=global',
-              }}
-            />
-          </div>
-          <div className={styles.output}>
-            <ResponsiveText
-              text={{
-                base: '> Initializing...',
-                md: '> Initializing project analysis...',
-              }}
-            />
-          </div>
-          <ProgressBar
-            label={
+          <Stack space={{ base: 'minimal', md: 'tiny' }}>
+            <div className={styles.command}>
               <ResponsiveText
                 text={{
-                  base: 'Loading...',
-                  md: 'Loading project data',
+                  base: '$ analyze-project --client="Sonic"',
+                  md: '$ analyze-project --client="Sonic Equipment" --duration=19months --scale=global',
                 }}
               />
-            }
-            percent={100}
-          />
-          <div className={styles.success}>✓ Client: SONIC EQUIPMENT</div>
-          <div className={styles.success}>
-            <ResponsiveText
-              text={{
-                base: '✓ Industry: Tools',
-                md: '✓ Industry: Professional Tools & Storage',
-              }}
+            </div>
+            <div className={styles.output}>
+              <ResponsiveText
+                text={{
+                  base: '> Initializing...',
+                  md: '> Initializing project analysis...',
+                }}
+              />
+            </div>
+            <ProgressBar
+              label={
+                <ResponsiveText
+                  text={{
+                    base: 'Loading...',
+                    md: 'Loading project data',
+                  }}
+                />
+              }
+              percent={100}
             />
-          </div>
-          <div className={styles.success}>
-            <ResponsiveText
-              text={{
-                base: '✓ Scale: 65+ countries',
-                md: '✓ Scale: 100+ employees | 65+ countries',
-              }}
-            />
-          </div>
-          <div className={styles.success}>✓ Duration: 19 months</div>
+            <Stack>
+              <div className={styles.success}>✓ Client: SONIC EQUIPMENT</div>
+              <div className={styles.success}>
+                <ResponsiveText
+                  text={{
+                    base: '✓ Industry: Tools',
+                    md: '✓ Industry: Professional Tools & Storage',
+                  }}
+                />
+              </div>
+              <div className={styles.success}>
+                <ResponsiveText
+                  text={{
+                    base: '✓ Scale: 65+ countries',
+                    md: '✓ Scale: 100+ employees | 65+ countries',
+                  }}
+                />
+              </div>
+              <div className={styles.success}>✓ Duration: 19 months</div>
+            </Stack>
+          </Stack>
         </TerminalWindow>
 
-        <PageTitle variant="large">
-          E-Commerce Platform Transformation
+        <PageTitle>
+          E-COMMERCE PLATFORM{' '}
+          <PageTitle.Accent>TRANSFORMATION</PageTitle.Accent>
         </PageTitle>
 
         <p className={styles.tagline}>

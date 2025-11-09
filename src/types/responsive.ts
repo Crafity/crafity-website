@@ -118,22 +118,6 @@ export function getHideAtBreakpoint(
 }
 
 /**
- * Map spacing size names to spacing token numbers
- * Used by Stack and Grid components
- */
-export function getSpacingToken(
-  size: 'small' | 'medium' | 'large' | 'xlarge',
-): string {
-  const map = {
-    large: '16',
-    medium: '12',
-    small: '8',
-    xlarge: '24',
-  }
-  return map[size]
-}
-
-/**
  * Map gap size names to spacing tokens (for Grid)
  * Small/Medium/Large have different responsive values
  */

@@ -1,3 +1,5 @@
+import { Card } from '../card/card'
+
 import styles from './stat.module.css'
 
 interface StatProps {
@@ -7,9 +9,9 @@ interface StatProps {
 
 export function Stat({ label, number }: StatProps) {
   return (
-    <div className={styles.stat}>
+    <Card className={styles.stat} variant="filled">
       <div className={styles.number}>{number}</div>
       <div className={styles.label}>{label}</div>
-    </div>
+    </Card>
   )
 }

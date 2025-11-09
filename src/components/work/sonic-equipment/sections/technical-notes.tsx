@@ -13,7 +13,6 @@ export function TechnicalNotesSection() {
         <div className={styles['technical-content']}>
           <div className={styles['tech-section']}>
             <div className={styles['tech-header']}>
-              <span className={styles['tech-icon']}>⚡</span>
               <span className={styles['tech-title']}>
                 Global operations, zero downtime
               </span>
@@ -30,7 +29,6 @@ export function TechnicalNotesSection() {
 
           <div className={styles['tech-section']}>
             <div className={styles['tech-header']}>
-              <span className={styles['tech-icon']}>🔧</span>
               <span className={styles['tech-title']}>
                 Modern architecture, gradual transition
               </span>
@@ -47,7 +45,6 @@ export function TechnicalNotesSection() {
 
           <div className={styles['tech-section']}>
             <div className={styles['tech-header']}>
-              <span className={styles['tech-icon']}>🔍</span>
               <span className={styles['tech-title']}>
                 Instant search at scale
               </span>
@@ -63,7 +60,6 @@ export function TechnicalNotesSection() {
 
           <div className={styles['tech-section']}>
             <div className={styles['tech-header']}>
-              <span className={styles['tech-icon']}>🏗️</span>
               <span className={styles['tech-title']}>
                 Building for two platforms simultaneously
               </span>
@@ -80,7 +76,6 @@ export function TechnicalNotesSection() {
 
           <div className={styles['tech-section']}>
             <div className={styles['tech-header']}>
-              <span className={styles['tech-icon']}>💻</span>
               <span className={styles['tech-title']}>Technology stack</span>
             </div>
             <ul>

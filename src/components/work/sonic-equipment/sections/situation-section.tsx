@@ -1,14 +1,14 @@
 import styles from './situation-section.module.css'
 
 import { AccentBar } from '@/components/common/accent-bar/accent-bar'
-import { ContentWidth } from '@/components/layout/content-width/content-width'
+import { Container } from '@/components/layout/container/container'
 import { SectionHeader } from '@/components/layout/section-header/section-header'
 
 export function SituationSection() {
   return (
     <>
       <SectionHeader>The Situation</SectionHeader>
-      <ContentWidth indent>
+      <Container size="comfortable">
         <p>
           Sonic Equipment is the global specialist in professional hand tools,
           filled toolboxes and premium storage solutions. Operating across 65+
@@ -54,7 +54,7 @@ export function SituationSection() {
           The constraint: 65 countries, thousands of professional customers,
           zero tolerance for downtime during business hours.
         </p>
-      </ContentWidth>
+      </Container>
     </>
   )
 }
