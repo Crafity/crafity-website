@@ -137,6 +137,286 @@ export function Component() {
 }
 ```
 
+### Spacing System
+
+**Overview**
+
+Our spacing system uses numeric tokens following industry standards (Chakra UI, Material-UI). Numbers represent token names that map to CSS custom properties, not pixel values.
+
+**Key Principle:**
+```typescript
+8 → --spacing-8 → 32px  // Token 8 maps to CSS variable, NOT 8px!
+```
+
+**SpacingToken Type**
+
+All spacing values must use the `SpacingToken` type (defined in [src/types/spacing.ts](src/types/spacing.ts)):
+
+```typescript
+type SpacingToken =
+  | 0 | 0.1 | 0.5 | 1 | 1.5 | 2 | 2.5 | 3 | 3.5 | 4 | 5 | 6 | 7 | 8 | 9 | 10
+  | 11 | 12 | 14 | 16 | 20 | 24 | 28 | 32 | 36 | 40 | 44 | 48 | 52 | 56 | 60
+  | 64 | 72 | 80 | 96
+```
+
+**Common Spacing Tokens**
+
+| Token | CSS Variable | Pixel Value | Use Case |
+|-------|-------------|-------------|----------|
+| `0` | `--spacing-0` | 0px | No spacing |
+| `1` | `--spacing-1` | 4px | Tiny gaps, borders |
+| `2` | `--spacing-2` | 8px | Minimal spacing |
+| `4` | `--spacing-4` | 16px | Small padding, tight gaps |
+| `6` | `--spacing-6` | 24px | Grid gaps, medium padding |
+| `8` | `--spacing-8` | 32px | Common padding, stack space |
+| `12` | `--spacing-12` | 48px | Large spacing |
+| `16` | `--spacing-16` | 64px | Section padding (default) |
+| `24` | `--spacing-24` | 96px | Large section padding |
+
+**Usage in TypeScript/TSX**
+
+```tsx
+// ✅ Correct: Use numeric tokens
+<Stack space={8}>...</Stack>                    // 32px
+<Grid gap={6}>...</Grid>                        // 24px
+<Section padding={16}>...</Section>             // 64px
+<Box p={4} mb={8}>...</Box>                     // 16px padding, 32px bottom margin
+
+// ✅ Responsive spacing
+<Stack space={{ base: 8, md: 12, lg: 16 }}>...</Stack>
+<Box p={{ base: 4, md: 6 }}>...</Box>
+
+// ❌ Wrong: Don't use strings or random numbers
+<Stack space="medium">...</Stack>               // Old pattern - removed
+<Grid gap={25}>...</Grid>                       // Invalid - not in SpacingToken
+```
+
+**Usage in CSS**
+
+```css
+/* ✅ Correct: Use CSS custom properties */
+.container {
+  padding: var(--spacing-8);          /* 32px */
+  gap: var(--spacing-6);              /* 24px */
+  margin-bottom: var(--spacing-16);   /* 64px */
+}
+
+/* ✅ Responsive with component aliases */
+.hero {
+  --hero-spacing: var(--spacing-12);
+
+  @media (--md-n-above) {
+    --hero-spacing: var(--spacing-16);
+  }
+
+  @media (--lg-n-above) {
+    --hero-spacing: var(--spacing-24);
+  }
+}
+
+.hero-content {
+  padding: var(--hero-spacing);
+}
+
+/* ❌ Wrong: Don't hardcode pixels */
+.container {
+  padding: 32px;  /* Use var(--spacing-8) instead */
+}
+```
+
+**Layout Components with Spacing**
+
+**Box Component** - For granular padding/margin control:
+
+```tsx
+import { Box } from '@/components/layout/box'
+
+// Padding examples
+<Box p={8}>All sides 32px</Box>
+<Box px={8} py={4}>Horizontal 32px, Vertical 16px</Box>
+<Box pt={4} pr={6} pb={4} pl={6}>Individual sides</Box>
+
+// Margin examples
+<Box mb={8}>Bottom margin 32px</Box>
+<Box mx={4} my={8}>Horizontal 16px, Vertical 32px</Box>
+
+// Combined padding and margin
+<Box p={6} mb={12}>Padding 24px, Bottom margin 48px</Box>
+
+// Responsive spacing
+<Box p={{ base: 4, md: 6, lg: 8 }}>
+  Grows from 16px → 24px → 32px
+</Box>
+
+// Property precedence: p < px/py < pt/pr/pb/pl
+<Box p={8} px={4}>           {/* Results in: top/bottom 32px, left/right 16px */}
+<Box p={8} px={4} pl={6}>    {/* Results in: top/bottom 32px, right 16px, left 24px */}
+```
+
+**Stack Component** - For vertical spacing between children:
+
+```tsx
+import { Stack } from '@/components/layout/stack'
+
+// Static spacing
+<Stack space={8}>           {/* 32px between items */}
+  <Item />
+  <Item />
+</Stack>
+
+// Responsive spacing
+<Stack space={{ base: 8, md: 12, lg: 16 }}>
+  <Item />
+  <Item />
+</Stack>
+
+// With dividers
+<Stack space={12} dividers>
+  <Section1 />
+  <Section2 />
+</Stack>
+```
+
+**Grid Component** - For multi-column layouts:
+
+```tsx
+import { Grid } from '@/components/layout/grid'
+
+// Static gap
+<Grid columns={3} gap={6}>  {/* 24px gap */}
+  <Card />
+  <Card />
+  <Card />
+</Grid>
+
+// Responsive columns and gap
+<Grid
+  columns={{ base: 1, md: 2, lg: 3 }}
+  gap={{ base: 4, md: 6, lg: 8 }}>
+  <Card />
+  <Card />
+  <Card />
+</Grid>
+```
+
+**Section Component** - For page sections with vertical padding:
+
+```tsx
+import { Section } from '@/components/layout/section'
+
+// Standard section
+<Section padding={16}>      {/* 64px top/bottom (default) */}
+  <Content />
+</Section>
+
+// Large section (hero)
+<Section padding={24}>      {/* 96px top/bottom */}
+  <Hero />
+</Section>
+
+// No padding
+<Section padding={0}>
+  <FullBleedContent />
+</Section>
+
+// Responsive padding
+<Section padding={{ base: 12, md: 16, lg: 24 }}>
+  <Content />
+</Section>
+```
+
+**Common Spacing Patterns**
+
+```tsx
+// Card with custom spacing
+<Card p={6} mb={8}>         {/* Padding 24px, Bottom margin 32px */}
+  <Stack space={4}>         {/* 16px between elements */}
+    <Heading level={3}>Title</Heading>
+    <Text>Description</Text>
+  </Stack>
+</Card>
+
+// Section → Container → Stack composition
+<Section padding={16}>
+  <Container size="base">
+    <Stack space={12}>      {/* 48px between major blocks */}
+      <Heading level={2}>Section Title</Heading>
+      <Stack space={4}>     {/* 16px between paragraphs */}
+        <Text>First paragraph</Text>
+        <Text>Second paragraph</Text>
+      </Stack>
+    </Stack>
+  </Container>
+</Section>
+
+// Responsive grid with proper gaps
+<Grid
+  columns={{ base: 1, md: 2, lg: 3 }}
+  gap={{ base: 4, md: 6 }}>
+  {items.map(item => (
+    <Card key={item.id} p={{ base: 4, md: 6 }}>
+      {item.content}
+    </Card>
+  ))}
+</Grid>
+```
+
+**Spacing Decision Guide**
+
+```
+Need vertical spacing between siblings?
+└─ Use Stack with space prop
+    ├─ Tight spacing (list items, form fields) → 4 (16px)
+    ├─ Medium spacing (paragraphs, cards) → 8 (32px)
+    ├─ Large spacing (sections, major blocks) → 12-16 (48-64px)
+    └─ Extra large (page sections) → 24 (96px)
+
+Need multi-column layout?
+└─ Use Grid with gap prop
+    ├─ Tight grid → 4 (16px)
+    ├─ Medium grid → 6 (24px)
+    └─ Loose grid → 8 (32px)
+
+Need padding/margin on a specific element?
+└─ Use Box component
+    ├─ Uniform → p={8} or m={8}
+    ├─ Axis-based → px={8} py={4} or mx={4} my={8}
+    └─ Directional → pt={4} pr={6} pb={4} pl={6}
+
+Need section-level vertical spacing?
+└─ Use Section with padding prop
+    ├─ Standard section → 16 (64px, default)
+    ├─ Hero/feature → 24 (96px)
+    └─ No spacing → 0
+```
+
+**Type-Safe Spacing Utilities**
+
+```typescript
+import { getSpacingVar, SpacingToken } from '@/types/spacing'
+
+// Convert token to CSS variable
+getSpacingVar(8)    // Returns: 'var(--spacing-8)'
+getSpacingVar(12)   // Returns: 'var(--spacing-12)'
+
+// Use in dynamic styles
+const spacing: SpacingToken = 8
+const style = {
+  padding: getSpacingVar(spacing)
+}
+```
+
+**Migration Notes**
+
+This is the current spacing system (numeric tokens). The old t-shirt size system (`"small"`, `"medium"`, `"large"`) has been removed.
+
+If you encounter old code:
+- `space="small"` → `space={8}`
+- `space="medium"` → `space={12}`
+- `space="large"` → `space={16}`
+- `gap="medium"` → `gap={6}`
+- `padding="base"` → `padding={16}`
+
 ## 4. TypeScript
 
 ### Strict Mode Always
@@ -273,9 +553,9 @@ Layout follows a predictable 3-layer hierarchy for consistent page structure:
 **Standard composition:**
 
 ```tsx
-<Section padding="base">           {/* Layer 1: Vertical spacing */}
+<Section padding={16}>             {/* Layer 1: Vertical spacing (64px) */}
   <Container size="wide">          {/* Layer 2: Horizontal constraint */}
-    <Stack space="large">          {/* Layer 3: Content spacing */}
+    <Stack space={16}>             {/* Layer 3: Content spacing (64px) */}
       <Heading level={2}>Title</Heading>
       <Text>Content</Text>
     </Stack>
@@ -287,10 +567,11 @@ Layout follows a predictable 3-layer hierarchy for consistent page structure:
 
 | Component | Purpose | Key Props | Use When |
 |-----------|---------|-----------|----------|
-| **Section** | Vertical padding for page sections | `padding`: 'base' \| 'large' \| 'none'<br/>`id`: for anchor links | Creating semantic page sections with vertical spacing |
+| **Section** | Vertical padding for page sections | `padding`: SpacingToken (0, 8, 16, 24, etc.)<br/>`id`: for anchor links | Creating semantic page sections with vertical spacing |
 | **Container** | Horizontal centering + max-width | `size`: 'narrow' \| 'base' \| 'comfortable' \| 'wide' \| 'full'<br/>`padding`: boolean (default: true) | Constraining content width and adding edge padding |
-| **Stack** | Vertical spacing between children | `space`: 'none' \| 'minimal' \| 'tiny' \| 'small' \| 'medium' \| 'large' \| 'xlarge'<br/>`dividers`: boolean | Spacing sibling elements vertically |
-| **Grid** | Multi-column layouts | `columns`: number or responsive<br/>`gap`: 'small' \| 'medium' \| 'large' | Creating responsive grid layouts |
+| **Stack** | Vertical spacing between children | `space`: SpacingToken (0, 4, 8, 12, 16, 24, etc.)<br/>`dividers`: boolean | Spacing sibling elements vertically |
+| **Grid** | Multi-column layouts | `columns`: number or responsive<br/>`gap`: SpacingToken (4, 6, 8, 12, etc.) | Creating responsive grid layouts |
+| **Box** | Granular padding/margin control | `p`, `px`, `py`, `pt`, `pr`, `pb`, `pl`<br/>`m`, `mx`, `my`, `mt`, `mr`, `mb`, `ml` | Fine-grained spacing control within components |
 
 **Container size selection guide:**
 
@@ -315,23 +596,23 @@ Layout follows a predictable 3-layer hierarchy for consistent page structure:
 
 ```tsx
 // Hero section (full-width, large padding)
-<Section padding="large">
+<Section padding={24}>  {/* 96px */}
   <Container size="full">
     <Hero />
   </Container>
 </Section>
 
 // Content section (readable width, base padding)
-<Section padding="base">
+<Section padding={16}>  {/* 64px - default */}
   <Container size="base">
     <Article />
   </Container>
 </Section>
 
 // Services section (wide for grid, base padding)
-<Section padding="base" id="services">
+<Section padding={16} id="services">
   <Container size="wide">
-    <Grid columns={{ base: 1, md: 2, lg: 3 }} gap="medium">
+    <Grid columns={{ base: 1, md: 2, lg: 3 }} gap={6}>  {/* 24px gap */}
       <ServiceCard />
       <ServiceCard />
       <ServiceCard />
@@ -340,7 +621,7 @@ Layout follows a predictable 3-layer hierarchy for consistent page structure:
 </Section>
 
 // Full-bleed image within constraint (no padding)
-<Section padding="none">
+<Section padding={0}>
   <Container size="base" padding={false}>
     <img src="hero.jpg" alt="Full bleed" />
   </Container>
@@ -352,9 +633,9 @@ Layout follows a predictable 3-layer hierarchy for consistent page structure:
 ```
 Creating a page section?
 └─ Yes → Use <Section>
-    ├─ Large hero/feature? → padding="large"
-    ├─ Standard section? → padding="base" (default)
-    └─ No padding needed? → padding="none"
+    ├─ Large hero/feature? → padding={24} (96px)
+    ├─ Standard section? → padding={16} (64px, default)
+    └─ No padding needed? → padding={0}
 
 Need horizontal centering/max-width?
 └─ Yes → Use <Container> inside Section
@@ -367,11 +648,15 @@ Need horizontal centering/max-width?
 
 Need vertical spacing between elements?
 └─ Yes → Use <Stack> inside Container
-    └─ Choose space based on visual hierarchy
+    └─ Choose space: 8 (32px), 12 (48px), 16 (64px), 24 (96px)
 
 Need multi-column layout?
 └─ Yes → Use <Grid> inside Container
-    └─ Set responsive columns + gap
+    └─ Set responsive columns + gap (4-8 typical)
+
+Need granular padding/margin control?
+└─ Yes → Use <Box>
+    └─ Apply directional spacing (p, px, py, pt, pr, pb, pl, m, mx, my, mt, mr, mb, ml)
 ```
 
 ## 6. Linting & Code Quality
@@ -673,8 +958,13 @@ pnpm build            # Production build
 --accent-primary, --accent-secondary
 --border-default-color
 
-/* Spacing */
---spacing-4, --spacing-8, --spacing-16
+/* Spacing (use numeric tokens in TSX: 4, 6, 8, 12, 16, 24) */
+--spacing-4   /* 16px - small padding, tight gaps */
+--spacing-6   /* 24px - grid gaps, medium padding */
+--spacing-8   /* 32px - common padding, stack space */
+--spacing-12  /* 48px - large spacing */
+--spacing-16  /* 64px - section padding (default) */
+--spacing-24  /* 96px - large section padding */
 
 /* Typography - Perfect Fourth Scale (1.333 ratio) */
 --font-family, --mono-font-family, --accent-font-family

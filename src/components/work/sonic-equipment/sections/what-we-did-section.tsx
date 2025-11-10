@@ -9,13 +9,12 @@ export function WhatWeDidSection() {
   return (
     <>
       <div className={styles['section-header']}>
-        <div className={styles['accent-bar']} />
         <Heading fluid align="center" level={2} size="5xl" variant="accent">
           What We Did
         </Heading>
       </div>
-      <Container size="wide">
-        <Stack space="large">
+      <Container size="comfortable">
+        <Stack gap={16}>
           <p>
             We worked embedded at Sonic over 19 months, transforming the
             platform while building their internal capability.

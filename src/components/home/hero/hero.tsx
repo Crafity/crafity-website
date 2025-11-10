@@ -13,11 +13,11 @@ import { Stack } from '@/components/layout/stack/stack'
 export function Hero() {
   return (
     <Container size="full">
-      <Stack space="large">
+      <Stack gap={16}>
         <TerminalWindow
           className={styles['terminal-window']}
           title="crafity-init v14.0">
-          <Stack space={{ base: 'minimal', sm: 'tiny' }}>
+          <Stack gap={{ base: 2, sm: 4 }}>
             <div className={styles.command}>
               <ResponsiveText
                 text={{

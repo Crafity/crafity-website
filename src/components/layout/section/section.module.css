@@ -1,38 +1,37 @@
 /**
  * Section Component Styles
  *
- * Provides semantic sectioning with responsive vertical padding.
- * Consolidates old Section and SectionContainer into one component.
+ * Provides semantic sectioning with responsive vertical margin.
  */
 
 .section {
-  /* Base section - just semantic HTML */
-}
+  margin: var(--section-padding, 0) 0;
 
-/* ========================================================================
-   Padding Variants
-   ======================================================================== */
-
-.base {
-  /* Mobile: 64px */
-  padding: var(--spacing-16) 0;
-
-  /* Desktop: 96px */
-  @media (--lg-n-above) {
-    padding: var(--spacing-24) 0;
+  @media (--xs-n-above) {
+    margin: var(--section-padding-xs, var(--section-padding, 0)) 0;
   }
-}
 
-.large {
-  /* Mobile: 96px */
-  padding: var(--spacing-24) 0;
-
-  /* Desktop: 128px */
-  @media (--lg-n-above) {
-    padding: var(--spacing-32) 0;
+  @media (--sm-n-above) {
+    margin: var(--section-padding-sm, var(--section-padding-xs, var(--section-padding, 0))) 0;
   }
-}
 
-.none {
-  padding: 0;
+  @media (--md-n-above) {
+    margin: var(--section-padding-md, var(--section-padding-sm, var(--section-padding-xs, var(--section-padding, 0)))) 0;
+  }
+
+  @media (--lg-n-above) {
+    margin: var(--section-padding-lg, var(--section-padding-md, var(--section-padding-sm, var(--section-padding-xs, var(--section-padding, 0))))) 0;
+  }
+
+  @media (--xl-n-above) {
+    margin: var(--section-padding-xl, var(--section-padding-lg, var(--section-padding-md, var(--section-padding-sm, var(--section-padding-xs, var(--section-padding, 0)))))) 0;
+  }
+
+  @media (--2xl-n-above) {
+    margin: var(--section-padding-2xl, var(--section-padding-xl, var(--section-padding-lg, var(--section-padding-md, var(--section-padding-sm, var(--section-padding-xs, var(--section-padding, 0))))))) 0;
+  }
+
+  @media (--3xl-n-above) {
+    margin: var(--section-padding-3xl, var(--section-padding-2xl, var(--section-padding-xl, var(--section-padding-lg, var(--section-padding-md, var(--section-padding-sm, var(--section-padding-xs, var(--section-padding, 0)))))))) 0;
+  }
 }

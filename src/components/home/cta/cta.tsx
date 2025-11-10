@@ -8,7 +8,7 @@ import { Stack } from '@/components/layout/stack/stack'
 export function CTA() {
   return (
     <Container size="comfortable">
-      <Stack className={styles.stack} space="medium">
+      <Stack className={styles.stack} gap={12}>
         <Heading align="center" level={2} variant="accent">
           LET'S BUILD SOMETHING
         </Heading>

@@ -116,28 +116,3 @@ export function getHideAtBreakpoint(
   const currentIndex = activeBreakpoints.indexOf(currentBreakpoint)
   return activeBreakpoints[currentIndex + 1]
 }
-
-/**
- * Map gap size names to spacing tokens (for Grid)
- * Small/Medium/Large have different responsive values
- */
-export function getGapToken(
-  size: 'small' | 'medium' | 'large',
-  isBase: boolean,
-): string {
-  if (isBase) {
-    const baseMap = {
-      large: '8',
-      medium: '6',
-      small: '4',
-    }
-    return baseMap[size]
-  }
-  // md and above
-  const mdMap = {
-    large: '12',
-    medium: '8',
-    small: '6',
-  }
-  return mdMap[size]
-}

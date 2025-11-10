@@ -5,11 +5,11 @@ import { Link } from '@/components/common/link/link'
 export function Navigation() {
   return (
     <nav className={styles.navigation}>
-      <Link className={styles.link} href="/#work">
-        Work
-      </Link>
       <Link className={styles.link} href="/#services">
         What We Do
+      </Link>
+      <Link className={styles.link} href="/#work">
+        Work
       </Link>
       <Link className={styles.link} href="/#approach">
         Approach

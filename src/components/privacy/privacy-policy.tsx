@@ -10,9 +10,9 @@ export function PrivacyPolicy() {
   return (
     <Section>
       <Container size="base">
-        <Stack space="large">
+        <Stack gap={16}>
           <header>
-            <Stack space="small">
+            <Stack gap={8}>
               <Heading level={1} size="2xl">
                 Privacy Policy
               </Heading>
@@ -23,7 +23,7 @@ export function PrivacyPolicy() {
           </header>
 
           <Typography>
-            <Stack dividers space="medium">
+            <Stack dividers gap={12}>
               <section>
                 <h2>1. Introduction</h2>
                 <p>

@@ -1,14 +1,7 @@
 /* Base card styles */
 .card {
-  /* Mobile baseline */
-  padding: var(--spacing-4);
   background: var(--bg-secondary);
   transition: var(--transition-all);
-
-  /* Desktop: larger padding */
-  @media (--md-n-above) {
-    padding: var(--spacing-6);
-  }
 }
 
 /* ============================================================================
@@ -96,6 +89,22 @@
 
 .border-side-left.border-width-accent-thin {
   border-left-width: var(--border-width-accent-thin);
+}
+
+/* ============================================================================
+   BORDER COLOR (color of border)
+   ========================================================================== */
+
+.border-color-default {
+  border-color: var(--border-default-color);
+}
+
+.border-color-primary {
+  border-color: var(--accent-primary);
+}
+
+.border-color-secondary {
+  border-color: var(--accent-secondary);
 }
 
 /* ============================================================================

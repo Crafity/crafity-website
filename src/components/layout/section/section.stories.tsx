@@ -13,11 +13,11 @@ const meta: Meta<typeof Section> = {
     padding: {
       control: 'select',
       description: 'Amount of vertical padding for the section',
-      options: ['base', 'large', 'none'],
+      options: [0, 16, 24],
       table: {
-        defaultValue: { summary: 'base' },
+        defaultValue: { summary: '16' },
         type: {
-          summary: "'base' | 'large' | 'none'",
+          summary: '0 | 16 | 24',
         },
       },
     },
@@ -58,7 +58,7 @@ const ExampleContent = ({ title }: { title: string }) => (
 export const AllPaddingVariants: Story = {
   render: () => (
     <div style={{ background: 'var(--bg-primary)' }}>
-      <Section padding="base">
+      <Section padding={16}>
         <Container size="wide">
           <ExampleContent title="Base Padding (64px / 96px)" />
         </Container>
@@ -66,7 +66,7 @@ export const AllPaddingVariants: Story = {
 
       <div style={{ background: 'var(--accent-primary)', height: '2px' }} />
 
-      <Section padding="large">
+      <Section padding={24}>
         <Container size="wide">
           <ExampleContent title="Large Padding (96px / 128px)" />
         </Container>
@@ -74,7 +74,7 @@ export const AllPaddingVariants: Story = {
 
       <div style={{ background: 'var(--accent-primary)', height: '2px' }} />
 
-      <Section padding="none">
+      <Section padding={0}>
         <Container size="wide">
           <ExampleContent title="No Padding (0px)" />
         </Container>
@@ -90,7 +90,7 @@ export const Base: Story = {
         <ExampleContent title="Base Section" />
       </Container>
     ),
-    padding: 'base',
+    padding: 16,
   },
 }
 
@@ -101,7 +101,7 @@ export const Large: Story = {
         <ExampleContent title="Large Section" />
       </Container>
     ),
-    padding: 'large',
+    padding: 24,
   },
 }
 
@@ -112,7 +112,7 @@ export const None: Story = {
         <ExampleContent title="Section with No Padding" />
       </Container>
     ),
-    padding: 'none',
+    padding: 0,
   },
 }
 
@@ -142,7 +142,7 @@ export const WithAnchorId: Story = {
       </Container>
     ),
     id: 'services',
-    padding: 'base',
+    padding: 16,
   },
 }
 
@@ -150,7 +150,7 @@ export const RealWorldExample: Story = {
   render: () => (
     <div style={{ background: 'var(--bg-primary)' }}>
       {/* Hero section - typically full width */}
-      <Section padding="large">
+      <Section padding={24}>
         <Container size="full">
           <div
             style={{
@@ -176,14 +176,14 @@ export const RealWorldExample: Story = {
       </Section>
 
       {/* Content section - narrower */}
-      <Section id="content" padding="base">
+      <Section id="content" padding={16}>
         <Container size="base">
           <ExampleContent title="Content Section" />
         </Container>
       </Section>
 
       {/* Services section - wider for grid */}
-      <Section id="services" padding="base">
+      <Section id="services" padding={16}>
         <Container size="wide">
           <div
             style={{

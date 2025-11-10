@@ -10,7 +10,7 @@ export function Footer() {
   return (
     <footer className={styles.footer}>
       <Container size="full">
-        <Stack space="large">
+        <Stack gap={16}>
           <div className={styles.columns}>
             <div className={styles.column}>
               <div className={styles.logo}>CRAFITY</div>
@@ -20,11 +20,11 @@ export function Footer() {
 
             <div className={styles.column}>
               <div className={styles.title}>NAVIGATE</div>
-              <Link className={styles.link} href="/#work">
-                Work
-              </Link>
               <Link className={styles.link} href="/#services">
                 What We Do
+              </Link>
+              <Link className={styles.link} href="/#work">
+                Work
               </Link>
               <Link className={styles.link} href="/#approach">
                 Approach

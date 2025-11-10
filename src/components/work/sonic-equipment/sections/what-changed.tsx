@@ -16,7 +16,7 @@ export function WhatChangedSection() {
         </Heading>
       </div>
       <Container size="wide">
-        <Stack space="small">
+        <Stack gap={8}>
           <p className={styles['results-intro']}>
             Sonic now controls their platform:
           </p>

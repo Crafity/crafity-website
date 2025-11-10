@@ -69,7 +69,7 @@ export function Container({
               '--container-size-sm': size.sm && getMaxWidth(size.sm),
               '--container-size-xl': size.xl && getMaxWidth(size.xl),
               '--container-size-xs': size.xs && getMaxWidth(size.xs),
-            } as React.CSSProperties)
+            } satisfies React.CSSProperties)
           : undefined
       }>
       {children}

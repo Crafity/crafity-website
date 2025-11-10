@@ -8,12 +8,12 @@ import { Stack } from '@/components/layout/stack/stack'
 export function FeaturedWork() {
   return (
     <Container size="wide">
-      <Stack space="large">
+      <Stack gap={16}>
         <Heading fluid align="center" level={2} size="5xl" variant="accent">
           FEATURED WORK
         </Heading>
 
-        <Grid columns={{ base: 1, lg: 2 }} gap="large">
+        <Grid columns={{ base: 1, lg: 2 }} gap={8}>
           <ProjectCard
             client="SONIC EQUIPMENT"
             description="Transformed a legacy monolith into a modern headless architecture—without a single minute of downtime. Over 18 months, we orchestrated a complete platform evolution: from building the technical foundation and CI/CD pipelines to implementing a comprehensive design system. Every component was battle-tested in isolation before going live, so customers saw continuous improvements rather than waiting for the big reveal."

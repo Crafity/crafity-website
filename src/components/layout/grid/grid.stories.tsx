@@ -18,11 +18,11 @@ const meta: Meta<typeof Grid> = {
     gap: {
       control: 'select',
       description: 'Gap size between grid items (responsive)',
-      options: ['small', 'medium', 'large'],
+      options: [4, 6, 8],
       table: {
-        defaultValue: { summary: 'medium' },
+        defaultValue: { summary: '6' },
         type: {
-          summary: "'small' | 'medium' | 'large'",
+          summary: '4 | 6 | 8',
         },
       },
     },
@@ -64,7 +64,7 @@ export const AllGaps: Story = {
         flexDirection: 'column',
         gap: 'var(--spacing-16)',
       }}>
-      {(['small', 'medium', 'large'] as const).map(gap => (
+      {([4, 6, 8] as const).map(gap => (
         <div key={gap}>
           <h3
             style={{
@@ -73,7 +73,7 @@ export const AllGaps: Story = {
               marginBottom: 'var(--spacing-4)',
               textTransform: 'uppercase',
             }}>
-            {gap} gap ({getGapValue(gap)})
+            gap {gap} ({getGapValue(gap)})
           </h3>
           <Grid columns={{ base: 2, lg: 4, md: 3 }} gap={gap}>
             <ExampleCard label="1" />
@@ -100,7 +100,7 @@ export const SmallGap: Story = {
       </>
     ),
     columns: { base: 2, lg: 4, md: 3 },
-    gap: 'small',
+    gap: 4,
   },
 }
 
@@ -117,7 +117,7 @@ export const MediumGap: Story = {
       </>
     ),
     columns: { base: 2, lg: 4, md: 3 },
-    gap: 'medium',
+    gap: 6,
   },
 }
 
@@ -134,7 +134,7 @@ export const LargeGap: Story = {
       </>
     ),
     columns: { base: 2, lg: 4, md: 3 },
-    gap: 'large',
+    gap: 8,
   },
 }
 
@@ -429,16 +429,16 @@ export const RealWorldExample: Story = {
       </>
     ),
     columns: { base: 1, lg: 3, md: 2 },
-    gap: 'large',
+    gap: 8,
   },
 }
 
 // Helper function
-function getGapValue(gap: string): string {
-  const values: Record<string, string> = {
-    large: '32px / 48px',
-    medium: '24px / 32px',
-    small: '16px / 24px',
+function getGapValue(gap: number): string {
+  const values: Record<number, string> = {
+    4: '16px / 24px',
+    6: '24px / 32px',
+    8: '32px / 48px',
   }
   return values[gap] || ''
 }

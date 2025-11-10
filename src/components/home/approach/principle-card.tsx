@@ -1,3 +1,4 @@
+import { ReactNode } from 'react'
 import { clsx } from 'clsx'
 
 import styles from './principle-card.module.css'
@@ -6,7 +7,7 @@ import { Heading } from '@/components/common/heading/heading'
 import { Text } from '@/components/common/text/text'
 
 interface PrincipleCardProps {
-  description: React.ReactNode
+  description: ReactNode
   index: number
   title: string
 }

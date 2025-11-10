@@ -1,22 +1,19 @@
 import { ReactNode } from 'react'
 import { clsx } from 'clsx'
 
-// eslint-disable-next-line css-modules/no-unused-class
 import styles from './grid.module.css'
 
 import {
-  getGapToken,
-  isResponsiveProp,
-  ResponsiveProp,
-} from '@/types/responsive'
-
-type GapSize = 'small' | 'medium' | 'large'
+  getSpacingVar,
+  SpacingToken,
+} from '@/components/layout/box/box-spacing'
+import { isResponsiveProp, ResponsiveProp } from '@/types/responsive'
 
 interface GridProps {
   children: ReactNode
   className?: string
   columns?: number | ResponsiveProp<number>
-  gap?: GapSize | ResponsiveProp<GapSize>
+  gap?: SpacingToken | ResponsiveProp<SpacingToken>
 }
 
 /**
@@ -27,7 +24,7 @@ interface GridProps {
  *
  * @example Basic grid with static columns
  * ```tsx
- * <Grid columns={3}>
+ * <Grid columns={3} gap={6}>
  *   <Card>Item 1</Card>
  *   <Card>Item 2</Card>
  *   <Card>Item 3</Card>
@@ -38,7 +35,7 @@ interface GridProps {
  * ```tsx
  * <Grid
  *   columns={{ base: 1, md: 2, lg: 3, xl: 4 }}
- *   gap={{ base: 'small', md: 'medium', lg: 'large' }}
+ *   gap={{ base: 4, md: 6, lg: 8 }}
  * >
  *   <Card>Item 1</Card>
  *   <Card>Item 2</Card>
@@ -48,7 +45,7 @@ interface GridProps {
  *
  * @example Product grid
  * ```tsx
- * <Grid columns={{ base: 1, sm: 2, md: 3, lg: 4 }} gap="medium">
+ * <Grid columns={{ base: 1, sm: 2, md: 3, lg: 4 }} gap={6}>
  *   {products.map(product => (
  *     <ProductCard key={product.id} {...product} />
  *   ))}
@@ -59,23 +56,18 @@ export function Grid({
   children,
   className,
   columns = { base: 1, lg: 3, md: 2 },
-  gap = 'medium',
+  gap = 6,
 }: GridProps) {
-  // Handle both static and responsive props
   const isColumnsResponsive = isResponsiveProp(columns)
   const isGapResponsive = isResponsiveProp(gap)
 
-  // Get column values for CSS variables
   const columnValues = isColumnsResponsive
     ? columns
     : { base: columns, lg: columns, md: columns }
 
-  // Get gap class names
-  const gapClassName = isGapResponsive ? undefined : styles[gap]
-
   return (
     <div
-      className={clsx(styles.grid, gapClassName, className)}
+      className={clsx(styles.grid, className)}
       style={
         {
           '--grid-cols-2xl': columnValues['2xl'],
@@ -86,12 +78,29 @@ export function Grid({
           '--grid-cols-sm': columnValues.sm,
           '--grid-cols-xl': columnValues.xl,
           '--grid-cols-xs': columnValues.xs,
-          ...(isGapResponsive && {
-            '--grid-gap-base': `var(--spacing-${getGapToken(gap.base, true)})`,
-            '--grid-gap-md':
-              gap.md && `var(--spacing-${getGapToken(gap.md, false)})`,
-          }),
-        } as React.CSSProperties
+          '--grid-gap': isGapResponsive ? undefined : getSpacingVar(gap),
+          '--grid-gap-2xl':
+            isGapResponsive && gap['2xl']
+              ? getSpacingVar(gap['2xl'])
+              : undefined,
+          '--grid-gap-3xl':
+            isGapResponsive && gap['3xl']
+              ? getSpacingVar(gap['3xl'])
+              : undefined,
+          '--grid-gap-base': isGapResponsive
+            ? getSpacingVar(gap.base)
+            : undefined,
+          '--grid-gap-lg':
+            isGapResponsive && gap.lg ? getSpacingVar(gap.lg) : undefined,
+          '--grid-gap-md':
+            isGapResponsive && gap.md ? getSpacingVar(gap.md) : undefined,
+          '--grid-gap-sm':
+            isGapResponsive && gap.sm ? getSpacingVar(gap.sm) : undefined,
+          '--grid-gap-xl':
+            isGapResponsive && gap.xl ? getSpacingVar(gap.xl) : undefined,
+          '--grid-gap-xs':
+            isGapResponsive && gap.xs ? getSpacingVar(gap.xs) : undefined,
+        } satisfies React.CSSProperties
       }>
       {children}
     </div>

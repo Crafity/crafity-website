@@ -26,7 +26,7 @@ const supportingClients = [
 export function ClientTrust() {
   return (
     <Container size="wide">
-      <Stack space="medium">
+      <Stack gap={12}>
         <div className={styles.header}>
           <Divider spacing="none" variant="default" />
           <Text

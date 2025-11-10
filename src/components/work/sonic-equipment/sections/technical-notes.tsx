@@ -2,12 +2,12 @@ import styles from './technical-notes.module.css'
 
 import { Heading } from '@/components/common/heading/heading'
 import { TerminalWindow } from '@/components/common/terminal-window/terminal-window'
+import { Container } from '@/components/layout/container/container'
 
 export function TechnicalNotesSection() {
   return (
-    <>
+    <Container size="narrow">
       <div className={styles['section-header']}>
-        <div className={styles['accent-bar']} />
         <Heading fluid align="center" level={2} size="4xl" variant="accent">
           Technical Notes
         </Heading>
@@ -105,6 +105,6 @@ export function TechnicalNotesSection() {
           </div>
         </div>
       </TerminalWindow>
-    </>
+    </Container>
   )
 }

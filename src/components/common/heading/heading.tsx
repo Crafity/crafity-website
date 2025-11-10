@@ -21,6 +21,7 @@ interface HeadingProps {
   align?: 'left' | 'center' | 'right'
   children: ReactNode
   className?: string
+  color?: 'default' | 'primary' | 'secondary'
   fluid?: boolean
   level: 1 | 2 | 3 | 4 | 5 | 6
   size?: HeadingSize | ResponsiveProp<HeadingSize>
@@ -76,6 +77,7 @@ export function Heading({
   align,
   children,
   className,
+  color = 'default',
   fluid = false,
   level,
   size,
@@ -95,6 +97,7 @@ export function Heading({
     <Tag
       className={clsx(
         styles.heading,
+        styles[`color-${color}`],
         !isSizeResponsive && styles[`size-${computedSize}`],
         isSizeResponsive && styles['size-responsive'],
         fluid && styles.fluid,
@@ -121,7 +124,7 @@ export function Heading({
                 computedSize.xl && getSizeValue(computedSize.xl),
               '--heading-size-xs':
                 computedSize.xs && getSizeValue(computedSize.xs),
-            } as React.CSSProperties)
+            } satisfies React.CSSProperties)
           : undefined
       }>
       {children}

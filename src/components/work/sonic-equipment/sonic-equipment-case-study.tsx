@@ -1,3 +1,4 @@
+import { AccentBar } from '@/components/common/accent-bar/accent-bar'
 import { Section } from '@/components/layout/section/section'
 import { SectionDivider } from '@/components/layout/section-divider/section-divider'
 import { HeroSection } from '@/components/work/sonic-equipment/sections/hero-section'
@@ -12,6 +13,7 @@ export function SonicEquipmentCaseStudy() {
       <Section>
         <HeroSection />
       </Section>
+      <AccentBar />
       <Section>
         <SituationSection />
       </Section>
@@ -23,7 +25,7 @@ export function SonicEquipmentCaseStudy() {
       <Section>
         <WhatChangedSection />
       </Section>
-      <SectionDivider />
+      <AccentBar />
       <Section>
         <TechnicalNotesSection />
       </Section>

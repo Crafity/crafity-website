@@ -11,11 +11,11 @@ import { Stack } from '@/components/layout/stack/stack'
 export function HeroSection() {
   return (
     <Container size="full">
-      <Stack className={styles.hero} space="large">
+      <Stack className={styles.hero} gap={16}>
         <TerminalWindow
           className={styles['terminal-window']}
           title="sonic-case-study.log">
-          <Stack space={{ base: 'minimal', md: 'tiny' }}>
+          <Stack gap={{ base: 2, md: 4 }}>
             <div className={styles.command}>
               <ResponsiveText
                 text={{

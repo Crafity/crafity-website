@@ -38,12 +38,12 @@ const services = [
 export function Services() {
   return (
     <Container size="wide">
-      <Stack space="xlarge">
+      <Stack gap={24}>
         <Heading fluid align="center" level={2} size="5xl" variant="accent">
           WHAT WE DO
         </Heading>
 
-        <Stack space="xlarge">
+        <Stack gap={24}>
           {services.map(service => (
             <ServiceCard key={service.number} {...service} />
           ))}

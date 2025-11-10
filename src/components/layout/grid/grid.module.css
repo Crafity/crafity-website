@@ -8,61 +8,41 @@
 
 .grid {
   display: grid;
+  gap: var(--grid-gap);
   grid-template-columns: repeat(var(--grid-cols-base, 1), 1fr);
 
   @media (--xs-n-above) {
+    gap: var(--grid-gap-xs, var(--grid-gap));
     grid-template-columns: repeat(var(--grid-cols-xs, var(--grid-cols-base, 1)), 1fr);
   }
 
   @media (--sm-n-above) {
+    gap: var(--grid-gap-sm, var(--grid-gap-xs, var(--grid-gap)));
     grid-template-columns: repeat(var(--grid-cols-sm, var(--grid-cols-xs, var(--grid-cols-base, 1))), 1fr);
   }
 
   @media (--md-n-above) {
+    gap: var(--grid-gap-md, var(--grid-gap-sm, var(--grid-gap-xs, var(--grid-gap))));
     grid-template-columns: repeat(var(--grid-cols-md, var(--grid-cols-sm, var(--grid-cols-xs, var(--grid-cols-base, 1)))), 1fr);
   }
 
   @media (--lg-n-above) {
+    gap: var(--grid-gap-lg, var(--grid-gap-md, var(--grid-gap-sm, var(--grid-gap-xs, var(--grid-gap)))));
     grid-template-columns: repeat(var(--grid-cols-lg, var(--grid-cols-md, var(--grid-cols-sm, var(--grid-cols-xs, var(--grid-cols-base, 1))))), 1fr);
   }
 
   @media (--xl-n-above) {
+    gap: var(--grid-gap-xl, var(--grid-gap-lg, var(--grid-gap-md, var(--grid-gap-sm, var(--grid-gap-xs, var(--grid-gap))))));
     grid-template-columns: repeat(var(--grid-cols-xl, var(--grid-cols-lg, var(--grid-cols-md, var(--grid-cols-sm, var(--grid-cols-xs, var(--grid-cols-base, 1)))))), 1fr);
   }
 
   @media (--2xl-n-above) {
+    gap: var(--grid-gap-2xl, var(--grid-gap-xl, var(--grid-gap-lg, var(--grid-gap-md, var(--grid-gap-sm, var(--grid-gap-xs, var(--grid-gap)))))));
     grid-template-columns: repeat(var(--grid-cols-2xl, var(--grid-cols-xl, var(--grid-cols-lg, var(--grid-cols-md, var(--grid-cols-sm, var(--grid-cols-xs, var(--grid-cols-base, 1))))))), 1fr);
   }
 
   @media (--3xl-n-above) {
+    gap: var(--grid-gap-3xl, var(--grid-gap-2xl, var(--grid-gap-xl, var(--grid-gap-lg, var(--grid-gap-md, var(--grid-gap-sm, var(--grid-gap-xs, var(--grid-gap))))))));
     grid-template-columns: repeat(var(--grid-cols-3xl, var(--grid-cols-2xl, var(--grid-cols-xl, var(--grid-cols-lg, var(--grid-cols-md, var(--grid-cols-sm, var(--grid-cols-xs, var(--grid-cols-base, 1)))))))), 1fr);
-  }
-}
-
-/* ========================================================================
-   Gap Variants - Using design tokens
-   ======================================================================== */
-
-.small {
-  gap: var(--spacing-4);
-
-  @media (--md-n-above) {
-    gap: var(--spacing-6);
-  }
-}
-
-.medium {
-  gap: var(--spacing-6);
-
-  @media (--md-n-above) {
-    gap: var(--spacing-8);
-  }
-}
-
-.large {
-  gap: var(--spacing-8);
-
-  @media (--md-n-above) {
-    gap: var(--spacing-12);
   }
 }

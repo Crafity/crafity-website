@@ -55,6 +55,23 @@
 }
 
 /* ========================================================================
+   Size Variants - Visual sizing independent of semantic level
+   Perfect Fourth Scale (1.333 ratio)
+   ======================================================================== */
+
+.color-default {
+  color: var(--text-primary);
+}
+
+.color-primary {
+  color: var(--accent-primary);
+}
+
+.color-secondary {
+  color: var(--accent-secondary);
+}
+
+/* ========================================================================
    Responsive Size - When size prop is responsive object
    ======================================================================== */
 
@@ -66,40 +83,142 @@
   }
 
   @media (--sm-n-above) {
-    font-size: var(--heading-size-sm, var(--heading-size-xs, var(--heading-size-base)));
+    font-size: var(
+      --heading-size-sm,
+      var(--heading-size-xs, var(--heading-size-base))
+    );
   }
 
   @media (--md-n-above) {
-    font-size: var(--heading-size-md, var(--heading-size-sm, var(--heading-size-xs, var(--heading-size-base))));
+    font-size: var(
+      --heading-size-md,
+      var(--heading-size-sm, var(--heading-size-xs, var(--heading-size-base)))
+    );
   }
 
   @media (--lg-n-above) {
-    font-size: var(--heading-size-lg, var(--heading-size-md, var(--heading-size-sm, var(--heading-size-xs, var(--heading-size-base)))));
+    font-size: var(
+      --heading-size-lg,
+      var(
+        --heading-size-md,
+        var(--heading-size-sm, var(--heading-size-xs, var(--heading-size-base)))
+      )
+    );
   }
 
   @media (--xl-n-above) {
-    font-size: var(--heading-size-xl, var(--heading-size-lg, var(--heading-size-md, var(--heading-size-sm, var(--heading-size-xs, var(--heading-size-base))))));
+    font-size: var(
+      --heading-size-xl,
+      var(
+        --heading-size-lg,
+        var(
+          --heading-size-md,
+          var(
+            --heading-size-sm,
+            var(--heading-size-xs, var(--heading-size-base))
+          )
+        )
+      )
+    );
   }
 
   @media (--2xl-n-above) {
-    font-size: var(--heading-size-2xl, var(--heading-size-xl, var(--heading-size-lg, var(--heading-size-md, var(--heading-size-sm, var(--heading-size-xs, var(--heading-size-base)))))));
+    font-size: var(
+      --heading-size-2xl,
+      var(
+        --heading-size-xl,
+        var(
+          --heading-size-lg,
+          var(
+            --heading-size-md,
+            var(
+              --heading-size-sm,
+              var(--heading-size-xs, var(--heading-size-base))
+            )
+          )
+        )
+      )
+    );
   }
 
   @media (--3xl-n-above) {
-    font-size: var(--heading-size-3xl, var(--heading-size-2xl, var(--heading-size-xl, var(--heading-size-lg, var(--heading-size-md, var(--heading-size-sm, var(--heading-size-xs, var(--heading-size-base))))))));
+    font-size: var(
+      --heading-size-3xl,
+      var(
+        --heading-size-2xl,
+        var(
+          --heading-size-xl,
+          var(
+            --heading-size-lg,
+            var(
+              --heading-size-md,
+              var(
+                --heading-size-sm,
+                var(--heading-size-xs, var(--heading-size-base))
+              )
+            )
+          )
+        )
+      )
+    );
   }
 }
 
 /* Add support for 4xl and 5xl responsive sizes */
 @media (--3xl-n-above) {
   .size-responsive {
-    font-size: var(--heading-size-4xl, var(--heading-size-3xl, var(--heading-size-2xl, var(--heading-size-xl, var(--heading-size-lg, var(--heading-size-md, var(--heading-size-sm, var(--heading-size-xs, var(--heading-size-base)))))))));
+    font-size: var(
+      --heading-size-4xl,
+      var(
+        --heading-size-3xl,
+        var(
+          --heading-size-2xl,
+          var(
+            --heading-size-xl,
+            var(
+              --heading-size-lg,
+              var(
+                --heading-size-md,
+                var(
+                  --heading-size-sm,
+                  var(--heading-size-xs, var(--heading-size-base))
+                )
+              )
+            )
+          )
+        )
+      )
+    );
   }
 }
 
 @media (--3xl-n-above) {
   .size-responsive {
-    font-size: var(--heading-size-5xl, var(--heading-size-4xl, var(--heading-size-3xl, var(--heading-size-2xl, var(--heading-size-xl, var(--heading-size-lg, var(--heading-size-md, var(--heading-size-sm, var(--heading-size-xs, var(--heading-size-base))))))))));
+    font-size: var(
+      --heading-size-5xl,
+      var(
+        --heading-size-4xl,
+        var(
+          --heading-size-3xl,
+          var(
+            --heading-size-2xl,
+            var(
+              --heading-size-xl,
+              var(
+                --heading-size-lg,
+                var(
+                  --heading-size-md,
+                  var(
+                    --heading-size-sm,
+                    var(--heading-size-xs, var(--heading-size-base))
+                  )
+                )
+              )
+            )
+          )
+        )
+      )
+    );
   }
 }
 
@@ -152,7 +271,11 @@
 @media (--md-n-above) {
   .size-5xl-fluid {
     /* Tablet (768-1279px): 53px→95px (3xl→5xl) */
-    --heading-fluid-size: clamp(3.3125rem, calc(3.3125rem * 0.3 + 4vw), 5.9375rem);
+    --heading-fluid-size: clamp(
+      3.3125rem,
+      calc(3.3125rem * 0.3 + 4vw),
+      5.9375rem
+    );
   }
 }
 
@@ -179,27 +302,43 @@
 @media (--xl-n-above) {
   .size-4xl-fluid {
     /* Desktop (1280px+): 71px→80px */
-    --heading-fluid-size: clamp(4.4375rem, calc(4.4375rem * 0.15 + 1.5vw), 5rem);
+    --heading-fluid-size: clamp(
+      4.4375rem,
+      calc(4.4375rem * 0.15 + 1.5vw),
+      5rem
+    );
   }
 }
 
 /* Fluid Display (size="3xl") - 23px→30px→53px→60px */
 .size-3xl-fluid {
   /* Mobile (320-767px): 23px→30px (lg→xl) */
-  --heading-fluid-size: clamp(1.4375rem, calc(1.4375rem * 0.3 + 1.5vw), 1.875rem);
+  --heading-fluid-size: clamp(
+    1.4375rem,
+    calc(1.4375rem * 0.3 + 1.5vw),
+    1.875rem
+  );
 }
 
 @media (--md-n-above) {
   .size-3xl-fluid {
     /* Tablet (768-1279px): 30px→53px (xl→3xl) */
-    --heading-fluid-size: clamp(1.875rem, calc(1.875rem * 0.4 + 3vw), 3.3125rem);
+    --heading-fluid-size: clamp(
+      1.875rem,
+      calc(1.875rem * 0.4 + 3vw),
+      3.3125rem
+    );
   }
 }
 
 @media (--xl-n-above) {
   .size-3xl-fluid {
     /* Desktop (1280px+): 53px→60px */
-    --heading-fluid-size: clamp(3.3125rem, calc(3.3125rem * 0.15 + 1vw), 3.75rem);
+    --heading-fluid-size: clamp(
+      3.3125rem,
+      calc(3.3125rem * 0.15 + 1vw),
+      3.75rem
+    );
   }
 }
 
@@ -226,13 +365,21 @@
 /* Fluid Subsection/H3 (size="xl") - 18px→23px→30px→40px */
 .size-xl-fluid {
   /* Mobile (320-767px): 18px→23px (base→lg) */
-  --heading-fluid-size: clamp(1.125rem, calc(1.125rem * 0.4 + 1.5vw), 1.4375rem);
+  --heading-fluid-size: clamp(
+    1.125rem,
+    calc(1.125rem * 0.4 + 1.5vw),
+    1.4375rem
+  );
 }
 
 @media (--md-n-above) {
   .size-xl-fluid {
     /* Tablet (768-1279px): 23px→30px (lg→xl) */
-    --heading-fluid-size: clamp(1.4375rem, calc(1.4375rem * 0.4 + 2vw), 1.875rem);
+    --heading-fluid-size: clamp(
+      1.4375rem,
+      calc(1.4375rem * 0.4 + 2vw),
+      1.875rem
+    );
   }
 }
 
@@ -252,7 +399,11 @@
 @media (--md-n-above) {
   .size-lg-fluid {
     /* Tablet+: 23px→25px (subtle scaling) */
-    --heading-fluid-size: clamp(1.4375rem, calc(1.4375rem * 0.1 + 0.5vw), 1.5625rem);
+    --heading-fluid-size: clamp(
+      1.4375rem,
+      calc(1.4375rem * 0.1 + 0.5vw),
+      1.5625rem
+    );
   }
 }
 
@@ -265,33 +416,53 @@
 @media (--md-n-above) {
   .size-md-fluid {
     /* Tablet+: 18px→20px (subtle scaling) */
-    --heading-fluid-size: clamp(1.125rem, calc(1.125rem * 0.15 + 0.5vw), 1.25rem);
+    --heading-fluid-size: clamp(
+      1.125rem,
+      calc(1.125rem * 0.15 + 0.5vw),
+      1.25rem
+    );
   }
 }
 
 /* Fluid Small UI (size="sm") - 13px→14px→15px */
 .size-sm-fluid {
   /* Mobile (320-767px): 13px→14px (conservative) */
-  --heading-fluid-size: clamp(0.8125rem, calc(0.8125rem * 0.1 + 0.3vw), 0.875rem);
+  --heading-fluid-size: clamp(
+    0.8125rem,
+    calc(0.8125rem * 0.1 + 0.3vw),
+    0.875rem
+  );
 }
 
 @media (--md-n-above) {
   .size-sm-fluid {
     /* Tablet+: 14px→15px (subtle scaling) */
-    --heading-fluid-size: clamp(0.875rem, calc(0.875rem * 0.1 + 0.3vw), 0.9375rem);
+    --heading-fluid-size: clamp(
+      0.875rem,
+      calc(0.875rem * 0.1 + 0.3vw),
+      0.9375rem
+    );
   }
 }
 
 /* Fluid Extra Small (size="xs") - 11px→12px→13px */
 .size-xs-fluid {
   /* Mobile (320-767px): 11px→12px (conservative) */
-  --heading-fluid-size: clamp(0.6875rem, calc(0.6875rem * 0.1 + 0.3vw), 0.75rem);
+  --heading-fluid-size: clamp(
+    0.6875rem,
+    calc(0.6875rem * 0.1 + 0.3vw),
+    0.75rem
+  );
 }
 
 @media (--md-n-above) {
   .size-xs-fluid {
     /* Tablet+: 12px→13px (subtle scaling) */
-    --heading-fluid-size: clamp(0.75rem, calc(0.75rem * 0.1 + 0.3vw), 0.8125rem);
+    --heading-fluid-size: clamp(
+      0.75rem,
+      calc(0.75rem * 0.1 + 0.3vw),
+      0.8125rem
+    );
   }
 }
 

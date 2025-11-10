@@ -11,14 +11,14 @@ const meta: Meta<typeof Stack> = {
         defaultValue: { summary: 'false' },
       },
     },
-    space: {
+    gap: {
       control: 'select',
       description: 'Amount of vertical spacing between children',
-      options: ['small', 'medium', 'large', 'xlarge'],
+      options: [8, 12, 16, 24],
       table: {
-        defaultValue: { summary: 'medium' },
+        defaultValue: { summary: '12' },
         type: {
-          summary: "'small' | 'medium' | 'large' | 'xlarge'",
+          summary: '8 | 12 | 16 | 24',
         },
       },
     },
@@ -54,7 +54,7 @@ export const AllSpacing: Story = {
         gap: 'var(--spacing-16)',
         gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
       }}>
-      {(['small', 'medium', 'large', 'xlarge'] as const).map(space => (
+      {([8, 12, 16, 24] as const).map(space => (
         <div key={space}>
           <h3
             style={{
@@ -63,9 +63,9 @@ export const AllSpacing: Story = {
               marginBottom: 'var(--spacing-4)',
               textTransform: 'uppercase',
             }}>
-            {space} ({getSpaceValue(space)})
+            space {space} ({getSpaceValue(space)})
           </h3>
-          <Stack space={space}>
+          <Stack gap={space}>
             <ExampleBox label="Item 1" />
             <ExampleBox label="Item 2" />
             <ExampleBox label="Item 3" />
@@ -85,7 +85,7 @@ export const Small: Story = {
         <ExampleBox label="Like form fields or list items" />
       </>
     ),
-    space: 'small',
+    gap: 8,
   },
 }
 
@@ -98,7 +98,7 @@ export const Medium: Story = {
         <ExampleBox label="Good balance between connection and separation" />
       </>
     ),
-    space: 'medium',
+    gap: 12,
   },
 }
 
@@ -111,7 +111,7 @@ export const Large: Story = {
         <ExampleBox label="Creates clear visual separation" />
       </>
     ),
-    space: 'large',
+    gap: 16,
   },
 }
 
@@ -124,7 +124,7 @@ export const XLarge: Story = {
         <ExampleBox label="Maximum vertical breathing room" />
       </>
     ),
-    space: 'xlarge',
+    gap: 24,
   },
 }
 
@@ -139,7 +139,7 @@ export const WithDividers: Story = {
       </>
     ),
     dividers: true,
-    space: 'medium',
+    gap: 12,
   },
 }
 
@@ -151,7 +151,7 @@ export const WithDividersDifferentSpacing: Story = {
         gap: 'var(--spacing-16)',
         gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
       }}>
-      {(['small', 'medium', 'large'] as const).map(space => (
+      {([8, 12, 16] as const).map(space => (
         <div key={space}>
           <h3
             style={{
@@ -160,9 +160,9 @@ export const WithDividersDifferentSpacing: Story = {
               marginBottom: 'var(--spacing-4)',
               textTransform: 'uppercase',
             }}>
-            {space} with dividers
+            space {space} with dividers
           </h3>
-          <Stack dividers space={space}>
+          <Stack dividers gap={space}>
             <ExampleBox label="Section 1" />
             <ExampleBox label="Section 2" />
             <ExampleBox label="Section 3" />
@@ -224,17 +224,17 @@ export const RealWorldExample: Story = {
         </div>
       </>
     ),
-    space: 'large',
+    gap: 16,
   },
 }
 
 // Helper function
-function getSpaceValue(space: string): string {
-  const values: Record<string, string> = {
-    large: '64px',
-    medium: '48px',
-    small: '32px',
-    xlarge: '96px',
+function getSpaceValue(space: number): string {
+  const values: Record<number, string> = {
+    12: '48px',
+    16: '64px',
+    24: '96px',
+    8: '32px',
   }
   return values[space] || ''
 }
