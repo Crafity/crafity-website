@@ -8,6 +8,21 @@ importers:
 
   .:
     dependencies:
+      '@fontsource-variable/recursive':
+        specifier: ^5.2.8
+        version: 5.2.8
+      '@fontsource/dm-sans':
+        specifier: ^5.2.8
+        version: 5.2.8
+      '@fontsource/instrument-sans':
+        specifier: ^5.2.8
+        version: 5.2.8
+      '@fontsource/martian-mono':
+        specifier: ^5.2.7
+        version: 5.2.7
+      '@fontsource/schibsted-grotesk':
+        specifier: ^5.2.8
+        version: 5.2.8
       '@storybook/addon-links':
         specifier: ^10.0.5
         version: 10.0.5(react@19.2.0)(storybook@9.1.16(@testing-library/dom@10.4.1)(prettier@3.6.2)(vite@7.2.0(@types/node@24.10.0)(jiti@2.6.1)(tsx@4.20.6)))
@@ -630,6 +645,21 @@ packages:
   '@eslint/plugin-kit@0.4.1':
     resolution: {integrity: sha512-43/qtrDUokr7LJqoF2c3+RInu/t4zfrpYdoSDfYyhg52rwLV6TnOvdG4fXm7IkSB3wErkcmJS9iEhjVtOSEjjA==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
+
+  '@fontsource-variable/recursive@5.2.8':
+    resolution: {integrity: sha512-LEq6XtuWtjmNTRFQEctx+RUPiQegsjOaCF++ASVoMoGEW4gNjbaKZJJo/NiR12eWxT4LaTKonTgrmEci0oVcSw==}
+
+  '@fontsource/dm-sans@5.2.8':
+    resolution: {integrity: sha512-tlovG42m9ESG28WiHpLq3F5umAlm64rv0RkqTbYowRn70e9OlRr5a3yTJhrhrY+k5lftR/OFJjPzOLQzk8EfCA==}
+
+  '@fontsource/instrument-sans@5.2.8':
+    resolution: {integrity: sha512-TJRYVbjZPx4DGMMU5lb5eFKrP3iLe9h7rz8Pk+dP958IZKiyHjYGXXwQZapVbBXcQN+YOiviVhAWxrjv8g6Z6g==}
+
+  '@fontsource/martian-mono@5.2.7':
+    resolution: {integrity: sha512-DU0WVmso0FjwnNf7Z80FhnrF/pCMgNi9ZfHTn1Ws7TM6u00CwV6esjaFkn3blnchn0pRwt63/M/2vfBe6J4mFg==}
+
+  '@fontsource/schibsted-grotesk@5.2.8':
+    resolution: {integrity: sha512-CyyDW5aS89oKGFAVndOsJTQ5pqzKuPnSKWjrdJdMT5TD/eA2JyWapUBhvy6X/lqqrB/GNk74PIff7coPifeVyg==}
 
   '@formatjs/ecma402-abstract@2.3.6':
     resolution: {integrity: sha512-HJnTFeRM2kVFVr5gr5kH1XP6K0JcJtE7Lzvtr3FS/so5f1kpsqqqxy5JF+FRaO6H2qmcMfAUIox7AJteieRtVw==}
@@ -4529,6 +4559,16 @@ snapshots:
     dependencies:
       '@eslint/core': 0.17.0
       levn: 0.4.1
+
+  '@fontsource-variable/recursive@5.2.8': {}
+
+  '@fontsource/dm-sans@5.2.8': {}
+
+  '@fontsource/instrument-sans@5.2.8': {}
+
+  '@fontsource/martian-mono@5.2.7': {}
+
+  '@fontsource/schibsted-grotesk@5.2.8': {}
 
   '@formatjs/ecma402-abstract@2.3.6':
     dependencies:

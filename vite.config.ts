@@ -64,6 +64,7 @@ export default defineConfig({
             // Delay between retries in milliseconds
             retryDelay: 1000,
           },
+          sitemap: { host: 'http://localhost:3000' },
           // Optional configuration for specific pages
           // Note: When autoStaticPathsDiscovery is enabled (default), discovered static
           // routes will be merged with the pages specified below

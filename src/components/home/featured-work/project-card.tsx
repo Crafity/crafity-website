@@ -1,5 +1,6 @@
 import { clsx } from 'clsx'
 
+import { Card } from '../../common/card/card'
 import { Dots } from '../../common/dots/dots'
 import { Heading } from '../../common/heading/heading'
 import { Link } from '../../common/link/link'
@@ -26,7 +27,9 @@ export function ProjectCard({
   title,
 }: ProjectCardProps) {
   return (
-    <div className={clsx(styles.card, large && styles.large)}>
+    <Card
+      className={clsx(styles.card, large && styles.large)}
+      variant="outlined">
       <div className={styles.dots}>
         <Dots />
       </div>
@@ -53,6 +56,6 @@ export function ProjectCard({
           → View case study
         </button>
       )}
-    </div>
+    </Card>
   )
 }

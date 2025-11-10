@@ -1,10 +1,7 @@
+/* Card provides: padding, border (medium), background, transition */
 .card {
   display: flex;
   flex-direction: column;
-  padding: var(--spacing-6);
-  border: var(--border-width-medium) solid var(--border-default-color);
-  background: var(--bg-secondary);
-  transition: var(--transition-all);
 
   &:hover {
     border-color: var(--accent-secondary);

@@ -25,11 +25,6 @@
   gap: var(--spacing-3);
 }
 
-.tech-icon {
-  color: var(--accent-secondary);
-  font-size: var(--font-size-base-lg);
-}
-
 .tech-title {
   color: var(--accent-secondary);
   font-weight: var(--font-weight-bold);

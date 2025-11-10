@@ -9,11 +9,13 @@
   font-weight: var(--font-weight-bold);
 }
 
+/* Card provides: padding, border (accent-thin), background */
 .transformation-text {
-  padding: var(--spacing-8);
-  border: var(--border-width-accent-thin) solid var(--accent-secondary);
   margin: var(--spacing-12) 0;
-  background: var(--bg-secondary);
   font-size: var(--font-size-base-lg);
   line-height: var(--line-height-relaxed);
+}
+
+.transformation-text p {
+  margin: 0;
 }

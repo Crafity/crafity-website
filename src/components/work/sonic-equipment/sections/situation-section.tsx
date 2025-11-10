@@ -1,6 +1,7 @@
 import styles from './situation-section.module.css'
 
 import { AccentBar } from '@/components/common/accent-bar/accent-bar'
+import { Card } from '@/components/common/card/card'
 import { Container } from '@/components/layout/container/container'
 import { SectionHeader } from '@/components/layout/section-header/section-header'
 
@@ -50,10 +51,16 @@ export function SituationSection() {
           </p>
         </AccentBar>
 
-        <p className={styles['constraint-text']}>
-          The constraint: 65 countries, thousands of professional customers,
-          zero tolerance for downtime during business hours.
-        </p>
+        <Card
+          borderSide="left"
+          borderWidth="accent"
+          className={styles['constraint-text']}
+          variant="filled">
+          <p>
+            The constraint: 65 countries, thousands of professional customers,
+            zero tolerance for downtime during business hours.
+          </p>
+        </Card>
       </Container>
     </>
   )

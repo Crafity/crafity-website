@@ -1,8 +1,8 @@
 :root {
-  /* Font Families */
-  --font-family: 'Inter', sans-serif;
-  --mono-font-family: 'JetBrains Mono', monospace;
-  --accent-font-family: 'Space Grotesk', sans-serif;
+  /* Font Families - New Typography Stack */
+  --font-family: 'Instrument Sans', sans-serif;
+  --mono-font-family: 'Recursive', monospace;
+  --accent-font-family: 'Schibsted Grotesk', sans-serif;
 
   /*
    * Primitive Font Sizes - T-shirt sizing

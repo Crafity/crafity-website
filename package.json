@@ -32,6 +32,11 @@
   "license": "ISC",
   "packageManager": "pnpm@10.16.1",
   "dependencies": {
+    "@fontsource-variable/recursive": "^5.2.8",
+    "@fontsource/dm-sans": "^5.2.8",
+    "@fontsource/instrument-sans": "^5.2.8",
+    "@fontsource/martian-mono": "^5.2.7",
+    "@fontsource/schibsted-grotesk": "^5.2.8",
     "@storybook/addon-links": "^10.0.5",
     "@tanstack/react-router": "^1.134.9",
     "@tanstack/react-start": "^1.134.9",
