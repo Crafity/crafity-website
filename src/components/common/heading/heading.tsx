@@ -21,6 +21,7 @@ interface HeadingProps {
   align?: 'left' | 'center' | 'right'
   children: ReactNode
   className?: string
+  fluid?: boolean
   level: 1 | 2 | 3 | 4 | 5 | 6
   size?: HeadingSize | ResponsiveProp<HeadingSize>
   variant?: 'default' | 'accent' | 'display'
@@ -53,10 +54,21 @@ interface HeadingProps {
  * </Heading>
  * ```
  *
- * @example Auto-sized heading (h1 defaults to 3xl)
+ * @example Auto-sized heading (h1 defaults to 5xl, h2 to 2xl)
  * ```tsx
  * <Heading level={1}>
  *   Main Title
+ * </Heading>
+ * ```
+ *
+ * @example Fluid heading (scales smoothly between breakpoints)
+ * All sizes now support fluid scaling with conservative ranges for smaller sizes
+ * ```tsx
+ * <Heading level={1} size="5xl" fluid>
+ *   Hero Title (dramatic scaling)
+ * </Heading>
+ * <Heading level={5} size="md" fluid>
+ *   Body Text (conservative scaling)
  * </Heading>
  * ```
  */
@@ -64,6 +76,7 @@ export function Heading({
   align,
   children,
   className,
+  fluid = false,
   level,
   size,
   variant = 'default',
@@ -71,8 +84,8 @@ export function Heading({
   const Tag = `h${level}` as const
 
   // Default size based on level if not specified
-  // Using Perfect Fourth scale: 5xl, 4xl, 3xl, 2xl, xl, lg
-  const defaultSizes = ['5xl', '4xl', '3xl', '2xl', 'xl', 'lg'] as const
+  // All sizes now support fluid typography with appropriate scaling ranges
+  const defaultSizes = ['5xl', '2xl', 'xl', 'lg', 'md', 'sm'] as const
   const defaultSize = defaultSizes[level - 1]
   const computedSize = size || defaultSize
 
@@ -84,6 +97,8 @@ export function Heading({
         styles.heading,
         !isSizeResponsive && styles[`size-${computedSize}`],
         isSizeResponsive && styles['size-responsive'],
+        fluid && styles.fluid,
+        !isSizeResponsive && fluid && styles[`size-${computedSize}-fluid`],
         styles[`variant-${variant}`],
         align && styles[`align-${align}`],
         className,

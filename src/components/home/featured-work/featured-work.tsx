@@ -9,7 +9,7 @@ export function FeaturedWork() {
   return (
     <Container size="wide">
       <Stack space="large">
-        <Heading align="center" level={2} variant="accent">
+        <Heading fluid align="center" level={2} size="5xl" variant="accent">
           FEATURED WORK
         </Heading>
 

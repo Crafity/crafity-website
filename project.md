@@ -262,7 +262,7 @@ Responsive grid layouts.
 ### Typography Components
 
 #### Heading
-Separates semantic HTML level from visual size.
+Separates semantic HTML level from visual size. Supports fluid typography for smooth responsive scaling.
 
 ```tsx
 {/* Semantic h2, visual 3xl */}
@@ -277,9 +277,16 @@ Separates semantic HTML level from visual size.
 
 {/* Auto-sized (h1 → 3xl) */}
 <Heading level={1}>Main Title</Heading>
+
+{/* Fluid hero heading - scales smoothly 30px → 95px */}
+<Heading level={1} size="5xl" fluid>
+  Deploy with confidence
+</Heading>
 ```
 
-**Props**: `level` (1-6), `size` (xs/sm/md/lg/xl/2xl/3xl), `variant` (default/accent/display), `align`, `className`
+**Props**: `level` (1-6), `size` (xs/sm/md/lg/xl/2xl/3xl/4xl/5xl), `variant` (default/accent/display), `align`, `fluid` (boolean), `className`
+
+**Note**: The `PageTitle` component is deprecated. Use `<Heading level={1} size="5xl" fluid>` for hero headings instead.
 
 #### Text
 Body text, captions, labels with semantic variants.

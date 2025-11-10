@@ -35,14 +35,12 @@ export function Approach() {
     <Container size="wide">
       <Stack space="xlarge">
         <div className={styles.statement}>
-          <Heading align="center" level={2} variant="accent">
+          <Heading fluid align="center" level={2} size="5xl" variant="accent">
             BUILT TO LAST. BUILT WITH PASSION.
           </Heading>
         </div>
 
-        <div className={styles.divider}>
-          <Divider spacing="none" variant="gradient" />
-        </div>
+        <Divider spacing="none" variant="gradient" />
 
         <Stack space="xlarge">
           {principles.map((principle, index) => (

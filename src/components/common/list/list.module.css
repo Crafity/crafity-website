@@ -1,6 +1,5 @@
 .list {
   padding-left: var(--spacing-10);
-  margin: var(--spacing-8) 0;
   list-style: none;
 }
 

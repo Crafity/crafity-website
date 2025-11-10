@@ -116,10 +116,10 @@ Instead of adding `margin-bottom` to every element, Stack handles spacing declar
 </Section>
 ```
 
-**With custom spacing:**
+**With custom padding:**
 
 ```tsx
-<Section spacing="large">
+<Section padding="large">
   <Container size="base">
     <p>Content with extra vertical padding</p>
   </Container>
@@ -128,7 +128,7 @@ Instead of adding `margin-bottom` to every element, Stack handles spacing declar
 
 **Props:**
 
-- `spacing`: 'normal' (64/96px) | 'large' (96/128px) | 'none' - Default: 'normal'
+- `padding`: 'base' (64/96px) | 'large' (96/128px) | 'none' - Default: 'base'
 - `id`: For anchor links (e.g., `id="services"`)
 - `className`: Optional custom styles
 
@@ -339,7 +339,7 @@ Instead of adding `margin-bottom` to every element, Stack handles spacing declar
 ### Pattern 3: Case Study Hero
 
 ```tsx
-<Section spacing="large">
+<Section padding="large">
   <Container size="full">
     <Stack space="xlarge">
       <TerminalWindow title="case-study.log">

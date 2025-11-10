@@ -2,20 +2,35 @@
    RESULTS SECTION (What Changed)
    ========================================================================== */
 
+.section-header {
+  text-align: center;
+}
+
+.accent-bar {
+  width: var(--spacing-20); /* 80px */
+  height: var(--spacing-1); /* 4px */
+  margin: 0 auto var(--spacing-6);
+  background: linear-gradient(
+    90deg,
+    var(--accent-secondary),
+    var(--accent-primary)
+  );
+
+  @media (--md-n-above) {
+    margin-bottom: var(--spacing-8);
+  }
+}
+
+.section-header h2 {
+  margin-bottom: var(--spacing-12);
+
+  @media (--md-n-above) {
+    margin-bottom: var(--spacing-16);
+  }
+}
+
 .results-intro {
-  margin-bottom: var(--spacing-6);
   color: var(--text-primary);
   font-size: var(--font-size-lg);
   font-weight: var(--font-weight-bold);
-}
-
-/* Card provides: padding, border (accent-thin), background */
-.transformation-text {
-  margin: var(--spacing-12) 0;
-  font-size: var(--font-size-lg);
-  line-height: var(--line-height-relaxed);
-}
-
-.transformation-text p {
-  margin: 0;
 }

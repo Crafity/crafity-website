@@ -9,6 +9,14 @@ const meta: Meta<typeof Heading> = {
       description: 'Text alignment',
       options: ['left', 'center', 'right'],
     },
+    fluid: {
+      control: 'boolean',
+      description:
+        'Enable fluid typography - headings scale smoothly between breakpoints using CSS clamp()',
+      table: {
+        defaultValue: { summary: 'false' },
+      },
+    },
     level: {
       control: 'select',
       description: 'Semantic HTML heading level',
@@ -21,7 +29,7 @@ const meta: Meta<typeof Heading> = {
       control: 'select',
       description:
         'Visual size (independent of semantic level). Auto-defaults based on level if not specified.',
-      options: ['xs', 'sm', 'md', 'lg', 'xl', '2xl', '3xl'],
+      options: ['xs', 'sm', 'md', 'lg', 'xl', '2xl', '3xl', '4xl', '5xl'],
     },
     variant: {
       control: 'select',
@@ -142,7 +150,7 @@ export const AutoSizedHeadings: Story = {
         flexDirection: 'column',
         gap: 'var(--spacing-4)',
       }}>
-      <Heading level={1}>H1 - Auto-sized to 3xl</Heading>
+      <Heading level={1}>H1 - Auto-sized to 5xl</Heading>
       <Heading level={2}>H2 - Auto-sized to 2xl</Heading>
       <Heading level={3}>H3 - Auto-sized to xl</Heading>
       <Heading level={4}>H4 - Auto-sized to lg</Heading>
@@ -253,4 +261,224 @@ export const DisplayFont: Story = {
     level: 1,
     variant: 'display',
   },
+}
+
+export const FluidHero: Story = {
+  args: {
+    children: 'Deploy with confidence',
+    fluid: true,
+    level: 1,
+    size: '5xl',
+  },
+  parameters: {
+    docs: {
+      description: {
+        story:
+          'Hero heading with fluid typography. Resize your browser window to see smooth scaling: 30px (mobile) → 53px (tablet) → 95px (desktop).',
+      },
+    },
+    layout: 'padded',
+  },
+}
+
+export const FluidSectionHeader: Story = {
+  args: {
+    children: 'Our Services',
+    fluid: true,
+    level: 2,
+    size: '2xl',
+  },
+  parameters: {
+    docs: {
+      description: {
+        story:
+          'Section header with fluid typography. Scales from 18px (mobile) → 30px (tablet) → 40px (desktop).',
+      },
+    },
+  },
+}
+
+export const FluidVsStatic: Story = {
+  parameters: {
+    docs: {
+      description: {
+        story:
+          'Comparison between static and fluid typography. Resize the browser window to observe the difference in behavior.',
+      },
+    },
+    layout: 'padded',
+  },
+  render: () => (
+    <div
+      style={{
+        display: 'grid',
+        gap: 'var(--spacing-16)',
+      }}>
+      <div>
+        <p
+          style={{
+            color: 'var(--text-tertiary)',
+            fontSize: 'var(--font-size-sm)',
+            marginBottom: 'var(--spacing-4)',
+          }}>
+          Static (default) - Fixed size at each breakpoint:
+        </p>
+        <Heading level={1} size="5xl">
+          Fixed Size Heading
+        </Heading>
+      </div>
+      <div>
+        <p
+          style={{
+            color: 'var(--text-tertiary)',
+            fontSize: 'var(--font-size-sm)',
+            marginBottom: 'var(--spacing-4)',
+          }}>
+          Fluid - Scales smoothly within breakpoints:
+        </p>
+        <Heading fluid level={1} size="5xl">
+          Responsive Size Heading
+        </Heading>
+      </div>
+    </div>
+  ),
+}
+
+export const AllFluidSizes: Story = {
+  parameters: {
+    docs: {
+      description: {
+        story:
+          'All font sizes now support fluid scaling. Each scales smoothly between breakpoints using CSS clamp(). Larger sizes have dramatic scaling, smaller sizes use conservative scaling. Resize to see the effect.',
+      },
+    },
+    layout: 'padded',
+  },
+  render: () => (
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        gap: 'var(--spacing-8)',
+      }}>
+      <div>
+        <p
+          style={{
+            color: 'var(--text-tertiary)',
+            fontSize: 'var(--font-size-xs)',
+            marginBottom: 'var(--spacing-2)',
+          }}>
+          size=&quot;5xl&quot; fluid - 30px→53px→95px→104px (Hero)
+        </p>
+        <Heading fluid level={1} size="5xl">
+          Hero Title
+        </Heading>
+      </div>
+      <div>
+        <p
+          style={{
+            color: 'var(--text-tertiary)',
+            fontSize: 'var(--font-size-xs)',
+            marginBottom: 'var(--spacing-2)',
+          }}>
+          size=&quot;4xl&quot; fluid - 30px→40px→71px→80px (Large Display)
+        </p>
+        <Heading fluid level={1} size="4xl">
+          Large Display
+        </Heading>
+      </div>
+      <div>
+        <p
+          style={{
+            color: 'var(--text-tertiary)',
+            fontSize: 'var(--font-size-xs)',
+            marginBottom: 'var(--spacing-2)',
+          }}>
+          size=&quot;3xl&quot; fluid - 23px→30px→53px→60px (Display)
+        </p>
+        <Heading fluid level={2} size="3xl">
+          Display Heading
+        </Heading>
+      </div>
+      <div>
+        <p
+          style={{
+            color: 'var(--text-tertiary)',
+            fontSize: 'var(--font-size-xs)',
+            marginBottom: 'var(--spacing-2)',
+          }}>
+          size=&quot;2xl&quot; fluid - 18px→30px→40px→53px (Section Header)
+        </p>
+        <Heading fluid level={2} size="2xl">
+          Section Header
+        </Heading>
+      </div>
+      <div>
+        <p
+          style={{
+            color: 'var(--text-tertiary)',
+            fontSize: 'var(--font-size-xs)',
+            marginBottom: 'var(--spacing-2)',
+          }}>
+          size=&quot;xl&quot; fluid - 18px→23px→30px→40px (Subsection)
+        </p>
+        <Heading fluid level={3} size="xl">
+          Subsection
+        </Heading>
+      </div>
+      <div>
+        <p
+          style={{
+            color: 'var(--text-tertiary)',
+            fontSize: 'var(--font-size-xs)',
+            marginBottom: 'var(--spacing-2)',
+          }}>
+          size=&quot;lg&quot; fluid - 18px→23px→25px (Body Large)
+        </p>
+        <Heading fluid level={4} size="lg">
+          Body Large
+        </Heading>
+      </div>
+      <div>
+        <p
+          style={{
+            color: 'var(--text-tertiary)',
+            fontSize: 'var(--font-size-xs)',
+            marginBottom: 'var(--spacing-2)',
+          }}>
+          size=&quot;md&quot; fluid - 16px→18px→20px (Body Base - conservative)
+        </p>
+        <Heading fluid level={5} size="md">
+          Body Base Text
+        </Heading>
+      </div>
+      <div>
+        <p
+          style={{
+            color: 'var(--text-tertiary)',
+            fontSize: 'var(--font-size-xs)',
+            marginBottom: 'var(--spacing-2)',
+          }}>
+          size=&quot;sm&quot; fluid - 13px→14px→15px (Small UI - conservative)
+        </p>
+        <Heading fluid level={6} size="sm">
+          Small UI Text
+        </Heading>
+      </div>
+      <div>
+        <p
+          style={{
+            color: 'var(--text-tertiary)',
+            fontSize: 'var(--font-size-xs)',
+            marginBottom: 'var(--spacing-2)',
+          }}>
+          size=&quot;xs&quot; fluid - 11px→12px→13px (Extra Small -
+          conservative)
+        </p>
+        <Heading fluid level={6} size="xs">
+          Extra Small Text
+        </Heading>
+      </div>
+    </div>
+  ),
 }

@@ -759,18 +759,109 @@ Is it terminal, code, caption, or small UI element?
 **Heading Component Usage:**
 
 ```tsx
-/* Page title - responsive hero sizing */
-<Heading level={1} size="5xl">Welcome</Heading>
+/* Page title - auto-sized to 5xl (h1 default) */
+<Heading level={1}>Welcome</Heading>
 
-/* Section header */
-<Heading level={2} size="2xl">Our Services</Heading>
+/* Section header - auto-sized to 2xl (h2 default) */
+<Heading level={2}>Our Services</Heading>
 
-/* Subsection */
-<Heading level={3} size="xl">Technical Approach</Heading>
+/* Subsection - auto-sized to xl (h3 default) */
+<Heading level={3}>Technical Approach</Heading>
 
-/* Smaller heading with default auto-sizing */
+/* Smaller heading - auto-sized to lg (h4 default) */
 <Heading level={4}>Details</Heading>
+
+/* Override auto-sizing with explicit size */
+<Heading level={2} size="3xl">Large Section Header</Heading>
 ```
+
+**Auto-sizing defaults (aligned with fluid typography):**
+- h1 → 5xl (95px)
+- h2 → 2xl (40px)
+- h3 → xl (30px)
+- h4 → lg (23px)
+- h5 → md (18px)
+- h6 → sm (14px)
+
+### Fluid Typography
+
+The Heading component supports **fluid typography** via the `fluid` prop. Fluid headings scale smoothly between breakpoints using CSS `clamp()`, creating more responsive and visually harmonious layouts.
+
+**When to use fluid:**
+- Hero headings (H1 on landing pages)
+- Large section headers where dramatic scaling enhances visual hierarchy
+- Marketing/editorial content with flexible layouts
+
+**When to use static (default):**
+- UI elements (navigation, buttons, labels)
+- Content with fixed layouts
+- Small headings where fluidity isn't noticeable
+
+**Examples:**
+
+```tsx
+/* Hero - fluid for dramatic scaling (30px → 53px → 95px) */
+<Heading level={1} size="5xl" fluid>
+  Enterprise Engineering
+</Heading>
+
+/* Section header - fluid for responsive hierarchy (18px → 30px → 40px) */
+<Heading level={2} size="2xl" fluid>
+  Our Services
+</Heading>
+
+/* UI heading - static for consistency */
+<Heading level={3} size="lg">
+  Dashboard Settings
+</Heading>
+```
+
+**Section header with accent bar pattern:**
+
+```tsx
+<div className={styles['section-header']}>
+  <div className={styles['accent-bar']} />
+  <Heading level={2} size="2xl" fluid variant="accent" align="center">
+    Featured Work
+  </Heading>
+</div>
+```
+
+```css
+/* section.module.css */
+.section-header {
+  text-align: center;
+}
+
+.accent-bar {
+  width: var(--spacing-20); /* 80px */
+  height: var(--spacing-1); /* 4px */
+  margin: 0 auto var(--spacing-6);
+  background: linear-gradient(
+    90deg,
+    var(--accent-secondary),
+    var(--accent-primary)
+  );
+
+  @media (--md-n-above) {
+    margin-bottom: var(--spacing-8);
+  }
+}
+
+.section-header h2 {
+  margin-bottom: var(--spacing-12);
+
+  @media (--md-n-above) {
+    margin-bottom: var(--spacing-16);
+  }
+}
+```
+
+**Fluid scaling ranges:**
+- **5xl** (Hero): 30px → 53px → 95px → 104px
+- **2xl** (Section): 18px → 30px → 40px → 53px
+- **xl** (Subsection): 18px → 23px → 30px → 40px
+- **lg** (Body Large): 18px → 23px (minimal scaling)
 
 **Why This System Matters:**
 
@@ -779,6 +870,7 @@ Is it terminal, code, caption, or small UI element?
 3. **Clear Purpose**: Each size has a defined use case
 4. **Professional Polish**: Matches industry standards (Stripe, GitHub, Medium)
 5. **Maintainability**: Systematic approach = easier to update consistently
+6. **Responsive by Design**: Fluid typography adapts seamlessly to viewport changes
 
 ---
 

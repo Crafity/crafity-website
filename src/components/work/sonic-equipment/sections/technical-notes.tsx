@@ -1,12 +1,17 @@
 import styles from './technical-notes.module.css'
 
+import { Heading } from '@/components/common/heading/heading'
 import { TerminalWindow } from '@/components/common/terminal-window/terminal-window'
-import { SectionHeader } from '@/components/layout/section-header/section-header'
 
 export function TechnicalNotesSection() {
   return (
     <>
-      <SectionHeader>Technical Notes</SectionHeader>
+      <div className={styles['section-header']}>
+        <div className={styles['accent-bar']} />
+        <Heading fluid align="center" level={2} size="4xl" variant="accent">
+          Technical Notes
+        </Heading>
+      </div>
       <TerminalWindow
         className={styles['tech-terminal']}
         title="technical-challenges.log">

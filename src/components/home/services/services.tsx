@@ -39,7 +39,7 @@ export function Services() {
   return (
     <Container size="wide">
       <Stack space="xlarge">
-        <Heading align="center" level={2} variant="accent">
+        <Heading fluid align="center" level={2} size="5xl" variant="accent">
           WHAT WE DO
         </Heading>
 

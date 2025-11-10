@@ -1,12 +1,19 @@
+import styles from './what-we-did-section.module.css'
+
+import { Heading } from '@/components/common/heading/heading'
 import { PrincipleCard } from '@/components/home/approach/principle-card'
 import { Container } from '@/components/layout/container/container'
-import { SectionHeader } from '@/components/layout/section-header/section-header'
 import { Stack } from '@/components/layout/stack/stack'
 
 export function WhatWeDidSection() {
   return (
     <>
-      <SectionHeader>What We Did</SectionHeader>
+      <div className={styles['section-header']}>
+        <div className={styles['accent-bar']} />
+        <Heading fluid align="center" level={2} size="5xl" variant="accent">
+          What We Did
+        </Heading>
+      </div>
       <Container size="wide">
         <Stack space="large">
           <p>

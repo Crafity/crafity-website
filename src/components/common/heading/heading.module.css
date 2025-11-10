@@ -136,3 +136,176 @@
 .align-right {
   text-align: right;
 }
+
+/* ========================================================================
+   Fluid Typography - Smooth scaling between breakpoints
+   Uses CSS clamp() for controlled fluid scaling with breakpoint jumps
+   All font sizes now support fluid scaling for maximum flexibility
+   ======================================================================== */
+
+/* Fluid Hero/H1 (size="5xl") - 30px→53px→95px→104px */
+.size-5xl-fluid {
+  /* Mobile (320-767px): 30px→53px (xl→3xl) */
+  --heading-fluid-size: clamp(1.875rem, calc(1.875rem * 0.4 + 3vw), 3.3125rem);
+}
+
+@media (--md-n-above) {
+  .size-5xl-fluid {
+    /* Tablet (768-1279px): 53px→95px (3xl→5xl) */
+    --heading-fluid-size: clamp(3.3125rem, calc(3.3125rem * 0.3 + 4vw), 5.9375rem);
+  }
+}
+
+@media (--xl-n-above) {
+  .size-5xl-fluid {
+    /* Desktop (1280px+): 71px→104px (4xl→6.5rem) */
+    --heading-fluid-size: clamp(4.4375rem, calc(4.4375rem * 0.4 + 3vw), 6.5rem);
+  }
+}
+
+/* Fluid Large Display (size="4xl") - 30px→40px→71px→80px */
+.size-4xl-fluid {
+  /* Mobile (320-767px): 30px→40px (xl→2xl) */
+  --heading-fluid-size: clamp(1.875rem, calc(1.875rem * 0.35 + 2.5vw), 2.5rem);
+}
+
+@media (--md-n-above) {
+  .size-4xl-fluid {
+    /* Tablet (768-1279px): 40px→71px (2xl→4xl) */
+    --heading-fluid-size: clamp(2.5rem, calc(2.5rem * 0.4 + 3.5vw), 4.4375rem);
+  }
+}
+
+@media (--xl-n-above) {
+  .size-4xl-fluid {
+    /* Desktop (1280px+): 71px→80px */
+    --heading-fluid-size: clamp(4.4375rem, calc(4.4375rem * 0.15 + 1.5vw), 5rem);
+  }
+}
+
+/* Fluid Display (size="3xl") - 23px→30px→53px→60px */
+.size-3xl-fluid {
+  /* Mobile (320-767px): 23px→30px (lg→xl) */
+  --heading-fluid-size: clamp(1.4375rem, calc(1.4375rem * 0.3 + 1.5vw), 1.875rem);
+}
+
+@media (--md-n-above) {
+  .size-3xl-fluid {
+    /* Tablet (768-1279px): 30px→53px (xl→3xl) */
+    --heading-fluid-size: clamp(1.875rem, calc(1.875rem * 0.4 + 3vw), 3.3125rem);
+  }
+}
+
+@media (--xl-n-above) {
+  .size-3xl-fluid {
+    /* Desktop (1280px+): 53px→60px */
+    --heading-fluid-size: clamp(3.3125rem, calc(3.3125rem * 0.15 + 1vw), 3.75rem);
+  }
+}
+
+/* Fluid Section Header/H2 (size="2xl") - 18px→30px→40px→53px */
+.size-2xl-fluid {
+  /* Mobile (320-767px): 18px→30px (base→xl) */
+  --heading-fluid-size: clamp(1.125rem, calc(1.125rem * 0.5 + 2vw), 1.875rem);
+}
+
+@media (--md-n-above) {
+  .size-2xl-fluid {
+    /* Tablet (768-1279px): 30px→40px (xl→2xl) */
+    --heading-fluid-size: clamp(1.875rem, calc(1.875rem * 0.4 + 2.5vw), 2.5rem);
+  }
+}
+
+@media (--xl-n-above) {
+  .size-2xl-fluid {
+    /* Desktop (1280px+): 40px→53px (2xl→3xl) */
+    --heading-fluid-size: clamp(2.5rem, calc(2.5rem * 0.3 + 1.5vw), 3.3125rem);
+  }
+}
+
+/* Fluid Subsection/H3 (size="xl") - 18px→23px→30px→40px */
+.size-xl-fluid {
+  /* Mobile (320-767px): 18px→23px (base→lg) */
+  --heading-fluid-size: clamp(1.125rem, calc(1.125rem * 0.4 + 1.5vw), 1.4375rem);
+}
+
+@media (--md-n-above) {
+  .size-xl-fluid {
+    /* Tablet (768-1279px): 23px→30px (lg→xl) */
+    --heading-fluid-size: clamp(1.4375rem, calc(1.4375rem * 0.4 + 2vw), 1.875rem);
+  }
+}
+
+@media (--xl-n-above) {
+  .size-xl-fluid {
+    /* Desktop (1280px+): 30px→40px (xl→2xl) */
+    --heading-fluid-size: clamp(1.875rem, calc(1.875rem * 0.3 + 1.5vw), 2.5rem);
+  }
+}
+
+/* Fluid Body Large (size="lg") - 18px→23px→25px */
+.size-lg-fluid {
+  /* Mobile (320-767px): 18px→23px (base→lg) */
+  --heading-fluid-size: clamp(1.125rem, calc(1.125rem * 0.3 + 1vw), 1.4375rem);
+}
+
+@media (--md-n-above) {
+  .size-lg-fluid {
+    /* Tablet+: 23px→25px (subtle scaling) */
+    --heading-fluid-size: clamp(1.4375rem, calc(1.4375rem * 0.1 + 0.5vw), 1.5625rem);
+  }
+}
+
+/* Fluid Body Base (size="md") - 16px→18px→20px */
+.size-md-fluid {
+  /* Mobile (320-767px): 16px→18px (conservative) */
+  --heading-fluid-size: clamp(1rem, calc(1rem * 0.15 + 0.5vw), 1.125rem);
+}
+
+@media (--md-n-above) {
+  .size-md-fluid {
+    /* Tablet+: 18px→20px (subtle scaling) */
+    --heading-fluid-size: clamp(1.125rem, calc(1.125rem * 0.15 + 0.5vw), 1.25rem);
+  }
+}
+
+/* Fluid Small UI (size="sm") - 13px→14px→15px */
+.size-sm-fluid {
+  /* Mobile (320-767px): 13px→14px (conservative) */
+  --heading-fluid-size: clamp(0.8125rem, calc(0.8125rem * 0.1 + 0.3vw), 0.875rem);
+}
+
+@media (--md-n-above) {
+  .size-sm-fluid {
+    /* Tablet+: 14px→15px (subtle scaling) */
+    --heading-fluid-size: clamp(0.875rem, calc(0.875rem * 0.1 + 0.3vw), 0.9375rem);
+  }
+}
+
+/* Fluid Extra Small (size="xs") - 11px→12px→13px */
+.size-xs-fluid {
+  /* Mobile (320-767px): 11px→12px (conservative) */
+  --heading-fluid-size: clamp(0.6875rem, calc(0.6875rem * 0.1 + 0.3vw), 0.75rem);
+}
+
+@media (--md-n-above) {
+  .size-xs-fluid {
+    /* Tablet+: 12px→13px (subtle scaling) */
+    --heading-fluid-size: clamp(0.75rem, calc(0.75rem * 0.1 + 0.3vw), 0.8125rem);
+  }
+}
+
+/* Apply fluid size when fluid prop is enabled AND a fluid variant exists */
+
+/* All sizes now support fluid scaling */
+.size-5xl-fluid.fluid,
+.size-4xl-fluid.fluid,
+.size-3xl-fluid.fluid,
+.size-2xl-fluid.fluid,
+.size-xl-fluid.fluid,
+.size-lg-fluid.fluid,
+.size-md-fluid.fluid,
+.size-sm-fluid.fluid,
+.size-xs-fluid.fluid {
+  font-size: var(--heading-fluid-size);
+}

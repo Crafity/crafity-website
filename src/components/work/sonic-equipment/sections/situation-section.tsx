@@ -2,13 +2,18 @@ import styles from './situation-section.module.css'
 
 import { AccentBar } from '@/components/common/accent-bar/accent-bar'
 import { Card } from '@/components/common/card/card'
+import { Heading } from '@/components/common/heading/heading'
 import { Container } from '@/components/layout/container/container'
-import { SectionHeader } from '@/components/layout/section-header/section-header'
 
 export function SituationSection() {
   return (
     <>
-      <SectionHeader>The Situation</SectionHeader>
+      <div className={styles['section-header']}>
+        <div className={styles['accent-bar']} />
+        <Heading fluid align="center" level={2} size="5xl" variant="accent">
+          The Situation
+        </Heading>
+      </div>
       <Container size="comfortable">
         <p>
           Sonic Equipment is the global specialist in professional hand tools,

@@ -2,6 +2,33 @@
    TECHNICAL NOTES SECTION
    ========================================================================== */
 
+.section-header {
+  text-align: center;
+}
+
+.accent-bar {
+  width: var(--spacing-20); /* 80px */
+  height: var(--spacing-1); /* 4px */
+  margin: 0 auto var(--spacing-6);
+  background: linear-gradient(
+    90deg,
+    var(--accent-secondary),
+    var(--accent-primary)
+  );
+
+  @media (--md-n-above) {
+    margin-bottom: var(--spacing-8);
+  }
+}
+
+.section-header h2 {
+  margin-bottom: var(--spacing-12);
+
+  @media (--md-n-above) {
+    margin-bottom: var(--spacing-16);
+  }
+}
+
 .tech-terminal {
   max-width: 900px;
   margin: 0 auto;
