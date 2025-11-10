@@ -35,7 +35,8 @@ export function Approach() {
       <Stack gap={24}>
         <div className={styles.statement}>
           <Heading fluid align="center" level={2} size="5xl" variant="accent">
-            BUILT TO LAST. BUILT WITH PASSION.
+            <Heading.Line>BUILT TO LAST</Heading.Line>
+            <Heading.Line>BUILT WITH PASSION</Heading.Line>
           </Heading>
         </div>
 

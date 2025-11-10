@@ -480,3 +480,41 @@
 .size-xs-fluid.fluid {
   font-size: var(--heading-fluid-size);
 }
+
+/* Line sub-component for multi-line titles */
+.line {
+  display: block;
+
+  /* Preserve whitespace and prevent text from collapsing */
+  white-space: pre-wrap;
+}
+
+/* Add spacing between lines for better readability */
+.line:not(:last-child) {
+  margin-bottom: 0;
+}
+
+.line-default {
+  color: var(--text-primary);
+}
+
+.line-primary {
+  color: var(--accent-primary);
+}
+
+.line-secondary {
+  color: var(--accent-secondary);
+}
+
+/* Accent sub-component for inline color accents */
+.accent {
+  /* Base class for accent (no specific styling needed) */
+}
+
+.accent-primary {
+  color: var(--accent-primary);
+}
+
+.accent-secondary {
+  color: var(--accent-secondary);
+}

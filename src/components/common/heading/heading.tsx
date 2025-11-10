@@ -28,6 +28,18 @@ interface HeadingProps {
   variant?: 'default' | 'accent' | 'display'
 }
 
+interface HeadingLineProps {
+  children: ReactNode
+  className?: string
+  color?: 'default' | 'primary' | 'secondary'
+}
+
+interface HeadingAccentProps {
+  children: ReactNode
+  className?: string
+  color?: 'primary' | 'secondary'
+}
+
 /**
  * Heading component for semantic headings with flexible visual styling.
  *
@@ -129,6 +141,43 @@ export function Heading({
       }>
       {children}
     </Tag>
+  )
+}
+
+Heading.Line = function HeadingLine({
+  children,
+  className,
+  color = 'default',
+}: HeadingLineProps) {
+  return (
+    <span
+      className={clsx(
+        styles.line,
+        color === 'default' && styles['line-default'],
+        color === 'primary' && styles['line-primary'],
+        color === 'secondary' && styles['line-secondary'],
+        className,
+      )}>
+      {children}
+    </span>
+  )
+}
+
+Heading.Accent = function HeadingAccent({
+  children,
+  className,
+  color = 'secondary',
+}: HeadingAccentProps) {
+  return (
+    <span
+      className={clsx(
+        styles.accent,
+        color === 'primary' && styles['accent-primary'],
+        color === 'secondary' && styles['accent-secondary'],
+        className,
+      )}>
+      {children}
+    </span>
   )
 }
 
