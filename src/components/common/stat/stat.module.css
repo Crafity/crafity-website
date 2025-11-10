@@ -26,6 +26,6 @@
 
 .label {
   color: var(--text-primary);
-  font-size: var(--font-size-base-sm);
+  font-size: var(--font-size-sm);
   line-height: var(--line-height-normal);
 }

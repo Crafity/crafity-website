@@ -15,46 +15,43 @@
 
 /* ========================================================================
    Size Variants - Visual sizing independent of semantic level
+   Perfect Fourth Scale (1.333 ratio)
    ======================================================================== */
 
 .size-xs {
-  font-size: var(--font-size-base);
+  font-size: var(--font-size-xs);
 }
 
 .size-sm {
-  font-size: var(--font-size-md);
+  font-size: var(--font-size-sm);
 }
 
 .size-md {
-  font-size: var(--font-size-lg);
+  font-size: var(--font-size-base);
 }
 
 .size-lg {
-  font-size: var(--font-size-xl);
+  font-size: var(--font-size-lg);
 }
 
 .size-xl {
-  font-size: var(--font-size-2xl);
+  font-size: var(--font-size-xl);
 }
 
 .size-2xl {
-  font-size: var(--font-size-xl);
-
-  @media (--md-n-above) {
-    font-size: var(--font-size-2xl);
-  }
-
-  @media (--lg-n-above) {
-    font-size: var(--font-size-3xl);
-  }
+  font-size: var(--font-size-2xl);
 }
 
 .size-3xl {
-  font-size: var(--font-size-2xl);
+  font-size: var(--font-size-3xl);
+}
 
-  @media (--md-n-above) {
-    font-size: var(--font-size-3xl);
-  }
+.size-4xl {
+  font-size: var(--font-size-4xl);
+}
+
+.size-5xl {
+  font-size: var(--font-size-5xl);
 }
 
 /* ========================================================================
@@ -90,6 +87,19 @@
 
   @media (--3xl-n-above) {
     font-size: var(--heading-size-3xl, var(--heading-size-2xl, var(--heading-size-xl, var(--heading-size-lg, var(--heading-size-md, var(--heading-size-sm, var(--heading-size-xs, var(--heading-size-base))))))));
+  }
+}
+
+/* Add support for 4xl and 5xl responsive sizes */
+@media (--3xl-n-above) {
+  .size-responsive {
+    font-size: var(--heading-size-4xl, var(--heading-size-3xl, var(--heading-size-2xl, var(--heading-size-xl, var(--heading-size-lg, var(--heading-size-md, var(--heading-size-sm, var(--heading-size-xs, var(--heading-size-base)))))))));
+  }
+}
+
+@media (--3xl-n-above) {
+  .size-responsive {
+    font-size: var(--heading-size-5xl, var(--heading-size-4xl, var(--heading-size-3xl, var(--heading-size-2xl, var(--heading-size-xl, var(--heading-size-lg, var(--heading-size-md, var(--heading-size-sm, var(--heading-size-xs, var(--heading-size-base))))))))));
   }
 }
 

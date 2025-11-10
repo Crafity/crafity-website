@@ -38,7 +38,7 @@
   margin-right: var(--spacing-5);
   color: var(--text-primary);
   font-family: var(--accent-font-family);
-  font-size: var(--font-size-lg);
+  font-size: var(--font-size-2xl);
   font-weight: var(--font-weight-bold);
   letter-spacing: var(--letter-spacing-wider);
   line-height: 1;
@@ -62,7 +62,7 @@
 .tagline {
   color: var(--accent-secondary);
   font-family: var(--mono-font-family);
-  font-size: var(--font-size-xs);
+  font-size: var(--font-size-sm);
   font-weight: var(--font-weight-bold);
   letter-spacing: var(--letter-spacing-wide);
   line-height: 1;
@@ -72,7 +72,7 @@
   /* Mobile: wrap to new line if too cramped */
   @media (--xs-only) {
     flex-basis: 100%;
-    font-size: var(--font-size-2xs);
+    font-size: var(--font-size-xs);
   }
 
   /* Small tablets: hide if space is tight */

@@ -7,7 +7,7 @@
   display: block;
   margin-bottom: var(--spacing-3);
   color: var(--text-primary);
-  font-size: var(--font-size-base-lg);
+  font-size: var(--font-size-lg);
 }
 
 .callout ul {

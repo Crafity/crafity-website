@@ -55,21 +55,43 @@ src/
 
 Full definitions: `src/css/color-tokens.css`
 
-### Typography Scale (Primitives)
+### Typography Scale - Perfect Fourth (1.333 ratio)
 
+The typography system uses a **Perfect Fourth modular scale** (1.333 ratio) for mathematical harmony and visual rhythm. Each size is approximately 33% larger than the previous, creating predictable, pleasing hierarchy.
+
+**Font Families:**
 ```css
---font-family:
-  'Inter', sans-serif --mono-font-family: 'JetBrains Mono',
-  monospace --accent-font-family: 'Space Grotesk',
-  sans-serif --font-size-3xl: 92px /* Hero desktop */ --font-size-2xl: 80px
-    /* Hero tablet */ --font-size-xl: 54px /* Hero mobile, H1 */
-    --font-size-lg: 40px /* H2, section titles */ --font-size-md: 32px
-    /* H3, card titles */ --font-size-base: 18px /* Default body */
-    --font-size-xs: 14px /* Terminal, code */ --font-size-2xs: 12px
-    /* Meta, labels */;
+--font-family: 'Instrument Sans', sans-serif;
+--mono-font-family: 'Recursive', monospace;
+--accent-font-family: 'Schibsted Grotesk', sans-serif;
 ```
 
-Full scale: `src/css/typography-tokens.css`
+**Font Sizes (9 sizes, down from 12):**
+```css
+/* Display Sizes - Hero sections and page titles */
+--font-size-5xl: 95px;   /* Hero desktop */
+--font-size-4xl: 71px;   /* Hero tablet */
+--font-size-3xl: 53px;   /* Hero mobile, page titles (H1) */
+--font-size-2xl: 40px;   /* Major section headers (H2) */
+--font-size-xl: 30px;    /* Subsection headers (H3) */
+
+/* Body & UI Sizes */
+--font-size-lg: 23px;    /* Large body text, callouts, featured content */
+--font-size-base: 18px;  /* Default body text */
+--font-size-sm: 14px;    /* Small UI text, terminal, captions */
+--font-size-xs: 12px;    /* Meta text, labels, footer fine print */
+```
+
+**When to use each size:**
+- **5xl, 4xl, 3xl**: Hero sections and page titles (responsive)
+- **2xl**: Major section headers (H2)
+- **xl**: Subsection headers (H3)
+- **lg**: Large body text, callouts, featured content
+- **base**: Default body text (18px)
+- **sm**: Terminal, code, captions, small UI elements
+- **xs**: Meta text, labels, fine print
+
+Full definitions and rationale: `src/css/typography-tokens.css`
 
 ### Spacing Scale (4px base)
 

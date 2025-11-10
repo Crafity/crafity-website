@@ -21,11 +21,11 @@
 
 .title {
   color: var(--text-secondary);
-  font-size: var(--font-size-xs);
+  font-size: var(--font-size-sm);
 }
 
 .content {
   color: var(--text-primary);
-  font-size: var(--font-size-xs);
+  font-size: var(--font-size-sm);
   line-height: var(--line-height-relaxed);
 }

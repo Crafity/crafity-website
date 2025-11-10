@@ -38,7 +38,7 @@
 .logo {
   color: var(--text-primary);
   font-family: var(--accent-font-family);
-  font-size: var(--font-size-base-xl);
+  font-size: var(--font-size-lg);
   font-weight: var(--font-weight-bold);
   letter-spacing: var(--letter-spacing-wider);
   line-height: var(--line-height-normal);
@@ -47,7 +47,7 @@
 .tagline {
   color: var(--accent-secondary);
   font-family: var(--mono-font-family);
-  font-size: var(--font-size-xs);
+  font-size: var(--font-size-sm);
   font-weight: var(--font-weight-bold);
   letter-spacing: var(--letter-spacing-wide);
   opacity: 0.8;
@@ -55,14 +55,14 @@
 
 .year {
   color: var(--text-secondary);
-  font-size: var(--font-size-base-sm);
+  font-size: var(--font-size-sm);
 }
 
 .title {
   margin-bottom: var(--spacing-2);
   color: var(--text-primary);
   font-family: var(--mono-font-family);
-  font-size: var(--font-size-2xs);
+  font-size: var(--font-size-xs);
   font-weight: var(--font-weight-bold);
   letter-spacing: var(--letter-spacing-wide);
   text-transform: uppercase;
@@ -73,7 +73,7 @@
   background: none;
   color: var(--text-secondary);
   cursor: pointer;
-  font-size: var(--font-size-base-sm);
+  font-size: var(--font-size-sm);
   text-align: left;
   transition: var(--transition-color);
 
@@ -99,12 +99,12 @@
 
 .bottom-text {
   color: var(--text-secondary);
-  font-size: var(--font-size-xs);
+  font-size: var(--font-size-sm);
 }
 
 .exit {
   color: var(--text-tertiary);
   font-family: var(--mono-font-family);
-  font-size: var(--font-size-xs);
+  font-size: var(--font-size-sm);
   text-align: center;
 }

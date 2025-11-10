@@ -1,9 +1,0 @@
-.section {
-  /* Mobile baseline: 64px */
-  padding: var(--spacing-16) 0;
-
-  /* Desktop: 96px */
-  @media (--lg-n-above) {
-    padding: var(--spacing-24) 0;
-  }
-}

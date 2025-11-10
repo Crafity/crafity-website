@@ -8,7 +8,7 @@ interface SectionProps {
   children: ReactNode
   className?: string
   id?: string
-  spacing?: 'normal' | 'large' | 'none'
+  padding?: 'base' | 'large' | 'none'
 }
 
 /**
@@ -26,9 +26,9 @@ interface SectionProps {
  * </Section>
  * ```
  *
- * @example With custom spacing
+ * @example With custom padding
  * ```tsx
- * <Section spacing="large">
+ * <Section padding="large">
  *   <Container size="base">
  *     <p>Content with extra vertical padding</p>
  *   </Container>
@@ -39,11 +39,11 @@ export function Section({
   children,
   className,
   id,
-  spacing = 'normal',
+  padding = 'base',
 }: SectionProps) {
   return (
     <section
-      className={clsx(styles.section, styles[spacing], className)}
+      className={clsx(styles.section, styles[padding], className)}
       id={id}>
       {children}
     </section>

@@ -11,15 +11,15 @@
 }
 
 /* ========================================================================
-   Size Variants
+   Size Variants - Perfect Fourth Scale
    ======================================================================== */
 
 .size-xs {
-  font-size: var(--font-size-2xs);
+  font-size: var(--font-size-xs);
 }
 
 .size-sm {
-  font-size: var(--font-size-xs);
+  font-size: var(--font-size-sm);
 }
 
 .size-base {
@@ -27,11 +27,11 @@
 }
 
 .size-lg {
-  font-size: var(--font-size-base-lg);
+  font-size: var(--font-size-lg);
 }
 
 .size-xl {
-  font-size: var(--font-size-md);
+  font-size: var(--font-size-xl);
 }
 
 /* ========================================================================
@@ -63,7 +63,7 @@
 }
 
 .variant-caption {
-  font-size: var(--font-size-xs);
+  font-size: var(--font-size-sm);
   line-height: var(--line-height-normal);
 }
 
@@ -74,7 +74,7 @@
 
 .variant-code {
   font-family: var(--mono-font-family);
-  font-size: var(--font-size-xs);
+  font-size: var(--font-size-sm);
 }
 
 /* ========================================================================

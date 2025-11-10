@@ -11,6 +11,7 @@ type ContainerSize = 'narrow' | 'base' | 'comfortable' | 'wide' | 'full'
 interface ContainerProps {
   children: ReactNode
   className?: string
+  padding?: boolean
   size?: ContainerSize | ResponsiveProp<ContainerSize>
 }
 
@@ -32,10 +33,18 @@ interface ContainerProps {
  *   <p>Responsive container width</p>
  * </Container>
  * ```
+ *
+ * @example Without padding (for full-bleed content)
+ * ```tsx
+ * <Container size="base" padding={false}>
+ *   <img src="hero.jpg" alt="Full bleed within constraint" />
+ * </Container>
+ * ```
  */
 export function Container({
   children,
   className,
+  padding = true,
   size = 'base',
 }: ContainerProps) {
   const isSizeResponsive = isResponsiveProp(size)
@@ -46,6 +55,7 @@ export function Container({
         styles.container,
         !isSizeResponsive && styles[size],
         isSizeResponsive && styles['size-responsive'],
+        !padding && styles['no-padding'],
         className,
       )}
       style={

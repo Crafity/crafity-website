@@ -10,14 +10,14 @@ const meta: Meta<typeof Section> = {
       control: 'text',
       description: 'HTML id for anchor links',
     },
-    spacing: {
+    padding: {
       control: 'select',
       description: 'Amount of vertical padding for the section',
-      options: ['normal', 'large', 'none'],
+      options: ['base', 'large', 'none'],
       table: {
-        defaultValue: { summary: 'normal' },
+        defaultValue: { summary: 'base' },
         type: {
-          summary: "'normal' | 'large' | 'none'",
+          summary: "'base' | 'large' | 'none'",
         },
       },
     },
@@ -55,42 +55,42 @@ const ExampleContent = ({ title }: { title: string }) => (
   </div>
 )
 
-export const AllSpacingVariants: Story = {
+export const AllPaddingVariants: Story = {
   render: () => (
     <div style={{ background: 'var(--bg-primary)' }}>
-      <Section spacing="normal">
+      <Section padding="base">
         <Container size="wide">
-          <ExampleContent title="Normal Spacing (64px / 96px)" />
+          <ExampleContent title="Base Padding (64px / 96px)" />
         </Container>
       </Section>
 
       <div style={{ background: 'var(--accent-primary)', height: '2px' }} />
 
-      <Section spacing="large">
+      <Section padding="large">
         <Container size="wide">
-          <ExampleContent title="Large Spacing (96px / 128px)" />
+          <ExampleContent title="Large Padding (96px / 128px)" />
         </Container>
       </Section>
 
       <div style={{ background: 'var(--accent-primary)', height: '2px' }} />
 
-      <Section spacing="none">
+      <Section padding="none">
         <Container size="wide">
-          <ExampleContent title="No Spacing (0px)" />
+          <ExampleContent title="No Padding (0px)" />
         </Container>
       </Section>
     </div>
   ),
 }
 
-export const Normal: Story = {
+export const Base: Story = {
   args: {
     children: (
       <Container size="wide">
-        <ExampleContent title="Normal Section" />
+        <ExampleContent title="Base Section" />
       </Container>
     ),
-    spacing: 'normal',
+    padding: 'base',
   },
 }
 
@@ -101,7 +101,7 @@ export const Large: Story = {
         <ExampleContent title="Large Section" />
       </Container>
     ),
-    spacing: 'large',
+    padding: 'large',
   },
 }
 
@@ -112,7 +112,7 @@ export const None: Story = {
         <ExampleContent title="Section with No Padding" />
       </Container>
     ),
-    spacing: 'none',
+    padding: 'none',
   },
 }
 
@@ -142,7 +142,7 @@ export const WithAnchorId: Story = {
       </Container>
     ),
     id: 'services',
-    spacing: 'normal',
+    padding: 'base',
   },
 }
 
@@ -150,7 +150,7 @@ export const RealWorldExample: Story = {
   render: () => (
     <div style={{ background: 'var(--bg-primary)' }}>
       {/* Hero section - typically full width */}
-      <Section spacing="large">
+      <Section padding="large">
         <Container size="full">
           <div
             style={{
@@ -169,21 +169,21 @@ export const RealWorldExample: Story = {
               HERO SECTION
             </h1>
             <p style={{ fontSize: 'var(--font-size-lg)' }}>
-              Full-width container with large spacing
+              Full-width container with large padding
             </p>
           </div>
         </Container>
       </Section>
 
       {/* Content section - narrower */}
-      <Section id="content" spacing="normal">
+      <Section id="content" padding="base">
         <Container size="base">
           <ExampleContent title="Content Section" />
         </Container>
       </Section>
 
       {/* Services section - wider for grid */}
-      <Section id="services" spacing="normal">
+      <Section id="services" padding="base">
         <Container size="wide">
           <div
             style={{

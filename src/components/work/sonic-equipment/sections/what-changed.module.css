@@ -5,14 +5,14 @@
 .results-intro {
   margin-bottom: var(--spacing-6);
   color: var(--text-primary);
-  font-size: var(--font-size-base-lg);
+  font-size: var(--font-size-lg);
   font-weight: var(--font-weight-bold);
 }
 
 /* Card provides: padding, border (accent-thin), background */
 .transformation-text {
   margin: var(--spacing-12) 0;
-  font-size: var(--font-size-base-lg);
+  font-size: var(--font-size-lg);
   line-height: var(--line-height-relaxed);
 }
 

@@ -4,6 +4,17 @@ import { Container } from './container'
 
 const meta: Meta<typeof Container> = {
   argTypes: {
+    padding: {
+      control: 'boolean',
+      description:
+        'Whether to include horizontal padding. Set to false for full-bleed content within max-width constraint.',
+      table: {
+        defaultValue: { summary: 'true' },
+        type: {
+          summary: 'boolean',
+        },
+      },
+    },
     size: {
       control: 'select',
       description:
@@ -134,6 +145,38 @@ export const WithRealContent: Story = {
     ),
     size: 'base',
   },
+}
+
+export const WithoutPadding: Story = {
+  render: () => (
+    <div style={{ background: 'var(--bg-secondary)', padding: '2rem 0' }}>
+      <div style={{ marginBottom: '2rem' }}>
+        <Container padding={true} size="base">
+          <div
+            style={{
+              background: 'var(--accent-secondary)',
+              color: 'var(--bg-primary)',
+              padding: '1rem',
+              textAlign: 'center',
+            }}>
+            With padding (default) - Content respects edges
+          </div>
+        </Container>
+      </div>
+
+      <Container padding={false} size="base">
+        <div
+          style={{
+            background: 'var(--accent-primary)',
+            color: 'var(--bg-primary)',
+            padding: '1rem',
+            textAlign: 'center',
+          }}>
+          Without padding - Full bleed within max-width constraint
+        </div>
+      </Container>
+    </div>
+  ),
 }
 
 // Helper function for labels

@@ -40,7 +40,7 @@
   margin-top: auto;
   color: var(--accent-secondary);
   cursor: pointer;
-  font-size: var(--font-size-base-sm);
+  font-size: var(--font-size-sm);
   text-align: left;
   transition: var(--transition-color);
 

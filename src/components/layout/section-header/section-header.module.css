@@ -17,7 +17,7 @@
   margin-bottom: var(--spacing-12);
   color: var(--text-primary);
   font-family: var(--accent-font-family);
-  font-size: var(--font-size-lg);
+  font-size: var(--font-size-2xl);
   font-weight: var(--font-weight-bold);
   letter-spacing: var(--letter-spacing-wide);
   line-height: var(--line-height-normal);
@@ -26,6 +26,6 @@
 
   @media (--md-n-above) {
     margin-bottom: var(--spacing-16);
-    font-size: var(--font-size-2xl);
+    font-size: var(--font-size-3xl);
   }
 }

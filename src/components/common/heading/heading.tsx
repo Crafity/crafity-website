@@ -6,7 +6,16 @@ import styles from './heading.module.css'
 
 import { isResponsiveProp, ResponsiveProp } from '@/types/responsive'
 
-type HeadingSize = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl' | '3xl'
+type HeadingSize =
+  | 'xs'
+  | 'sm'
+  | 'md'
+  | 'lg'
+  | 'xl'
+  | '2xl'
+  | '3xl'
+  | '4xl'
+  | '5xl'
 
 interface HeadingProps {
   align?: 'left' | 'center' | 'right'
@@ -62,7 +71,8 @@ export function Heading({
   const Tag = `h${level}` as const
 
   // Default size based on level if not specified
-  const defaultSizes = ['3xl', '2xl', 'xl', 'lg', 'md', 'sm'] as const
+  // Using Perfect Fourth scale: 5xl, 4xl, 3xl, 2xl, xl, lg
+  const defaultSizes = ['5xl', '4xl', '3xl', '2xl', 'xl', 'lg'] as const
   const defaultSize = defaultSizes[level - 1]
   const computedSize = size || defaultSize
 
@@ -109,6 +119,8 @@ function getSizeValue(size: HeadingSize): string {
   const sizeMap: Record<HeadingSize, string> = {
     '2xl': 'var(--font-size-2xl)',
     '3xl': 'var(--font-size-3xl)',
+    '4xl': 'var(--font-size-4xl)',
+    '5xl': 'var(--font-size-5xl)',
     lg: 'var(--font-size-lg)',
     md: 'var(--font-size-md)',
     sm: 'var(--font-size-sm)',

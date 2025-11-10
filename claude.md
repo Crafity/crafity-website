@@ -262,6 +262,118 @@ export const AllVariants: Story = {
 }
 ```
 
+### Layout Composition Pattern
+
+Layout follows a predictable 3-layer hierarchy for consistent page structure:
+
+1. **Section** - Semantic sectioning with vertical padding
+2. **Container** - Horizontal centering with max-width constraint
+3. **Stack/Grid** - Spacing/layout between content elements
+
+**Standard composition:**
+
+```tsx
+<Section padding="base">           {/* Layer 1: Vertical spacing */}
+  <Container size="wide">          {/* Layer 2: Horizontal constraint */}
+    <Stack space="large">          {/* Layer 3: Content spacing */}
+      <Heading level={2}>Title</Heading>
+      <Text>Content</Text>
+    </Stack>
+  </Container>
+</Section>
+```
+
+**When to use each component:**
+
+| Component | Purpose | Key Props | Use When |
+|-----------|---------|-----------|----------|
+| **Section** | Vertical padding for page sections | `padding`: 'base' \| 'large' \| 'none'<br/>`id`: for anchor links | Creating semantic page sections with vertical spacing |
+| **Container** | Horizontal centering + max-width | `size`: 'narrow' \| 'base' \| 'comfortable' \| 'wide' \| 'full'<br/>`padding`: boolean (default: true) | Constraining content width and adding edge padding |
+| **Stack** | Vertical spacing between children | `space`: 'none' \| 'minimal' \| 'tiny' \| 'small' \| 'medium' \| 'large' \| 'xlarge'<br/>`dividers`: boolean | Spacing sibling elements vertically |
+| **Grid** | Multi-column layouts | `columns`: number or responsive<br/>`gap`: 'small' \| 'medium' \| 'large' | Creating responsive grid layouts |
+
+**Container size selection guide:**
+
+```tsx
+// Forms, CTAs, focused content
+<Container size="narrow">   {/* 600px */}
+
+// Articles, case studies, long-form reading
+<Container size="base">     {/* 900px */}
+
+// Comfortable wider reading
+<Container size="comfortable"> {/* 1000px */}
+
+// Service grids, multi-column layouts
+<Container size="wide">     {/* 1200px */}
+
+// Hero sections, full-width layouts
+<Container size="full">     {/* 1400px */}
+```
+
+**Common patterns:**
+
+```tsx
+// Hero section (full-width, large padding)
+<Section padding="large">
+  <Container size="full">
+    <Hero />
+  </Container>
+</Section>
+
+// Content section (readable width, base padding)
+<Section padding="base">
+  <Container size="base">
+    <Article />
+  </Container>
+</Section>
+
+// Services section (wide for grid, base padding)
+<Section padding="base" id="services">
+  <Container size="wide">
+    <Grid columns={{ base: 1, md: 2, lg: 3 }} gap="medium">
+      <ServiceCard />
+      <ServiceCard />
+      <ServiceCard />
+    </Grid>
+  </Container>
+</Section>
+
+// Full-bleed image within constraint (no padding)
+<Section padding="none">
+  <Container size="base" padding={false}>
+    <img src="hero.jpg" alt="Full bleed" />
+  </Container>
+</Section>
+```
+
+**Decision tree:**
+
+```
+Creating a page section?
+└─ Yes → Use <Section>
+    ├─ Large hero/feature? → padding="large"
+    ├─ Standard section? → padding="base" (default)
+    └─ No padding needed? → padding="none"
+
+Need horizontal centering/max-width?
+└─ Yes → Use <Container> inside Section
+    ├─ What content type?
+    │   ├─ Form/CTA → size="narrow"
+    │   ├─ Article → size="base"
+    │   ├─ Grid → size="wide"
+    │   └─ Hero → size="full"
+    └─ Full-bleed within constraint? → padding={false}
+
+Need vertical spacing between elements?
+└─ Yes → Use <Stack> inside Container
+    └─ Choose space based on visual hierarchy
+
+Need multi-column layout?
+└─ Yes → Use <Grid> inside Container
+    └─ Set responsive columns + gap
+```
+
 ## 6. Linting & Code Quality
 
 ### Before Every Commit
@@ -564,14 +676,109 @@ pnpm build            # Production build
 /* Spacing */
 --spacing-4, --spacing-8, --spacing-16
 
-/* Typography */
+/* Typography - Perfect Fourth Scale (1.333 ratio) */
 --font-family, --mono-font-family, --accent-font-family
---font-size-base, --font-size-lg, --font-size-xl
+--font-size-5xl, --font-size-4xl, --font-size-3xl  /* Hero/display sizes */
+--font-size-2xl, --font-size-xl                    /* Section headers */
+--font-size-lg, --font-size-base                   /* Body text */
+--font-size-sm, --font-size-xs                     /* UI/meta text */
 
 /* Animation */
 --transition-color, --transition-all
 --duration-normal, --ease-out
 ```
+
+### Typography Best Practices
+
+**Perfect Fourth Modular Scale (1.333 ratio)**
+
+Our typography system uses a mathematical scale where each size is ~33% larger than the previous. This creates visual harmony and predictable hierarchy.
+
+**Decision Tree for Font Sizes:**
+
+```
+Is it a hero section or page title?
+  ├─ Yes → Use 5xl (desktop), 4xl (tablet), 3xl (mobile)
+  └─ No → Continue
+
+Is it a major section header (H2)?
+  ├─ Yes → Use 2xl (40px)
+  └─ No → Continue
+
+Is it a subsection header (H3)?
+  ├─ Yes → Use xl (30px)
+  └─ No → Continue
+
+Is it featured/callout content or large body text?
+  ├─ Yes → Use lg (23px)
+  └─ No → Continue
+
+Is it normal body text or paragraph?
+  ├─ Yes → Use base (18px)
+  └─ No → Continue
+
+Is it terminal, code, caption, or small UI element?
+  ├─ Yes → Use sm (14px)
+  └─ No → Use xs (12px) for meta/labels/fine print
+```
+
+**Anti-Patterns:**
+
+❌ **DON'T:** Create new font sizes outside the scale
+```css
+.custom-title {
+  font-size: 35px; /* Random value breaks harmony */
+}
+```
+
+✅ **DO:** Use existing scale tokens
+```css
+.custom-title {
+  font-size: var(--font-size-xl); /* 30px - maintains harmony */
+}
+```
+
+---
+
+❌ **DON'T:** Use display sizes for body content
+```css
+.paragraph {
+  font-size: var(--font-size-3xl); /* Too large for body text */
+}
+```
+
+✅ **DO:** Use appropriate size for content type
+```css
+.paragraph {
+  font-size: var(--font-size-base); /* 18px - readable body text */
+}
+```
+
+---
+
+**Heading Component Usage:**
+
+```tsx
+/* Page title - responsive hero sizing */
+<Heading level={1} size="5xl">Welcome</Heading>
+
+/* Section header */
+<Heading level={2} size="2xl">Our Services</Heading>
+
+/* Subsection */
+<Heading level={3} size="xl">Technical Approach</Heading>
+
+/* Smaller heading with default auto-sizing */
+<Heading level={4}>Details</Heading>
+```
+
+**Why This System Matters:**
+
+1. **Visual Harmony**: Mathematical ratios create natural rhythm
+2. **Reduced Complexity**: 9 sizes (down from 12) = fewer decisions
+3. **Clear Purpose**: Each size has a defined use case
+4. **Professional Polish**: Matches industry standards (Stripe, GitHub, Medium)
+5. **Maintainability**: Systematic approach = easier to update consistently
 
 ---
 

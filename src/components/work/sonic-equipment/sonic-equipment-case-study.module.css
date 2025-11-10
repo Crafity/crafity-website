@@ -82,7 +82,7 @@
   margin: 0;
   color: var(--text-secondary);
   font-family: var(--font-family);
-  font-size: var(--font-size-base-lg);
+  font-size: var(--font-size-lg);
   font-style: italic;
   line-height: var(--line-height-relaxed);
 }
@@ -91,7 +91,7 @@
 .metadata {
   color: var(--accent-secondary);
   font-family: var(--mono-font-family);
-  font-size: var(--font-size-xs);
+  font-size: var(--font-size-sm);
   letter-spacing: var(--letter-spacing-wide);
 }
 
@@ -111,7 +111,7 @@
 .results-intro {
   margin-bottom: var(--spacing-6);
   color: var(--text-primary);
-  font-size: var(--font-size-base-lg);
+  font-size: var(--font-size-lg);
   font-weight: var(--font-weight-bold);
 }
 
@@ -120,7 +120,7 @@
   border: var(--border-width-medium) solid var(--accent-secondary);
   margin: var(--spacing-12) 0;
   background: var(--bg-secondary);
-  font-size: var(--font-size-base-lg);
+  font-size: var(--font-size-lg);
   line-height: var(--line-height-relaxed);
 }
 
@@ -136,7 +136,7 @@
 .technical-content {
   color: var(--text-primary);
   font-family: var(--mono-font-family);
-  font-size: var(--font-size-xs);
+  font-size: var(--font-size-sm);
   line-height: var(--line-height-loose);
 }
 
@@ -153,7 +153,7 @@
 
 .tech-icon {
   color: var(--accent-secondary);
-  font-size: var(--font-size-base-lg);
+  font-size: var(--font-size-lg);
 }
 
 .tech-title {

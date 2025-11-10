@@ -34,7 +34,7 @@
   margin: 0;
   color: var(--text-secondary);
   font-family: var(--font-family);
-  font-size: var(--font-size-base-lg);
+  font-size: var(--font-size-lg);
   font-style: italic;
   line-height: var(--line-height-relaxed);
 }
@@ -43,7 +43,7 @@
 .metadata {
   color: var(--accent-secondary);
   font-family: var(--mono-font-family);
-  font-size: var(--font-size-xs);
+  font-size: var(--font-size-sm);
   font-weight: var(--font-weight-bold);
   letter-spacing: var(--letter-spacing-wide);
 }
