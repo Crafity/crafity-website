@@ -12,7 +12,7 @@ const meta: Meta<typeof ServiceCard> = {
       control: 'text',
       description: 'Recent client examples or project names',
     },
-    number: {
+    index: {
       control: 'text',
       description: 'Service number (e.g., "01", "02")',
     },
@@ -43,7 +43,7 @@ export const Default: Story = {
     description:
       'Migrating from monoliths to headless commerce, implementing modern tech stacks without disrupting operations.',
     examples: 'Sonic Equipment, Major EU Retailer',
-    number: '01',
+    index: '01',
     title: 'E-COMMERCE MODERNIZATION',
   },
 }
@@ -53,7 +53,7 @@ export const SecondCard: Story = {
     description:
       'Rescuing troubled projects, untangling technical debt, and bringing legacy systems back to life.',
     examples: 'ING Bank, Healthcare SaaS Provider',
-    number: '02',
+    index: '02',
     title: 'LEGACY RESCUE',
   },
   parameters: {
@@ -71,7 +71,7 @@ export const ThirdCard: Story = {
     description:
       'Senior engineering capacity when you need it—architecture, implementation, and team leadership.',
     examples: 'Picnic, Electronic Arts, Schiphol',
-    number: '03',
+    index: '03',
     title: 'ENGINEERING CAPACITY',
   },
 }
@@ -82,7 +82,7 @@ export const LongContent: Story = {
       'This is a service card with significantly longer description text to test how the component handles multiple lines of content and maintains visual balance across different text lengths. The layout should remain consistent even with extended content.',
     examples:
       'Client One, Client Two, Client Three, Client Four, Client Five, Client Six',
-    number: '04',
+    index: '04',
     title: 'COMPREHENSIVE DIGITAL TRANSFORMATION SERVICES',
   },
   parameters: {
@@ -99,7 +99,7 @@ export const MinimalContent: Story = {
   args: {
     description: 'Short description.',
     examples: 'Client',
-    number: '05',
+    index: '05',
     title: 'SERVICE',
   },
   parameters: {

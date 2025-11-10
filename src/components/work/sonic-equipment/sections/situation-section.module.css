@@ -13,11 +13,6 @@
 
 /* Card provides: padding, border-left (accent width), background */
 .constraint-text {
-  margin-top: var(--spacing-12);
   color: var(--text-secondary);
   font-style: italic;
-}
-
-.constraint-text p {
-  margin: 0;
 }
